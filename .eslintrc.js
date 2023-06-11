@@ -4,6 +4,7 @@ module.exports = {
         es2021: true,
         jest: true,
     },
+
     extends: [
         'plugin:react/recommended',
         'airbnb',
@@ -48,7 +49,7 @@ module.exports = {
                 ignoreAttribute: ['data-testid', 'to'],
             },
         ],
-        'max-len': ['error', { ignoreComments: true, code: 100 }],
+        'max-len': ['error', { ignoreComments: true, code: 150 }],
     },
     globals: {
         __IS_DEV__: true,

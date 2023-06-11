@@ -4,10 +4,11 @@ import cls from './Button.module.scss';
 
 export const enum ThemeButton {
   CLEAR = 'clear',
+  ROUNDED= 'rounded'
 }
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-   className?: string;
+    className?: string;
   theme?: ThemeButton;
 }
 

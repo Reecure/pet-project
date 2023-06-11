@@ -12,4 +12,10 @@ describe('button', () => {
         expect(screen.getByText('Test')).toHaveClass('clear');
         screen.debug();
     });
+
+    test('button with rounded theme', () => {
+        render(<Button theme={ThemeButton.ROUNDED}>Test</Button>);
+        expect(screen.getByText('Test')).toHaveClass('rounded');
+        screen.debug();
+    });
 });

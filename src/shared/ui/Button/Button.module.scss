@@ -1,4 +1,17 @@
+
+.Button {
+  background-color: var(--primary-color);
+}
+
 .clear {
   border: none;
   outline: none;
+  background-color: transparent;
+}
+
+.rounded {
+  border: 1px solid black;
+  border-radius: 20px;
+  padding: 5px 10px;
+  background-color: var(--secondary-color);
 }
