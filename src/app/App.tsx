@@ -15,7 +15,7 @@ const App = () => {
                 <Navbar />
                 <div className={classNames('page-wrapper', {}, [])}>
                     <Sidebar />
-                    <p>for test</p>
+
                     <AppRouter />
                 </div>
             </Suspense>
