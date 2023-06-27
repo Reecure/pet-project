@@ -1,10 +1,16 @@
 {
-  "Test example" : "Тестовий приклад",
+  "Test example": "Тестовий приклад",
   "Translate": "Переклад",
   "Main": "Головна",
   "About": "Про сайт",
   "Not Found": "Cторінка не існує =(",
   "Something went wrong": "Щось пішло не так =(",
   "Reload page": "Перезавантажити сторінку",
-  "Toggle": "Перемкнути"
+  "Toggle": "Перемкнути",
+  "ReduxProvider": "Редукс провайдер",
+  "hello": "привiт",
+  "Login": "Увiйти",
+  "Register": "Реэстрацiя",
+  "Logout": "Вийти",
+  "Main Page": "Головна"
 }

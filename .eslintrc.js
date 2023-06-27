@@ -40,8 +40,13 @@ module.exports = {
         'react/function-component-definition': 'off',
         'no-shadow': 'off',
         'import/extensions': 'off',
+        'react/jsx-boolean-value': 'off',
         'import/no-extraneous-dependencies': 'off',
+        'jsx-a11y/click-events-have-key-events': 'off',
+        'jsx-a11y/no-noninteractive-element-interactions': 'off',
         'no-underscore-dangle': 'off',
+        'no-param-reassign': 'off',
+        'jsx-a11y/no-static-element-interactions': 'off',
         'i18next/no-literal-string': [
             'error',
             {

@@ -16,7 +16,7 @@ const PageError: FC<PageErrorProps> = ({ className }) => {
 
     const { t } = useTranslation();
     return (
-        <div className={classNames(cls.PageError, {}, [className])}>
+        <div data-testid="error-page" className={classNames(cls.PageError, {}, [className])}>
             {t('Something went wrong')}
             <Button onClick={reloadPageHandler}>{t('Reload page')}</Button>
         </div>

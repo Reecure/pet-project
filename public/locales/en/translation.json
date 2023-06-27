@@ -1,5 +1,5 @@
 {
-  "Test example" : "Test example",
+  "Test example": "Test example",
   "Translate": "Translate",
   "Main": "Main",
   "About": "About",
@@ -7,6 +7,11 @@
   "Loading": "Loading...",
   "Something went wrong": "Something went wrong",
   "Reload page": "Reload page",
-  "Toggle": "Toggle"
+  "Toggle": "Toggle",
+  "ReduxProvider": "ReduxProvider",
+  "hello": "hello",
+    "Main Page": "Main Page",
+  "Login": "Login",
+  "Register": "Register",
+  "Logout": "Logout"
 }
-

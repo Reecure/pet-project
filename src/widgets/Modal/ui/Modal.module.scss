@@ -1,0 +1,32 @@
+.Modal {
+    position: absolute;
+    background-color: rgba(#000000, 0.5);
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+
+.modalActive {
+ animation: show .4s ease-in-out forwards ;
+}
+
+.modalExit {
+ animation: show .4s reverse ease-in-out forwards;
+}
+
+
+@keyframes show {
+0%{
+ scale: 0;
+ opacity: 0;
+}
+ 100%{
+  scale: 1;
+  opacity: 1;
+ }
+}
