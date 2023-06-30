@@ -10,8 +10,9 @@
   "Toggle": "Toggle",
   "ReduxProvider": "ReduxProvider",
   "hello": "hello",
-    "Main Page": "Main Page",
+  "Main Page": "Main Page",
   "Login": "Login",
   "Register": "Register",
-  "Logout": "Logout"
+  "Logout": "Logout",
+  "Profile": "Profile"
 }

@@ -1,4 +1,6 @@
-import { FC, useState } from 'react';
+import {
+    FC, memo, useCallback, useEffect, useState,
+} from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import Button from 'shared/ui/Button/Button';
 import { ThemeSwitcher } from 'widgets/ThemeSwitcher';
@@ -8,19 +10,26 @@ import { AppLink } from 'shared';
 import { AppRoutes } from 'shared/config/routeConfig/routeConfig';
 import { AiOutlineHome } from 'react-icons/ai';
 import { BsListStars } from 'react-icons/bs';
+import { useAppSelector } from 'app/providers/ReduxProvider/config/hooks';
+import { profileSelector } from 'enteties/Profile/selectors/profileSelector';
+import { isLoggedSelector } from 'enteties/User/model/selectors/isLoggedSelector';
 import cls from './Sidebar.module.scss';
 
 interface SidebarProps {
   className?: string;
 }
 
-const Sidebar: FC<SidebarProps> = ({ className }) => {
+const Sidebar: FC<SidebarProps> = memo(({ className }) => {
     const [open, isOpen] = useState(true);
     const { t } = useTranslation();
 
-    const openSideHandler = () => {
-        isOpen((prev) => !prev);
-    };
+    const selectIsLogged = useAppSelector(isLoggedSelector);
+
+    const openSideHandler = useCallback(() => {
+        isOpen(!open);
+    }, [open]);
+
+    useEffect(() => {}, [selectIsLogged]);
 
     return (
 
@@ -36,6 +45,15 @@ const Sidebar: FC<SidebarProps> = ({ className }) => {
                     <span className={cls.linkIcon}><BsListStars /></span>
                     <span className={classNames('', { [cls.linkTextWhenClose]: !open }, [])}>{t('About')}</span>
                 </AppLink>
+                {
+                    selectIsLogged && (
+                        <AppLink to={AppRoutes.PROFILE} className={cls.link}>
+                            <span className={cls.linkIcon}><BsListStars /></span>
+                            <span className={classNames('', { [cls.linkTextWhenClose]: !open }, [])}>{t('Profile')}</span>
+                        </AppLink>
+                    )
+                }
+
             </div>
             <div>
                 <Button data-testid="sidebar-toggle" className={cls.ToggleButton} onClick={openSideHandler}>
@@ -48,6 +66,6 @@ const Sidebar: FC<SidebarProps> = ({ className }) => {
             </div>
         </div>
     );
-};
+});
 
 export default Sidebar;

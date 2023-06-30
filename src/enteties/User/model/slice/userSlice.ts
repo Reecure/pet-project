@@ -1,61 +1,71 @@
-import { createSlice } from '@reduxjs/toolkit';
-import { log } from 'console';
+import { PayloadAction, createSlice } from '@reduxjs/toolkit';
+import { USER_LOCALSTORAGE_KEY } from 'shared/constants/localStorage';
+import { CURRENCIES } from 'enteties/Currency/model/types/currencies';
+import { COUNTRIES } from 'enteties/Country/model/types/countries';
+import { getUserByCredentials } from '../../../../features/AuthByUsername/services/getUserByCredentials';
 
 export interface User {
-    username: string,
-    email: string,
-    password: string
+    'first': string,
+    'lastname':string,
+    'age': number,
+    'currency': CURRENCIES,
+    'country': COUNTRIES,
+    'city': string,
+    'username': string,
+    'avatar': string
 }
 
 interface State {
-    logged: boolean,
-    user: {
-        username: '',
-        password: ''
-    },
+    userData: User
+    error: string | undefined,
+    loading: boolean
+    isLogged: boolean
 }
 
 const initialState:State = {
-    logged: false,
-    user: {
-        username: '',
-        password: '',
-    },
+    userData: undefined,
+    error: undefined,
+    loading: false,
+    isLogged: false,
 };
 
 const userSlice = createSlice({
     name: 'user',
     initialState,
     reducers: {
-        setUsernameForLogin: (state, action) => {
-            state.user.username = action.payload;
+        setAuthData: (state, action: PayloadAction<User>) => {
+            state.userData = action.payload;
+            state.isLogged = true;
         },
-        setPasswordForLogin: (state, action) => {
-            state.user.password = action.payload;
-        },
-        login: (state) => {
-            const userExist = localStorage.getItem('user');
-            if (userExist) {
-                const user = JSON.parse(userExist);
-                if (user.username === state.user.username && user.password === state.user.password) {
-                    state.logged = true;
-                    window.location.reload();
-                    console.log(user);
-                } else {
-                    console.log('incorrect email or password');
-                }
-            } else {
-                console.log('user doesn`t exsist');
+        initAuthData: (state) => {
+            const userInStorage = localStorage.getItem(USER_LOCALSTORAGE_KEY);
+            if (userInStorage) {
+                state.userData = JSON.parse(userInStorage);
+                state.isLogged = true;
             }
         },
         logout: (state) => {
-            state.logged = false;
+            state.userData = undefined;
+            state.isLogged = false;
+            window.location.href = '/';
+            localStorage.removeItem(USER_LOCALSTORAGE_KEY);
         },
+    },
+    extraReducers: (builder) => {
+        builder.addCase(getUserByCredentials.fulfilled, (state, action) => {
+            state.userData = action.payload;
+            state.loading = false;
+        });
+        builder.addCase(getUserByCredentials.rejected, (state, action) => {
+            state.error = action.payload as string;
+            state.loading = false;
+        });
+        builder.addCase(getUserByCredentials.pending, (state) => {
+            state.loading = true;
+        });
     },
 });
 
 export default userSlice.reducer;
 
-export const {
-    login, logout, setPasswordForLogin, setUsernameForLogin,
-} = userSlice.actions;
+export const { setAuthData, initAuthData, logout } = userSlice.actions;

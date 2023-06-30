@@ -1,6 +1,8 @@
 import { configureStore, combineReducers } from '@reduxjs/toolkit';
 import counter from 'enteties/Counter/model/slice/counterSlice';
 import user from 'enteties/User/model/slice/userSlice';
+import { loginReducer } from 'features/AuthByUsername';
+import { profileReducer } from 'enteties/Profile';
 import {
     persistStore, persistReducer, FLUSH,
     REHYDRATE,
@@ -14,6 +16,8 @@ import storage from 'redux-persist/lib/storage';
 const rootReducer = combineReducers({
     counter,
     user,
+    loginReducer,
+    profileReducer,
 });
 
 const persistConfig = {

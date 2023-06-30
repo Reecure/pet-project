@@ -5,14 +5,17 @@ import { ThemeProvider } from 'app/providers/ThemeProvider';
 
 import './shared/config/i18n/i18n';
 import { ErrorBoundary } from 'app/providers/ErrorBoundary';
+import ReduxProvider from 'app/providers/ReduxProvider/ui/ReduxProvider';
 
 render(
-    <BrowserRouter>
-        <ErrorBoundary>
-            <ThemeProvider>
-                <App />
-            </ThemeProvider>
-        </ErrorBoundary>
-    </BrowserRouter>,
+    <ReduxProvider>
+        <BrowserRouter>
+            <ErrorBoundary>
+                <ThemeProvider>
+                    <App />
+                </ThemeProvider>
+            </ErrorBoundary>
+        </BrowserRouter>
+    </ReduxProvider>,
     document.getElementById('root'),
 );
