@@ -7,7 +7,7 @@ import { getUserByCredentials } from '../../../../features/AuthByUsername/servic
 export interface User {
     'first': string,
     'lastname':string,
-    'age': number,
+    'age': string,
     'currency': CURRENCIES,
     'country': COUNTRIES,
     'city': string,

@@ -1,8 +1,11 @@
-import axios from 'axios';
-import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import { FC } from 'react';
 
-const MainPage = () => {
+interface Props {
+
+}
+
+const MainPage:FC<Props> = () => {
     const { t } = useTranslation();
 
     return (

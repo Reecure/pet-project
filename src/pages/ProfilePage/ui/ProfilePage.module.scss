@@ -1,0 +1,14 @@
+.ProfilePageWrapper{
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+   
+}
+
+.ProfilePageContent{
+  padding: 15px 20px;
+  border: 2px solid var(--primary-color);
+  width: 60%;
+  height: min-content;
+}

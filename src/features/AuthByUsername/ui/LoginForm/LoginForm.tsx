@@ -9,6 +9,7 @@ import { Button } from 'shared';
 import { selectLoginField, setUserPassword, setUsername } from 'features/AuthByUsername/model/slice/loginSlice';
 import { getUserByCredentials } from 'features/AuthByUsername/services/getUserByCredentials';
 import { classNames } from 'shared/lib/classNames/classNames';
+import Text from 'shared/ui/Text/Text';
 import cls from './LoginForm.module.scss';
 
 type Props = {
@@ -18,10 +19,7 @@ type Props = {
 
 const LoginForm:FC<Props> = memo(({ isOpen, setIsOpen }) => {
     const [pendingButton, setpendingButton] = useState(false);
-
-    useEffect(() => {
-        console.log(pendingButton);
-    }, [pendingButton]);
+    const [loginError, setLoginError] = useState(false);
 
     const dispatch = useAppDispatch();
 
@@ -48,8 +46,15 @@ const LoginForm:FC<Props> = memo(({ isOpen, setIsOpen }) => {
 
             if (res.meta.requestStatus === 'fulfilled' && res.payload !== undefined) {
                 setpendingButton(false);
+                setLoginError(false);
                 setIsOpen();
             }
+            if (res.payload === undefined) {
+                setpendingButton(false);
+                setLoginError(true);
+            }
+
+            setpendingButton(false);
         },
         [dispatch, password, username, setIsOpen],
     );
@@ -57,6 +62,12 @@ const LoginForm:FC<Props> = memo(({ isOpen, setIsOpen }) => {
     return (
         <Modal isOpen={isOpen} setIsOpen={setIsOpen}>
             <div className={classNames(cls.LoginForm, {}, [])}>
+                <Text
+                    title="Login Form"
+                    // eslint-disable-next-line no-nested-ternary
+                    mainText={`${loginError ? 'Incorrect login or password' : ''}`}
+                    haveError={loginError}
+                />
                 <label>
                     <span>username:</span>
                     <Input onChange={(e) => setUsernameHandler(e.currentTarget.value)} value={username} />

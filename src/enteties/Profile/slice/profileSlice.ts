@@ -1,12 +1,14 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { User } from 'enteties/User/model/slice/userSlice';
 import { getUserProfile } from '../services/getUserProfile';
+import { updateUserProfile } from '../services/updateUserProfile';
 
 interface State {
     userInfo: User
     error: string,
     loading: boolean,
     readonly: boolean
+    form?: User;
 }
 
 const initialState:State = {
@@ -20,20 +22,39 @@ const initialState:State = {
 const profileSlice = createSlice({
     name: 'profile',
     initialState,
-    reducers: {},
+    reducers: {
+        setEditable: (state) => {
+            state.readonly = true;
+        },
+        canselEditing: (state) => {
+            state.readonly = false;
+            state.form = state.userInfo;
+        },
+        updateProfile: (state, action) => {
+            state.form = {
+                ...state.form,
+                ...action.payload,
+            };
+        },
+
+    },
     extraReducers: (builder) => {
-        builder.addCase(getUserProfile.fulfilled, (state, action) => {
-            state.userInfo = action.payload;
-            state.loading = false;
-        });
-        builder.addCase(getUserProfile.rejected, (state, action) => {
-            state.error = action.payload as string;
-            state.loading = false;
-        });
-        builder.addCase(getUserProfile.pending, (state) => {
-            state.loading = true;
-        });
+        builder
+            .addCase(getUserProfile.fulfilled, (state, action) => {
+                state.userInfo = action.payload;
+                state.form = action.payload;
+                state.loading = false;
+            })
+            .addCase(getUserProfile.rejected, (state, action) => {
+                state.error = action.payload as string;
+                state.loading = false;
+            })
+            .addCase(getUserProfile.pending, (state) => {
+                state.loading = true;
+            });
     },
 });
 
 export default profileSlice.reducer;
+
+export const { canselEditing, setEditable, updateProfile } = profileSlice.actions;

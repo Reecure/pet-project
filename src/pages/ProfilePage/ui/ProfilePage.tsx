@@ -3,6 +3,9 @@ import { profileIsLoadingSelector } from 'enteties/Profile/selectors/profileIsLo
 import { profileSelector } from 'enteties/Profile/selectors/profileSelector';
 import { getUserProfile } from 'enteties/Profile/services/getUserProfile';
 import React, { useEffect } from 'react';
+import ProfileCard from './ProfileCard/ProfileCard';
+import ProfilePageHeader from './ProfilePageHeader/ProfilePageHeader';
+import cls from './ProfilePage.module.scss';
 
 type Props = {}
 
@@ -25,10 +28,11 @@ const ProfilePage = (props: Props) => {
     }
 
     return (
-        <div>
-            username:
-            {' '}
-            {profileData?.first}
+        <div className={cls.ProfilePageWrapper}>
+            <div className={cls.ProfilePageContent}>
+                <ProfilePageHeader />
+                <ProfileCard userInfo={profileData} />
+            </div>
         </div>
     );
 };

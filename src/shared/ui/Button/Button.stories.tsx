@@ -25,10 +25,3 @@ export const Clear: Story = {
         theme: ThemeButton.CLEAR,
     },
 };
-
-export const Rounded: Story = {
-    args: {
-        children: 'text',
-        theme: ThemeButton.ROUNDED,
-    },
-};

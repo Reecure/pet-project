@@ -1,5 +1,10 @@
-
 .Button {
+  padding: 5px 10px;
+  width: min-content;
+  height: 40px;
+  color: var(--bg-color);
+  border: none;
+  outline: none;
   background-color: var(--primary-color);
 }
 
@@ -9,9 +14,19 @@
   background-color: transparent;
 }
 
-.rounded {
-  border: 1px solid black;
-  border-radius: 20px;
-  padding: 5px 10px;
-  background-color: var(--secondary-color);
+.outline {
+  background-color: transparent;
+  color: var(--inverted-bg-color);
+  border: 2px solid var(--primary-color);
 }
+
+.outline_inverted {
+    background-color: transparent;
+    border: 2px solid var(--inverted-primary-color);
+  }
+ .outline_red {
+    background-color: transparent;
+    color: var(--primary-red);
+    border: 2px solid var(--primary-red)
+  }
+

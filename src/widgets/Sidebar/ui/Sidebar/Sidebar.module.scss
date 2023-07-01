@@ -19,6 +19,7 @@
 .links {
   display: flex;
   flex-direction: column;
+  
 
   .link{
     display: flex;
@@ -39,6 +40,6 @@
 .ToggleButton {
   position: absolute;
   bottom: 0;
-  right: -33px;
+  right: -28px;
   padding: 5px 10px ;
 }
