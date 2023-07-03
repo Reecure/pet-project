@@ -20,9 +20,15 @@ const App = () => {
         <div className={classNames('app', {}, [theme])}>
             <Suspense fallback="">
                 <Navbar />
+
                 <div className={classNames('page-wrapper', {}, [])}>
-                    <Sidebar />
-                    <AppRouter />
+                    <div>
+                        <Sidebar />
+                    </div>
+                    <div className="page-component-wrapper">
+                        <AppRouter />
+                    </div>
+
                 </div>
             </Suspense>
         </div>

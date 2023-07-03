@@ -1,0 +1,16 @@
+.ArticleCodeComponent {
+    position: relative;
+    margin: 20px 0;
+}
+
+.ArticleCodeComponent {
+    padding: 20px;
+    background-color: black;
+    color: var(--inverted-primary-color);
+}
+
+.codeCopyButton{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}

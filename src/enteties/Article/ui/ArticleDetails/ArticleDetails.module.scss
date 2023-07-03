@@ -1,0 +1,35 @@
+.titleWrapper{
+    display: grid;
+    grid-template-columns: 1fr 10fr;
+}
+
+.Avatar{
+    margin: 0 auto;
+}
+
+.Title {
+    font-size: 32px;
+    font-weight: 600;
+    margin-bottom: 5px;
+    margin-left: 10px;
+}
+
+.subTitle {
+    font-size: 20px;
+    font-weight: 400;
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
+
+.articleInfoWrapper {
+    margin: 10px 0;
+}
+
+.articleInfo {
+    display: flex;
+    align-items: center;
+}
+
+.articleInfoIcon {
+    margin-right: 3px;
+}

@@ -29,4 +29,11 @@ export const SidebarLinks :SidebarLink[] = [
         icon: 'BsFillPersonLinesFill',
         authOnly: true,
     },
+    {
+        to: AppRoutes.ARTICLES,
+        theme: AppLinkTheme.SECONDARY,
+        text: 'Articles',
+        icon: 'PiArticleMediumBold',
+        authOnly: true,
+    },
 ];

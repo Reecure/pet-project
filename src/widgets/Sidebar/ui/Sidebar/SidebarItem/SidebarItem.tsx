@@ -6,6 +6,7 @@ import { isLoggedSelector } from 'enteties/User/model/selectors/isLoggedSelector
 import { AppLink } from 'shared';
 import { SidebarLink } from 'widgets/Sidebar/model/item';
 import { sidebarIconRender } from 'widgets/Sidebar/helpers/sidebarIconRender';
+
 import cls from './SidebarItem.module.scss';
 
 interface Props {

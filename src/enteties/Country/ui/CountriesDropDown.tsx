@@ -1,4 +1,4 @@
-import React, { FC, useState } from 'react';
+import React, { FC, useState, useMemo } from 'react';
 import { COUNTRIES } from '../model/types/countries';
 
 type Props = {
@@ -7,17 +7,13 @@ type Props = {
     setCurrentCountry: (val: string) => void
 }
 
-const CountriesDropDown:FC<Props> = ({ canEdit, defaultCountrie, setCurrentCountry }) => {
-    const [value, setSelectedValue] = useState('');
+const CountriesDropDown:FC<Props> = ({ canEdit, defaultCountrie, setCurrentCountry }) => (
+    <select onChange={(e) => setCurrentCountry(e.currentTarget.value)} disabled={canEdit} defaultValue={defaultCountrie}>
+        {
+            Object.values(COUNTRIES).map((item) => <option key={item} value={item}>{item}</option>)
+        }
+    </select>
 
-    return (
-        <select onChange={(e) => setCurrentCountry(e.currentTarget.value)} disabled={canEdit} defaultValue={defaultCountrie}>
-            {
-                Object.values(COUNTRIES).map((item) => <option value={item}>{item}</option>)
-            }
-        </select>
-
-    );
-};
+);
 
 export default CountriesDropDown;

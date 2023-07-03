@@ -3,6 +3,7 @@ import counter from 'enteties/Counter/model/slice/counterSlice';
 import user from 'enteties/User/model/slice/userSlice';
 import { loginReducer } from 'features/AuthByUsername';
 import { profileReducer } from 'enteties/Profile';
+import { articleReducer } from 'enteties/Article';
 import {
     persistStore, persistReducer, FLUSH,
     REHYDRATE,
@@ -18,6 +19,7 @@ const rootReducer = combineReducers({
     user,
     loginReducer,
     profileReducer,
+    articleReducer,
 });
 
 const persistConfig = {

@@ -13,7 +13,7 @@ const CurrenciesDropDown:FC<Props> = ({ canEdit, defaultCurrency, setCurrentCurr
     return (
         <select onChange={(e) => setCurrentCurrency(e.currentTarget.value)} disabled={canEdit} defaultValue={defaultCurrency}>
             {
-                Object.values(CURRENCIES).map((item) => <option value={item}>{item}</option>)
+                Object.values(CURRENCIES).map((item) => <option key={item} value={item}>{item}</option>)
             }
         </select>
 

@@ -1,5 +1,6 @@
 import { AiOutlineHome } from 'react-icons/ai';
 import { BsFillPersonLinesFill, BsListStars } from 'react-icons/bs';
+import { PiArticleMediumBold } from 'react-icons/pi';
 
 export function sidebarIconRender(icon: string) {
     switch (icon) {
@@ -9,6 +10,8 @@ export function sidebarIconRender(icon: string) {
         return <BsListStars />;
     case 'BsFillPersonLinesFill':
         return <BsFillPersonLinesFill />;
+    case 'PiArticleMediumBold':
+        return <PiArticleMediumBold />;
     default:
         break;
     }

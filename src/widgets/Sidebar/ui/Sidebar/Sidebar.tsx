@@ -21,7 +21,7 @@ const Sidebar: FC<SidebarProps> = memo(({ className }) => {
     const { t } = useTranslation();
 
     const links = useMemo(() => SidebarLinks.map((link) => (
-        <SidebarItem link={link} open={open} />
+        <SidebarItem key={link.to} link={link} open={open} />
     )), [open]);
 
     const selectIsLogged = useAppSelector(isLoggedSelector);
@@ -42,7 +42,7 @@ const Sidebar: FC<SidebarProps> = memo(({ className }) => {
             </div>
             <div>
                 <Button data-testid="sidebar-toggle" className={cls.ToggleButton} onClick={openSideHandler}>
-                    {'>'}
+                    {open ? '<' : '>'}
                 </Button>
                 <div>
                     <LangSwitcher />
