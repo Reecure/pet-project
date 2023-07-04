@@ -2,9 +2,10 @@ import { PayloadAction, createSlice } from '@reduxjs/toolkit';
 import { USER_LOCALSTORAGE_KEY } from 'shared/constants/localStorage';
 import { CURRENCIES } from 'enteties/Currency/model/types/currencies';
 import { COUNTRIES } from 'enteties/Country/model/types/countries';
-import { getUserByCredentials } from '../../../../features/AuthByUsername/services/getUserByCredentials';
+import { getUserByCredentials } from '../../../../features/AuthByUsername/model/services/getUserByCredentials';
 
 export interface User {
+    'id': string
     'first': string,
     'lastname':string,
     'age': string,

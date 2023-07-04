@@ -1,0 +1,19 @@
+.Comment {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    padding: 5px 10px;
+    border: var(--primary-color) 2px solid;
+}
+
+.commentUserAvatar {
+    max-width: min-content;
+}
+
+.commentContent{
+    margin-left: 10px;
+
+    p{
+        text-align: justify;
+    }
+}

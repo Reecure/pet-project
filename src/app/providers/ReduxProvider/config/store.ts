@@ -4,6 +4,7 @@ import user from 'enteties/User/model/slice/userSlice';
 import { loginReducer } from 'features/AuthByUsername';
 import { profileReducer } from 'enteties/Profile';
 import { articleReducer } from 'enteties/Article';
+import { commentsReducer } from 'features/getComments';
 import {
     persistStore, persistReducer, FLUSH,
     REHYDRATE,
@@ -20,6 +21,7 @@ const rootReducer = combineReducers({
     loginReducer,
     profileReducer,
     articleReducer,
+    commentsReducer,
 });
 
 const persistConfig = {

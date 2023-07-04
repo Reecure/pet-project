@@ -21,4 +21,6 @@
 .page-component-wrapper {
   width: 100%;
   padding: 40px;
+  max-height: calc(100vh - 50px);
+  overflow-y: auto;
 }

@@ -6,6 +6,11 @@ import { useAppDispatch, useAppSelector } from 'app/providers/ReduxProvider/conf
 import { getArticleById } from 'enteties/Article/services/getArticleById';
 import { ArticleAllProps } from 'enteties/Article/selectors/articleSelector';
 import { ArticleDetails } from 'enteties/Article';
+import Comments from 'features/getComments/ui/Comments';
+import { getCommentsByArticleId } from 'features/getComments/model/services/getCommentsByArticleId';
+import AddComment from 'features/addComment/ui/AddComment';
+import { getArticleComments } from 'features/getComments/model/slice/commentsSlice';
+import { commentisLoading } from 'features/getComments/model/selectors/commentPropsSelector';
 import cls from './ArticlePage.module.scss';
 
 interface Props {
@@ -19,10 +24,17 @@ const ArticlePage:FC<Props> = () => {
     const dispatch = useAppDispatch();
 
     const { article, error, loading } = useAppSelector(ArticleAllProps);
+    const commentLoading = useAppSelector(commentisLoading);
+    const comments = useAppSelector(getArticleComments.selectAll);
 
     useEffect(() => {
         dispatch(getArticleById(id));
+        dispatch(getCommentsByArticleId(id));
     }, [dispatch, id]);
+
+    useEffect(() => {
+        console.log(comments);
+    }, [comments]);
 
     if (loading) {
         return <div>Loading...</div>;
@@ -36,7 +48,10 @@ const ArticlePage:FC<Props> = () => {
 
     return (
         <div className={classNames(cls.ArticlePage, {}, [])}>
+
             <ArticleDetails article={article} />
+
+            <Comments isLoading={commentLoading} comments={comments} />
         </div>
     );
 };

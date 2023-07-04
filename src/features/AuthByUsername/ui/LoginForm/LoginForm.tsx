@@ -7,7 +7,7 @@ import { useAppDispatch, useAppSelector } from 'app/providers/ReduxProvider/conf
 import { Button } from 'shared';
 
 import { selectLoginField, setUserPassword, setUsername } from 'features/AuthByUsername/model/slice/loginSlice';
-import { getUserByCredentials } from 'features/AuthByUsername/services/getUserByCredentials';
+import { getUserByCredentials } from 'features/AuthByUsername/model/services/getUserByCredentials';
 import { classNames } from 'shared/lib/classNames/classNames';
 import Text from 'shared/ui/Text/Text';
 import cls from './LoginForm.module.scss';
