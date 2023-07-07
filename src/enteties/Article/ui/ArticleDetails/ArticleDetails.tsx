@@ -2,7 +2,7 @@ import { useTranslation } from 'react-i18next';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { FC } from 'react';
 import { Article, BlockTypes } from 'enteties/Article/model/types/article';
-import Avatar from 'shared/ui/Avatar/Avatar';
+import Avatar from 'shared/ui/Avatar/ui/Avatar';
 import { AiFillEye, AiOutlineCalendar } from 'react-icons/ai';
 import cls from './ArticleDetails.module.scss';
 import ArticleTextComponent from '../ArticleTextComponent/ArticleTextComponent';

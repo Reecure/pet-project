@@ -8,15 +8,11 @@ interface Props {
     views: string | number
 }
 
-const Views:FC<Props> = ({ views }) => {
-    const { t } = useTranslation();
-
-    return (
-        <div className={classNames(cls.Views, {}, [])}>
-            <AiFillEye />
-            <p>{views}</p>
-        </div>
-    );
-};
+const Views:FC<Props> = ({ views }) => (
+    <div className={classNames(cls.Views, {}, [])}>
+        <AiFillEye />
+        <p>{views}</p>
+    </div>
+);
 
 export default Views;

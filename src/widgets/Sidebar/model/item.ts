@@ -1,7 +1,5 @@
-import { useAppSelector } from 'app/providers/ReduxProvider/config/hooks';
-import { userDataSelector } from 'enteties/User/model/selectors/userDataSelector';
 import { AppRoutes } from 'shared/config/routeConfig/routeConfig';
-import { AppLinkTheme } from 'shared/ui/AppLink/AppLink';
+import { AppLinkTheme } from 'shared/ui/AppLink';
 
 export const enum Links {
     Main = 'Main',

@@ -1,0 +1,15 @@
+.Input {
+    color: var(--primary-color);
+    background-color: transparent;
+    outline: none;
+    width: 100%;
+    padding: 5px 10px;
+}
+
+.clear {
+    border: 0;
+}
+
+.outline {
+    border: 1px solid var(--primary-color);
+}

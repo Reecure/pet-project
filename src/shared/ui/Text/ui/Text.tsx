@@ -1,7 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import { classNames } from 'shared/lib/classNames/classNames';
-import { FC, useEffect } from 'react';
-import { error } from 'console';
+import { FC } from 'react';
 import cls from './Text.module.scss';
 
 interface Props {

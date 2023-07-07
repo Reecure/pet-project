@@ -1,7 +1,7 @@
 import {
     EntityState, PayloadAction, createEntityAdapter, createSlice,
 } from '@reduxjs/toolkit';
-import { Article } from 'enteties/Article/model/types/article';
+import { Article, ArticleTypes } from 'enteties/Article/model/types/article';
 import { RootState } from 'app/providers/ReduxProvider/config/store';
 import { getAllArticles } from '../services/getArticles';
 
@@ -10,11 +10,25 @@ export enum viewTypes {
     SMALL = 'SMALL',
 }
 
+export enum OrderType {
+    NONE = '',
+    ASC = 'asc',
+    DESC = 'desc'
+}
+
+export enum sortFields {
+    NONE = '',
+    VIEWS = 'views'
+}
+
 interface Props extends EntityState<Article> {
     error?: string,
     loading?: boolean,
     // pagination
     haveMore: boolean
+    sortByField: sortFields,
+    types: ArticleTypes[],
+    order: OrderType,
     page: number,
     limit: number,
     viewsType?: viewTypes
@@ -36,6 +50,9 @@ const initialState = articlesAdapter.getInitialState<Props>({
 
     // pagination
     haveMore: true,
+    sortByField: sortFields.NONE,
+    order: OrderType.NONE,
+    types: [],
     page: 1,
     limit: 6,
     viewsType: viewTypes.SMALL,
@@ -56,6 +73,23 @@ const articlesSlice = createSlice({
                 state.page -= 1;
             }
         },
+        resetPage: (state) => {
+            state.page = 1;
+        },
+        setSortByOrder: (state, action: PayloadAction<OrderType>) => {
+            state.order = action.payload;
+        },
+        setSortByField: (state, action: PayloadAction<sortFields>) => {
+            state.sortByField = action.payload;
+        },
+        setSortByType: (state, action: PayloadAction<ArticleTypes>) => {
+            if (state.types.indexOf(action.payload) === -1) {
+                state.types.push(action.payload);
+            } else {
+                state.types = state.types.filter((item) => item !== action.payload);
+            }
+        },
+
     },
     extraReducers: (builder) => {
         builder.addCase(getAllArticles.pending, (state) => {
@@ -75,4 +109,6 @@ const articlesSlice = createSlice({
 
 export default articlesSlice.reducer;
 
-export const { setViewType, setNextPage, setPrevPage } = articlesSlice.actions;
+export const {
+    setViewType, setNextPage, setPrevPage, setSortByOrder, setSortByField, resetPage, setSortByType,
+} = articlesSlice.actions;

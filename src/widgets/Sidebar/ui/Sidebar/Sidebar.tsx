@@ -2,12 +2,11 @@ import {
     FC, memo, useCallback, useEffect, useState, useMemo,
 } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
-import Button from 'shared/ui/Button/Button';
 import { ThemeSwitcher } from 'widgets/ThemeSwitcher';
-import { useTranslation } from 'react-i18next';
 import { LangSwitcher } from 'widgets/LangSwitcher';
 import { useAppSelector } from 'app/providers/ReduxProvider/config/hooks';
 import { isLoggedSelector } from 'enteties/User/model/selectors/isLoggedSelector';
+import { Button } from 'shared/ui/Button';
 import { SidebarLinks } from '../../model/item';
 import SidebarItem from './SidebarItem/SidebarItem';
 import cls from './Sidebar.module.scss';
@@ -16,9 +15,8 @@ interface SidebarProps {
   className?: string;
 }
 
-const Sidebar: FC<SidebarProps> = memo(({ className }) => {
+const Sidebar: FC<SidebarProps> = ({ className }) => {
     const [open, isOpen] = useState(true);
-    const { t } = useTranslation();
 
     const links = useMemo(() => SidebarLinks.map((link) => (
         <SidebarItem key={link.to} link={link} open={open} />
@@ -51,6 +49,6 @@ const Sidebar: FC<SidebarProps> = memo(({ className }) => {
             </div>
         </div>
     );
-});
+};
 
-export default Sidebar;
+export default memo(Sidebar);

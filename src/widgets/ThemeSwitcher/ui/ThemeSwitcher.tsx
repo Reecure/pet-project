@@ -1,14 +1,14 @@
 import { FC, memo } from 'react';
 import { Theme, useTheme } from 'app/providers/ThemeProvider';
 import { classNames } from 'shared/lib/classNames/classNames';
-import Button, { ThemeButton } from 'shared/ui/Button/Button';
 import { FiMoon } from 'react-icons/fi';
 import { BsFillSunFill } from 'react-icons/bs';
+import { Button, ThemeButton } from 'shared/ui/Button';
 import cls from './ThemeSwitcher.module.scss';
 
 interface ThemeSwitcherProps { className?: string; }
 
-const ThemeSwitcher: FC<ThemeSwitcherProps> = memo(({ className }) => {
+const ThemeSwitcher: FC<ThemeSwitcherProps> = ({ className }) => {
     const { theme, toggleTheme } = useTheme();
 
     return (
@@ -25,6 +25,6 @@ const ThemeSwitcher: FC<ThemeSwitcherProps> = memo(({ className }) => {
             </div>
         </Button>
     );
-});
+};
 
-export default ThemeSwitcher;
+export default memo(ThemeSwitcher);

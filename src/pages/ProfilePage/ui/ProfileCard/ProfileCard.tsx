@@ -6,9 +6,9 @@ import { profileReadOnlySelector } from 'enteties/Profile/selectors/profileReadO
 import { updateProfile } from 'enteties/Profile/slice/profileSlice';
 import { User } from 'enteties/User/model/slice/userSlice';
 import React, { FC, useCallback, useEffect } from 'react';
-import Avatar from 'shared/ui/Avatar/Avatar';
-import Input from 'shared/ui/Input/Input';
-import { userDataSelector } from 'enteties/User/model/selectors/userDataSelector';
+import Avatar from 'shared/ui/Avatar/ui/Avatar';
+import { Input } from 'shared/ui/Input';
+import { useTranslation } from 'react-i18next';
 import cls from './ProfileCard.module.scss';
 
 type Props = {
@@ -16,6 +16,7 @@ type Props = {
 }
 
 const ProfileCard:FC<Props> = ({ userInfo }) => {
+    const { t } = useTranslation();
     const isReadOnly = useAppSelector(profileReadOnlySelector);
 
     const dispatch = useAppDispatch();
@@ -58,13 +59,19 @@ const ProfileCard:FC<Props> = ({ userInfo }) => {
 
                 <div>
                     <label htmlFor="">
-                        <span>Username:</span>
+                        <span>
+                            {t('Username')}
+                            :
+                        </span>
                         <Input readOnly={!isReadOnly} onChange={setUsernameHandler} value={profileForm?.first} placeholder={userInfo?.first} />
                     </label>
                 </div>
                 <div>
                     <label htmlFor="">
-                        <span>Lastname:</span>
+                        <span>
+                            {t('Lastname')}
+                            :
+                        </span>
                         <Input
                             readOnly={!isReadOnly}
                             onChange={setLastnameHandler}
@@ -75,7 +82,10 @@ const ProfileCard:FC<Props> = ({ userInfo }) => {
                 </div>
                 <div>
                     <label htmlFor="">
-                        <span>Age:</span>
+                        <span>
+                            {t('Age')}
+                            :
+                        </span>
                         <Input
                             readOnly={!isReadOnly}
                             type="number"
@@ -87,7 +97,8 @@ const ProfileCard:FC<Props> = ({ userInfo }) => {
                 </div>
                 <div />
                 <p>
-                    Country:
+                    {t('Country')}
+                    :
                     <CountriesDropDown
                         setCurrentCountry={setCountryHandler}
                         canEdit={!isReadOnly}
@@ -95,7 +106,11 @@ const ProfileCard:FC<Props> = ({ userInfo }) => {
                     />
                 </p>
                 <label htmlFor="">
-                    <span> City:</span>
+                    <span>
+                        {' '}
+                        {t('City')}
+                        :
+                    </span>
                     <Input
                         readOnly={!isReadOnly}
                         onChange={setCityHandler}
@@ -104,7 +119,8 @@ const ProfileCard:FC<Props> = ({ userInfo }) => {
                     />
                 </label>
                 <p>
-                    Currency:
+                    {t('Currency')}
+                    :
                     <CurrenciesDropDown
                         setCurrentCurrency={setCurrencyHandler}
                         canEdit={!isReadOnly}
@@ -112,7 +128,11 @@ const ProfileCard:FC<Props> = ({ userInfo }) => {
                     />
                 </p>
                 <label htmlFor="">
-                    <span> Avatar:</span>
+                    <span>
+                        {' '}
+                        {t('Avatar')}
+                        :
+                    </span>
                     <Input
                         onChange={setAvatarHandler}
                         value={profileForm?.avatar}

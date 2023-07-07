@@ -4,12 +4,11 @@ import {
     FC, useCallback, useEffect, useState,
 } from 'react';
 import { Article, BlockTypes } from 'enteties/Article/model/types/article';
-import { Button, Views } from 'shared';
-import { ThemeButton } from 'shared/ui/Button/Button';
-import Avatar from 'shared/ui/Avatar/Avatar';
+import Avatar from 'shared/ui/Avatar/ui/Avatar';
 import { useNavigate } from 'react-router-dom';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
-import { AiFillEye } from 'react-icons/ai';
+import { Button, ThemeButton } from 'shared/ui/Button';
+import { Views } from 'shared/ui/Views';
 import cls from './ArticleBigComponent.module.scss';
 
 interface Props {
@@ -27,7 +26,7 @@ const ArticleBigComponent:FC<Props> = ({ article }) => {
         () => {
             navigate(RoutePath.article + article.id);
         },
-        [],
+        [article.id, navigate],
     );
 
     useEffect(() => {
@@ -67,7 +66,7 @@ const ArticleBigComponent:FC<Props> = ({ article }) => {
                 </p>
             </div>
             <div className={cls.ArticleBigComponentFooter}>
-                <Button onClick={readMoreHandler} theme={ThemeButton.OUTLINE}>Read more</Button>
+                <Button onClick={readMoreHandler} theme={ThemeButton.OUTLINE}>{t('Read more')}</Button>
                 <Views views={article?.views} />
             </div>
         </div>

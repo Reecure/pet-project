@@ -2,9 +2,9 @@ import { useAppDispatch, useAppSelector } from 'app/providers/ReduxProvider/conf
 import { profileIsLoadingSelector } from 'enteties/Profile/selectors/profileIsLoadingSelector';
 import { profileSelector } from 'enteties/Profile/selectors/profileSelector';
 import { getUserProfile } from 'enteties/Profile/services/getUserProfile';
-import React, { useEffect } from 'react';
-import { userDataSelector } from 'enteties/User/model/selectors/userDataSelector';
+import { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import ProfileCard from './ProfileCard/ProfileCard';
 import ProfilePageHeader from './ProfilePageHeader/ProfilePageHeader';
 import cls from './ProfilePage.module.scss';
@@ -12,6 +12,7 @@ import cls from './ProfilePage.module.scss';
 type Props = {}
 
 const ProfilePage = (props: Props) => {
+    const { t } = useTranslation();
     const dispatch = useAppDispatch();
 
     const { id } = useParams();
@@ -25,7 +26,8 @@ const ProfilePage = (props: Props) => {
     if (profileLoading) {
         return (
             <div>
-                Loading...
+                {t('Loading')}
+                ...
             </div>
         );
     }
@@ -33,7 +35,7 @@ const ProfilePage = (props: Props) => {
     if (!profileData) {
         return (
             <div>
-                User is not found
+                {t('User is not found')}
             </div>
         );
     }

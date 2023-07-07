@@ -1,9 +1,9 @@
 import { useTranslation } from 'react-i18next';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { FC } from 'react';
-import Avatar from 'shared/ui/Avatar/Avatar';
-import { AppLink } from 'shared';
+import Avatar from 'shared/ui/Avatar/ui/Avatar';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
+import { AppLink } from 'shared/ui/AppLink';
 import cls from './Comment.module.scss';
 import { IComment } from '../model/types/comment';
 

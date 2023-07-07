@@ -1,15 +1,15 @@
-import React, {
-    FC, memo, useCallback, useEffect, useState,
+import {
+    FC, memo, useCallback, useState,
 } from 'react';
-import Modal from 'widgets/Modal/ui/Modal';
-import Input from 'shared/ui/Input/Input';
 import { useAppDispatch, useAppSelector } from 'app/providers/ReduxProvider/config/hooks';
-import { Button } from 'shared';
-
 import { selectLoginField, setUserPassword, setUsername } from 'features/AuthByUsername/model/slice/loginSlice';
 import { getUserByCredentials } from 'features/AuthByUsername/model/services/getUserByCredentials';
 import { classNames } from 'shared/lib/classNames/classNames';
-import Text from 'shared/ui/Text/Text';
+import { Text } from 'shared/ui/Text';
+import { Input } from 'shared/ui/Input';
+import { Button } from 'shared/ui/Button';
+import { useTranslation } from 'react-i18next';
+import { Modal } from 'widgets/Modal';
 import cls from './LoginForm.module.scss';
 
 type Props = {
@@ -17,7 +17,9 @@ type Props = {
     setIsOpen: () => void
 }
 
-const LoginForm:FC<Props> = memo(({ isOpen, setIsOpen }) => {
+const LoginForm:FC<Props> = ({ isOpen, setIsOpen }) => {
+    const { t } = useTranslation();
+
     const [pendingButton, setpendingButton] = useState(false);
     const [loginError, setLoginError] = useState(false);
 
@@ -69,18 +71,24 @@ const LoginForm:FC<Props> = memo(({ isOpen, setIsOpen }) => {
                     haveError={loginError}
                 />
                 <label>
-                    <span>username:</span>
+                    <span>
+                        {t('Username')}
+                        :
+                    </span>
                     <Input onChange={(e) => setUsernameHandler(e.currentTarget.value)} value={username} />
                 </label>
                 <label>
-                    <span>password:</span>
+                    <span>
+                        {t('Password')}
+                        :
+                    </span>
                     <Input onChange={(e) => setPasswordHandler(e.currentTarget.value)} value={password} />
                 </label>
-                <Button disabled={pendingButton} onClick={onLoginClick}>login</Button>
+                <Button disabled={pendingButton} onClick={onLoginClick}>{t('Login')}</Button>
             </div>
 
         </Modal>
     );
-});
+};
 
-export default LoginForm;
+export default memo(LoginForm);

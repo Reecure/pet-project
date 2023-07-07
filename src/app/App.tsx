@@ -6,7 +6,6 @@ import { Sidebar } from 'widgets/Sidebar';
 import { Suspense, useEffect } from 'react';
 import './styles/index.scss';
 import { initAuthData } from 'enteties/User/model/slice/userSlice';
-import ReduxProvider from './providers/ReduxProvider/ui/ReduxProvider';
 import { useAppDispatch } from './providers/ReduxProvider/config/hooks';
 
 const App = () => {

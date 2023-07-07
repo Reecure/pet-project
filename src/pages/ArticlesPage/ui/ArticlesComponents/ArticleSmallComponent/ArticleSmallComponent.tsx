@@ -2,7 +2,7 @@ import { useTranslation } from 'react-i18next';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { FC } from 'react';
 import { Article } from 'enteties/Article/model/types/article';
-import { Views } from 'shared';
+import { Views } from 'shared/ui/Views';
 import cls from './ArticleSmallComponent.module.scss';
 
 interface Props {

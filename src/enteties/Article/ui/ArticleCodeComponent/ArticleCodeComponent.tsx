@@ -3,12 +3,11 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import {
     FC, useState, useEffect, useCallback, memo,
 } from 'react';
-import Code from 'shared/ui/Code/Code';
-import { Button } from 'shared';
-import { ThemeButton } from 'shared/ui/Button/Button';
-import Notify from 'shared/ui/Notify/Notify';
-import cls from './ArticleCodeComponent.module.scss';
+import { Button, ThemeButton } from 'shared/ui/Button';
+import { Code } from 'shared/ui/Code';
+import { Notify } from 'shared/ui/Notify';
 import { CodeBlock } from '../../model/types/article';
+import cls from './ArticleCodeComponent.module.scss';
 
 interface Props {
     block: CodeBlock
@@ -44,10 +43,13 @@ const ArticleCodeComponent:FC<Props> = ({ block }) => {
                     theme={ThemeButton.OUTLINE}
                     onClick={codeCopyHandler}
                 >
-                    Copy
+                    {t('Copy')}
                 </Button>
             </div>
-            <Notify open={coppied}>Coppied!</Notify>
+            <Notify open={coppied}>
+                {t('Coppied')}
+                !
+            </Notify>
         </>
     );
 };

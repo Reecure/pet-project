@@ -3,10 +3,10 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import { FC } from 'react';
 import { useAppSelector } from 'app/providers/ReduxProvider/config/hooks';
 import { isLoggedSelector } from 'enteties/User/model/selectors/isLoggedSelector';
-import { AppLink } from 'shared';
 import { sidebarIconRender } from 'widgets/Sidebar/helpers/sidebarIconRender';
 
 import { userDataSelector } from 'enteties/User/model/selectors/userDataSelector';
+import { AppLink } from 'shared/ui/AppLink';
 import { Links, SidebarLink } from '../../../model/item';
 import cls from './SidebarItem.module.scss';
 
@@ -38,7 +38,7 @@ const SidebarItem:FC<Props> = ({ link, open }) => {
         <AppLink theme={link.theme} to={helperProfileId(link.text)} className={cls.link}>
             <span className={cls.linkIcon}>{sidebarIconRender(link.icon)}</span>
             <span className={classNames('', { [cls.linkTextWhenClose]: !open }, [])}>
-                {link.text}
+                {t(link.text)}
             </span>
         </AppLink>
     );

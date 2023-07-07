@@ -17,6 +17,7 @@
   border: none;
   outline: none;
   background-color: transparent;
+  color: var(--primary-color);
 }
 
 .outline {
@@ -35,3 +36,6 @@
     border: 2px solid var(--primary-red)
   }
 
+.disabled {
+  opacity: 0.8;
+}

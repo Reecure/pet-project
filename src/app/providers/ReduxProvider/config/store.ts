@@ -1,4 +1,4 @@
-import { configureStore, combineReducers } from '@reduxjs/toolkit';
+import { configureStore } from '@reduxjs/toolkit';
 import counter from 'enteties/Counter/model/slice/counterSlice';
 import user from 'enteties/User/model/slice/userSlice';
 import { loginReducer } from 'features/AuthByUsername';
@@ -8,19 +8,17 @@ import { commentsReducer } from 'features/getComments';
 import { addCommentReducer } from 'features/addComment';
 import { articlesReducer } from 'pages/ArticlesPage';
 
-const rootReducer = combineReducers({
-    counter,
-    user,
-    loginReducer,
-    profileReducer,
-    articleReducer,
-    commentsReducer,
-    addCommentReducer,
-    articlesReducer,
-});
-
 export const store = configureStore({
-    reducer: rootReducer,
+    reducer: {
+        counter,
+        user,
+        loginReducer,
+        profileReducer,
+        articleReducer,
+        commentsReducer,
+        addCommentReducer,
+        articlesReducer,
+    },
 });
 
 // Infer the `RootState` and `AppDispatch` types from the store itself

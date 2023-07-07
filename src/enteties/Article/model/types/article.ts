@@ -27,7 +27,19 @@ export interface ImageBlock {
 
 export enum ArticleTypes {
     IT = 'IT',
-    Science = 'Science'
+    Science = 'Science',
+    Education = 'Education',
+    Economics = 'Economics',
+    Mathematics = 'Mathematics',
+    Physics = 'Physics',
+    Psychology = 'Psychology',
+    Languages = 'Languages',
+    Programming = 'Programming',
+    WebDevelopment = 'Web Development',
+    MobileDevelopment = 'Mobile Development',
+    DataScience = 'Data Science',
+    MachineLearning = 'Machine Learning',
+    Blockchain = 'Blockchain',
 }
 
 export type ArticleBlocks = CodeBlock | TextBlock | ImageBlock

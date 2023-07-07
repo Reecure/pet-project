@@ -1,12 +1,12 @@
 import { useAppDispatch, useAppSelector } from 'app/providers/ReduxProvider/config/hooks';
 import { profileReadOnlySelector } from 'enteties/Profile/selectors/profileReadOnlySelector';
 import { updateUserProfile } from 'enteties/Profile/services/updateUserProfile';
-import { canselEditing, setEditable, updateProfile } from 'enteties/Profile/slice/profileSlice';
-import React, { FC, useCallback } from 'react';
-import { Button } from 'shared';
-import { ThemeButton } from 'shared/ui/Button/Button';
+import { canselEditing, setEditable } from 'enteties/Profile/slice/profileSlice';
+import { FC, useCallback } from 'react';
 import { userDataSelector } from 'enteties/User/model/selectors/userDataSelector';
 import { User } from 'enteties/User/model/slice/userSlice';
+import { useTranslation } from 'react-i18next';
+import { Button, ThemeButton } from 'shared/ui/Button';
 import cls from './ProfilePageHeader.module.scss';
 
 type Props = {
@@ -14,6 +14,8 @@ type Props = {
 }
 
 const ProfilePageHeader:FC<Props> = ({ userInfo }) => {
+    const { t } = useTranslation();
+
     const dispatch = useAppDispatch();
     const isReadOnly = useAppSelector(profileReadOnlySelector);
 
@@ -30,23 +32,25 @@ const ProfilePageHeader:FC<Props> = ({ userInfo }) => {
 
     const saveEditHandler = useCallback(() => {
         dispatch(updateUserProfile());
-    }, [dispatch, currentUser]);
+    }, [dispatch]);
 
     if (isReadOnly) {
         return (
             <div className={cls.actionButtons}>
-                <Button theme={ThemeButton.OUTLINE_RED} onClick={canscelEditHandler}>Cancel</Button>
-                <Button className={cls.saveButton} onClick={saveEditHandler}>Save</Button>
+                <Button theme={ThemeButton.OUTLINE_RED} onClick={canscelEditHandler}>
+                    {t('Cancel')}
+                </Button>
+                <Button className={cls.saveButton} onClick={saveEditHandler}>
+                    {t('Save')}
+                </Button>
             </div>
         );
     }
-
     return (
         <div className={cls.actionButtons}>
             {
-                canEdit && <Button onClick={editHandler}>Edit</Button>
+                canEdit && <Button onClick={editHandler}>{t('Edit')}</Button>
             }
-
         </div>
     );
 };

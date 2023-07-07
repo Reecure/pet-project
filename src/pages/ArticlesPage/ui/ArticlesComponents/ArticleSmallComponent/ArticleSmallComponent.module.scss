@@ -1,6 +1,11 @@
 .ArticleSmallComponent {
     width: 200px;
     background-color: #fff;
+    transition: 0.3s;
+    cursor: pointer;
+    &:hover {
+        scale: 1.03;
+    }
 }
 
 .ArticleSmallComponentHeader {

@@ -1,17 +1,18 @@
 import { useTranslation } from 'react-i18next';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { ChangeEvent, FC, useCallback } from 'react';
-import Input from 'shared/ui/Input/Input';
-import { Button } from 'shared';
-import { ThemeButton } from 'shared/ui/Button/Button';
-import Avatar from 'shared/ui/Avatar/Avatar';
+import Avatar from 'shared/ui/Avatar/ui/Avatar';
 import { useAppDispatch, useAppSelector } from 'app/providers/ReduxProvider/config/hooks';
-import { User } from 'enteties/User/model/slice/userSlice';
 import { userDataSelector } from 'enteties/User/model/selectors/userDataSelector';
-import cls from './AddComment.module.scss';
+import { Input } from 'shared/ui/Input';
+import { Button } from 'shared/ui/Button';
+import { ThemeButton } from 'shared/ui/Button/ui/Button';
+import { FaRegPaperPlane } from 'react-icons/fa';
 import { addComment } from '../model/services/addComment';
 import { setCommentText } from '../model/slice/addCommentSlice';
 import { commentTextSelector } from '../model/selectors/commentTextSelector';
+
+import cls from './AddComment.module.scss';
 
 interface Props {
 
@@ -54,7 +55,7 @@ const AddComment:FC<Props> = () => {
                 </div>
             </div>
             <div className={cls.sendButton}>
-                <Button theme={ThemeButton.OUTLINE} onClick={addCommentHandler}>Send</Button>
+                <Button theme={ThemeButton.OUTLINE} onClick={addCommentHandler}><FaRegPaperPlane /></Button>
             </div>
         </div>
     );
