@@ -13,8 +13,9 @@ export const updateUserProfile = createAsyncThunk<User, void, ThunkConfig>('prof
     const { getState } = thunkApi;
 
     const formData = profileFormSelector(getState());
+
     try {
-        const res = await axios.put('http://localhost:8000/profile', formData, {
+        const res = await axios.put(`http://localhost:8000/profiles/${formData.id}`, formData, {
             headers: {
                 authorization: localStorage.getItem(USER_LOCALSTORAGE_KEY) || '',
             },

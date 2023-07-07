@@ -1,0 +1,15 @@
+.types {
+    display: flex;
+}
+
+.type {
+    padding: 5px 10px;
+    margin-right: 10px;
+    background-color: var(--primary-color);
+    color: var(--inverted-primary-color);
+}
+
+.sortingWrapper {
+    display: flex;
+    justify-content:  space-between;
+}

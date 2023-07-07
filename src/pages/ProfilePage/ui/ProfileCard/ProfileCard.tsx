@@ -5,9 +5,10 @@ import { profileFormSelector } from 'enteties/Profile/selectors/profileFormSelec
 import { profileReadOnlySelector } from 'enteties/Profile/selectors/profileReadOnlySelector';
 import { updateProfile } from 'enteties/Profile/slice/profileSlice';
 import { User } from 'enteties/User/model/slice/userSlice';
-import React, { FC, useCallback } from 'react';
+import React, { FC, useCallback, useEffect } from 'react';
 import Avatar from 'shared/ui/Avatar/Avatar';
 import Input from 'shared/ui/Input/Input';
+import { userDataSelector } from 'enteties/User/model/selectors/userDataSelector';
 import cls from './ProfileCard.module.scss';
 
 type Props = {
@@ -16,7 +17,12 @@ type Props = {
 
 const ProfileCard:FC<Props> = ({ userInfo }) => {
     const isReadOnly = useAppSelector(profileReadOnlySelector);
+
     const dispatch = useAppDispatch();
+
+    useEffect(() => {
+        console.log(userInfo);
+    }, [userInfo]);
 
     const profileForm = useAppSelector(profileFormSelector);
 

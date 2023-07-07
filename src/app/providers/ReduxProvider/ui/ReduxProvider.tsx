@@ -1,15 +1,12 @@
 import { FC } from 'react';
 import { Provider } from 'react-redux';
-import { PersistGate } from 'redux-persist/integration/react';
-import { persistor, store } from '../config/store';
+import { store } from '../config/store';
 
 type Props = {}
 
 const ReduxProvider:FC<Props> = ({ children }) => (
     <Provider store={store}>
-        <PersistGate loading={null} persistor={persistor}>
-            {children}
-        </PersistGate>
+        {children}
     </Provider>
 );
 

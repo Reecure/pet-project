@@ -1,0 +1,60 @@
+.ArticleBigComponent {
+     background: rgb(207, 207, 207, 0.8);
+}
+
+.ArticleBigComponentHeader {
+    margin-top: 20px;
+    padding: 10px 20px;
+}
+
+.ArticleBigComponentMain {
+    max-height: 200px;
+    overflow-y: hidden;
+    padding: 5px 20px;
+}
+
+.userInfo {
+    display: flex;
+    
+}
+
+.imageWrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+       
+.articleTypes {
+    display: flex;
+    .type {
+        margin-right: 5px;
+    }
+}
+
+.userInfoWrapper {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.articleInfo {
+   font-size: 14px;
+}
+
+.articleTitle{
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.ArticleBigComponentFooter {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 20px;
+    margin-top: 30px;
+}
+
+.viewsWrapper {
+    display: flex;
+    align-items: center;
+}

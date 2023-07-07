@@ -1,3 +1,5 @@
+import { User } from 'enteties/User/model/slice/userSlice';
+
 export enum BlockTypes {
     TEXT = 'TEXT',
     IMAGE ='IMAGE',
@@ -34,9 +36,10 @@ export interface Article {
     id: string,
     title: string,
     subtitle: string,
+    user: User,
     img: string,
     views: number,
     createdAt: string,
-    type: ArticleTypes,
+    type: ArticleTypes[],
     blocks: ArticleBlocks[]
 }

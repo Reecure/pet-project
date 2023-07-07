@@ -6,15 +6,7 @@ import { profileReducer } from 'enteties/Profile';
 import { articleReducer } from 'enteties/Article';
 import { commentsReducer } from 'features/getComments';
 import { addCommentReducer } from 'features/addComment';
-import {
-    persistStore, persistReducer, FLUSH,
-    REHYDRATE,
-    PAUSE,
-    PERSIST,
-    PURGE,
-    REGISTER,
-} from 'redux-persist';
-import storage from 'redux-persist/lib/storage';
+import { articlesReducer } from 'pages/ArticlesPage';
 
 const rootReducer = combineReducers({
     counter,
@@ -24,25 +16,12 @@ const rootReducer = combineReducers({
     articleReducer,
     commentsReducer,
     addCommentReducer,
+    articlesReducer,
 });
-
-const persistConfig = {
-    key: 'root',
-    storage,
-};
-
-const persistedReducer = persistReducer(persistConfig, rootReducer);
 
 export const store = configureStore({
-    reducer: persistedReducer,
-    middleware: (getDefaultMiddleware) => getDefaultMiddleware({
-        serializableCheck: {
-            ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
-        },
-    }),
+    reducer: rootReducer,
 });
-
-export const persistor = persistStore(store);
 
 // Infer the `RootState` and `AppDispatch` types from the store itself
 export type RootState = ReturnType<typeof store.getState>

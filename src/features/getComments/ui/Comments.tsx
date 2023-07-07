@@ -14,6 +14,7 @@ interface Props {
 
 const Comments:FC<Props> = ({ comments, isLoading }) => {
     const { t } = useTranslation();
+
     if (isLoading) {
         return <div>Loading...</div>;
     }

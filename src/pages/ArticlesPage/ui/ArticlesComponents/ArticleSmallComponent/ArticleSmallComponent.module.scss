@@ -1,0 +1,30 @@
+.ArticleSmallComponent {
+    width: 200px;
+    background-color: #fff;
+}
+
+.ArticleSmallComponentHeader {
+    position: relative;
+    width: 100%;
+
+    img {
+        width: 100%;
+        height: 150px;
+        object-fit: cover;
+    }
+
+    .createdAt {
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+}
+
+
+.ArticleSmallComponentFooter {
+    padding: 5px 0 10px 0;
+    .articleInfo {
+        display: flex;
+        justify-content: space-between;
+    }
+}
