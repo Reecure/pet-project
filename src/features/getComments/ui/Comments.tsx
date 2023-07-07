@@ -5,6 +5,7 @@ import { useAppDispatch, useAppSelector } from 'app/providers/ReduxProvider/conf
 import Comment from 'enteties/Comment/ui/Comment';
 import AddComment from 'features/addComment/ui/AddComment';
 import { IComment } from 'enteties/Comment/model/types/comment';
+import { Loader } from 'shared/ui/Loader';
 import cls from './Comments.module.scss';
 
 interface Props {
@@ -16,7 +17,7 @@ const Comments:FC<Props> = ({ comments, isLoading }) => {
     const { t } = useTranslation();
 
     if (isLoading) {
-        return <div>Loading...</div>;
+        return <div><Loader /></div>;
     }
     return (
         <div className={classNames(cls.Comments, {}, [])}>

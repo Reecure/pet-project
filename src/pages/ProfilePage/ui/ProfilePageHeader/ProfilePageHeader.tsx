@@ -37,20 +37,20 @@ const ProfilePageHeader:FC<Props> = ({ userInfo }) => {
     if (isReadOnly) {
         return (
             <div className={cls.actionButtons}>
-                <Button theme={ThemeButton.OUTLINE_RED} onClick={canscelEditHandler}>
-                    {t('Cancel')}
-                </Button>
-                <Button className={cls.saveButton} onClick={saveEditHandler}>
-                    {t('Save')}
-                </Button>
+                {
+                    canEdit && <Button onClick={editHandler}>{t('Edit')}</Button>
+                }
             </div>
         );
     }
     return (
         <div className={cls.actionButtons}>
-            {
-                canEdit && <Button onClick={editHandler}>{t('Edit')}</Button>
-            }
+            <Button theme={ThemeButton.OUTLINE_RED} onClick={canscelEditHandler}>
+                {t('Cancel')}
+            </Button>
+            <Button className={cls.saveButton} onClick={saveEditHandler}>
+                {t('Save')}
+            </Button>
         </div>
     );
 };

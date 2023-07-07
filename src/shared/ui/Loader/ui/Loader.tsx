@@ -11,7 +11,9 @@ const Loader:FC<Props> = () => {
 
     return (
         <div className={classNames(cls.Loader, {}, [])}>
-            <div>{t('Loader')}</div>
+            <div className={cls.circleOne} />
+            <div className={cls.circleTwo} />
+            <div className={cls.circleThree} />
         </div>
     );
 };

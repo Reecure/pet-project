@@ -4,6 +4,7 @@ import { AppRoutesProps, routeConfig } from 'shared/config/routeConfig/routeConf
 import { useTranslation } from 'react-i18next';
 import { useAppSelector } from 'app/providers/ReduxProvider/config/hooks';
 import { isLoggedSelector } from 'enteties/User/model/selectors/isLoggedSelector';
+import { Loader } from 'shared/ui/Loader';
 
 const AppRouter = () => {
     const isLogged = useAppSelector(isLoggedSelector);
@@ -17,7 +18,7 @@ const AppRouter = () => {
 
     const { t } = useTranslation();
     return (
-        <Suspense fallback={<div>{t('Loading')}</div>}>
+        <Suspense fallback={<div><Loader /></div>}>
             <Routes>
                 {
                     routes.map(({ element, path }) => (

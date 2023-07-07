@@ -63,7 +63,7 @@ const ProfileCard:FC<Props> = ({ userInfo }) => {
                             {t('Username')}
                             :
                         </span>
-                        <Input readOnly={!isReadOnly} onChange={setUsernameHandler} value={profileForm?.first} placeholder={userInfo?.first} />
+                        <Input readOnly={isReadOnly} onChange={setUsernameHandler} value={profileForm?.first} placeholder={userInfo?.first} />
                     </label>
                 </div>
                 <div>
@@ -73,7 +73,7 @@ const ProfileCard:FC<Props> = ({ userInfo }) => {
                             :
                         </span>
                         <Input
-                            readOnly={!isReadOnly}
+                            readOnly={isReadOnly}
                             onChange={setLastnameHandler}
                             value={profileForm?.lastname}
                             placeholder={profileForm?.lastname}
@@ -87,7 +87,7 @@ const ProfileCard:FC<Props> = ({ userInfo }) => {
                             :
                         </span>
                         <Input
-                            readOnly={!isReadOnly}
+                            readOnly={isReadOnly}
                             type="number"
                             onChange={setAgeHandler}
                             value={profileForm?.age}
@@ -101,7 +101,7 @@ const ProfileCard:FC<Props> = ({ userInfo }) => {
                     :
                     <CountriesDropDown
                         setCurrentCountry={setCountryHandler}
-                        canEdit={!isReadOnly}
+                        canEdit={isReadOnly}
                         defaultCountrie={userInfo?.country}
                     />
                 </p>
@@ -112,7 +112,7 @@ const ProfileCard:FC<Props> = ({ userInfo }) => {
                         :
                     </span>
                     <Input
-                        readOnly={!isReadOnly}
+                        readOnly={isReadOnly}
                         onChange={setCityHandler}
                         value={profileForm?.city}
                         placeholder={userInfo?.city}
@@ -123,7 +123,7 @@ const ProfileCard:FC<Props> = ({ userInfo }) => {
                     :
                     <CurrenciesDropDown
                         setCurrentCurrency={setCurrencyHandler}
-                        canEdit={!isReadOnly}
+                        canEdit={isReadOnly}
                         defaultCurrency={userInfo?.currency}
                     />
                 </p>
@@ -136,7 +136,7 @@ const ProfileCard:FC<Props> = ({ userInfo }) => {
                     <Input
                         onChange={setAvatarHandler}
                         value={profileForm?.avatar}
-                        readOnly={!isReadOnly}
+                        readOnly={isReadOnly}
                         placeholder={userInfo?.avatar}
                         className={cls.avatarInput}
                     />

@@ -8,9 +8,9 @@ import { ArticleAllProps } from 'enteties/Article/selectors/articleSelector';
 import { ArticleDetails } from 'enteties/Article';
 import Comments from 'features/getComments/ui/Comments';
 import { getCommentsByArticleId } from 'features/getComments/model/services/getCommentsByArticleId';
-import AddComment from 'features/addComment/ui/AddComment';
 import { getArticleComments } from 'features/getComments/model/slice/commentsSlice';
 import { commentisLoading } from 'features/getComments/model/selectors/commentPropsSelector';
+import { Loader } from 'shared/ui/Loader';
 import cls from './ArticlePage.module.scss';
 
 interface Props {
@@ -37,7 +37,7 @@ const ArticlePage:FC<Props> = () => {
     }, [comments]);
 
     if (loading) {
-        return <div>Loading...</div>;
+        return <div><Loader /></div>;
     }
     if (error || !id) {
         return <div>Error</div>;

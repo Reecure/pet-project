@@ -10,6 +10,7 @@ import {
 import { getAllArticles } from 'pages/ArticlesPage/model/services/getArticles';
 import { Button } from 'shared/ui/Button';
 import { useTranslation } from 'react-i18next';
+import { Loader } from 'shared/ui/Loader';
 import cls from './ArticleMainContent.module.scss';
 import ArticleBigComponent from '../ArticleBigComponent/ArticleBigComponent';
 import ArticleSmallComponent from '../ArticleSmallComponent/ArticleSmallComponent';
@@ -32,7 +33,7 @@ const ArticleMainContent:FC<Props> = () => {
 
     if (articlesLoading) {
         return (
-            <div>{`${t('Loading')}`}</div>
+            <div><Loader /></div>
         );
     }
     const nextPageHandler = () => {

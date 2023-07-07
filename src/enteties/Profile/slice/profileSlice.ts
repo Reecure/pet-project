@@ -24,10 +24,10 @@ const profileSlice = createSlice({
     initialState,
     reducers: {
         setEditable: (state) => {
-            state.readonly = true;
+            state.readonly = false;
         },
         canselEditing: (state) => {
-            state.readonly = false;
+            state.readonly = true;
             state.form = state.userInfo;
         },
         updateProfile: (state, action) => {
