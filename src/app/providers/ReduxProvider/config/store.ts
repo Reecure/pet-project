@@ -7,6 +7,7 @@ import { articleReducer } from 'enteties/Article';
 import { commentsReducer } from 'features/getComments';
 import { addCommentReducer } from 'features/addComment';
 import { articlesReducer } from 'pages/ArticlesPage';
+import { addArticleReducer } from 'pages/CreateArticlePage';
 
 export const store = configureStore({
     reducer: {
@@ -18,6 +19,7 @@ export const store = configureStore({
         commentsReducer,
         addCommentReducer,
         articlesReducer,
+        addArticleReducer,
     },
 });
 

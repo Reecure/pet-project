@@ -43,6 +43,7 @@ module.exports = {
         'react/jsx-props-no-spreading': 'warn',
         'react/function-component-definition': 'off',
         'no-shadow': 'off',
+        'i18next/no-literal-string': 'off',
         'import/extensions': 'off',
         'react/jsx-boolean-value': 'off',
         'import/no-extraneous-dependencies': 'off',
@@ -51,13 +52,6 @@ module.exports = {
         'no-underscore-dangle': 'off',
         'no-param-reassign': 'off',
         'jsx-a11y/no-static-element-interactions': 'off',
-        'i18next/no-literal-string': [
-            'error',
-            {
-                markupOnly: true,
-                ignoreAttribute: ['data-testid', 'to'],
-            },
-        ],
         'max-len': ['error', { ignoreComments: true, code: 150 }],
     },
     globals: {

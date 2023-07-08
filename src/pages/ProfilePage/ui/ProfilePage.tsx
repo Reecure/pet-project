@@ -26,7 +26,7 @@ const ProfilePage = (props: Props) => {
 
     if (profileLoading) {
         return (
-            <div>
+            <div className={cls.loaderWrapper}>
                 <Loader />
             </div>
         );

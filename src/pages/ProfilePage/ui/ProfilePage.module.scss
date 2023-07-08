@@ -11,3 +11,11 @@
   width: 60%;
   height: min-content;
 }
+
+.loaderWrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

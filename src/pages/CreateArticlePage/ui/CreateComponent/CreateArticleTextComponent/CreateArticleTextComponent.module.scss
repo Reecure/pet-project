@@ -1,0 +1,16 @@
+.textArea {
+    margin: 0 10px 10px 0;
+    padding: 5px 10px;
+    background-color: var(--inverted-secondary-color);
+    color: var(--bg-color);
+    width: 100%;
+    resize: vertical;
+    border: none;
+    outline: none;
+    flex:1;
+    
+}
+
+.paragraphWrapper {
+    display: flex;
+}

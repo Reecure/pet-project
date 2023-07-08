@@ -33,7 +33,7 @@ const ArticleMainContent:FC<Props> = () => {
 
     if (articlesLoading) {
         return (
-            <div><Loader /></div>
+            <div className={cls.loaderWrapper}><Loader /></div>
         );
     }
     const nextPageHandler = () => {

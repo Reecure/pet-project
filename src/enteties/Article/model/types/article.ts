@@ -55,3 +55,12 @@ export interface Article {
     type: ArticleTypes[],
     blocks: ArticleBlocks[]
 }
+
+export interface ArticleForSend {
+    title: string,
+    subtitle: string,
+    img: string,
+    views: number,
+    type: ArticleTypes[],
+    blocks: ArticleBlocks[]
+}
