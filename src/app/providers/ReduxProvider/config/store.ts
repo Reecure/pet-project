@@ -20,6 +20,7 @@ export const store = configureStore({
         addCommentReducer,
         articlesReducer,
         addArticleReducer,
+
     },
 });
 

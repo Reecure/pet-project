@@ -43,18 +43,18 @@ const CreateArticlePage:FC<Props> = () => {
     const blockTypeRender = (blockType: BlockTypes, block?: any) => {
         switch (blockType) {
         case BlockTypes.TEXT:
-            return <CreateArticleTextComponent />;
+            return <CreateArticleTextComponent blockId={block.id} />;
         case BlockTypes.CODE:
-            return <CreateArticleCodeComponent />;
+            return <CreateArticleCodeComponent blockId={block.id} blocks={blocks} />;
         case BlockTypes.IMAGE:
-            return <CreateArticlePhotoComponent />;
+            return <CreateArticlePhotoComponent blockId={block.id} />;
 
         default:
             return null;
         }
     };
 
-    const memoBlocks = useMemo(() => blocks.map((item) => <div>{blockTypeRender(item.type)}</div>), [blocks]);
+    const memoBlocks = useMemo(() => blocks.map((item) => <div>{blockTypeRender(item.type, item)}</div>), [blocks]);
 
     return (
         <div className={classNames(cls.CreateArticlePage, {}, [])}>

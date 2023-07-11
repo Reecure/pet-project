@@ -2,22 +2,38 @@ import { useTranslation } from 'react-i18next';
 import { classNames } from 'shared/lib/classNames/classNames';
 import React, { FC, useEffect, useState } from 'react';
 import { Text } from 'shared/ui/Text';
+import { useAppDispatch, useAppSelector } from 'app/providers/ReduxProvider/config/hooks';
+import { ArticleBlocks, BlockTypes, CodeBlock } from 'enteties/Article/model/types/article';
+import { getCreateFields } from 'pages/CreateArticlePage/model/selectors/getCreateArticle';
+import { setArticleBlocks } from 'pages/CreateArticlePage/model/slice/addArticleSlice';
 import cls from './CreateArticleCodeComponent.module.scss';
 
 interface Props {
+    blockId: string
+    blocks: ArticleBlocks[]
 }
 
-const CreateArticleCodeComponent:FC<Props> = () => {
+const CreateArticleCodeComponent:FC<Props> = ({ blockId, blocks }) => {
     const { t } = useTranslation();
     const [rows, setRows] = useState(1);
+    const [code, setCode] = useState('');
+    const dispatch = useAppDispatch();
 
     const handleTextAreaChange = (event:React.ChangeEvent<HTMLTextAreaElement>) => {
-        const textareaLineHeight = 24; // Adjust this value based on your textarea's line-height CSS property
-        const currentRows = Math.ceil((event.target.scrollHeight - textareaLineHeight) / textareaLineHeight);
+        const updatedCode = event.currentTarget.value; // Store the updated code separately
+        setCode(updatedCode);
+        const updatedCodeBlock = {
+            id: blockId,
+            code: updatedCode,
+        };
 
-        if (currentRows !== rows) {
-            setRows(currentRows);
-        }
+        const updatedBlocks = blocks.map((block) => {
+            if (block.id === blockId) {
+                return { ...block, ...updatedCodeBlock };
+            }
+            return block;
+        });
+        dispatch(setArticleBlocks(updatedBlocks));
     };
     return (
         <div className={classNames(cls.CreateArticleCodeComponent, {}, [])}>
@@ -27,7 +43,7 @@ const CreateArticleCodeComponent:FC<Props> = () => {
                     { Array.from({ length: rows }).map((_, i) => (<p key={i}>{i + 1}</p>)) }
 
                 </div>
-                <textarea onChange={handleTextAreaChange} className={cls.textArea} name="" id="" rows={rows} />
+                <textarea value={code} onChange={handleTextAreaChange} className={cls.textArea} name="" id="" rows={rows} />
             </div>
         </div>
     );

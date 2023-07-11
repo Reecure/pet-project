@@ -1034,55 +1034,24 @@
       "type": [],
       "blocks": [
         {
-          "id": "BKdGULKbZXYluECkvTwYO",
-          "type": "TEXT",
-          "title": "Some Title",
-          "paragraphs": []
-        },
-        {
-          "id": "Ywpf5XD_-qr7lKiwAuFdd",
-          "type": "IMAGE",
-          "src": "",
-          "title": ""
-        },
-        {
-          "id": "npeve9P9lDufERVNOr7lE",
+          "id": "u01hh66nc0wM3rzLXF78a",
           "type": "CODE",
-          "code": ""
+          "code": "qw"
+        },
+        {
+          "id": "1jV62FwHYWf4nS-duldHT",
+          "type": "CODE",
+          "code": "as"
+        },
+        {
+          "id": "g1s37CTW9qRxUZHLLQCri",
+          "type": "CODE",
+          "code": "zx"
         }
       ],
-      "createdAt": "08.07.23",
-      "userId": "2",
-      "id": "r-0GlhT"
-    },
-    {
-      "title": "",
-      "subtitle": "",
-      "img": "",
-      "views": 0,
-      "type": [],
-      "blocks": [
-        {
-          "id": "n0E0t1TAm5oEkBaCN3RJH",
-          "type": "TEXT",
-          "title": "Some Title",
-          "paragraphs": []
-        },
-        {
-          "id": "0ZUSH1XvBgLTnPUDRxIDX",
-          "type": "IMAGE",
-          "src": "",
-          "title": ""
-        },
-        {
-          "id": "B6jkL9fIV4ulqz1tvJ1tH",
-          "type": "CODE",
-          "code": ""
-        }
-      ],
-      "createdAt": "08.07.23",
-      "userId": "2",
-      "id": "r--eQfn"
+      "createdAt": "11.07.23",
+      "userId": "1",
+      "id": "RIb3R0A"
     }
   ],
   "comments": [

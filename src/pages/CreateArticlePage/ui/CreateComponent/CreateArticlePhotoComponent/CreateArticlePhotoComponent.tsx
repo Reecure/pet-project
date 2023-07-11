@@ -6,9 +6,10 @@ import { Text } from 'shared/ui/Text';
 import cls from './CreateArticlePhotoComponent.module.scss';
 
 interface Props {
+    blockId: string
 }
 
-const CreateArticlePhotoComponent:FC<Props> = () => {
+const CreateArticlePhotoComponent:FC<Props> = ({ blockId }) => {
     const { t } = useTranslation();
 
     return (

@@ -2,7 +2,7 @@
 
 import { PayloadAction, createSlice } from '@reduxjs/toolkit';
 import {
-    ArticleBlocks, ArticleTypes,
+    ArticleBlocks, ArticleTypes, BlockTypes, CodeBlock, ImageBlock, TextBlock,
 } from 'enteties/Article/model/types/article';
 
 interface Props {
@@ -12,7 +12,6 @@ interface Props {
     views: number,
     type: ArticleTypes[],
     blocks: ArticleBlocks[]
-
 }
 
 const initialState:Props = {
@@ -43,7 +42,6 @@ const addArticleSlice = createSlice({
         setArticleBlocks: (state, action: PayloadAction<ArticleBlocks[]>) => {
             state.blocks = action.payload;
         },
-        // views , user, id
     },
 
 });

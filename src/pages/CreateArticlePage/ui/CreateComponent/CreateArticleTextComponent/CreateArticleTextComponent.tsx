@@ -8,14 +8,16 @@ import { nanoid } from '@reduxjs/toolkit';
 import cls from './CreateArticleTextComponent.module.scss';
 
 interface Props {
+    blockId: string
 }
 
 interface Paragraph {
     id: string,
     text: string
+
 }
 
-const CreateArticleTextComponent:FC<Props> = () => {
+const CreateArticleTextComponent:FC<Props> = ({ blockId }) => {
     const [paragraphs, setParagraphs] = useState<Paragraph[]>([{ id: nanoid(), text: '' }]);
     const { t } = useTranslation();
 
@@ -33,7 +35,7 @@ const CreateArticleTextComponent:FC<Props> = () => {
         <div className={classNames(cls.CreateArticleTextComponent, {}, [])}>
             <div>
                 <Text title="Title >" />
-                <Input theme={ThemeInput.OUTLINE} />
+                <Input theme={ThemeInput.OUTLINE} placeholder="" />
             </div>
             <div>
                 <Text title="Paragraphs" />
