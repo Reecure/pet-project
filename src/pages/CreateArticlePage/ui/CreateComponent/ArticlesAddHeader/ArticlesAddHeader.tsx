@@ -5,27 +5,40 @@ import { Text } from 'shared/ui/Text';
 import { Input, ThemeInput } from 'shared/ui/Input';
 import { useAppDispatch } from 'app/providers/ReduxProvider/config/hooks';
 import { setArticlePreviewImg, setArticleSubTitle, setArticleTitle } from 'pages/CreateArticlePage/model/slice/addArticleSlice';
+
+import { Field } from 'formik';
 import cls from './ArticlesAddHeader.module.scss';
 
 interface Props {
+    values: {
+        title: string,
+        subTitle: string,
+        img: string
+    }
 }
 
-const ArticlesAddHeader:FC<Props> = () => {
+const ArticlesAddHeader:FC<Props> = ({ values }) => {
     const { t } = useTranslation();
     const dispatch = useAppDispatch();
     return (
         <div className={classNames(cls.ArticlesAddHeader, {}, [])}>
             <div>
                 <Text title="Title" />
-                <Input onChange={(e) => { dispatch(setArticleTitle(e.currentTarget.value)); }} theme={ThemeInput.OUTLINE} />
+                <Field
+                    name="title"
+                />
             </div>
             <div>
                 <Text title="Subtitle" />
-                <Input onChange={(e) => { dispatch(setArticleSubTitle(e.currentTarget.value)); }} theme={ThemeInput.OUTLINE} />
+                <Field
+                    name="subTitle"
+                />
             </div>
             <div>
                 <Text title="Img" />
-                <Input onChange={(e) => { dispatch(setArticlePreviewImg(e.currentTarget.value)); }} theme={ThemeInput.OUTLINE} />
+                <Field
+                    name="img"
+                />
             </div>
             <div>
                 Types

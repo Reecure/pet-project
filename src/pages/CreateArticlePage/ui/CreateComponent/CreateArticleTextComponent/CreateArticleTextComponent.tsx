@@ -45,18 +45,22 @@ const CreateArticleTextComponent:FC<Props> = ({ blockId, blocks, setBlocks }) =>
     };
 
     const onTitleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        setTitle(e.currentTarget.value);
-        updateBlock({ title: e.currentTarget.value });
+        const updatedTitle = e.currentTarget.value;
+
+        setTitle(updatedTitle);
+        updateBlock({ title: updatedTitle });
     };
 
     const addParagraphHandler = () => {
         const paragraphId = nanoid();
-        setParagraphs([...paragraphs, { id: paragraphId, text: '' }]);
-        updateBlock({ paragraphs: [...paragraphs, { id: paragraphId, text: '' }] });
+        const upadateParagraphs = [...paragraphs, { id: paragraphId, text: '' }];
+        setParagraphs(upadateParagraphs);
+        updateBlock({ paragraphs: upadateParagraphs });
     };
     const deleteParagraphHandler = (id: string) => {
-        setParagraphs(paragraphs.filter((item) => item.id !== id));
-        updateBlock({ paragraphs: paragraphs.filter((item) => item.id !== id) });
+        const filteredParagraphs = paragraphs.filter((item) => item.id !== id);
+        setParagraphs(filteredParagraphs);
+        updateBlock({ paragraphs: filteredParagraphs });
     };
 
     const onParagraphChange = (e: React.ChangeEvent<HTMLTextAreaElement>, paragraphId: string) => {

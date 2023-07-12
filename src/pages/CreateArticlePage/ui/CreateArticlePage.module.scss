@@ -8,5 +8,11 @@
 
 
 .blocksWrapper {
-    flex: 1
+    flex: 1;
+    margin-right: 10px;
+}
+
+.articlesAddBlokButtonsWrapper {
+    min-width: 180px;
+    position: relative;
 }
