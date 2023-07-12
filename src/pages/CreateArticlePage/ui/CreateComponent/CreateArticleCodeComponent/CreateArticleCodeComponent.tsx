@@ -11,39 +11,49 @@ import cls from './CreateArticleCodeComponent.module.scss';
 interface Props {
     blockId: string
     blocks: ArticleBlocks[]
+    setBlocks: (block: any) => void
 }
 
-const CreateArticleCodeComponent:FC<Props> = ({ blockId, blocks }) => {
+const CreateArticleCodeComponent:FC<Props> = ({ blockId, blocks, setBlocks }) => {
     const { t } = useTranslation();
     const [rows, setRows] = useState(1);
-    const [code, setCode] = useState('');
-    const dispatch = useAppDispatch();
+    const [codeItem, setCodeItem] = useState('');
 
-    const handleTextAreaChange = (event:React.ChangeEvent<HTMLTextAreaElement>) => {
-        const updatedCode = event.currentTarget.value; // Store the updated code separately
-        setCode(updatedCode);
-        const updatedCodeBlock = {
+    const handleTextAreaChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
+        const updatedCodeItem = event.currentTarget.value; // Используйте актуальное значение
+        setCodeItem(updatedCodeItem);
+
+        const updatedBlock: CodeBlock = {
             id: blockId,
-            code: updatedCode,
+            type: BlockTypes.CODE,
+            code: updatedCodeItem, // Используйте актуальное значение
         };
 
-        const updatedBlocks = blocks.map((block) => {
-            if (block.id === blockId) {
-                return { ...block, ...updatedCodeBlock };
+        const updatedBlocks = blocks.map((item) => {
+            if (item.id === blockId) {
+                return updatedBlock;
             }
-            return block;
+            return item;
         });
-        dispatch(setArticleBlocks(updatedBlocks));
+        setBlocks(updatedBlocks);
     };
     return (
         <div className={classNames(cls.CreateArticleCodeComponent, {}, [])}>
             <Text title="Code Block" />
             <div className={cls.textAreaWrapper}>
                 <div className={cls.linesNumber}>
-                    { Array.from({ length: rows }).map((_, i) => (<p key={i}>{i + 1}</p>)) }
+                    { Array.from({ length: rows })
+                        .map((_, i) => (<p key={i}>{i + 1}</p>)) }
 
                 </div>
-                <textarea value={code} onChange={handleTextAreaChange} className={cls.textArea} name="" id="" rows={rows} />
+                <textarea
+                    value={codeItem}
+                    onChange={handleTextAreaChange}
+                    className={cls.textArea}
+                    name=""
+                    id=""
+                    rows={rows}
+                />
             </div>
         </div>
     );

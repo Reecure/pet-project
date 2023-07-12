@@ -15,7 +15,7 @@ const ArticleTextComponent:FC<Props> = ({ block }) => {
         <div className={classNames(cls.ArticleTextComponent, {}, [])}>
             <h3>{block?.title}</h3>
             <div>
-                {block.paragraphs.map((paragraph) => <p className={cls.articleParagraph}>{paragraph}</p>)}
+                {block.paragraphs.map((paragraph) => <p className={cls.articleParagraph}>{paragraph.text}</p>)}
 
             </div>
         </div>

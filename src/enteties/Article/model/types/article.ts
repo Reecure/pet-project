@@ -28,11 +28,17 @@ export interface CodeBlock {
     type?: BlockTypes.CODE,
     code: string
 }
+interface Paragraph {
+    id: string,
+    text: string
+
+}
+
 export interface TextBlock {
     id?: string,
     type?: BlockTypes.TEXT,
     title: string,
-    paragraphs: string[]
+    paragraphs: Paragraph[]
 
 }
 export interface ImageBlock {

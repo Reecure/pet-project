@@ -43,11 +43,11 @@ const CreateArticlePage:FC<Props> = () => {
     const blockTypeRender = (blockType: BlockTypes, block?: any) => {
         switch (blockType) {
         case BlockTypes.TEXT:
-            return <CreateArticleTextComponent blockId={block.id} />;
+            return <CreateArticleTextComponent blockId={block.id} blocks={blocks} setBlocks={setBlocks} />;
         case BlockTypes.CODE:
-            return <CreateArticleCodeComponent blockId={block.id} blocks={blocks} />;
+            return <CreateArticleCodeComponent blockId={block.id} blocks={blocks} setBlocks={setBlocks} />;
         case BlockTypes.IMAGE:
-            return <CreateArticlePhotoComponent blockId={block.id} />;
+            return <CreateArticlePhotoComponent blockId={block.id} blocks={blocks} setBlocks={setBlocks} />;
 
         default:
             return null;

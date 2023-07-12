@@ -1,14 +1,17 @@
 import { useTranslation } from 'react-i18next';
 import { classNames } from 'shared/lib/classNames/classNames';
-import { FC, useState } from 'react';
+import React, { FC, useState } from 'react';
 import { Input, ThemeInput } from 'shared/ui/Input';
 import { Text } from 'shared/ui/Text';
 import { Button } from 'shared/ui/Button';
 import { nanoid } from '@reduxjs/toolkit';
+import { ArticleBlocks, BlockTypes, TextBlock } from 'enteties/Article/model/types/article';
 import cls from './CreateArticleTextComponent.module.scss';
 
 interface Props {
     blockId: string
+    blocks: ArticleBlocks[]
+    setBlocks: (block: any) => void
 }
 
 interface Paragraph {
@@ -17,25 +20,66 @@ interface Paragraph {
 
 }
 
-const CreateArticleTextComponent:FC<Props> = ({ blockId }) => {
+const CreateArticleTextComponent:FC<Props> = ({ blockId, blocks, setBlocks }) => {
     const [paragraphs, setParagraphs] = useState<Paragraph[]>([{ id: nanoid(), text: '' }]);
+    const [title, setTitle] = useState('');
     const { t } = useTranslation();
+
+    const updateBlock = (updatedProps: Partial<TextBlock>) => {
+        const updatedBlock: TextBlock = {
+            id: blockId,
+            title,
+            paragraphs,
+            type: BlockTypes.TEXT,
+            ...updatedProps,
+        };
+
+        const updatedBlocks = blocks.map((item) => {
+            if (item.id === blockId) {
+                return updatedBlock;
+            }
+            return item;
+        });
+
+        setBlocks(updatedBlocks);
+    };
+
+    const onTitleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        setTitle(e.currentTarget.value);
+        updateBlock({ title: e.currentTarget.value });
+    };
 
     const addParagraphHandler = () => {
         const paragraphId = nanoid();
         setParagraphs([...paragraphs, { id: paragraphId, text: '' }]);
-        console.log(`added ${paragraphId}`);
+        updateBlock({ paragraphs: [...paragraphs, { id: paragraphId, text: '' }] });
     };
     const deleteParagraphHandler = (id: string) => {
         setParagraphs(paragraphs.filter((item) => item.id !== id));
-        console.log(`deleted ${id}`);
+        updateBlock({ paragraphs: paragraphs.filter((item) => item.id !== id) });
+    };
+
+    const onParagraphChange = (e: React.ChangeEvent<HTMLTextAreaElement>, paragraphId: string) => {
+        const updatedParagraph:Paragraph = {
+            id: paragraphId,
+            text: e.currentTarget.value,
+        };
+        const updateParagraphs = paragraphs.map((paragraph) => {
+            if (paragraphId === paragraph.id) {
+                return updatedParagraph;
+            }
+            return paragraph;
+        });
+
+        setParagraphs(updateParagraphs);
+        updateBlock({ paragraphs: updateParagraphs });
     };
 
     return (
         <div className={classNames(cls.CreateArticleTextComponent, {}, [])}>
             <div>
                 <Text title="Title >" />
-                <Input theme={ThemeInput.OUTLINE} placeholder="" />
+                <Input onChange={onTitleChange} value={title} theme={ThemeInput.OUTLINE} placeholder="" />
             </div>
             <div>
                 <Text title="Paragraphs" />
@@ -44,7 +88,7 @@ const CreateArticleTextComponent:FC<Props> = ({ blockId }) => {
                 {
                     paragraphs.map((paragraph, i) => (
                         <div key={paragraph.id} className={cls.paragraphWrapper}>
-                            <textarea className={cls.textArea} name="" rows={5} />
+                            <textarea onChange={(e) => onParagraphChange(e, paragraph.id)} className={cls.textArea} name="" rows={5} />
                             <Button onClick={() => deleteParagraphHandler(paragraph.id)}>X</Button>
                         </div>
                     ))

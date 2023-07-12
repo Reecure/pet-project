@@ -1027,31 +1027,79 @@
       ]
     },
     {
-      "title": "",
-      "subtitle": "",
-      "img": "",
+      "title": "My custom article",
+      "subtitle": "test custom article",
+      "img": "https://img.freepik.com/premium-photo/image-many-different-colored-hearts-cluster_724548-6883.jpg?w=2000",
       "views": 0,
       "type": [],
       "blocks": [
         {
-          "id": "u01hh66nc0wM3rzLXF78a",
-          "type": "CODE",
-          "code": "qw"
+          "id": "ajJpFBe7WabMH7-LKpfVl",
+          "title": "First Title",
+          "paragraphs": [
+            {
+              "id": "CZIXrasp1vFpZqD5cqLTN",
+              "text": "My first paragraph"
+            },
+            {
+              "id": "pdOc9Aymsn0GPbgAJLe1u",
+              "text": "My second paragraph"
+            }
+          ],
+          "type": "TEXT"
         },
         {
-          "id": "1jV62FwHYWf4nS-duldHT",
+          "id": "PhOII8y0YoswDZ34yI62V",
           "type": "CODE",
-          "code": "as"
+          "code": "<div> "
         },
         {
-          "id": "g1s37CTW9qRxUZHLLQCri",
+          "id": "hHrMK_7viPNW4Zlxk3H5r",
+          "src": "https://img.freepik.com/free-photo/colorful-heart-air-balloon-shape-collection-concept-isolated-color-background-beautiful-heart-ball-event_90220-1047.jpg",
+          "title": "My first image title",
+          "type": "IMAGE"
+        },
+        {
+          "id": "a-DfAX40LhyqoRWjzGsf_",
           "type": "CODE",
-          "code": "zx"
+          "code": "<div>\n   <p>\n</div>"
+        },
+        {
+          "id": "B83yUh8JBEQjBdexzTp2W",
+          "title": "Second Title",
+          "paragraphs": [
+            {
+              "id": "cy-EKEGuYxvZaS_fegioC",
+              "text": "First Paragraph"
+            },
+            {
+              "id": "PXm4w_4QZJB59EqghP-9I",
+              "text": ""
+            }
+          ],
+          "type": "TEXT"
+        },
+        {
+          "id": "M5hsGTSWC_dGcHKZz33KN",
+          "title": "Second title",
+          "paragraphs": [],
+          "type": "TEXT"
+        },
+        {
+          "id": "13gg7XCqgl6ZC8Qallyul",
+          "title": "Third title",
+          "paragraphs": [
+            {
+              "id": "4C82qaQL8vrZnLuX_9hRC",
+              "text": ""
+            }
+          ],
+          "type": "TEXT"
         }
       ],
-      "createdAt": "11.07.23",
+      "createdAt": "12.07.23",
       "userId": "1",
-      "id": "RIb3R0A"
+      "id": "gdLN82g"
     }
   ],
   "comments": [
@@ -1102,6 +1150,12 @@
       "articleId": "1",
       "userId": "1",
       "id": "iBHtdoI"
+    },
+    {
+      "text": "asdasd",
+      "articleId": "gdLN82g",
+      "userId": "1",
+      "id": "TXgst09"
     }
   ],
   "users": [
