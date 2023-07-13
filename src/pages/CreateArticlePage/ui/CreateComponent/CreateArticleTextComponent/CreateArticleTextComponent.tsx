@@ -79,10 +79,19 @@ const CreateArticleTextComponent:FC<Props> = ({ blockId, blocks, setBlocks }) =>
         updateBlock({ paragraphs: updateParagraphs });
     };
 
+    const onDeleteBlockHandler = (blockId: string) => {
+        const updatedBloks = blocks.filter((block) => block.id !== blockId);
+        setBlocks(updatedBloks);
+    };
+
     return (
         <div className={classNames(cls.CreateArticleTextComponent, {}, [])}>
             <div>
-                <Text title="Title >" />
+                <div className={cls.titleWrapper}>
+                    <Text title="Title >" />
+                    <Button onClick={() => onDeleteBlockHandler(blockId)}>X</Button>
+                </div>
+
                 <Input onChange={onTitleChange} value={title} theme={ThemeInput.OUTLINE} placeholder="" />
             </div>
             <div>

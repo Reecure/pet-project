@@ -1106,22 +1106,15 @@
       "subtitle": "",
       "img": "",
       "views": 0,
-      "type": [],
+      "type": [
+        "Science",
+        "Education",
+        "IT"
+      ],
       "blocks": [],
-      "createdAt": "12.07.23",
+      "createdAt": "13.07.23",
       "userId": "1",
-      "id": "XrypGw3"
-    },
-    {
-      "title": "",
-      "subtitle": "",
-      "img": "",
-      "views": 0,
-      "type": [],
-      "blocks": [],
-      "createdAt": "12.07.23",
-      "userId": "1",
-      "id": "xRIDepI"
+      "id": "lG99FH9"
     }
   ],
   "comments": [

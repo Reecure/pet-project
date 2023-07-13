@@ -10,7 +10,7 @@ interface Props {
     subtitle: string,
     img: string,
     views: number,
-    type: ArticleTypes[],
+    type: string[],
     blocks: ArticleBlocks[]
 }
 
@@ -36,7 +36,7 @@ const addArticleSlice = createSlice({
         setArticlePreviewImg: (state, action: PayloadAction<string>) => {
             state.img = action.payload;
         },
-        setArticleTypes: (state, action: PayloadAction<ArticleTypes[]>) => {
+        setArticleTypes: (state, action: PayloadAction<string[]>) => {
             state.type = action.payload;
         },
         setArticleBlocks: (state, action: PayloadAction<ArticleBlocks[]>) => {

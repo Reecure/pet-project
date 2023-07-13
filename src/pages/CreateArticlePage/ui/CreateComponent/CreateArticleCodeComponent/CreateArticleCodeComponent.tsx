@@ -2,10 +2,8 @@ import { useTranslation } from 'react-i18next';
 import { classNames } from 'shared/lib/classNames/classNames';
 import React, { FC, useEffect, useState } from 'react';
 import { Text } from 'shared/ui/Text';
-import { useAppDispatch, useAppSelector } from 'app/providers/ReduxProvider/config/hooks';
 import { ArticleBlocks, BlockTypes, CodeBlock } from 'enteties/Article/model/types/article';
-import { getCreateFields } from 'pages/CreateArticlePage/model/selectors/getCreateArticle';
-import { setArticleBlocks } from 'pages/CreateArticlePage/model/slice/addArticleSlice';
+import { Button } from 'shared/ui/Button';
 import cls from './CreateArticleCodeComponent.module.scss';
 
 interface Props {
@@ -37,9 +35,18 @@ const CreateArticleCodeComponent:FC<Props> = ({ blockId, blocks, setBlocks }) =>
         });
         setBlocks(updatedBlocks);
     };
+
+    const onDeleteBlockHandler = (blockId: string) => {
+        const updatedBloks = blocks.filter((block) => block.id !== blockId);
+        setBlocks(updatedBloks);
+    };
     return (
         <div className={classNames(cls.CreateArticleCodeComponent, {}, [])}>
-            <Text title="Code Block" />
+            <div className={cls.titleWrapper}>
+                <Text title="Code Block" />
+                <Button onClick={() => onDeleteBlockHandler(blockId)}>X</Button>
+            </div>
+
             <div className={cls.textAreaWrapper}>
                 <div className={cls.linesNumber}>
                     { Array.from({ length: rows })

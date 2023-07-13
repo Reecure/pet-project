@@ -4,6 +4,7 @@ import React, { FC, useState } from 'react';
 import { Input, ThemeInput } from 'shared/ui/Input';
 import { Text } from 'shared/ui/Text';
 import { ArticleBlocks, BlockTypes, ImageBlock } from 'enteties/Article/model/types/article';
+import { Button } from 'shared/ui/Button';
 import cls from './CreateArticlePhotoComponent.module.scss';
 
 interface Props {
@@ -48,9 +49,18 @@ const CreateArticlePhotoComponent:FC<Props> = ({ blockId, blocks, setBlocks }) =
         updateBlock({ title: updatedTitle });
     };
 
+    const onDeleteBlockHandler = (blockId: string) => {
+        const updatedBloks = blocks.filter((block) => block.id !== blockId);
+        setBlocks(updatedBloks);
+    };
+
     return (
         <div className={classNames(cls.CreateArticlePhotoComponent, {}, [])}>
-            <Text title="Photo Block" />
+            <div className={cls.titleWrapper}>
+                <Text title="Photo Block" />
+                <Button onClick={() => onDeleteBlockHandler(blockId)}>X</Button>
+            </div>
+
             <div>
                 src:
                 <Input onChange={onSrcChange} value={src} theme={ThemeInput.OUTLINE} />

@@ -58,7 +58,7 @@ export interface Article {
     img: string,
     views: number,
     createdAt: string,
-    type: ArticleTypes[],
+    type: string[],
     blocks: ArticleBlocks[]
 }
 
@@ -67,6 +67,6 @@ export interface ArticleForSend {
     subtitle: string,
     img: string,
     views: number,
-    type: ArticleTypes[],
+    type: string[],
     blocks: ArticleBlocks[]
 }

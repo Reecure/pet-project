@@ -15,7 +15,7 @@ import CreateArticleCodeComponent from './CreateComponent/CreateArticleCodeCompo
 import CreateArticlePhotoComponent from './CreateComponent/CreateArticlePhotoComponent/CreateArticlePhotoComponent';
 import { addArticle } from '../model/services/addArticle';
 import {
-    setArticleBlocks, setArticlePreviewImg, setArticleSubTitle, setArticleTitle,
+    setArticleBlocks,
 } from '../model/slice/addArticleSlice';
 import { getCreateFields } from '../model/selectors/getCreateArticle';
 import ArticlesAddBlokButtons from './CreateComponent/ArticlesAddBlokButtons/ArticlesAddBlokButtons';
@@ -58,46 +58,23 @@ const CreateArticlePage:FC<Props> = () => {
     const memoBlocks = useMemo(() => blocks.map((item) => <div>{blockTypeRender(item.type, item)}</div>), [blocks]);
 
     return (
-        <div className={classNames(cls.CreateArticlePage, {}, [])}>
-            <Formik
-                initialValues={{
-                    title: '',
-                    subTitle: '',
-                    img: '',
-                }}
-                onSubmit={async (values, { setSubmitting }) => {
-                    alert(JSON.stringify(values, null, 2));
-                    await setSubmitting(false);
-                    dispatch(setArticleSubTitle(values.subTitle));
-                    dispatch(setArticleTitle(values.title));
-                    dispatch(setArticlePreviewImg(values.img));
-                }}
-            >
-                {
-                    ({ values }) => (
-                        <Form>
-                            <div>
-                                <Button onClick={sendArticleHandler}>Send Article</Button>
-                            </div>
-                            <ArticlesAddHeader values={values} />
-                            <div className={classNames(cls.CreateArticleMain, {}, [])}>
-                                <div className={cls.blocksWrapper}>
-                                    {
-                                        memoBlocks
-                                    }
-                                </div>
-                                <div className={cls.articlesAddBlokButtonsWrapper}>
-                                    <ArticlesAddBlokButtons blocks={blocks} setBlocks={setBlocks} />
-                                </div>
+        <form className={classNames(cls.CreateArticlePage, {}, [])}>
+            <div>
+                <Button type="submit" onClick={sendArticleHandler}>Send Article</Button>
+            </div>
+            <ArticlesAddHeader />
+            <div className={classNames(cls.CreateArticleMain, {}, [])}>
+                <div className={cls.blocksWrapper}>
+                    {
+                        memoBlocks
+                    }
+                </div>
+                <div className={cls.articlesAddBlokButtonsWrapper}>
+                    <ArticlesAddBlokButtons blocks={blocks} setBlocks={setBlocks} />
+                </div>
 
-                            </div>
-                        </Form>
-                    )
-                }
-
-            </Formik>
-
-        </div>
+            </div>
+        </form>
     );
 };
 
