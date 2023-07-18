@@ -1,12 +1,8 @@
 .Navbar {
-  width: 100%;
   height: var(--navbar-height);
   background: var(--inverted-bg-color);
   display: flex;
+  justify-content: end;
   align-items: center;
-  padding: 20px;
-}
-
-.authButtons {
-  margin-left: auto;
+  padding: 0 20px;
 }

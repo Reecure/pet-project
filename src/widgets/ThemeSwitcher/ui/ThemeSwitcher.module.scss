@@ -1,10 +1,4 @@
 .ThemeSwitcher{
-  position: relative;
-  display: flex;
-  justify-content: space-between;
-  padding: 3px 6px;
-  width: 40px;
   background-color: var(--inverted-bg-color);
-  border-radius: 30px ;
-
+  color: var(--inverted-primary-color);
 }

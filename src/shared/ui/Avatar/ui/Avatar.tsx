@@ -11,6 +11,7 @@ const Avatar:FC<Props> = ({ src, size, className }) => {
     const styles = useMemo<CSSProperties>(() => ({
         height: size || 100,
         width: size || 100,
+        borderRadius: '100%',
     }), [size]);
     return (
         <img style={styles} className={classNames('', {}, [className])} src={src} alt="avatar" />

@@ -3,7 +3,6 @@
   padding: 20px;
   display:  flex;
   flex-direction: column;
-  align-items: center;
   justify-content: space-between;
   height: calc(100vh - var(--navbar-height));
   width: var(--sidebar-close-width);
@@ -21,6 +20,13 @@
   flex-direction: column;
   
 
+}
+
+.switchersWrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 

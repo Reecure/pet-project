@@ -1,12 +1,10 @@
 .Button {
   padding: 5px 10px;
-  
   height: 40px;
   color: var(--bg-color);
   border: none;
   outline: none;
   background-color: var(--primary-color);
-
   &:hover {
     opacity: 0.8;
     cursor: pointer;

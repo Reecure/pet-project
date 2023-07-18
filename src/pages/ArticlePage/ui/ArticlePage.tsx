@@ -32,12 +32,12 @@ const ArticlePage:FC<Props> = () => {
         dispatch(getCommentsByArticleId(id));
     }, [dispatch, id]);
 
-    useEffect(() => {
-        console.log(comments);
-    }, [comments]);
-
     if (loading) {
-        return <div><Loader /></div>;
+        return (
+            <div className={cls.LoaderWrapper}>
+                <Loader />
+            </div>
+        );
     }
     if (error || !id) {
         return <div>Error</div>;

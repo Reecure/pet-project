@@ -42,7 +42,7 @@ const Sidebar: FC<SidebarProps> = ({ className }) => {
                 <Button data-testid="sidebar-toggle" className={cls.ToggleButton} onClick={openSideHandler}>
                     {open ? '<' : '>'}
                 </Button>
-                <div>
+                <div className={cls.switchersWrapper}>
                     <LangSwitcher />
                     <ThemeSwitcher className={cls.themeSwitcher} />
                 </div>

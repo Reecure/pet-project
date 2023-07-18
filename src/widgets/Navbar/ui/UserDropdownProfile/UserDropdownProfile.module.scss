@@ -1,0 +1,30 @@
+.UserDropdownProfile {
+    cursor: pointer;
+    color: var(--inverted-primary-color)
+}
+
+.menuWrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.menuButton {
+    border: none;
+    outline: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.menuItems {
+   position: absolute;
+   right: 0;
+   padding: 12px;
+   display: flex;
+   flex-direction: column;   
+    background-color: var(--secondary-color);
+
+}
+
+.menuItem {
+    text-overflow: unset;
+}

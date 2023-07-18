@@ -42,8 +42,6 @@ const ArticlesPage:FC<Props> = () => {
         navigate(`/articles?${queryString}`);
     }, [navigate, page, sort, order, type]);
 
-    console.log(navigate);
-
     return (
         <div className={classNames(cls.ArticlesPage, {}, [])}>
             <ArticleHeader />
