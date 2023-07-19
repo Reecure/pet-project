@@ -1,7 +1,7 @@
-import { User } from 'enteties/User/model/slice/userSlice';
+import { User } from 'enteties/User/model/types';
 
 export interface IComment {
-    id: string,
-    user: User,
-    text: string
+    id: string;
+    user: User;
+    text: string;
 }

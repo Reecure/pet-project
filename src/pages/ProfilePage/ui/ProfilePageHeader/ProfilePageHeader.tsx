@@ -4,16 +4,16 @@ import { updateUserProfile } from 'enteties/Profile/services/updateUserProfile';
 import { canselEditing, setEditable } from 'enteties/Profile/slice/profileSlice';
 import { FC, useCallback } from 'react';
 import { userDataSelector } from 'enteties/User/model/selectors/userDataSelector';
-import { User } from 'enteties/User/model/slice/userSlice';
 import { useTranslation } from 'react-i18next';
 import { Button, ThemeButton } from 'shared/ui/Button';
+import { User } from 'enteties/User/model/types';
 import cls from './ProfilePageHeader.module.scss';
 
 type Props = {
-    userInfo: User
-}
+    userInfo: User;
+};
 
-const ProfilePageHeader:FC<Props> = ({ userInfo }) => {
+const ProfilePageHeader: FC<Props> = ({ userInfo }) => {
     const { t } = useTranslation();
 
     const dispatch = useAppDispatch();
@@ -35,13 +35,7 @@ const ProfilePageHeader:FC<Props> = ({ userInfo }) => {
     }, [dispatch]);
 
     if (isReadOnly) {
-        return (
-            <div className={cls.actionButtons}>
-                {
-                    canEdit && <Button onClick={editHandler}>{t('Edit')}</Button>
-                }
-            </div>
-        );
+        return <div className={cls.actionButtons}>{canEdit && <Button onClick={editHandler}>{t('Edit')}</Button>}</div>;
     }
     return (
         <div className={cls.actionButtons}>

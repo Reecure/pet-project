@@ -1177,14 +1177,14 @@
     {
       "id": "1",
       "username": "admin",
-      "role": "admin",
+      "roles": ["ADMIN", "MANAGER"],
       "password": "123",
       "avatar": "https://e0.pxfuel.com/wallpapers/668/829/desktop-wallpaper-killua-zoldyck-killuazoldyck-hunterxhunter-killuazoldyck-hunterxhunterkillua-killua.jpg"
     },
     {
       "id": "2",
       "username": "user",
-      "role": "user",
+      "roles": ["USER"],
       "password": "123",
       "avatar": "https://hatrabbits.com/wp-content/uploads/2017/01/random.jpg"
     }

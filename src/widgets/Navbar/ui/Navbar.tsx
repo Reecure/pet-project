@@ -12,7 +12,7 @@ import cls from './Navbar.module.scss';
 import UserDropdownProfile from './UserDropdownProfile/UserDropdownProfile';
 
 interface NavbarProps {
-  className?: string;
+    className?: string;
 }
 
 const Navbar: FC<NavbarProps> = ({ className }) => {
@@ -20,33 +20,16 @@ const Navbar: FC<NavbarProps> = ({ className }) => {
     const [loginModalOpen, setLoginModalOpen] = useState(false);
 
     const selectIsLogged = useAppSelector(userDataSelector);
-    const dispatch = useAppDispatch();
 
-    const loginModalOpenHandler = useCallback(
-        () => {
-            setLoginModalOpen(!loginModalOpen);
-        },
-        [loginModalOpen],
-    );
-
-    const LogountHandler = useCallback(() => {
-        dispatch(logout());
-    }, [dispatch]);
+    const loginModalOpenHandler = useCallback(() => {
+        setLoginModalOpen(!loginModalOpen);
+    }, [loginModalOpen]);
 
     return (
         <nav data-testid="navbar" className={classNames(cls.Navbar, {}, [className])}>
-            <div>
-                {
-                    selectIsLogged !== undefined && <UserDropdownProfile user={selectIsLogged} />
-                }
-            </div>
+            <div>{selectIsLogged !== undefined && <UserDropdownProfile user={selectIsLogged} />}</div>
             <div className={cls.authButtons}>
-                <div>
-                    {
-                        selectIsLogged === undefined
-                        && <Button onClick={loginModalOpenHandler}>{t('Login')}</Button>
-                    }
-                </div>
+                <div>{selectIsLogged === undefined && <Button onClick={loginModalOpenHandler}>{t('Login')}</Button>}</div>
                 <LoginForm isOpen={loginModalOpen} setIsOpen={loginModalOpenHandler} />
             </div>
         </nav>

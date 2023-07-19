@@ -6,20 +6,24 @@ import { ProfilePage } from 'pages/ProfilePage';
 import { ArticlesPage } from 'pages/ArticlesPage';
 import { ArticlePage } from 'pages/ArticlePage';
 import { CreateArticlePage } from 'pages/CreateArticlePage';
+import { AdminPage } from 'pages/AdminPage';
+import { Roles } from 'enteties/User/model/types';
 
 export type AppRoutesProps = RouteProps & {
-    authOnly?: boolean
-}
+    authOnly?: boolean;
+    roles?: Roles[];
+};
 
 export enum AppRoutes {
-  MAIN = '',
-  ABOUT = 'about',
-  PROFILE = 'profile',
-  ARTICLE = 'article',
-  ARTICLES = 'articles',
-  CREATE_ARTICLE = 'create-article',
-  // Other paths
-  NOT_FOUND = 'not_found',
+    MAIN = '',
+    ABOUT = 'about',
+    PROFILE = 'profile',
+    ARTICLE = 'article',
+    ARTICLES = 'articles',
+    CREATE_ARTICLE = 'create-article',
+    ADMIN = 'admin',
+    // Other paths
+    NOT_FOUND = 'not_found',
 }
 
 export const RoutePath: Record<AppRoutes, string> = {
@@ -29,6 +33,7 @@ export const RoutePath: Record<AppRoutes, string> = {
     [AppRoutes.ARTICLES]: '/articles',
     [AppRoutes.ARTICLE]: '/article/', // +:id
     [AppRoutes.CREATE_ARTICLE]: '/create-article',
+    [AppRoutes.ADMIN]: '/admin',
     [AppRoutes.NOT_FOUND]: '*',
 };
 
@@ -60,6 +65,12 @@ export const routeConfig: Record<AppRoutes, AppRoutesProps> = {
         path: RoutePath['create-article'],
         element: <CreateArticlePage />,
         authOnly: true,
+    },
+    [AppRoutes.ADMIN]: {
+        path: RoutePath.admin,
+        element: <AdminPage />,
+        authOnly: true,
+        roles: [Roles.ADMIN, Roles.MANAGER],
     },
     [AppRoutes.NOT_FOUND]: {
         path: RoutePath.not_found,

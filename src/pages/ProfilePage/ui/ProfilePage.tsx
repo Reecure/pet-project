@@ -10,7 +10,7 @@ import ProfileCard from './ProfileCard/ProfileCard';
 import ProfilePageHeader from './ProfilePageHeader/ProfilePageHeader';
 import cls from './ProfilePage.module.scss';
 
-type Props = {}
+type Props = {};
 
 const ProfilePage = (props: Props) => {
     const { t } = useTranslation();
@@ -33,11 +33,7 @@ const ProfilePage = (props: Props) => {
     }
 
     if (!profileData) {
-        return (
-            <div>
-                {t('User is not found')}
-            </div>
-        );
+        return <div>{t('User is not found')}</div>;
     }
 
     return (

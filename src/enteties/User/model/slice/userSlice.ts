@@ -2,18 +2,7 @@ import { PayloadAction, createSlice } from '@reduxjs/toolkit';
 import { USER_LOCALSTORAGE_KEY } from 'shared/constants/localStorage';
 import { CURRENCIES } from 'enteties/Currency/model/types/currencies';
 import { COUNTRIES } from 'enteties/Country/model/types/countries';
-
-export interface User {
-    id: string;
-    first: string;
-    lastname: string;
-    age: string;
-    currency: CURRENCIES;
-    country: COUNTRIES;
-    city: string;
-    username: string;
-    avatar: string;
-}
+import { User } from '../types';
 
 interface State {
     userData: User;

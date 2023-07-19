@@ -1,22 +1,22 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { User } from 'enteties/User/model/slice/userSlice';
+
+import { User } from 'enteties/User/model/types';
 import { getUserProfile } from '../services/getUserProfile';
 import { updateUserProfile } from '../services/updateUserProfile';
 
 interface State {
-    userInfo: User
-    error: string,
-    loading: boolean,
-    readonly: boolean
+    userInfo: User;
+    error: string;
+    loading: boolean;
+    readonly: boolean;
     form?: User;
 }
 
-const initialState:State = {
+const initialState: State = {
     userInfo: undefined,
     error: '',
     loading: false,
     readonly: true,
-
 };
 
 const profileSlice = createSlice({
@@ -36,7 +36,6 @@ const profileSlice = createSlice({
                 ...action.payload,
             };
         },
-
     },
     extraReducers: (builder) => {
         builder
