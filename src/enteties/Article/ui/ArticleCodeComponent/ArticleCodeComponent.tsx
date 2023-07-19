@@ -10,20 +10,17 @@ import { CodeBlock } from '../../model/types/article';
 import cls from './ArticleCodeComponent.module.scss';
 
 interface Props {
-    block: CodeBlock
+    block: CodeBlock;
 }
 
-const ArticleCodeComponent:FC<Props> = ({ block }) => {
+const ArticleCodeComponent: FC<Props> = ({ block }) => {
     const [coppied, setCoppied] = useState(false);
     const { t } = useTranslation();
 
-    const codeCopyHandler = useCallback(
-        () => {
-            navigator.clipboard.writeText(block.code);
-            setCoppied(true);
-        },
-        [block],
-    );
+    const codeCopyHandler = useCallback(() => {
+        navigator.clipboard.writeText(block.code);
+        setCoppied(true);
+    }, [block]);
 
     useEffect(() => {
         const coppiedTimout = setTimeout(() => {
@@ -38,11 +35,7 @@ const ArticleCodeComponent:FC<Props> = ({ block }) => {
         <>
             <div className={classNames(cls.ArticleCodeComponent, {}, [])}>
                 <Code>{block.code}</Code>
-                <Button
-                    className={cls.codeCopyButton}
-                    theme={ThemeButton.OUTLINE}
-                    onClick={codeCopyHandler}
-                >
+                <Button className={cls.codeCopyButton} theme={ThemeButton.OUTLINE} onClick={codeCopyHandler}>
                     {t('Copy')}
                 </Button>
             </div>

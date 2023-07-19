@@ -1,10 +1,11 @@
 import { useTranslation } from 'react-i18next';
 import { classNames } from 'shared/lib/classNames/classNames';
-import { FC } from 'react';
+import React, { FC } from 'react';
 import { CSSTransition } from 'react-transition-group';
 import cls from './Notify.module.scss';
 
 interface Props {
+    children: React.ReactNode
     open: boolean
 }
 

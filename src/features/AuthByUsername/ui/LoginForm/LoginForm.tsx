@@ -28,14 +28,14 @@ const LoginForm:FC<Props> = ({ isOpen, setIsOpen }) => {
     const { password, username } = useAppSelector(selectLoginField);
 
     const setUsernameHandler = useCallback(
-        (value) => {
+        (value: string) => {
             dispatch(setUsername(value));
         },
         [dispatch],
     );
 
     const setPasswordHandler = useCallback(
-        (value) => {
+        (value: string) => {
             dispatch(setUserPassword(value));
         },
         [dispatch],

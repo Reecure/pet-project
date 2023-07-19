@@ -10,10 +10,10 @@ import ArticleCodeComponent from '../ArticleCodeComponent/ArticleCodeComponent';
 import ArticleImageComponent from '../ArticleImageComponent/ArticleImageComponent';
 
 interface Props {
-    article: Article
+    article: Article;
 }
 
-const ArticleDetails:FC<Props> = ({ article }) => {
+const ArticleDetails: FC<Props> = ({ article }) => {
     const { t } = useTranslation();
 
     const blockTypeRender = (blockType: BlockTypes, block: any) => {
@@ -40,7 +40,6 @@ const ArticleDetails:FC<Props> = ({ article }) => {
                     <p className={cls.Title}>{article.title}</p>
                     <p className={cls.subTitle}>{article.subtitle}</p>
                 </div>
-
             </div>
             <div className={cls.articleInfoWrapper}>
                 <div className={cls.articleInfo}>
@@ -53,12 +52,10 @@ const ArticleDetails:FC<Props> = ({ article }) => {
                 </div>
             </div>
 
-            {
-                article.blocks.map((block) => <div key={block.id}>{blockTypeRender(block.type, block)}</div>)
-            }
-
+            {article.blocks.map((block) => (
+                <div key={block.id}>{blockTypeRender(block.type, block)}</div>
+            ))}
         </>
-
     );
 };
 

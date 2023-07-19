@@ -1,9 +1,10 @@
 import { useTranslation } from 'react-i18next';
 import { classNames } from 'shared/lib/classNames/classNames';
-import { FC } from 'react';
+import React, { FC } from 'react';
 import cls from './Code.module.scss';
 
 interface Props {
+    children: React.ReactNode
 }
 
 const Code:FC<Props> = ({ children }) => {

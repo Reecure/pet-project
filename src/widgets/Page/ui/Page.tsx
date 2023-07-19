@@ -1,9 +1,9 @@
-import { useTranslation } from 'react-i18next';
 import { classNames } from 'shared/lib/classNames/classNames';
-import { FC, memo } from 'react';
+import React, { FC, memo } from 'react';
 import cls from './Page.module.scss';
 
 interface Props {
+    children: React.ReactNode
 }
 
 const Page:FC<Props> = ({ children }) => (

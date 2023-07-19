@@ -1,16 +1,11 @@
-// @ts-ignore
 import HTMLWebpackPlugin from 'html-webpack-plugin';
-// @ts-ignore
 import webpack from 'webpack';
-// @ts-ignore
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
+import CircularDependencyPlugin from 'circular-dependency-plugin';
 import { BuildOptions } from './types/config';
 
-export function buildPlugins({
-    isDev,
-    paths,
-}: BuildOptions): webpack.WebpackPluginInstance[] {
+export function buildPlugins({ isDev, paths }: BuildOptions): webpack.WebpackPluginInstance[] {
     return [
         new HTMLWebpackPlugin({
             template: paths.html,
@@ -26,6 +21,10 @@ export function buildPlugins({
         new webpack.HotModuleReplacementPlugin(),
         new BundleAnalyzerPlugin({
             openAnalyzer: false,
+        }),
+        new CircularDependencyPlugin({
+            exclude: /node_modules/,
+            failOnError: true,
         }),
     ];
 }
