@@ -1,16 +1,29 @@
-.Text{
-    .title{
-        font-size: 20px;
-        color: var(--primary-color);
-    }
-    .mainText{
-        font-size: 12px;
-        
-    }
-    
+.Text {
+  .title {
+    font-size: 20px;
+    color: var(--primary-color);
+  }
+
+  .mainText {
+    font-size: 14px;
+
+  }
+
+  .subText {
+    font-size: 12px;
+  }
+
+}
+
+.center {
+  text-align: center;
+}
+
+.right {
+  text-align: right;
 }
 
 .error {
-    font-size: 30px;
-    color: red;
+  font-size: 30px;
+  color: red;
 }

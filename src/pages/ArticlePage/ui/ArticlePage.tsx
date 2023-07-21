@@ -16,7 +16,7 @@ import cls from './ArticlePage.module.scss';
 interface Props {
 }
 
-const ArticlePage:FC<Props> = () => {
+const ArticlePage: FC<Props> = () => {
     const { t } = useTranslation();
 
     const { id } = useParams();
@@ -40,17 +40,15 @@ const ArticlePage:FC<Props> = () => {
         );
     }
     if (error || !id) {
-        return <div>Error</div>;
+        return <div>{t('Error')}</div>;
     }
     if (article === undefined) {
-        return <div>doesnt exsist</div>;
+        return <div>{t('Article doesn`t exist')}</div>;
     }
 
     return (
         <div className={classNames(cls.ArticlePage, {}, [])}>
-
             <ArticleDetails article={article} />
-
             <Comments isLoading={commentLoading} comments={comments} />
         </div>
     );

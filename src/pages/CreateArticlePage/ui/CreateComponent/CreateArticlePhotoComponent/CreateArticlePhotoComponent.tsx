@@ -5,6 +5,8 @@ import { Input, ThemeInput } from 'shared/ui/Input';
 import { Text } from 'shared/ui/Text';
 import { ArticleBlocks, BlockTypes, ImageBlock } from 'enteties/Article/model/types/article';
 import { Button } from 'shared/ui/Button';
+import Image from 'shared/ui/Image/Image';
+import Stack, { StackPosition } from 'shared/ui/Stack/ui/Stack';
 import cls from './CreateArticlePhotoComponent.module.scss';
 
 interface Props {
@@ -13,7 +15,7 @@ interface Props {
     setBlocks: (block: any) => void
 }
 
-const CreateArticlePhotoComponent:FC<Props> = ({ blockId, blocks, setBlocks }) => {
+const CreateArticlePhotoComponent: FC<Props> = ({ blockId, blocks, setBlocks }) => {
     const { t } = useTranslation();
     const [title, setTitle] = useState('');
     const [src, setSrc] = useState('');
@@ -50,25 +52,30 @@ const CreateArticlePhotoComponent:FC<Props> = ({ blockId, blocks, setBlocks }) =
     };
 
     const onDeleteBlockHandler = (blockId: string) => {
-        const updatedBloks = blocks.filter((block) => block.id !== blockId);
-        setBlocks(updatedBloks);
+        const updatedBlocks = blocks.filter((block) => block.id !== blockId);
+        setBlocks(updatedBlocks);
     };
 
     return (
         <div className={classNames(cls.CreateArticlePhotoComponent, {}, [])}>
-            <div className={cls.titleWrapper}>
-                <Text title="Photo Block" />
+            <Stack className={cls.titleWrapper}>
+                <Text title={t('Photo Block')} />
                 <Button onClick={() => onDeleteBlockHandler(blockId)}>X</Button>
-            </div>
+            </Stack>
+            <Stack childrenPosition={StackPosition.CENTER}>
+                <Image src={src} width={400} height={300} />
+            </Stack>
+            <Stack>
 
-            <div>
-                src:
+                {t('src')}
+                :
                 <Input onChange={onSrcChange} value={src} theme={ThemeInput.OUTLINE} />
-            </div>
-            <div>
-                title:
+            </Stack>
+            <Stack>
+                {t('title')}
+                :
                 <Input onChange={onTitleChange} value={title} theme={ThemeInput.OUTLINE} />
-            </div>
+            </Stack>
         </div>
     );
 };

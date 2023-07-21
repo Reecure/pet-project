@@ -1,18 +1,32 @@
-.CreateArticlePage {
-    
-}
 
-.CreateArticleMain{
-    display: flex;
+.CreateArticleMain {
+  display: flex;
 }
 
 
 .blocksWrapper {
-    flex: 1;
-    margin-right: 10px;
+  flex: 1;
+  margin-right: 10px;
 }
 
 .articlesAddBlokButtonsWrapper {
-    min-width: 180px;
-    position: relative;
+  min-width: 180px;
+  position: relative;
 }
+
+
+.previewArticle {
+  padding: 20px;
+  background-color: var(--bg-color);
+}
+
+.modalWrapper {
+  max-width: 80%;
+  width: 100%;
+  margin: 20px auto;
+}
+
+.sendButton {
+  margin-right: 10px;
+}
+

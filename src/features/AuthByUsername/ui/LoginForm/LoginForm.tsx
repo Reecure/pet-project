@@ -2,7 +2,7 @@ import {
     FC, memo, useCallback, useState,
 } from 'react';
 import { useAppDispatch, useAppSelector } from 'app/providers/ReduxProvider/config/hooks';
-import { selectLoginField, setUserPassword, setUsername } from 'features/AuthByUsername/model/slice/loginSlice';
+import { selectLoginField, setUsername, setUserPassword } from 'features/AuthByUsername/model/slice/loginSlice';
 import { getUserByCredentials } from 'features/AuthByUsername/model/services/getUserByCredentials';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Text } from 'shared/ui/Text';
@@ -10,6 +10,7 @@ import { Input } from 'shared/ui/Input';
 import { Button } from 'shared/ui/Button';
 import { useTranslation } from 'react-i18next';
 import { Modal } from 'widgets/Modal';
+import { ModalPositions } from 'widgets/Modal/ui/Modal';
 import cls from './LoginForm.module.scss';
 
 type Props = {
@@ -17,7 +18,7 @@ type Props = {
     setIsOpen: () => void
 }
 
-const LoginForm:FC<Props> = ({ isOpen, setIsOpen }) => {
+const LoginForm: FC<Props> = ({ isOpen, setIsOpen }) => {
     const { t } = useTranslation();
 
     const [pendingButton, setpendingButton] = useState(false);
@@ -62,10 +63,10 @@ const LoginForm:FC<Props> = ({ isOpen, setIsOpen }) => {
     );
 
     return (
-        <Modal isOpen={isOpen} setIsOpen={setIsOpen}>
+        <Modal isOpen={isOpen} setIsOpen={setIsOpen} childrenPosition={ModalPositions.CENTER}>
             <div className={classNames(cls.LoginForm, {}, [])}>
                 <Text
-                    title="Login Form"
+                    title={t('Login Form')}
                     // eslint-disable-next-line no-nested-ternary
                     mainText={`${loginError ? 'Incorrect login or password' : ''}`}
                     haveError={loginError}
