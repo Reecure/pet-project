@@ -1,12 +1,12 @@
 import { DeepPartial } from '@reduxjs/toolkit';
 import { render } from '@testing-library/react';
-import { RootState } from 'app/providers/ReduxProvider/config/store';
-import ReduxProvider from 'app/providers/ReduxProvider/ui/ReduxProvider';
-import { ThemeProvider } from 'app/providers/ThemeProvider';
+import { RootState } from '@/app/providers/ReduxProvider/config/store';
+import ReduxProvider from '@/app/providers/ReduxProvider/ui/ReduxProvider';
+import { ThemeProvider } from '@/app/providers/ThemeProvider';
 import React, { ReactNode } from 'react';
 import { I18nextProvider } from 'react-i18next';
 import { MemoryRouter } from 'react-router-dom';
-import i18nForTest from 'shared/config/i18n/i18nForTest';
+import i18nForTest from '@/shared/config/i18n/i18nForTest';
 
 export interface componentRenderOptions {
     route?: string;

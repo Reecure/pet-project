@@ -1,14 +1,14 @@
-import { useAppDispatch, useAppSelector } from 'app/providers/ReduxProvider/config/hooks';
-import CountriesDropDown from 'enteties/Country/ui/CountriesDropDown';
-import CurrenciesDropDown from 'enteties/Currency/ui/CurrenciesDropDown';
-import { profileFormSelector } from 'enteties/Profile/selectors/profileFormSelector';
-import { profileReadOnlySelector } from 'enteties/Profile/selectors/profileReadOnlySelector';
-import { updateProfile } from 'enteties/Profile/slice/profileSlice';
-import React, { FC, useCallback, useEffect } from 'react';
-import Avatar from 'shared/ui/Avatar/ui/Avatar';
-import { Input } from 'shared/ui/Input';
+import React, { FC, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
-import { User } from 'enteties/User/model/types';
+import { useAppDispatch, useAppSelector } from '@/app/providers/ReduxProvider/config/hooks';
+import CountriesDropDown from '@/enteties/Country/ui/CountriesDropDown';
+import CurrenciesDropDown from '@/enteties/Currency/ui/CurrenciesDropDown';
+import { profileFormSelector } from '@/enteties/Profile/selectors/profileFormSelector';
+import { profileReadOnlySelector } from '@/enteties/Profile/selectors/profileReadOnlySelector';
+import { updateProfile } from '@/enteties/Profile/slice/profileSlice';
+import Avatar from '@/shared/ui/Avatar/ui/Avatar';
+import { Input } from '@/shared/ui/Input';
+import { User } from '@/enteties/User/model/types';
 import cls from './ProfileCard.module.scss';
 
 type Props = {
@@ -79,7 +79,12 @@ const ProfileCard: FC<Props> = ({ userInfo }) => {
                         {t('Username')}
                         :
                     </span>
-                    <Input readOnly={isReadOnly} onChange={setUsernameHandler} value={profileForm?.first} placeholder={userInfo?.first} />
+                    <Input
+                        readOnly={isReadOnly}
+                        onChange={setUsernameHandler}
+                        value={profileForm?.first}
+                        placeholder={userInfo?.first}
+                    />
                 </label>
             </div>
             <div>
@@ -88,7 +93,12 @@ const ProfileCard: FC<Props> = ({ userInfo }) => {
                         {t('Lastname')}
                         :
                     </span>
-                    <Input readOnly={isReadOnly} onChange={setLastnameHandler} value={profileForm?.lastname} placeholder={profileForm?.lastname} />
+                    <Input
+                        readOnly={isReadOnly}
+                        onChange={setLastnameHandler}
+                        value={profileForm?.lastname}
+                        placeholder={profileForm?.lastname}
+                    />
                 </label>
             </div>
             <div>
@@ -97,14 +107,24 @@ const ProfileCard: FC<Props> = ({ userInfo }) => {
                         {t('Age')}
                         :
                     </span>
-                    <Input readOnly={isReadOnly} type="number" onChange={setAgeHandler} value={profileForm?.age} placeholder={profileForm?.age} />
+                    <Input
+                        readOnly={isReadOnly}
+                        type="number"
+                        onChange={setAgeHandler}
+                        value={profileForm?.age}
+                        placeholder={profileForm?.age}
+                    />
                 </label>
             </div>
             <div />
             <p>
                 {t('Country')}
                 :
-                <CountriesDropDown setCurrentCountry={setCountryHandler} canEdit={isReadOnly} defaultCountrie={userInfo?.country} />
+                <CountriesDropDown
+                    setCurrentCountry={setCountryHandler}
+                    canEdit={isReadOnly}
+                    defaultCountrie={userInfo?.country}
+                />
             </p>
             <label htmlFor="">
                 <span>
@@ -112,12 +132,21 @@ const ProfileCard: FC<Props> = ({ userInfo }) => {
                     {t('City')}
                     :
                 </span>
-                <Input readOnly={isReadOnly} onChange={setCityHandler} value={profileForm?.city} placeholder={userInfo?.city} />
+                <Input
+                    readOnly={isReadOnly}
+                    onChange={setCityHandler}
+                    value={profileForm?.city}
+                    placeholder={userInfo?.city}
+                />
             </label>
             <p>
                 {t('Currency')}
                 :
-                <CurrenciesDropDown setCurrentCurrency={setCurrencyHandler} canEdit={isReadOnly} defaultCurrency={userInfo?.currency} />
+                <CurrenciesDropDown
+                    setCurrentCurrency={setCurrencyHandler}
+                    canEdit={isReadOnly}
+                    defaultCurrency={userInfo?.currency}
+                />
             </p>
             <label htmlFor="">
                 <span>

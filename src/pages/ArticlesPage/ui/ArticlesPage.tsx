@@ -1,11 +1,11 @@
 import { useTranslation } from 'react-i18next';
-import { classNames } from 'shared/lib/classNames/classNames';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import {
     FC, useEffect,
 } from 'react';
 import qs from 'qs';
 import { useNavigate, useSearchParams } from 'react-router-dom';
-import { useAppSelector } from 'app/providers/ReduxProvider/config/hooks';
+import { useAppSelector } from '@/app/providers/ReduxProvider/config/hooks';
 import { types } from 'util';
 import cls from './ArticlesPage.module.scss';
 import ArticleHeader from './ArticlesComponents/ArticleHeader/ArticleHeader';

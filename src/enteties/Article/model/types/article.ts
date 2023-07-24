@@ -1,4 +1,4 @@
-import { User } from 'enteties/User/model/types';
+import { User } from '@/enteties/User/model/types';
 
 export enum ArticleTypes {
     IT = 'IT',
@@ -28,6 +28,7 @@ export interface CodeBlock {
     type?: BlockTypes.CODE;
     code: string;
 }
+
 interface Paragraph {
     id: string;
     text: string;
@@ -39,6 +40,7 @@ export interface TextBlock {
     title: string;
     paragraphs: Paragraph[];
 }
+
 export interface ImageBlock {
     id?: string;
     type?: BlockTypes.IMAGE;

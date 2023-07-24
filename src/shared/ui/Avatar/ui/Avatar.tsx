@@ -1,5 +1,5 @@
 import React, { FC, CSSProperties, useMemo } from 'react';
-import { classNames } from 'shared/lib/classNames/classNames';
+import { classNames } from '@/shared/lib/classNames/classNames';
 
 type Props = {
     className?: string

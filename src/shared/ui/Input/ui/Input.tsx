@@ -1,5 +1,5 @@
 import React, { FC, InputHTMLAttributes, memo } from 'react';
-import { classNames } from 'shared/lib/classNames/classNames';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import cls from './Input.module.scss';
 
 export const enum ThemeInput {

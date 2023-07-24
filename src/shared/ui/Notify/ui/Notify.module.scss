@@ -1,43 +1,43 @@
 .Notify {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    padding: 10px 20px;
-    min-width: 200px;
-    font-size: 20px;
-    background-color: var(--primary-color);
-    color: var(--inverted-primary-color);
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 10px 20px;
+  min-width: 200px;
+  font-size: 20px;
+  background-color: var(--primary-color);
+  color: var(--inverted-primary-color);
 }
 
 .notifyActive {
-    animation: notifyAnim .4s forwards ease-in-out;
+  animation: notifyAnim .4s forwards ease-in-out;
 }
 
 
 .notifyExit {
-    animation: notifyAnimReverse .4s forwards ease-in-out;
+  animation: notifyAnimReverse .4s forwards ease-in-out;
 }
 
 
 @keyframes notifyAnim {
-    0% {
-        opacity: 0;
-        right: -50px
-    }
-    80% {
-        right: 30px
-    }
-    100% {
-        opacity: 1;
-        right: 20px
-    }
+  0% {
+    opacity: 0;
+    right: -50px
+  }
+  80% {
+    right: 30px
+  }
+  100% {
+    opacity: 1;
+    right: 20px
+  }
 }
 
 @keyframes notifyAnimReverse {
-    0% {
-        right: 0px
-    }
-    100% {
-        right: -100%
-    }
+  0% {
+    right: 0
+  }
+  100% {
+    right: -100%
+  }
 }

@@ -1,9 +1,7 @@
-import { useTranslation } from 'react-i18next';
-import { classNames } from 'shared/lib/classNames/classNames';
 import { FC } from 'react';
-import { Article, BlockTypes } from 'enteties/Article/model/types/article';
-import Avatar from 'shared/ui/Avatar/ui/Avatar';
 import { AiFillEye, AiOutlineCalendar } from 'react-icons/ai';
+import { Article, BlockTypes } from '@/enteties/Article/model/types/article';
+import Avatar from '@/shared/ui/Avatar/ui/Avatar';
 import cls from './ArticleDetails.module.scss';
 import ArticleTextComponent from '../ArticleTextComponent/ArticleTextComponent';
 import ArticleCodeComponent from '../ArticleCodeComponent/ArticleCodeComponent';
@@ -11,11 +9,10 @@ import ArticleImageComponent from '../ArticleImageComponent/ArticleImageComponen
 
 interface Props {
     article: Article;
+
 }
 
 const ArticleDetails: FC<Props> = ({ article }) => {
-    const { t } = useTranslation();
-
     const blockTypeRender = (blockType: BlockTypes, block: any) => {
         switch (blockType) {
         case BlockTypes.TEXT:

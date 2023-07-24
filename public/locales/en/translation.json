@@ -35,5 +35,14 @@
   "Age": "Age",
   "Create Text Block": "Create Text Block",
   "Create Photo Block": "Create Photo Block",
-  "Create Code Block": "Create Code Block"
+  "Create Code Block": "Create Code Block",
+  "title": "title",
+  "src": "src",
+  "Photo Block": "Photo Block",
+  "Preview Article": "Preview Article",
+  "Send Article": "Send Article",
+  "Code Block": "Code Block",
+  "Error": "Error",
+  "Article doesn`t exist": "Article doesn`t exist",
+  "Login Form": "Login Form"
 }

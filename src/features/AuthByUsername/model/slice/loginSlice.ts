@@ -1,5 +1,5 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit';
-import { RootState } from 'app/providers/ReduxProvider/config/store';
+import { RootState } from '@/app/providers/ReduxProvider/config/store';
 
 interface State {
     username: string,

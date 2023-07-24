@@ -1,16 +1,16 @@
-import { classNames } from 'shared/lib/classNames/classNames';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import { FC, useEffect, memo } from 'react';
-import { useAppDispatch, useAppSelector } from 'app/providers/ReduxProvider/config/hooks';
+import { useAppDispatch, useAppSelector } from '@/app/providers/ReduxProvider/config/hooks';
 import {
     articleHaveMoreSelector, articlePageSelector, articlesLoadingSelector, articlesViewsSelector,
-} from 'pages/ArticlesPage/model/selector/articlesSelector';
+} from '@/pages/ArticlesPage/model/selector/articlesSelector';
 import {
     getArticles, setNextPage, setPrevPage, viewTypes,
-} from 'pages/ArticlesPage/model/slice/articlesSlice';
-import { getAllArticles } from 'pages/ArticlesPage/model/services/getArticles';
-import { Button } from 'shared/ui/Button';
+} from '@/pages/ArticlesPage/model/slice/articlesSlice';
+import { getAllArticles } from '@/pages/ArticlesPage/model/services/getArticles';
+import { Button } from '@/shared/ui/Button';
 import { useTranslation } from 'react-i18next';
-import { Loader } from 'shared/ui/Loader';
+import { Loader } from '@/shared/ui/Loader';
 import cls from './ArticleMainContent.module.scss';
 import ArticleBigComponent from '../ArticleBigComponent/ArticleBigComponent';
 import ArticleSmallComponent from '../ArticleSmallComponent/ArticleSmallComponent';

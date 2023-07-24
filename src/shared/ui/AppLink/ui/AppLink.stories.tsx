@@ -1,6 +1,6 @@
 import { Meta, StoryObj } from '@storybook/react';
-import { StyleDecoration } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
-import { Theme } from 'app/providers/ThemeProvider';
+import { StyleDecoration } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
+import { Theme } from '@/app/providers/ThemeProvider';
 import AppLink from './AppLink';
 
 const meta = {
