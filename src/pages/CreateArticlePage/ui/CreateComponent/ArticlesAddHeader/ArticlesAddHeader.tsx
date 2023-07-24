@@ -1,25 +1,27 @@
 import { useTranslation } from 'react-i18next';
-import { classNames } from '@/shared/lib/classNames/classNames';
 import React, {
-    FC, useMemo, useState, useEffect,
+    FC, useEffect, useMemo, useState,
 } from 'react';
+import { Menu } from '@headlessui/react';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import { Text } from '@/shared/ui/Text';
 import { Input, ThemeInput } from '@/shared/ui/Input';
 import { useAppDispatch } from '@/app/providers/ReduxProvider/config/hooks';
 import {
-    setArticlePreviewImg, setArticleSubTitle, setArticleTitle, setArticleTypes,
+    setArticlePreviewImg,
+    setArticleSubTitle,
+    setArticleTitle,
+    setArticleTypes,
 } from '@/pages/CreateArticlePage/model/slice/addArticleSlice';
-import { Menu } from '@headlessui/react';
-import { ArticleTypes } from 'enteties/Article/model/types/article';
+import { ArticleTypes } from '@/enteties/Article/model/types/article';
 import { Button, ThemeButton } from '@/shared/ui/Button';
-import { ThemeContext } from '@/app/providers/ThemeProvider/lib/themeContext';
 import { Notify } from '@/shared/ui/Notify';
 import cls from './ArticlesAddHeader.module.scss';
 
 interface Props {
 }
 
-const ArticlesAddHeader:FC<Props> = () => {
+const ArticlesAddHeader: FC<Props> = () => {
     const [articleTypes, setarticleTypes] = useState<string[]>([]);
     const [openNotify, setopenNotify] = useState(false);
 
@@ -71,15 +73,33 @@ const ArticlesAddHeader:FC<Props> = () => {
         <div className={classNames(cls.ArticlesAddHeader, {}, [])}>
             <div>
                 <Text title="Title" />
-                <Input required onChange={(e) => { dispatch(setArticleTitle(e.currentTarget.value)); }} theme={ThemeInput.OUTLINE} />
+                <Input
+                    required
+                    onChange={(e) => {
+                        dispatch(setArticleTitle(e.currentTarget.value));
+                    }}
+                    theme={ThemeInput.OUTLINE}
+                />
             </div>
             <div>
                 <Text title="Subtitle" />
-                <Input required onChange={(e) => { dispatch(setArticleSubTitle(e.currentTarget.value)); }} theme={ThemeInput.OUTLINE} />
+                <Input
+                    required
+                    onChange={(e) => {
+                        dispatch(setArticleSubTitle(e.currentTarget.value));
+                    }}
+                    theme={ThemeInput.OUTLINE}
+                />
             </div>
             <div>
                 <Text title="Img" />
-                <Input required onChange={(e) => { dispatch(setArticlePreviewImg(e.currentTarget.value)); }} theme={ThemeInput.OUTLINE} />
+                <Input
+                    required
+                    onChange={(e) => {
+                        dispatch(setArticlePreviewImg(e.currentTarget.value));
+                    }}
+                    theme={ThemeInput.OUTLINE}
+                />
             </div>
             <div>
                 <div className={cls.articlesWrapper}>

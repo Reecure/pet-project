@@ -1,11 +1,10 @@
 import {
     FC, memo, useCallback, useState,
 } from 'react';
-import { classNames } from '@/shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
-import { useAppDispatch, useAppSelector } from '@/app/providers/ReduxProvider/config/hooks';
-import { userDataSelector } from 'enteties/User/model/selectors/userDataSelector';
-import { logout } from 'enteties/User/model/slice/userSlice';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { useAppSelector } from '@/app/providers/ReduxProvider/config/hooks';
+import { userDataSelector } from '@/enteties/User/model/selectors/userDataSelector';
 import { LoginForm } from '@/features/AuthByUsername';
 import { Button } from '@/shared/ui/Button';
 import cls from './Navbar.module.scss';
@@ -29,7 +28,10 @@ const Navbar: FC<NavbarProps> = ({ className }) => {
         <nav data-testid="navbar" className={classNames(cls.Navbar, {}, [className])}>
             <div>{selectIsLogged !== undefined && <UserDropdownProfile user={selectIsLogged} />}</div>
             <div className={cls.authButtons}>
-                <div>{selectIsLogged === undefined && <Button onClick={loginModalOpenHandler}>{t('Login')}</Button>}</div>
+                <div>
+                    {selectIsLogged === undefined
+                    && <Button onClick={loginModalOpenHandler}>{t('Login')}</Button>}
+                </div>
                 <LoginForm isOpen={loginModalOpen} setIsOpen={loginModalOpenHandler} />
             </div>
         </nav>

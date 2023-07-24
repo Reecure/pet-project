@@ -1,16 +1,15 @@
 import { useTranslation } from 'react-i18next';
-import { classNames } from '@/shared/lib/classNames/classNames';
-import { FC, useEffect } from 'react';
-import { logout } from 'enteties/User/model/slice/userSlice';
-import { Avatar } from '@/shared/ui/Avatar';
+import { FC } from 'react';
 import { Menu } from '@headlessui/react';
+import { useNavigate } from 'react-router-dom';
+import { logout } from '@/enteties/User/model/slice/userSlice';
+import { Avatar } from '@/shared/ui/Avatar';
 import { AppLink, AppLinkTheme } from '@/shared/ui/AppLink';
-import { Route, useNavigate, useNavigation } from 'react-router-dom';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import { AppRoutes } from '@/shared/config/routeConfig/routeConfig';
 import { useAppDispatch, useAppSelector } from '@/app/providers/ReduxProvider/config/hooks';
-import { Button, ThemeButton } from '@/shared/ui/Button';
-import { User } from 'enteties/User/model/types';
-import { isAdmin, isManager, userRolesSelector } from 'enteties/User/model/selectors/userRoleSelector';
+import { User } from '@/enteties/User/model/types';
+import { isAdmin, isManager, userRolesSelector } from '@/enteties/User/model/selectors/userRoleSelector';
 import cls from './UserDropdownProfile.module.scss';
 
 interface Props {

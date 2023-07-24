@@ -1,11 +1,11 @@
 import { useTranslation } from 'react-i18next';
-import { classNames } from '@/shared/lib/classNames/classNames';
 import {
     FC, useCallback, useEffect, useState,
 } from 'react';
-import { Article, BlockTypes } from 'enteties/Article/model/types/article';
-import Avatar from '@/shared/ui/Avatar/ui/Avatar';
 import { useNavigate } from 'react-router-dom';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { Article, BlockTypes } from '@/enteties/Article/model/types/article';
+import Avatar from '@/shared/ui/Avatar/ui/Avatar';
 import { RoutePath } from '@/shared/config/routeConfig/routeConfig';
 import { Button, ThemeButton } from '@/shared/ui/Button';
 import { Views } from '@/shared/ui/Views';
@@ -15,7 +15,7 @@ interface Props {
     article: Article
 }
 
-const ArticleBigComponent:FC<Props> = ({ article }) => {
+const ArticleBigComponent: FC<Props> = ({ article }) => {
     const { t } = useTranslation();
 
     const [paragraph, setParagraph] = useState('');

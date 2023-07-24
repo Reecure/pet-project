@@ -1,13 +1,13 @@
 import { useTranslation } from 'react-i18next';
-import { classNames } from '@/shared/lib/classNames/classNames';
 import { ChangeEvent, FC, useCallback } from 'react';
+import { FaRegPaperPlane } from 'react-icons/fa';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import Avatar from '@/shared/ui/Avatar/ui/Avatar';
 import { useAppDispatch, useAppSelector } from '@/app/providers/ReduxProvider/config/hooks';
-import { userDataSelector } from 'enteties/User/model/selectors/userDataSelector';
+import { userDataSelector } from '@/enteties/User/model/selectors/userDataSelector';
 import { Input } from '@/shared/ui/Input';
 import { Button } from '@/shared/ui/Button';
 import { ThemeButton } from '@/shared/ui/Button/ui/Button';
-import { FaRegPaperPlane } from 'react-icons/fa';
 import { addComment } from '../model/services/addComment';
 import { setCommentText } from '../model/slice/addCommentSlice';
 import { commentTextSelector } from '../model/selectors/commentTextSelector';
@@ -18,7 +18,7 @@ interface Props {
 
 }
 
-const AddComment:FC<Props> = () => {
+const AddComment: FC<Props> = () => {
     const { t } = useTranslation();
 
     const dispatch = useAppDispatch();
@@ -27,7 +27,7 @@ const AddComment:FC<Props> = () => {
     const currentUser = useAppSelector(userDataSelector);
 
     const setCommentHandler = useCallback(
-        (e:ChangeEvent<HTMLInputElement>) => {
+        (e: ChangeEvent<HTMLInputElement>) => {
             dispatch(setCommentText(e.currentTarget.value));
         },
         [dispatch],

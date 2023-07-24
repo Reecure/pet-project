@@ -1,12 +1,11 @@
 import React, { Suspense, useMemo } from 'react';
 import { Route, Routes } from 'react-router-dom';
-import { AppRoutesProps, routeConfig } from '@/shared/config/routeConfig/routeConfig';
 import { useTranslation } from 'react-i18next';
+import { isLoggedSelector } from '@/enteties/User/model/selectors/isLoggedSelector';
+import { routeConfig } from '@/shared/config/routeConfig/routeConfig';
 import { useAppSelector } from '@/app/providers/ReduxProvider/config/hooks';
-import { isLoggedSelector } from 'enteties/User/model/selectors/isLoggedSelector';
 import { Loader } from '@/shared/ui/Loader';
-import { isAdmin, userRolesSelector } from 'enteties/User/model/selectors/userRoleSelector';
-import { FaBullseye } from 'react-icons/fa';
+import { userRolesSelector } from '@/enteties/User/model/selectors/userRoleSelector';
 
 const AppRouter = () => {
     const isLogged = useAppSelector(isLoggedSelector);

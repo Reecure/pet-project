@@ -1,6 +1,6 @@
-import { classNames } from '@/shared/lib/classNames/classNames';
 import { FC, memo } from 'react';
-import { ImageBlock } from 'enteties/Article/model/types/article';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { ImageBlock } from '@/enteties/Article/model/types/article';
 import Image from '@/shared/ui/Image/Image';
 import Stack, { StackPosition } from '@/shared/ui/Stack/ui/Stack';
 import { Text } from '@/shared/ui/Text';

@@ -1,11 +1,11 @@
 import { useTranslation } from 'react-i18next';
-import { classNames } from '@/shared/lib/classNames/classNames';
 import { FC } from 'react';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import { useAppSelector } from '@/app/providers/ReduxProvider/config/hooks';
-import { isLoggedSelector } from 'enteties/User/model/selectors/isLoggedSelector';
+import { isLoggedSelector } from '@/enteties/User/model/selectors/isLoggedSelector';
 import { sidebarIconRender } from '@/widgets/Sidebar/helpers/sidebarIconRender';
 
-import { userDataSelector } from 'enteties/User/model/selectors/userDataSelector';
+import { userDataSelector } from '@/enteties/User/model/selectors/userDataSelector';
 import { AppLink } from '@/shared/ui/AppLink';
 import { Links, SidebarLink } from '../../../model/item';
 import cls from './SidebarItem.module.scss';
@@ -15,7 +15,7 @@ interface Props {
     open: boolean
 }
 
-const SidebarItem:FC<Props> = ({ link, open }) => {
+const SidebarItem: FC<Props> = ({ link, open }) => {
     const { t } = useTranslation();
 
     const selectIsLogged = useAppSelector(isLoggedSelector);

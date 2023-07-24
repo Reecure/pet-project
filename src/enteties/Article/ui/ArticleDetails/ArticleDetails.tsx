@@ -1,7 +1,7 @@
 import { FC } from 'react';
-import { Article, BlockTypes } from 'enteties/Article/model/types/article';
-import Avatar from '@/shared/ui/Avatar/ui/Avatar';
 import { AiFillEye, AiOutlineCalendar } from 'react-icons/ai';
+import { Article, BlockTypes } from '@/enteties/Article/model/types/article';
+import Avatar from '@/shared/ui/Avatar/ui/Avatar';
 import cls from './ArticleDetails.module.scss';
 import ArticleTextComponent from '../ArticleTextComponent/ArticleTextComponent';
 import ArticleCodeComponent from '../ArticleCodeComponent/ArticleCodeComponent';

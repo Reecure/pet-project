@@ -3,7 +3,7 @@ import axios from 'axios';
 import { RootState } from '@/app/providers/ReduxProvider/config/store';
 
 import { USER_LOCALSTORAGE_KEY } from '@/shared/constants/localStorage';
-import { User } from 'enteties/User/model/types';
+import { User } from '@/enteties/User/model/types';
 import { profileFormSelector } from '../selectors/profileFormSelector';
 
 interface ThunkConfig {

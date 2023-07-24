@@ -1,9 +1,7 @@
 // addArticle
 
-import { PayloadAction, createSlice } from '@reduxjs/toolkit';
-import {
-    ArticleBlocks, ArticleTypes, BlockTypes, CodeBlock, ImageBlock, TextBlock,
-} from 'enteties/Article/model/types/article';
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { ArticleBlocks } from '@/enteties/Article/model/types/article';
 
 interface Props {
     title: string,
@@ -14,7 +12,7 @@ interface Props {
     blocks: ArticleBlocks[]
 }
 
-const initialState:Props = {
+const initialState: Props = {
     title: '',
     subtitle: '',
     img: '',

@@ -1,9 +1,9 @@
 import { useTranslation } from 'react-i18next';
-import { classNames } from '@/shared/lib/classNames/classNames';
 import React, { FC, useState } from 'react';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import { Input, ThemeInput } from '@/shared/ui/Input';
 import { Text } from '@/shared/ui/Text';
-import { ArticleBlocks, BlockTypes, ImageBlock } from 'enteties/Article/model/types/article';
+import { ArticleBlocks, BlockTypes, ImageBlock } from '@/enteties/Article/model/types/article';
 import { Button } from '@/shared/ui/Button';
 import Image from '@/shared/ui/Image/Image';
 import Stack, { StackPosition } from '@/shared/ui/Stack/ui/Stack';

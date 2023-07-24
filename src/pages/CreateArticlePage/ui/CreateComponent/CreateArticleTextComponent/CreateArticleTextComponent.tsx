@@ -1,11 +1,11 @@
 import { useTranslation } from 'react-i18next';
-import { classNames } from '@/shared/lib/classNames/classNames';
 import React, { FC, useState } from 'react';
+import { nanoid } from '@reduxjs/toolkit';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import { Input, ThemeInput } from '@/shared/ui/Input';
 import { Text } from '@/shared/ui/Text';
 import { Button } from '@/shared/ui/Button';
-import { nanoid } from '@reduxjs/toolkit';
-import { ArticleBlocks, BlockTypes, TextBlock } from 'enteties/Article/model/types/article';
+import { ArticleBlocks, BlockTypes, TextBlock } from '@/enteties/Article/model/types/article';
 import cls from './CreateArticleTextComponent.module.scss';
 
 interface Props {
@@ -20,7 +20,7 @@ interface Paragraph {
 
 }
 
-const CreateArticleTextComponent:FC<Props> = ({ blockId, blocks, setBlocks }) => {
+const CreateArticleTextComponent: FC<Props> = ({ blockId, blocks, setBlocks }) => {
     const [paragraphs, setParagraphs] = useState<Paragraph[]>([{ id: nanoid(), text: '' }]);
     const [title, setTitle] = useState('');
     const { t } = useTranslation();
@@ -64,7 +64,7 @@ const CreateArticleTextComponent:FC<Props> = ({ blockId, blocks, setBlocks }) =>
     };
 
     const onParagraphChange = (e: React.ChangeEvent<HTMLTextAreaElement>, paragraphId: string) => {
-        const updatedParagraph:Paragraph = {
+        const updatedParagraph: Paragraph = {
             id: paragraphId,
             text: e.currentTarget.value,
         };
@@ -101,7 +101,12 @@ const CreateArticleTextComponent:FC<Props> = ({ blockId, blocks, setBlocks }) =>
                 {
                     paragraphs.map((paragraph, i) => (
                         <div key={paragraph.id} className={cls.paragraphWrapper}>
-                            <textarea onChange={(e) => onParagraphChange(e, paragraph.id)} className={cls.textArea} name="" rows={5} />
+                            <textarea
+                                onChange={(e) => onParagraphChange(e, paragraph.id)}
+                                className={cls.textArea}
+                                name=""
+                                rows={5}
+                            />
                             <Button onClick={() => deleteParagraphHandler(paragraph.id)}>X</Button>
                         </div>
                     ))

@@ -1,7 +1,7 @@
 import {
-    EntityState, PayloadAction, createEntityAdapter, createSlice,
+    createEntityAdapter, createSlice, EntityState, PayloadAction,
 } from '@reduxjs/toolkit';
-import { Article, ArticleTypes } from 'enteties/Article/model/types/article';
+import { Article, ArticleTypes } from '@/enteties/Article/model/types/article';
 import { RootState } from '@/app/providers/ReduxProvider/config/store';
 import { getAllArticles } from '../services/getArticles';
 

@@ -1,5 +1,5 @@
-import { EntityState, createEntityAdapter, createSlice } from '@reduxjs/toolkit';
-import { IComment } from 'enteties/Comment/model/types/comment';
+import { createEntityAdapter, createSlice, EntityState } from '@reduxjs/toolkit';
+import { IComment } from '@/enteties/Comment/model/types/comment';
 import { RootState } from '@/app/providers/ReduxProvider/config/store';
 import { getCommentsByArticleId } from '../services/getCommentsByArticleId';
 

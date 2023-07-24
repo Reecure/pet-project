@@ -7,7 +7,7 @@ import { ArticlesPage } from '@/pages/ArticlesPage';
 import { ArticlePage } from '@/pages/ArticlePage';
 import { CreateArticlePage } from '@/pages/CreateArticlePage';
 import { AdminPage } from '@/pages/AdminPage';
-import { Roles } from 'enteties/User/model/types';
+import { Roles } from '@/enteties/User/model/types';
 
 export type AppRoutesProps = RouteProps & {
     authOnly?: boolean;

@@ -1,6 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
-import { IComment } from 'enteties/Comment/model/types/comment';
+import { IComment } from '@/enteties/Comment/model/types/comment';
 import { USER_LOCALSTORAGE_KEY } from '@/shared/constants/localStorage';
 
 export const getCommentsByArticleId = createAsyncThunk('comments/getCommentsByArticleId', async (articleId: string) => {

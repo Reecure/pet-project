@@ -1,16 +1,23 @@
 import { useTranslation } from 'react-i18next';
-import { classNames } from '@/shared/lib/classNames/classNames';
 import {
-    FC, useCallback, ChangeEvent, useMemo,
+    ChangeEvent, FC, useCallback, useMemo,
 } from 'react';
+import { BsFillGrid3X3GapFill } from 'react-icons/bs';
+import { CiGrid2H } from 'react-icons/ci';
+import { classNames } from '@/shared/lib/classNames/classNames';
 
 import { useAppDispatch, useAppSelector } from '@/app/providers/ReduxProvider/config/hooks';
 import {
-    OrderType, resetPage, setSortByField, setSortByOrder, setSortByType, setViewType, sortFields, viewTypes,
+    OrderType,
+    resetPage,
+    setSortByField,
+    setSortByOrder,
+    setSortByType,
+    setViewType,
+    sortFields,
+    viewTypes,
 } from '@/pages/ArticlesPage/model/slice/articlesSlice';
-import { BsFillGrid3X3GapFill } from 'react-icons/bs';
-import { CiGrid2H } from 'react-icons/ci';
-import { ArticleTypes } from 'enteties/Article/model/types/article';
+import { ArticleTypes } from '@/enteties/Article/model/types/article';
 import { getAllArticles } from '@/pages/ArticlesPage/model/services/getArticles';
 import { articleTypesSelector } from '@/pages/ArticlesPage/model/selector/articlesSelector';
 import { Button, ThemeButton } from '@/shared/ui/Button';
@@ -31,7 +38,7 @@ const options = [
     },
 ];
 
-const ArticleHeader:FC<Props> = () => {
+const ArticleHeader: FC<Props> = () => {
     const { t } = useTranslation();
     const dispatch = useAppDispatch();
     const types = useAppSelector(articleTypesSelector);
@@ -73,7 +80,10 @@ const ArticleHeader:FC<Props> = () => {
 
     const memoTypes = useMemo(() => Object.values(ArticleTypes).map((type) => (
         <p
-            onClick={() => { dispatch(setSortByType(type)); dispatch(getAllArticles()); }}
+            onClick={() => {
+                dispatch(setSortByType(type));
+                dispatch(getAllArticles());
+            }}
             className={classNames(cls.type, { [cls.selected]: types.indexOf(type) !== -1 }, [])}
         >
             {type}

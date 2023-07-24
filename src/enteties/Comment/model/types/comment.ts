@@ -1,4 +1,4 @@
-import { User } from 'enteties/User/model/types';
+import { User } from '@/enteties/User/model/types';
 
 export interface IComment {
     id: string;
