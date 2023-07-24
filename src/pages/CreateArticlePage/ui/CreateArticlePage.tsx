@@ -1,15 +1,15 @@
 import { useTranslation } from 'react-i18next';
-import { classNames } from 'shared/lib/classNames/classNames';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import {
     FC, useCallback, useEffect, useMemo, useState,
 } from 'react';
-import { Button } from 'shared/ui/Button';
+import { Button } from '@/shared/ui/Button';
 import { ArticleBlocks, BlockTypes } from 'enteties/Article/model/types/article';
-import { useAppDispatch, useAppSelector } from 'app/providers/ReduxProvider/config/hooks';
-import { Modal } from 'widgets/Modal';
+import { useAppDispatch, useAppSelector } from '@/app/providers/ReduxProvider/config/hooks';
+import { Modal } from '@/widgets/Modal';
 import { ArticleDetails } from 'enteties/Article';
 import { userDataSelector } from 'enteties/User/model/selectors/userDataSelector';
-import Stack from 'shared/ui/Stack/ui/Stack';
+import Stack from '@/shared/ui/Stack/ui/Stack';
 import cls from './CreateArticlePage.module.scss';
 import CreateArticleTextComponent from './CreateComponent/CreateArticleTextComponent/CreateArticleTextComponent';
 import CreateArticleCodeComponent from './CreateComponent/CreateArticleCodeComponent/CreateArticleCodeComponent';

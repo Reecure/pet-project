@@ -1,16 +1,16 @@
 import { useTranslation } from 'react-i18next';
-import { classNames } from 'shared/lib/classNames/classNames';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import { FC, memo, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import { useAppDispatch, useAppSelector } from 'app/providers/ReduxProvider/config/hooks';
+import { useAppDispatch, useAppSelector } from '@/app/providers/ReduxProvider/config/hooks';
 import { getArticleById } from 'enteties/Article/services/getArticleById';
 import { ArticleAllProps } from 'enteties/Article/selectors/articleSelector';
 import { ArticleDetails } from 'enteties/Article';
-import Comments from 'features/getComments/ui/Comments';
-import { getCommentsByArticleId } from 'features/getComments/model/services/getCommentsByArticleId';
-import { getArticleComments } from 'features/getComments/model/slice/commentsSlice';
-import { commentisLoading } from 'features/getComments/model/selectors/commentPropsSelector';
-import { Loader } from 'shared/ui/Loader';
+import Comments from '@/features/getComments/ui/Comments';
+import { getCommentsByArticleId } from '@/features/getComments/model/services/getCommentsByArticleId';
+import { getArticleComments } from '@/features/getComments/model/slice/commentsSlice';
+import { commentisLoading } from '@/features/getComments/model/selectors/commentPropsSelector';
+import { Loader } from '@/shared/ui/Loader';
 import cls from './ArticlePage.module.scss';
 
 interface Props {

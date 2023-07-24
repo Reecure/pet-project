@@ -3,8 +3,8 @@ import axios from 'axios';
 import { ArticleFields } from 'enteties/Article/selectors/articleSelector';
 import { IComment } from 'enteties/Comment/model/types/comment';
 import { userDataSelector } from 'enteties/User/model/selectors/userDataSelector';
-import { getCommentsByArticleId } from 'features/getComments/model/services/getCommentsByArticleId';
-import { USER_LOCALSTORAGE_KEY } from 'shared/constants/localStorage';
+import { getCommentsByArticleId } from '@/features/getComments/model/services/getCommentsByArticleId';
+import { USER_LOCALSTORAGE_KEY } from '@/shared/constants/localStorage';
 
 export const addComment = createAsyncThunk<IComment, string>('comments/addComment', async (comment, thunkApi:any) => {
     const { getState, dispatch } = thunkApi;

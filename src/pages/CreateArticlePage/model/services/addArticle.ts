@@ -2,7 +2,7 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 import { Article, ArticleForSend } from 'enteties/Article/model/types/article';
 import { userDataSelector } from 'enteties/User/model/selectors/userDataSelector';
-import { USER_LOCALSTORAGE_KEY } from 'shared/constants/localStorage';
+import { USER_LOCALSTORAGE_KEY } from '@/shared/constants/localStorage';
 
 export const addArticle = createAsyncThunk<Article, ArticleForSend>('comments/addComment', async (article, thunkApi:any) => {
     const { getState } = thunkApi;

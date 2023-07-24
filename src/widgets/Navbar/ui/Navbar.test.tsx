@@ -1,4 +1,4 @@
-import { ComponentRender } from 'shared/lib/tests/componentRender/ComponentRender';
+import { ComponentRender } from '@/shared/lib/tests/componentRender/ComponentRender';
 import { screen } from '@testing-library/react';
 import Navbar from './Navbar';
 

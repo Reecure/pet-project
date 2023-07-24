@@ -1,9 +1,9 @@
 import { useTranslation } from 'react-i18next';
-import { classNames } from 'shared/lib/classNames/classNames';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import { FC, useCallback } from 'react';
 import { nanoid } from '@reduxjs/toolkit';
 import { ArticleBlocks, BlockTypes } from 'enteties/Article/model/types/article';
-import { Button } from 'shared/ui/Button';
+import { Button } from '@/shared/ui/Button';
 import cls from './ArticlesAddBlokButtons.module.scss';
 
 interface Props {

@@ -1,11 +1,11 @@
 import { useTranslation } from 'react-i18next';
-import { classNames } from 'shared/lib/classNames/classNames';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import { FC } from 'react';
-import { useAppDispatch, useAppSelector } from 'app/providers/ReduxProvider/config/hooks';
+import { useAppDispatch, useAppSelector } from '@/app/providers/ReduxProvider/config/hooks';
 import Comment from 'enteties/Comment/ui/Comment';
-import AddComment from 'features/addComment/ui/AddComment';
+import AddComment from '@/features/addComment/ui/AddComment';
 import { IComment } from 'enteties/Comment/model/types/comment';
-import { Loader } from 'shared/ui/Loader';
+import { Loader } from '@/shared/ui/Loader';
 import cls from './Comments.module.scss';
 
 interface Props {

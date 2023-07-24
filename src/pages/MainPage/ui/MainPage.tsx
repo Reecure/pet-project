@@ -5,11 +5,12 @@ interface Props {
 
 }
 
-const MainPage:FC<Props> = () => {
+const MainPage: FC<Props> = () => {
     const { t } = useTranslation();
 
     return (
         <div>
+
             <div>{t('Main Page')}</div>
         </div>
     );

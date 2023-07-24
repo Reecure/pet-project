@@ -1,12 +1,12 @@
 import { useTranslation } from 'react-i18next';
-import { classNames } from 'shared/lib/classNames/classNames';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import { FC } from 'react';
-import { useAppSelector } from 'app/providers/ReduxProvider/config/hooks';
+import { useAppSelector } from '@/app/providers/ReduxProvider/config/hooks';
 import { isLoggedSelector } from 'enteties/User/model/selectors/isLoggedSelector';
-import { sidebarIconRender } from 'widgets/Sidebar/helpers/sidebarIconRender';
+import { sidebarIconRender } from '@/widgets/Sidebar/helpers/sidebarIconRender';
 
 import { userDataSelector } from 'enteties/User/model/selectors/userDataSelector';
-import { AppLink } from 'shared/ui/AppLink';
+import { AppLink } from '@/shared/ui/AppLink';
 import { Links, SidebarLink } from '../../../model/item';
 import cls from './SidebarItem.module.scss';
 

@@ -1,13 +1,13 @@
 import { configureStore } from '@reduxjs/toolkit';
 import counter from 'enteties/Counter/model/slice/counterSlice';
 import user from 'enteties/User/model/slice/userSlice';
-import { loginReducer } from 'features/AuthByUsername';
+import { loginReducer } from '@/features/AuthByUsername';
 import { profileReducer } from 'enteties/Profile';
 import { articleReducer } from 'enteties/Article';
-import { commentsReducer } from 'features/getComments';
-import { addCommentReducer } from 'features/addComment';
-import { articlesReducer } from 'pages/ArticlesPage';
-import { addArticleReducer } from 'pages/CreateArticlePage';
+import { commentsReducer } from '@/features/getComments';
+import { addCommentReducer } from '@/features/addComment';
+import { articlesReducer } from '@/pages/ArticlesPage';
+import { addArticleReducer } from '@/pages/CreateArticlePage';
 
 export const store = configureStore({
     reducer: {

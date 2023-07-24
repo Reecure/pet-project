@@ -1,12 +1,12 @@
-import { useAppDispatch, useAppSelector } from 'app/providers/ReduxProvider/config/hooks';
+import { useAppDispatch, useAppSelector } from '@/app/providers/ReduxProvider/config/hooks';
 import CountriesDropDown from 'enteties/Country/ui/CountriesDropDown';
 import CurrenciesDropDown from 'enteties/Currency/ui/CurrenciesDropDown';
 import { profileFormSelector } from 'enteties/Profile/selectors/profileFormSelector';
 import { profileReadOnlySelector } from 'enteties/Profile/selectors/profileReadOnlySelector';
 import { updateProfile } from 'enteties/Profile/slice/profileSlice';
 import React, { FC, useCallback, useEffect } from 'react';
-import Avatar from 'shared/ui/Avatar/ui/Avatar';
-import { Input } from 'shared/ui/Input';
+import Avatar from '@/shared/ui/Avatar/ui/Avatar';
+import { Input } from '@/shared/ui/Input';
 import { useTranslation } from 'react-i18next';
 import { User } from 'enteties/User/model/types';
 import cls from './ProfileCard.module.scss';

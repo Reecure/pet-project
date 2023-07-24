@@ -1,6 +1,6 @@
 import { EntityState, createEntityAdapter, createSlice } from '@reduxjs/toolkit';
 import { IComment } from 'enteties/Comment/model/types/comment';
-import { RootState } from 'app/providers/ReduxProvider/config/store';
+import { RootState } from '@/app/providers/ReduxProvider/config/store';
 import { getCommentsByArticleId } from '../services/getCommentsByArticleId';
 
 interface Props extends EntityState<IComment> {

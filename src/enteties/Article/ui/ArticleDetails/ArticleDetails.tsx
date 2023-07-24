@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import { Article, BlockTypes } from 'enteties/Article/model/types/article';
-import Avatar from 'shared/ui/Avatar/ui/Avatar';
+import Avatar from '@/shared/ui/Avatar/ui/Avatar';
 import { AiFillEye, AiOutlineCalendar } from 'react-icons/ai';
 import cls from './ArticleDetails.module.scss';
 import ArticleTextComponent from '../ArticleTextComponent/ArticleTextComponent';

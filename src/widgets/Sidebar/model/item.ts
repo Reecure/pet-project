@@ -1,5 +1,5 @@
-import { AppRoutes } from 'shared/config/routeConfig/routeConfig';
-import { AppLinkTheme } from 'shared/ui/AppLink';
+import { AppRoutes } from '@/shared/config/routeConfig/routeConfig';
+import { AppLinkTheme } from '@/shared/ui/AppLink';
 
 export const enum Links {
     Main = 'Main',

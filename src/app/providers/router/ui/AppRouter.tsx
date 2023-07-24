@@ -1,10 +1,10 @@
 import React, { Suspense, useMemo } from 'react';
 import { Route, Routes } from 'react-router-dom';
-import { AppRoutesProps, routeConfig } from 'shared/config/routeConfig/routeConfig';
+import { AppRoutesProps, routeConfig } from '@/shared/config/routeConfig/routeConfig';
 import { useTranslation } from 'react-i18next';
-import { useAppSelector } from 'app/providers/ReduxProvider/config/hooks';
+import { useAppSelector } from '@/app/providers/ReduxProvider/config/hooks';
 import { isLoggedSelector } from 'enteties/User/model/selectors/isLoggedSelector';
-import { Loader } from 'shared/ui/Loader';
+import { Loader } from '@/shared/ui/Loader';
 import { isAdmin, userRolesSelector } from 'enteties/User/model/selectors/userRoleSelector';
 import { FaBullseye } from 'react-icons/fa';
 

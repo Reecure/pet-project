@@ -1,9 +1,9 @@
 import { useTranslation } from 'react-i18next';
-import { classNames } from 'shared/lib/classNames/classNames';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import React, { FC, useState } from 'react';
-import { Input, ThemeInput } from 'shared/ui/Input';
-import { Text } from 'shared/ui/Text';
-import { Button } from 'shared/ui/Button';
+import { Input, ThemeInput } from '@/shared/ui/Input';
+import { Text } from '@/shared/ui/Text';
+import { Button } from '@/shared/ui/Button';
 import { nanoid } from '@reduxjs/toolkit';
 import { ArticleBlocks, BlockTypes, TextBlock } from 'enteties/Article/model/types/article';
 import cls from './CreateArticleTextComponent.module.scss';

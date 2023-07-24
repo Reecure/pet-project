@@ -1,11 +1,11 @@
-import { useAppDispatch, useAppSelector } from 'app/providers/ReduxProvider/config/hooks';
+import { useAppDispatch, useAppSelector } from '@/app/providers/ReduxProvider/config/hooks';
 import { profileIsLoadingSelector } from 'enteties/Profile/selectors/profileIsLoadingSelector';
 import { profileSelector } from 'enteties/Profile/selectors/profileSelector';
 import { getUserProfile } from 'enteties/Profile/services/getUserProfile';
 import { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { Loader } from 'shared/ui/Loader';
+import { Loader } from '@/shared/ui/Loader';
 import ProfileCard from './ProfileCard/ProfileCard';
 import ProfilePageHeader from './ProfilePageHeader/ProfilePageHeader';
 import cls from './ProfilePage.module.scss';

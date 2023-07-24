@@ -1,19 +1,19 @@
 import { useTranslation } from 'react-i18next';
-import { classNames } from 'shared/lib/classNames/classNames';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import React, {
     FC, useMemo, useState, useEffect,
 } from 'react';
-import { Text } from 'shared/ui/Text';
-import { Input, ThemeInput } from 'shared/ui/Input';
-import { useAppDispatch } from 'app/providers/ReduxProvider/config/hooks';
+import { Text } from '@/shared/ui/Text';
+import { Input, ThemeInput } from '@/shared/ui/Input';
+import { useAppDispatch } from '@/app/providers/ReduxProvider/config/hooks';
 import {
     setArticlePreviewImg, setArticleSubTitle, setArticleTitle, setArticleTypes,
-} from 'pages/CreateArticlePage/model/slice/addArticleSlice';
+} from '@/pages/CreateArticlePage/model/slice/addArticleSlice';
 import { Menu } from '@headlessui/react';
 import { ArticleTypes } from 'enteties/Article/model/types/article';
-import { Button, ThemeButton } from 'shared/ui/Button';
-import { ThemeContext } from 'app/providers/ThemeProvider/lib/themeContext';
-import { Notify } from 'shared/ui/Notify';
+import { Button, ThemeButton } from '@/shared/ui/Button';
+import { ThemeContext } from '@/app/providers/ThemeProvider/lib/themeContext';
+import { Notify } from '@/shared/ui/Notify';
 import cls from './ArticlesAddHeader.module.scss';
 
 interface Props {

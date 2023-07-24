@@ -1,4 +1,4 @@
-import { classNames } from 'shared/lib/classNames/classNames';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import React, { FC, memo } from 'react';
 import cls from './Page.module.scss';
 

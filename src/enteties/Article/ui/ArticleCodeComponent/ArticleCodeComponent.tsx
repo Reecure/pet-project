@@ -1,11 +1,11 @@
 import { useTranslation } from 'react-i18next';
-import { classNames } from 'shared/lib/classNames/classNames';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import {
     FC, useState, useEffect, useCallback, memo,
 } from 'react';
-import { Button, ThemeButton } from 'shared/ui/Button';
-import { Code } from 'shared/ui/Code';
-import { Notify } from 'shared/ui/Notify';
+import { Button, ThemeButton } from '@/shared/ui/Button';
+import { Code } from '@/shared/ui/Code';
+import { Notify } from '@/shared/ui/Notify';
 import { CodeBlock } from '../../model/types/article';
 import cls from './ArticleCodeComponent.module.scss';
 

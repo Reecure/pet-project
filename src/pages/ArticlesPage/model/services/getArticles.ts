@@ -1,7 +1,7 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import { useAppSelector } from 'app/providers/ReduxProvider/config/hooks';
+import { useAppSelector } from '@/app/providers/ReduxProvider/config/hooks';
 import axios from 'axios';
-import { USER_LOCALSTORAGE_KEY } from 'shared/constants/localStorage';
+import { USER_LOCALSTORAGE_KEY } from '@/shared/constants/localStorage';
 import { Article, ArticleTypes } from 'enteties/Article/model/types/article';
 import {
     articleFieldSelector, articleOrderSelector, articlePageSelector, articleTypesSelector, articlesLimitSelector,

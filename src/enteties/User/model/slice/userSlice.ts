@@ -1,5 +1,5 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit';
-import { USER_LOCALSTORAGE_KEY } from 'shared/constants/localStorage';
+import { USER_LOCALSTORAGE_KEY } from '@/shared/constants/localStorage';
 import { CURRENCIES } from 'enteties/Currency/model/types/currencies';
 import { COUNTRIES } from 'enteties/Country/model/types/countries';
 import { User } from '../types';

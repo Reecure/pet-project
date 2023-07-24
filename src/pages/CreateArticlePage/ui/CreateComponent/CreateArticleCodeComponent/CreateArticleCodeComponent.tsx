@@ -1,9 +1,9 @@
 import { useTranslation } from 'react-i18next';
-import { classNames } from 'shared/lib/classNames/classNames';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import React, { FC, useState } from 'react';
-import { Text } from 'shared/ui/Text';
+import { Text } from '@/shared/ui/Text';
 import { ArticleBlocks, BlockTypes, CodeBlock } from 'enteties/Article/model/types/article';
-import { Button } from 'shared/ui/Button';
+import { Button } from '@/shared/ui/Button';
 import cls from './CreateArticleCodeComponent.module.scss';
 
 interface Props {

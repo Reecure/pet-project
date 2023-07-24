@@ -1,13 +1,13 @@
 import {
     FC, memo, useCallback, useState,
 } from 'react';
-import { classNames } from 'shared/lib/classNames/classNames';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
-import { useAppDispatch, useAppSelector } from 'app/providers/ReduxProvider/config/hooks';
+import { useAppDispatch, useAppSelector } from '@/app/providers/ReduxProvider/config/hooks';
 import { userDataSelector } from 'enteties/User/model/selectors/userDataSelector';
 import { logout } from 'enteties/User/model/slice/userSlice';
-import { LoginForm } from 'features/AuthByUsername';
-import { Button } from 'shared/ui/Button';
+import { LoginForm } from '@/features/AuthByUsername';
+import { Button } from '@/shared/ui/Button';
 import cls from './Navbar.module.scss';
 import UserDropdownProfile from './UserDropdownProfile/UserDropdownProfile';
 

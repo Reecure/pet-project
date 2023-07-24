@@ -1,12 +1,12 @@
 import {
     FC, memo, useCallback, useEffect, useState, useMemo,
 } from 'react';
-import { classNames } from 'shared/lib/classNames/classNames';
-import { ThemeSwitcher } from 'widgets/ThemeSwitcher';
-import { LangSwitcher } from 'widgets/LangSwitcher';
-import { useAppSelector } from 'app/providers/ReduxProvider/config/hooks';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { ThemeSwitcher } from '@/widgets/ThemeSwitcher';
+import { LangSwitcher } from '@/widgets/LangSwitcher';
+import { useAppSelector } from '@/app/providers/ReduxProvider/config/hooks';
 import { isLoggedSelector } from 'enteties/User/model/selectors/isLoggedSelector';
-import { Button } from 'shared/ui/Button';
+import { Button } from '@/shared/ui/Button';
 import { SidebarLinks } from '../../model/item';
 import SidebarItem from './SidebarItem/SidebarItem';
 import cls from './Sidebar.module.scss';

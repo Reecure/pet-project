@@ -1,6 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
-import { USER_LOCALSTORAGE_KEY } from 'shared/constants/localStorage';
+import { USER_LOCALSTORAGE_KEY } from '@/shared/constants/localStorage';
 import { User } from 'enteties/User/model/types';
 import { setAuthData } from '../../../../enteties/User/model/slice/userSlice';
 

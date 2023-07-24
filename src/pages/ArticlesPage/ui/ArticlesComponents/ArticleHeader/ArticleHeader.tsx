@@ -1,20 +1,20 @@
 import { useTranslation } from 'react-i18next';
-import { classNames } from 'shared/lib/classNames/classNames';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import {
     FC, useCallback, ChangeEvent, useMemo,
 } from 'react';
 
-import { useAppDispatch, useAppSelector } from 'app/providers/ReduxProvider/config/hooks';
+import { useAppDispatch, useAppSelector } from '@/app/providers/ReduxProvider/config/hooks';
 import {
     OrderType, resetPage, setSortByField, setSortByOrder, setSortByType, setViewType, sortFields, viewTypes,
-} from 'pages/ArticlesPage/model/slice/articlesSlice';
+} from '@/pages/ArticlesPage/model/slice/articlesSlice';
 import { BsFillGrid3X3GapFill } from 'react-icons/bs';
 import { CiGrid2H } from 'react-icons/ci';
 import { ArticleTypes } from 'enteties/Article/model/types/article';
-import { getAllArticles } from 'pages/ArticlesPage/model/services/getArticles';
-import { articleTypesSelector } from 'pages/ArticlesPage/model/selector/articlesSelector';
-import { Button, ThemeButton } from 'shared/ui/Button';
-import { Input, ThemeInput } from 'shared/ui/Input';
+import { getAllArticles } from '@/pages/ArticlesPage/model/services/getArticles';
+import { articleTypesSelector } from '@/pages/ArticlesPage/model/selector/articlesSelector';
+import { Button, ThemeButton } from '@/shared/ui/Button';
+import { Input, ThemeInput } from '@/shared/ui/Input';
 import cls from './ArticleHeader.module.scss';
 
 interface Props {
