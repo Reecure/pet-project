@@ -9,6 +9,8 @@ import { addCommentReducer } from '@/features/addComment';
 import { articlesReducer } from '@/pages/ArticlesPage';
 import { addArticleReducer } from '@/pages/CreateArticlePage';
 
+import { myArticlesReducer } from '@/pages/MyArticlesPage';
+
 export const store = configureStore({
     reducer: {
         counter,
@@ -20,6 +22,7 @@ export const store = configureStore({
         addCommentReducer,
         articlesReducer,
         addArticleReducer,
+        myArticlesReducer,
 
     },
 });

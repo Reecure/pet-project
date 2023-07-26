@@ -9,6 +9,7 @@ import { userDataSelector } from '@/enteties/User/model/selectors/userDataSelect
 import { AppLink } from '@/shared/ui/AppLink';
 import { Links, SidebarLink } from '../../../model/item';
 import cls from './SidebarItem.module.scss';
+import { getProfileRoute } from '@/shared/config/routeConfig/routeConfig';
 
 interface Props {
     link: SidebarLink
@@ -24,7 +25,7 @@ const SidebarItem: FC<Props> = ({ link, open }) => {
     const helperProfileId = (text: Links) => {
         switch (text) {
         case Links.Profile:
-            return `${link.to}/${currentUser.id}`;
+            return getProfileRoute(currentUser.id);
         default:
             return link.to;
         }
@@ -37,6 +38,7 @@ const SidebarItem: FC<Props> = ({ link, open }) => {
     return (
         <AppLink theme={link.theme} to={helperProfileId(link.text)} className={cls.link}>
             <span className={cls.linkIcon}>{sidebarIconRender(link.icon)}</span>
+
             <span className={classNames('', { [cls.linkTextWhenClose]: !open }, [])}>
                 {t(link.text)}
             </span>

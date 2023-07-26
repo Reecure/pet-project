@@ -6,26 +6,32 @@ import { Menu } from '@headlessui/react';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { Text } from '@/shared/ui/Text';
 import { Input, ThemeInput } from '@/shared/ui/Input';
-import { useAppDispatch } from '@/app/providers/ReduxProvider/config/hooks';
+import { useAppDispatch, useAppSelector } from '@/app/providers/ReduxProvider/config/hooks';
 import {
     setArticlePreviewImg,
     setArticleSubTitle,
     setArticleTitle,
     setArticleTypes,
-} from '@/pages/CreateArticlePage/model/slice/addArticleSlice';
+} from '@/features/CRUDArticle/model/slices/addArticleSlice';
 import { ArticleTypes } from '@/enteties/Article/model/types/article';
 import { Button, ThemeButton } from '@/shared/ui/Button';
 import { Notify } from '@/shared/ui/Notify';
 import cls from './ArticlesAddHeader.module.scss';
+import { getCreateFields } from '@/features/CRUDArticle/model/selectors/getCreateArticle';
 
 interface Props {
+    articleEditTypes: string[]
 }
 
-const ArticlesAddHeader: FC<Props> = () => {
-    const [articleTypes, setarticleTypes] = useState<string[]>([]);
+const ArticlesAddHeader: FC<Props> = ({
+    articleEditTypes,
+}) => {
+    const [articleTypes, setarticleTypes] = useState<string[]>(articleEditTypes);
     const [openNotify, setopenNotify] = useState(false);
 
     const { t } = useTranslation();
+
+    const { title, img, subtitle } = useAppSelector(getCreateFields);
 
     const dispatch = useAppDispatch();
 
@@ -37,6 +43,7 @@ const ArticlesAddHeader: FC<Props> = () => {
 
     const memoArticleTypes = useMemo(() => articleTypes.map((item, i) => (
         <div
+            key={`articleTypeWrapper${i}`}
             id={`articleTypeWrapper${i}`}
             onClick={() => deleteTypeHandler(i)}
             className={cls.articleTypeWrapper}
@@ -78,6 +85,7 @@ const ArticlesAddHeader: FC<Props> = () => {
                     onChange={(e) => {
                         dispatch(setArticleTitle(e.currentTarget.value));
                     }}
+                    value={title}
                     theme={ThemeInput.OUTLINE}
                 />
             </div>
@@ -88,6 +96,7 @@ const ArticlesAddHeader: FC<Props> = () => {
                     onChange={(e) => {
                         dispatch(setArticleSubTitle(e.currentTarget.value));
                     }}
+                    value={subtitle}
                     theme={ThemeInput.OUTLINE}
                 />
             </div>
@@ -98,6 +107,7 @@ const ArticlesAddHeader: FC<Props> = () => {
                     onChange={(e) => {
                         dispatch(setArticlePreviewImg(e.currentTarget.value));
                     }}
+                    value={img}
                     theme={ThemeInput.OUTLINE}
                 />
             </div>

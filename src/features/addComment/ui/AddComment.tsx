@@ -36,6 +36,7 @@ const AddComment: FC<Props> = () => {
     const addCommentHandler = useCallback(
         () => {
             dispatch(addComment(selectCommentField));
+            dispatch(setCommentText(''));
         },
         [dispatch, selectCommentField],
     );

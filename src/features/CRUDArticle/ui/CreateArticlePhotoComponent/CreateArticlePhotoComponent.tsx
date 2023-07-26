@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next';
-import React, { FC, useState } from 'react';
+import React, { FC, useEffect, useState } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { Input, ThemeInput } from '@/shared/ui/Input';
 import { Text } from '@/shared/ui/Text';
@@ -17,8 +17,22 @@ interface Props {
 
 const CreateArticlePhotoComponent: FC<Props> = ({ blockId, blocks, setBlocks }) => {
     const { t } = useTranslation();
+
     const [title, setTitle] = useState('');
     const [src, setSrc] = useState('');
+
+    useEffect(() => {
+        const initBlock = () => {
+            const initedBlocks = blocks.map((block) => {
+                if (block.id === blockId && block.type === BlockTypes.IMAGE) {
+                    setSrc(block.src);
+                    setTitle(block.title);
+                }
+            });
+            return initedBlocks;
+        };
+        initBlock();
+    }, []);
 
     const updateBlock = (updatedProps: Partial<ImageBlock>) => {
         const updatedBlock: ImageBlock = {

@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next';
-import React, { FC, useState } from 'react';
+import React, { FC, useEffect, useState } from 'react';
 import { nanoid } from '@reduxjs/toolkit';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { Input, ThemeInput } from '@/shared/ui/Input';
@@ -24,6 +24,19 @@ const CreateArticleTextComponent: FC<Props> = ({ blockId, blocks, setBlocks }) =
     const [paragraphs, setParagraphs] = useState<Paragraph[]>([{ id: nanoid(), text: '' }]);
     const [title, setTitle] = useState('');
     const { t } = useTranslation();
+
+    useEffect(() => {
+        const initBlock = () => {
+            const initedBlocks = blocks.map((block) => {
+                if (block.id === blockId && block.type === BlockTypes.TEXT) {
+                    setTitle(block.title);
+                    setParagraphs(block.paragraphs);
+                }
+            });
+            return initedBlocks;
+        };
+        initBlock();
+    }, [paragraphs]);
 
     const updateBlock = (updatedProps: Partial<TextBlock>) => {
         const updatedBlock: TextBlock = {
@@ -106,6 +119,7 @@ const CreateArticleTextComponent: FC<Props> = ({ blockId, blocks, setBlocks }) =
                                 className={cls.textArea}
                                 name=""
                                 rows={5}
+                                value={paragraph.text}
                             />
                             <Button onClick={() => deleteParagraphHandler(paragraph.id)}>X</Button>
                         </div>

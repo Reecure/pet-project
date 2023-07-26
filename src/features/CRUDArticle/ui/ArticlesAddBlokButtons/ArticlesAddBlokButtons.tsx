@@ -43,6 +43,7 @@ const ArticlesAddBlokButtons: FC<Props> = ({ blocks, setBlocks }) => {
             const newBlock: ArticleBlocks = {
                 id: nanoid(),
                 type: BlockTypes.CODE,
+                lines: 1,
                 code: '',
             };
             return [...prevBlocks, newBlock];
@@ -54,7 +55,6 @@ const ArticlesAddBlokButtons: FC<Props> = ({ blocks, setBlocks }) => {
             <Button onClick={onAddTextBlockHandler}>{t('Create Text Block')}</Button>
             <Button onClick={onAddPhotoBlockHandler}>{t('Create Photo Block')}</Button>
             <Button onClick={onAddCodeBlockHandler}>{t('Create Code Block')}</Button>
-
         </div>
     );
 };

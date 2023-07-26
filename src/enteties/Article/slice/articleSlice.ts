@@ -9,10 +9,10 @@ interface Props {
 
 }
 
-const initialState:Props = {
+const initialState: Props = {
     article: undefined,
     error: '',
-    loading: false,
+    loading: true,
 };
 
 const articleSlice = createSlice({

@@ -1,4 +1,6 @@
-import { AppRoutes } from '@/shared/config/routeConfig/routeConfig';
+import {
+    getAboutRoute, getArticlesRoute, getMainRoute, getProfileRoute,
+} from '@/shared/config/routeConfig/routeConfig';
 import { AppLinkTheme } from '@/shared/ui/AppLink';
 
 export const enum Links {
@@ -10,33 +12,34 @@ export const enum Links {
 
 export interface SidebarLink {
     theme: AppLinkTheme,
-    to: AppRoutes,
+    to: string,
     text: Links
     icon: string
     authOnly?: boolean
 }
-export const SidebarLinks :SidebarLink[] = [
+
+export const SidebarLinks: SidebarLink[] = [
     {
-        to: AppRoutes.MAIN,
+        to: getMainRoute(),
         theme: AppLinkTheme.SECONDARY,
         text: Links.Main,
         icon: 'AiOutlineHome',
     },
     {
-        to: AppRoutes.ABOUT,
+        to: getAboutRoute(),
         theme: AppLinkTheme.SECONDARY,
         text: Links.About,
         icon: 'BsListStars',
     },
     {
-        to: AppRoutes.PROFILE,
+        to: getProfileRoute(''),
         theme: AppLinkTheme.SECONDARY,
         text: Links.Profile,
         icon: 'BsFillPersonLinesFill',
         authOnly: true,
     },
     {
-        to: AppRoutes.ARTICLES,
+        to: getArticlesRoute(),
         theme: AppLinkTheme.SECONDARY,
         text: Links.Articles,
         icon: 'PiArticleMediumBold',

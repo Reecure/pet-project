@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { Article } from '@/enteties/Article/model/types/article';
 import { Views } from '@/shared/ui/Views';
-import { RoutePath } from '@/shared/config/routeConfig/routeConfig';
+import { getArticleRoute } from '@/shared/config/routeConfig/routeConfig';
 import cls from './ArticleSmallComponent.module.scss';
 
 interface Props {
@@ -17,7 +17,7 @@ const ArticleSmallComponent: FC<Props> = ({ article }) => {
 
     const readMoreHandler = useCallback(
         () => {
-            navigate(RoutePath.article + article.id);
+            navigate(getArticleRoute(article.id));
         },
         [article.id, navigate],
     );

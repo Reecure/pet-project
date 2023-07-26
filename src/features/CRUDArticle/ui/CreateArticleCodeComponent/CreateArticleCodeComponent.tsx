@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next';
-import React, { FC, useState } from 'react';
+import React, { FC, useEffect, useState } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { Text } from '@/shared/ui/Text';
 import { ArticleBlocks, BlockTypes, CodeBlock } from '@/enteties/Article/model/types/article';
@@ -17,6 +17,19 @@ const CreateArticleCodeComponent: FC<Props> = ({ blockId, blocks, setBlocks }) =
     const [rows, setRows] = useState(1);
     const [codeItem, setCodeItem] = useState('');
 
+    useEffect(() => {
+        const initBlock = () => {
+            const initedBlocks = blocks.map((block) => {
+                if (block.id === blockId && block.type === BlockTypes.CODE) {
+                    setCodeItem(block.code);
+                    setRows(block.lines);
+                }
+            });
+            return initedBlocks;
+        };
+        initBlock();
+    }, []);
+
     const handleTextAreaChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
         const updatedCodeItem = event.currentTarget.value;
         setCodeItem(updatedCodeItem);
@@ -25,6 +38,7 @@ const CreateArticleCodeComponent: FC<Props> = ({ blockId, blocks, setBlocks }) =
         const updatedBlock: CodeBlock = {
             id: blockId,
             type: BlockTypes.CODE,
+            lines: rows,
             code: updatedCodeItem,
         };
 

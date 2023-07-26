@@ -40,8 +40,11 @@ const options = [
 
 const ArticleHeader: FC<Props> = () => {
     const { t } = useTranslation();
+
     const dispatch = useAppDispatch();
+
     const types = useAppSelector(articleTypesSelector);
+
     const setBigArticles = useCallback(
         () => {
             dispatch(setViewType(viewTypes.BIG));
@@ -80,6 +83,7 @@ const ArticleHeader: FC<Props> = () => {
 
     const memoTypes = useMemo(() => Object.values(ArticleTypes).map((type) => (
         <p
+            key={type}
             onClick={() => {
                 dispatch(setSortByType(type));
                 dispatch(getAllArticles());
@@ -94,7 +98,7 @@ const ArticleHeader: FC<Props> = () => {
         <div className={classNames(cls.ArticleHeader, {}, [])}>
             <div className={cls.sortingWrapper}>
                 <div className={cls.selectWrapper}>
-                    <select onChange={setSortBy} name="Sort by">
+                    <select defaultValue="Sort by" onChange={setSortBy} name="Sort by">
                         <option disabled selected hidden>{t('Sort by')}</option>
                         {
                             options.map((item) => <option value={item.value} key={item.value}>{t(item.name)}</option>)

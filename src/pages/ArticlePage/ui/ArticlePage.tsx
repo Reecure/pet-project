@@ -39,7 +39,7 @@ const ArticlePage: FC<Props> = () => {
             </div>
         );
     }
-    if (error || !id) {
+    if (error) {
         return <div>{t('Error')}</div>;
     }
     if (article === undefined) {
