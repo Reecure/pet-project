@@ -1,6 +1,6 @@
 import { FC, ReactNode } from 'react';
-import { classNames } from '@/shared/lib/classNames/classNames';
 import { CSSTransition } from 'react-transition-group';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import cls from './Modal.module.scss';
 
 export enum ModalPositions {
@@ -30,7 +30,12 @@ const Modal: FC<Props> = ({
             }
         }
     >
-        <dialog open className={classNames(cls.Modal, {}, [cls[childrenPosition]])} onClick={setIsOpen}>
+        <dialog
+            data-testid="modal"
+            open
+            className={classNames(cls.Modal, {}, [cls[childrenPosition], className])}
+            onClick={setIsOpen}
+        >
             <div
                 onClick={(e) => {
                     e.stopPropagation();

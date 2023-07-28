@@ -7,6 +7,7 @@ interface Props {
     src: string;
     height?: number;
     width?: number;
+
 }
 
 const Image: FC<Props> = ({
@@ -17,7 +18,7 @@ const Image: FC<Props> = ({
         <img
             className={classNames(cls.image, {}, [])}
             src={src}
-            style={{ maxWidth: `${width}px` || '100%', maxHeight: `${height}px` || 'auto' }}
+            style={{ maxWidth: `${width}px` || '100%', maxHeight: `${height}px` || 'auto', stroke: '#ffffff' }}
             alt={src}
         />
     );
