@@ -18,7 +18,7 @@ const initialState: State = {
     readonly: true,
 };
 
-const profileSlice = createSlice({
+export const profileSlice = createSlice({
     name: 'profile',
     initialState,
     reducers: {

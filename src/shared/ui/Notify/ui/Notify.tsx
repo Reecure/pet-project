@@ -25,7 +25,7 @@ const Notify: FC<Props> = ({ children, open }) => {
                 }
             }
         >
-            <div className={classNames(cls.Notify, {}, [])}>
+            <div data-testid="notify" className={classNames(cls.Notify, {}, [])}>
                 <p>{children}</p>
             </div>
         </CSSTransition>

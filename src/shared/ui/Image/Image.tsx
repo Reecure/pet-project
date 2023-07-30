@@ -18,7 +18,7 @@ const Image: FC<Props> = ({
         <img
             className={classNames(cls.image, {}, [])}
             src={src}
-            style={{ maxWidth: `${width}px` || '100%', maxHeight: `${height}px` || 'auto', stroke: '#ffffff' }}
+            style={{ maxWidth: `${width}px` || '100%', maxHeight: `${height}px` || 'auto' }}
             alt={src}
         />
     );

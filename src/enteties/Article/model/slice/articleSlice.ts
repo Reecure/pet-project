@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { Article } from '../model/types/article';
+import { Article } from '../types/article';
 import { getArticleById } from '../services/getArticleById';
 
 interface Props {

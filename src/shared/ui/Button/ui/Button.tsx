@@ -24,6 +24,7 @@ const Button = memo(
 
         return (
             <button
+                data-testid="button"
                 type="button"
                 disabled={disabled}
                 {...otherProps}

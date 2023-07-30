@@ -1,5 +1,3 @@
-// addArticle
-
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { ArticleBlocks } from '@/enteties/Article/model/types/article';
 

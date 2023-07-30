@@ -3,8 +3,8 @@ import { classNames } from '@/shared/lib/classNames/classNames';
 import cls from './Input.module.scss';
 
 export const enum ThemeInput {
-  CLEAR = 'clear',
-  OUTLINE = 'outline',
+    CLEAR = 'clear',
+    OUTLINE = 'outline',
 }
 
 interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
@@ -12,8 +12,8 @@ interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
     theme?: ThemeInput
 }
 
-const Input:FC<InputProps> = ({ className, theme = ThemeInput.CLEAR, ...otherProps }) => (
-    <input {...otherProps} className={classNames(cls.Input, {}, [className, cls[theme]])} />
+const Input: FC<InputProps> = ({ className, theme = ThemeInput.CLEAR, ...otherProps }) => (
+    <input data-testid="input" {...otherProps} className={classNames(cls.Input, {}, [className, cls[theme]])} />
 );
 
 export default memo(Input);
