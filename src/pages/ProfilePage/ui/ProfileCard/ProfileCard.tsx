@@ -73,49 +73,49 @@ const ProfileCard: FC<Props> = ({ userInfo }) => {
                 <Avatar src={userInfo?.avatar} />
             </div>
 
-            <div>
-                <label htmlFor="">
-                    <span>
-                        {t('Username')}
-                        :
-                    </span>
-                    <Input
-                        readOnly={isReadOnly}
-                        onChange={setUsernameHandler}
-                        value={profileForm?.first}
-                        placeholder={userInfo?.first}
-                    />
-                </label>
-            </div>
-            <div>
-                <label htmlFor="">
-                    <span>
-                        {t('Lastname')}
-                        :
-                    </span>
-                    <Input
-                        readOnly={isReadOnly}
-                        onChange={setLastnameHandler}
-                        value={profileForm?.lastname}
-                        placeholder={profileForm?.lastname}
-                    />
-                </label>
-            </div>
-            <div>
-                <label htmlFor="">
-                    <span>
-                        {t('Age')}
-                        :
-                    </span>
-                    <Input
-                        readOnly={isReadOnly}
-                        type="number"
-                        onChange={setAgeHandler}
-                        value={profileForm?.age}
-                        placeholder={profileForm?.age}
-                    />
-                </label>
-            </div>
+            <label htmlFor="username" className={cls.fieldWrapper}>
+                <span>
+                    {t('Username')}
+                    :
+                </span>
+                <Input
+                    name="username"
+                    readOnly={isReadOnly}
+                    onChange={setUsernameHandler}
+                    value={profileForm?.first}
+                    placeholder={userInfo?.first}
+                />
+            </label>
+
+            <label htmlFor="lastname" className={cls.fieldWrapper}>
+                <span>
+                    {t('Lastname')}
+                    :
+                </span>
+                <Input
+                    name="lastname"
+                    readOnly={isReadOnly}
+                    onChange={setLastnameHandler}
+                    value={profileForm?.lastname}
+                    placeholder={profileForm?.lastname}
+                />
+            </label>
+
+            <label htmlFor="age" className={cls.fieldWrapper}>
+                <span>
+                    {t('Age')}
+                    :
+                </span>
+                <Input
+                    name="age"
+                    readOnly={isReadOnly}
+                    type="number"
+                    onChange={setAgeHandler}
+                    value={profileForm?.age}
+                    placeholder={profileForm?.age}
+                />
+            </label>
+
             <div />
             <p>
                 {t('Country')}
@@ -126,20 +126,21 @@ const ProfileCard: FC<Props> = ({ userInfo }) => {
                     defaultCountrie={userInfo?.country}
                 />
             </p>
-            <label htmlFor="">
+            <label htmlFor="city" className={cls.fieldWrapper}>
                 <span>
                     {' '}
                     {t('City')}
                     :
                 </span>
                 <Input
+                    name="city"
                     readOnly={isReadOnly}
                     onChange={setCityHandler}
                     value={profileForm?.city}
                     placeholder={userInfo?.city}
                 />
             </label>
-            <p>
+            <div>
                 {t('Currency')}
                 :
                 <CurrenciesDropDown
@@ -147,14 +148,15 @@ const ProfileCard: FC<Props> = ({ userInfo }) => {
                     canEdit={isReadOnly}
                     defaultCurrency={userInfo?.currency}
                 />
-            </p>
-            <label htmlFor="">
+            </div>
+            <label htmlFor="avatar" className={cls.fieldWrapper}>
                 <span>
                     {' '}
                     {t('Avatar')}
                     :
                 </span>
                 <Input
+                    name="avatar"
                     onChange={setAvatarHandler}
                     value={profileForm?.avatar}
                     readOnly={isReadOnly}

@@ -21,8 +21,8 @@ const CreateArticleCodeComponent: FC<Props> = ({ blockId, blocks, setBlocks }) =
         const initBlock = () => {
             const initedBlocks = blocks.map((block) => {
                 if (block.id === blockId && block.type === BlockTypes.CODE) {
-                    setCodeItem(block.code);
                     setRows(block.lines);
+                    setCodeItem(block.code);
                 }
             });
             return initedBlocks;

@@ -17,6 +17,7 @@ import { Loader } from '@/shared/ui/Loader';
 import cls from './ArticleMainContent.module.scss';
 import ArticleBigComponent from '../ArticleBigComponent/ArticleBigComponent';
 import ArticleSmallComponent from '../ArticleSmallComponent/ArticleSmallComponent';
+import ArticlesIsEmpty from '@/shared/ui/ArticlesIsEmpty/ui/ArticlesIsEmpty';
 
 interface Props {
 }
@@ -50,6 +51,10 @@ const ArticleMainContent: FC<Props> = () => {
         dispatch(setPrevPage());
         dispatch(getAllArticles());
     };
+
+    if (articles.length === 0) {
+        return (<ArticlesIsEmpty />);
+    }
 
     return (
         <div className={classNames(cls.ArticleMainContent, {}, [])}>

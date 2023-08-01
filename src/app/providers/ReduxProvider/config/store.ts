@@ -4,7 +4,6 @@ import { loginReducer } from '@/features/AuthByUsername';
 import { profileReducer } from '@/enteties/Profile';
 import { articleReducer } from '@/enteties/Article';
 import { commentsReducer } from '@/features/getComments';
-import { addCommentReducer } from '@/features/addComment';
 import { articlesReducer } from '@/pages/ArticlesPage';
 import { addArticleReducer } from '@/features/CRUDArticle';
 import { myArticlesReducer } from '@/pages/MyArticlesPage';
@@ -17,7 +16,6 @@ export const store = configureStore({
         profileReducer,
         articleReducer,
         commentsReducer,
-        addCommentReducer,
         articlesReducer,
         addArticleReducer,
         myArticlesReducer,
