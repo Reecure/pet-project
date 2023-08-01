@@ -4,7 +4,37 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="054dcfbb-5232-4235-a308-8c1e1cec3020" name="Changes" comment="add comments validation" />
+    <list default="true" id="054dcfbb-5232-4235-a308-8c1e1cec3020" name="Changes" comment="add comments validation">
+      <change afterPath="$PROJECT_DIR$/src/features/CRUDArticle/ui/ArticleForm/ArticleForm.module.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/features/CRUDArticle/ui/ArticleForm/ArticleForm.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/features/CRUDArticle/ui/ArticleForm/BlockButtons/BlockButtons.module.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/features/CRUDArticle/ui/ArticleForm/BlockButtons/BlockButtons.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.storybook/main.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.storybook/preview.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/extractedTranslations/en/translation.json" beforeDir="false" afterPath="$PROJECT_DIR$/extractedTranslations/en/translation.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html-report/jest-html-reporters-attach/report/result.js" beforeDir="false" afterPath="$PROJECT_DIR$/html-report/jest-html-reporters-attach/report/result.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/json-server/db.json" beforeDir="false" afterPath="$PROJECT_DIR$/json-server/db.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/CRUDArticle/model/services/updateArticle.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/CRUDArticle/model/services/updateArticle.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/CRUDArticle/ui/ArticlesAddBlokButtons/ArticlesAddBlokButtons.module.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/CRUDArticle/ui/ArticlesAddBlokButtons/ArticlesAddBlokButtons.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/CRUDArticle/ui/ArticlesAddHeader/ArticlesAddHeader.module.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/CRUDArticle/ui/ArticlesAddHeader/ArticlesAddHeader.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/CRUDArticle/ui/CreateArticleCodeComponent/CreateArticleCodeComponent.module.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/CRUDArticle/ui/CreateArticleCodeComponent/CreateArticleCodeComponent.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/CRUDArticle/ui/CreateArticlePhotoComponent/CreateArticlePhotoComponent.module.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/CRUDArticle/ui/CreateArticlePhotoComponent/CreateArticlePhotoComponent.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/CRUDArticle/ui/CreateArticleTextComponent/CreateArticleTextComponent.module.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/CRUDArticle/ui/CreateArticleTextComponent/CreateArticleTextComponent.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/CRUDArticle/ui/MainContentBlocks/MainContentBlocks.module.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/CRUDArticle/ui/MainContentBlocks/MainContentBlocks.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/AboutPage/ui/AboutPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/AboutPage/ui/AboutPage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/CreateArticlePage/ui/CreateArticlePage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/CreateArticlePage/ui/CreateArticlePage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/EditArticlePage/ui/EditArticlePage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/EditArticlePage/ui/EditArticlePage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/ui/Input/ui/Input.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/ui/Input/ui/Input.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/ui/Input/ui/Input.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/ui/Input/ui/Input.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/ui/Text/ui/Text.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/ui/Text/ui/Text.module.scss" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -53,7 +83,7 @@
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "main",
     "js.linters.configure.manually.selectedeslint": "true",
-    "last_opened_file_path": "C:/Users/user/Desktop/pet/src/enteties/Article/model",
+    "last_opened_file_path": "C:/Users/user/Desktop/pet/src/features/CRUDArticle/ui/ArticleForm",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.standard": "true",
     "node.js.detected.package.stylelint": "true",
@@ -76,11 +106,11 @@
       <recent name="C:\Users\user\Desktop\pet" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\user\Desktop\pet\src\features\CRUDArticle\ui\ArticleForm" />
       <recent name="C:\Users\user\Desktop\pet\src\enteties\Article\model" />
       <recent name="C:\Users\user\Desktop\pet\src\shared\assets" />
       <recent name="C:\Users\user\Desktop\pet\src\shared\ui\SvgImage" />
       <recent name="C:\Users\user\Desktop\pet\src\features\CRUDArticle\ui" />
-      <recent name="C:\Users\user\Desktop\pet\src\features\CRUDArticle\model\selectors" />
     </key>
   </component>
   <component name="RunManager" selected="npm.lint:ts:fix">
@@ -136,11 +166,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="npm.test" />
-        <item itemvalue="npm.start:dev:server" />
+        <item itemvalue="npm.start:vite" />
         <item itemvalue="npm.start" />
-        <item itemvalue="npm.lint:ts:fix" />
         <item itemvalue="npm.start:dev:server" />
+        <item itemvalue="npm.test" />
+        <item itemvalue="npm.lint:ts:fix" />
       </list>
     </recent_temporary>
   </component>
@@ -171,7 +201,7 @@
       <workItem from="1690782305180" duration="8266000" />
       <workItem from="1690827105743" duration="593000" />
       <workItem from="1690868461102" duration="490000" />
-      <workItem from="1690873598532" duration="160000" />
+      <workItem from="1690873598532" duration="19007000" />
     </task>
     <task id="LOCAL-00001" summary="some fix">
       <created>1689795990367</created>
@@ -243,7 +273,14 @@
       <option name="project" value="LOCAL" />
       <updated>1690868586244</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="add comments validation">
+      <created>1690874150231</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1690874150231</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

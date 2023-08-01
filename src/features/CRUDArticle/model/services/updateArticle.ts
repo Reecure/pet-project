@@ -1,20 +1,26 @@
-import { createAsyncThunk } from '@reduxjs/toolkit';
+import {createAsyncThunk} from '@reduxjs/toolkit';
 import axios from 'axios';
 
-import { USER_LOCALSTORAGE_KEY } from '@/shared/constants/localStorage';
-import { RootState } from '@/app/providers/ReduxProvider/config/store';
-import { getCreateFields } from '@/features/CRUDArticle/model/selectors/getCreateArticle';
-import { Article } from '@/enteties/Article/model/types/article';
-import { userDataSelector } from '@/enteties/User/model/selectors/userDataSelector';
+import {USER_LOCALSTORAGE_KEY} from '@/shared/constants/localStorage';
+import {RootState} from '@/app/providers/ReduxProvider/config/store';
+import {Article, ArticleForSend} from '@/enteties/Article/model/types/article';
+import {userDataSelector} from '@/enteties/User/model/selectors/userDataSelector';
 
 interface ThunkConfig {
     state: RootState;
 }
 
-export const updateArticle = createAsyncThunk<Article, any, ThunkConfig>('article/updateArticle', async (id: string, thunkApi) => {
-    const { getState } = thunkApi;
+interface SendProps {
+    id: string,
+    article: ArticleForSend
+}
 
-    const formData = getCreateFields(getState());
+export const updateArticle = createAsyncThunk<Article, SendProps, ThunkConfig>('article/updateArticle', async ({
+                                                                                                                   article,
+                                                                                                                   id
+                                                                                                               }, thunkApi) => {
+    const {getState} = thunkApi;
+
     const user = userDataSelector(getState());
 
     const currentDate = new Date();
@@ -28,7 +34,7 @@ export const updateArticle = createAsyncThunk<Article, any, ThunkConfig>('articl
         const res = await axios.put(`http://localhost:8000/articles/${id}`, {
             userId: user.id,
             createdAt: formattedDate,
-            ...formData,
+            ...article,
         }, {
             headers: {
                 authorization: localStorage.getItem(USER_LOCALSTORAGE_KEY) || '',
