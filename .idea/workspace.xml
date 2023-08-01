@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="054dcfbb-5232-4235-a308-8c1e1cec3020" name="Changes" comment="add comments validation" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Component Folder..child.1 (1)" />
+        <option value="Component Folder..child.1" />
+        <option value="TypeScript File" />
+        <option value="Component Folder.ts.child.0" />
+        <option value="Component Folder.ts.child.1" />
+        <option value="Component Folder" />
+      </list>
+    </option>
+  </component>
+  <component name="FormatOnSaveOptions">
+    <option name="myRunOnSave" value="true" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="write_jest_tests" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="OptimizeOnSaveOptions">
+    <option name="myRunOnSave" value="true" />
+  </component>
+  <component name="ProjectId" id="2SntWdPNNSbXdaKG8w9MTDJ4hYd" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "main",
+    "js.linters.configure.manually.selectedeslint": "true",
+    "last_opened_file_path": "C:/Users/user/Desktop/pet/src/enteties/Article/model",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.standard": "true",
+    "node.js.detected.package.stylelint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.standard": "C:\\Users\\user\\Desktop\\pet\\node_modules\\standard",
+    "node.js.selected.package.stylelint": "C:\\Users\\user\\Desktop\\pet\\node_modules\\stylelint",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "prettierjs.PrettierConfiguration.Package": "C:\\Users\\user\\Desktop\\pet\\node_modules\\prettier",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "ts.external.directory.path": "C:\\Users\\user\\Desktop\\pet\\node_modules\\typescript\\lib",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\user\Desktop\pet\src\features\updateArticle\model" />
+      <recent name="C:\Users\user\Desktop\pet\src\pages\MyArticlesPage\model" />
+      <recent name="C:\Users\user\Desktop\pet" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\user\Desktop\pet\src\enteties\Article\model" />
+      <recent name="C:\Users\user\Desktop\pet\src\shared\assets" />
+      <recent name="C:\Users\user\Desktop\pet\src\shared\ui\SvgImage" />
+      <recent name="C:\Users\user\Desktop\pet\src\features\CRUDArticle\ui" />
+      <recent name="C:\Users\user\Desktop\pet\src\features\CRUDArticle\model\selectors" />
+    </key>
+  </component>
+  <component name="RunManager" selected="npm.lint:ts:fix">
+    <configuration name="lint:ts:fix" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="lint:ts:fix" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="start" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="start:dev:server" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start:dev:server" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="start:vite" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start:vite" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="test" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="test" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="npm.test" />
+        <item itemvalue="npm.start:dev:server" />
+        <item itemvalue="npm.start" />
+        <item itemvalue="npm.lint:ts:fix" />
+        <item itemvalue="npm.start:dev:server" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="054dcfbb-5232-4235-a308-8c1e1cec3020" name="Changes" comment="" />
+      <created>1689794206381</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1689794206381</updated>
+      <workItem from="1689794210763" duration="2058000" />
+      <workItem from="1689837603052" duration="3249000" />
+      <workItem from="1689840923505" duration="2352000" />
+      <workItem from="1689911927968" duration="5374000" />
+      <workItem from="1689930941841" duration="3447000" />
+      <workItem from="1689962388055" duration="1183000" />
+      <workItem from="1690094181659" duration="592000" />
+      <workItem from="1690187815023" duration="12911000" />
+      <workItem from="1690264679520" duration="27349000" />
+      <workItem from="1690354118763" duration="13551000" />
+      <workItem from="1690447757833" duration="21236000" />
+      <workItem from="1690522133416" duration="28115000" />
+      <workItem from="1690609884267" duration="2610000" />
+      <workItem from="1690642029656" duration="4875000" />
+      <workItem from="1690708181383" duration="6711000" />
+      <workItem from="1690740333297" duration="1308000" />
+      <workItem from="1690782305180" duration="8266000" />
+      <workItem from="1690827105743" duration="593000" />
+      <workItem from="1690868461102" duration="490000" />
+      <workItem from="1690873598532" duration="160000" />
+    </task>
+    <task id="LOCAL-00001" summary="some fix">
+      <created>1689795990367</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1689795990367</updated>
+    </task>
+    <task id="LOCAL-00002" summary="some fix styling">
+      <created>1689933149834</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1689933149834</updated>
+    </task>
+    <task id="LOCAL-00003" summary="update alise and add vite some optimisation with babel loader">
+      <created>1690226238113</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1690226238113</updated>
+    </task>
+    <task id="LOCAL-00004" summary="update alise and add vite some optimisation with babel loader">
+      <created>1690226253030</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1690226253030</updated>
+    </task>
+    <task id="LOCAL-00005" summary="update imports">
+      <created>1690227250178</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1690227250178</updated>
+    </task>
+    <task id="LOCAL-00006" summary="some fix">
+      <created>1690385876591</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1690385876591</updated>
+    </task>
+    <task id="LOCAL-00007" summary="pre commit before stories realisation">
+      <created>1690449971758</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1690449971758</updated>
+    </task>
+    <task id="LOCAL-00008" summary="widgets now have tests">
+      <created>1690568524494</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1690568524494</updated>
+    </task>
+    <task id="LOCAL-00009" summary="write test for slices tests">
+      <created>1690733993612</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1690733993612</updated>
+    </task>
+    <task id="LOCAL-00010" summary="add comments validation">
+      <created>1690868586244</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1690868586244</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="some fix styling" />
+    <MESSAGE value="update alise and add vite some optimisation with babel loader" />
+    <MESSAGE value="update imports" />
+    <MESSAGE value="some fix" />
+    <MESSAGE value="pre commit before stories realisation" />
+    <MESSAGE value="widgets now have tests" />
+    <MESSAGE value="shared folder elements now have tests" />
+    <MESSAGE value="write test for slices tests" />
+    <MESSAGE value="add comments validation" />
+    <option name="LAST_COMMIT_MESSAGE" value="add comments validation" />
+  </component>
+</project>
