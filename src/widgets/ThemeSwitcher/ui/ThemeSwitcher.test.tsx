@@ -12,14 +12,14 @@ describe('theme switcher', () => {
         ComponentRender(<ThemeSwitcher />);
         expect(screen.getByTestId('theme-switcher')).toContainElement(screen.getByTestId('theme-swither-state'));
         expect(screen.getByTestId('theme-swither-state')).toBeInTheDocument();
-        expect(screen.getByTestId('theme-swither-state')).toContainElement(screen.getByTestId('dark-icon'));
+        expect(screen.getByTestId('theme-swither-state')).toContainElement(screen.getByTestId('light-icon'));
     });
-    test('renders LightIcon when theme is Light', () => {
+    test('renders DarkIcon when theme is Light', () => {
         ComponentRender(<ThemeSwitcher />);
         const toggle = screen.getByTestId('theme-switcher');
         expect(screen.getByTestId('theme-switcher')).toContainElement(screen.getByTestId('theme-swither-state'));
         expect(screen.getByTestId('theme-swither-state')).toBeInTheDocument();
         fireEvent.click(toggle);
-        expect(screen.getByTestId('theme-swither-state')).toContainElement(screen.getByTestId('light-icon'));
+        expect(screen.getByTestId('theme-swither-state')).toContainElement(screen.getByTestId('dark-icon'));
     });
 });

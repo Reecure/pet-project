@@ -6,10 +6,15 @@ import { logout } from '@/enteties/User/model/slice/userSlice';
 import { Avatar } from '@/shared/ui/Avatar';
 import { AppLink, AppLinkTheme } from '@/shared/ui/AppLink';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { AppRoutes } from '@/shared/config/routeConfig/routeConfig';
+import {
+    getAdminRoute,
+    getCreateArticleRoute,
+    getMyArticlesRoute,
+    getProfileRoute,
+} from '@/shared/config/routeConfig/routeConfig';
 import { useAppDispatch, useAppSelector } from '@/app/providers/ReduxProvider/config/hooks';
 import { User } from '@/enteties/User/model/types';
-import { isAdmin, isManager, userRolesSelector } from '@/enteties/User/model/selectors/userRoleSelector';
+import { isAdmin, isManager } from '@/enteties/User/model/selectors/userRoleSelector';
 import cls from './UserDropdownProfile.module.scss';
 
 interface Props {
@@ -24,10 +29,9 @@ const UserDropdownProfile: FC<Props> = ({ user }) => {
 
     const isUserAdmin = useAppSelector(isAdmin);
     const isUserManager = useAppSelector(isManager);
-    const text = useAppSelector(userRolesSelector);
 
     const goToUserProfileHandler = () => {
-        navigate(`${AppRoutes.PROFILE}/${user.id}`);
+        navigate(getProfileRoute(user.id));
     };
 
     const onLogoutHandler = () => {
@@ -35,9 +39,6 @@ const UserDropdownProfile: FC<Props> = ({ user }) => {
     };
 
     const haveAccessToAdmiPanel = isUserAdmin || isUserManager;
-    console.log(haveAccessToAdmiPanel);
-    console.log(isUserManager);
-    console.log(text);
 
     return (
         <div className={classNames(cls.UserDropdownProfile, {}, [])}>
@@ -52,15 +53,22 @@ const UserDropdownProfile: FC<Props> = ({ user }) => {
                     <Menu.Item>{({ active }) => <div onClick={goToUserProfileHandler}>Profile</div>}</Menu.Item>
                     <Menu.Item>
                         {({ active }) => (
-                            <AppLink theme={AppLinkTheme.SECONDARY} to={AppRoutes.CREATE_ARTICLE}>
+                            <AppLink theme={AppLinkTheme.SECONDARY} to={getCreateArticleRoute()}>
                                 Create article
+                            </AppLink>
+                        )}
+                    </Menu.Item>
+                    <Menu.Item>
+                        {({ active }) => (
+                            <AppLink theme={AppLinkTheme.SECONDARY} to={getMyArticlesRoute()}>
+                                My articles
                             </AppLink>
                         )}
                     </Menu.Item>
                     {haveAccessToAdmiPanel && (
                         <Menu.Item>
                             {({ active }) => (
-                                <AppLink theme={AppLinkTheme.SECONDARY} to={AppRoutes.ADMIN}>
+                                <AppLink theme={AppLinkTheme.SECONDARY} to={getAdminRoute()}>
                                     Admin
                                 </AppLink>
                             )}

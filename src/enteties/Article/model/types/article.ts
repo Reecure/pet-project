@@ -26,6 +26,7 @@ export enum BlockTypes {
 export interface CodeBlock {
     id?: string;
     type?: BlockTypes.CODE;
+    lines: number;
     code: string;
 }
 

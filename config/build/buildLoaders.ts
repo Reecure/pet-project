@@ -22,10 +22,5 @@ export function buildLoaders(option: BuildOptions, isTSX?: boolean): webpack.Rul
 
     const styleLoader = cssLoader(option.isDev);
 
-    // const typescriptLoader = {
-    //     test: /\.tsx?$/,
-    //     use: 'ts-loader',
-    //     exclude: /node_modules/,
-    // };
     return [codeBabelLoader, tsxBabelLoader, styleLoader, fileLoader, svgloader];
 }

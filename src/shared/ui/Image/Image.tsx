@@ -7,6 +7,7 @@ interface Props {
     src: string;
     height?: number;
     width?: number;
+
 }
 
 const Image: FC<Props> = ({

@@ -1,13 +1,13 @@
 import { ButtonHTMLAttributes, memo } from 'react';
 
-import { classNames } from '@/shared/lib/classNames/classNames';
+import { classNames } from '../../../../shared/lib/classNames/classNames';
 import cls from './Button.module.scss';
 
 export const enum ThemeButton {
-  CLEAR = 'clear',
-  OUTLINE = 'outline',
-  OUTLINE_INVERTED ='outline_inverted',
-  OUTLINE_RED = 'outline_red'
+    CLEAR = 'clear',
+    OUTLINE = 'outline',
+    OUTLINE_INVERTED = 'outline_inverted',
+    OUTLINE_RED = 'outline_red'
 }
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
@@ -24,6 +24,7 @@ const Button = memo(
 
         return (
             <button
+                data-testid="button"
                 type="button"
                 disabled={disabled}
                 {...otherProps}

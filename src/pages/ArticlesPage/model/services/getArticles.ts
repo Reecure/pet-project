@@ -10,7 +10,7 @@ import {
     articleTypesSelector,
 } from '../selector/articlesSelector';
 
-export const getAllArticles = createAsyncThunk<Article[], void>('profile/getAllArticles', async (_, thunkApi: any) => {
+export const getAllArticles = createAsyncThunk<Article[], void>('articles/getAllArticles', async (_, thunkApi: any) => {
     const { getState } = thunkApi;
 
     const pageState = articlePageSelector(getState());

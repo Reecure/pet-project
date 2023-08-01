@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next';
-import { classNames } from '@/shared/lib/classNames/classNames';
 import React, { FC } from 'react';
 import { CSSTransition } from 'react-transition-group';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import cls from './Notify.module.scss';
 
 interface Props {
@@ -9,7 +9,7 @@ interface Props {
     open: boolean
 }
 
-const Notify:FC<Props> = ({ children, open }) => {
+const Notify: FC<Props> = ({ children, open }) => {
     const { t } = useTranslation();
 
     return (
@@ -25,7 +25,7 @@ const Notify:FC<Props> = ({ children, open }) => {
                 }
             }
         >
-            <div className={classNames(cls.Notify, {}, [])}>
+            <div data-testid="notify" className={classNames(cls.Notify, {}, [])}>
                 <p>{children}</p>
             </div>
         </CSSTransition>

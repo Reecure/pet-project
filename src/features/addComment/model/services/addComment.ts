@@ -1,6 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
-import { ArticleFields } from '@/enteties/Article/selectors/articleSelector';
+import { ArticleFields } from '@/enteties/Article/model/selectors/articleSelector';
 import { IComment } from '@/enteties/Comment/model/types/comment';
 import { userDataSelector } from '@/enteties/User/model/selectors/userDataSelector';
 import { getCommentsByArticleId } from '@/features/getComments/model/services/getCommentsByArticleId';
