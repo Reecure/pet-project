@@ -1,25 +1,34 @@
-import { useTranslation } from 'react-i18next';
-import { classNames } from 'shared/lib/classNames/classNames';
 import { FC } from 'react';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import cls from './Text.module.scss';
 
-interface Props {
-    title?: string
-    mainText?: string
-    haveError?: boolean
+export enum TextPosition {
+    CENTER = 'center',
+    RIGHT = 'right'
 }
 
-const Text:FC<Props> = ({
-    mainText, title, haveError,
-}) => {
-    const { t } = useTranslation();
+interface Props {
+    className?: string
+    title?: string
+    mainText?: string
+    subText?: string
+    haveError?: boolean
+    textPosition?: TextPosition
+}
 
-    return (
-        <div className={classNames(cls.Text, {}, [])}>
-            <p className={cls.title}>{title}</p>
-            <p className={classNames(cls.mainText, { [cls.error]: haveError }, [])}>{mainText}</p>
-        </div>
-    );
-};
+const Text: FC<Props> = ({
+    mainText, title, haveError, className, textPosition, subText,
+}) => (
+    <div data-testid="text" className={classNames(cls.Text, {}, [])}>
+        <p className={cls.title}>{title}</p>
+        <p
+            data-testid="text-error"
+            className={classNames(cls.mainText, { [cls.error]: haveError }, [className, cls[textPosition]])}
+        >
+            {mainText}
+        </p>
+        <p className={cls.subText}>{subText}</p>
+    </div>
+);
 
 export default Text;

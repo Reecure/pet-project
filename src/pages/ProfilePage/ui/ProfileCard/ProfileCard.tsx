@@ -1,14 +1,14 @@
-import { useAppDispatch, useAppSelector } from 'app/providers/ReduxProvider/config/hooks';
-import CountriesDropDown from 'enteties/Country/ui/CountriesDropDown';
-import CurrenciesDropDown from 'enteties/Currency/ui/CurrenciesDropDown';
-import { profileFormSelector } from 'enteties/Profile/selectors/profileFormSelector';
-import { profileReadOnlySelector } from 'enteties/Profile/selectors/profileReadOnlySelector';
-import { updateProfile } from 'enteties/Profile/slice/profileSlice';
-import React, { FC, useCallback, useEffect } from 'react';
-import Avatar from 'shared/ui/Avatar/ui/Avatar';
-import { Input } from 'shared/ui/Input';
+import React, { FC, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
-import { User } from 'enteties/User/model/types';
+import { useAppDispatch, useAppSelector } from '@/app/providers/ReduxProvider/config/hooks';
+import CountriesDropDown from '@/enteties/Country/ui/CountriesDropDown';
+import CurrenciesDropDown from '@/enteties/Currency/ui/CurrenciesDropDown';
+import { profileFormSelector } from '@/enteties/Profile/selectors/profileFormSelector';
+import { profileReadOnlySelector } from '@/enteties/Profile/selectors/profileReadOnlySelector';
+import { updateProfile } from '@/enteties/Profile/slice/profileSlice';
+import Avatar from '@/shared/ui/Avatar/ui/Avatar';
+import { Input } from '@/shared/ui/Input';
+import { User } from '@/enteties/User/model/types';
 import cls from './ProfileCard.module.scss';
 
 type Props = {
@@ -73,59 +73,90 @@ const ProfileCard: FC<Props> = ({ userInfo }) => {
                 <Avatar src={userInfo?.avatar} />
             </div>
 
-            <div>
-                <label htmlFor="">
-                    <span>
-                        {t('Username')}
-                        :
-                    </span>
-                    <Input readOnly={isReadOnly} onChange={setUsernameHandler} value={profileForm?.first} placeholder={userInfo?.first} />
-                </label>
-            </div>
-            <div>
-                <label htmlFor="">
-                    <span>
-                        {t('Lastname')}
-                        :
-                    </span>
-                    <Input readOnly={isReadOnly} onChange={setLastnameHandler} value={profileForm?.lastname} placeholder={profileForm?.lastname} />
-                </label>
-            </div>
-            <div>
-                <label htmlFor="">
-                    <span>
-                        {t('Age')}
-                        :
-                    </span>
-                    <Input readOnly={isReadOnly} type="number" onChange={setAgeHandler} value={profileForm?.age} placeholder={profileForm?.age} />
-                </label>
-            </div>
+            <label htmlFor="username" className={cls.fieldWrapper}>
+                <span>
+                    {t('Username')}
+                    :
+                </span>
+                <Input
+                    name="username"
+                    readOnly={isReadOnly}
+                    onChange={setUsernameHandler}
+                    value={profileForm?.first}
+                    placeholder={userInfo?.first}
+                />
+            </label>
+
+            <label htmlFor="lastname" className={cls.fieldWrapper}>
+                <span>
+                    {t('Lastname')}
+                    :
+                </span>
+                <Input
+                    name="lastname"
+                    readOnly={isReadOnly}
+                    onChange={setLastnameHandler}
+                    value={profileForm?.lastname}
+                    placeholder={profileForm?.lastname}
+                />
+            </label>
+
+            <label htmlFor="age" className={cls.fieldWrapper}>
+                <span>
+                    {t('Age')}
+                    :
+                </span>
+                <Input
+                    name="age"
+                    readOnly={isReadOnly}
+                    type="number"
+                    onChange={setAgeHandler}
+                    value={profileForm?.age}
+                    placeholder={profileForm?.age}
+                />
+            </label>
+
             <div />
             <p>
                 {t('Country')}
                 :
-                <CountriesDropDown setCurrentCountry={setCountryHandler} canEdit={isReadOnly} defaultCountrie={userInfo?.country} />
+                <CountriesDropDown
+                    setCurrentCountry={setCountryHandler}
+                    canEdit={isReadOnly}
+                    defaultCountrie={userInfo?.country}
+                />
             </p>
-            <label htmlFor="">
+            <label htmlFor="city" className={cls.fieldWrapper}>
                 <span>
                     {' '}
                     {t('City')}
                     :
                 </span>
-                <Input readOnly={isReadOnly} onChange={setCityHandler} value={profileForm?.city} placeholder={userInfo?.city} />
+                <Input
+                    name="city"
+                    readOnly={isReadOnly}
+                    onChange={setCityHandler}
+                    value={profileForm?.city}
+                    placeholder={userInfo?.city}
+                />
             </label>
-            <p>
+            <div>
                 {t('Currency')}
                 :
-                <CurrenciesDropDown setCurrentCurrency={setCurrencyHandler} canEdit={isReadOnly} defaultCurrency={userInfo?.currency} />
-            </p>
-            <label htmlFor="">
+                <CurrenciesDropDown
+                    setCurrentCurrency={setCurrencyHandler}
+                    canEdit={isReadOnly}
+                    defaultCurrency={userInfo?.currency}
+                />
+            </div>
+            <label htmlFor="avatar" className={cls.fieldWrapper}>
                 <span>
                     {' '}
                     {t('Avatar')}
                     :
                 </span>
                 <Input
+                    name="avatar"
                     onChange={setAvatarHandler}
                     value={profileForm?.avatar}
                     readOnly={isReadOnly}

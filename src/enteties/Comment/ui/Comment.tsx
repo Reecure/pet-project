@@ -1,17 +1,17 @@
 import { useTranslation } from 'react-i18next';
-import { classNames } from 'shared/lib/classNames/classNames';
 import { FC } from 'react';
-import Avatar from 'shared/ui/Avatar/ui/Avatar';
-import { RoutePath } from 'shared/config/routeConfig/routeConfig';
-import { AppLink } from 'shared/ui/AppLink';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import Avatar from '@/shared/ui/Avatar/ui/Avatar';
+import { getProfileRoute } from '@/shared/config/routeConfig/routeConfig';
+import { AppLink } from '@/shared/ui/AppLink';
 import cls from './Comment.module.scss';
 import { IComment } from '../model/types/comment';
 
 interface Props {
-    comment:IComment
+    comment: IComment
 }
 
-const Comment:FC<Props> = ({ comment }) => {
+const Comment: FC<Props> = ({ comment }) => {
     const { t } = useTranslation();
 
     return (
@@ -24,7 +24,7 @@ const Comment:FC<Props> = ({ comment }) => {
                 />
             </div>
             <div className={cls.commentContent}>
-                <AppLink to={`${RoutePath.profile}${comment.user.id}`}>{comment.user.username}</AppLink>
+                <AppLink to={getProfileRoute(comment.user.id)}>{comment.user.username}</AppLink>
                 <p>{comment.text}</p>
             </div>
         </div>

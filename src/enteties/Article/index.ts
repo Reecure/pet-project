@@ -1,4 +1,4 @@
-import articleReducer from './slice/articleSlice';
+import articleReducer from '@/enteties/Article/model/slice/articleSlice';
 import ArticleCodeComponent from './ui/ArticleCodeComponent/ArticleCodeComponent';
 import ArticleDetails from './ui/ArticleDetails/ArticleDetails';
 import ArticleImageComponent from './ui/ArticleImageComponent/ArticleImageComponent';

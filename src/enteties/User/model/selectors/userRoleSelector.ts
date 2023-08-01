@@ -1,4 +1,4 @@
-import { RootState } from 'app/providers/ReduxProvider/config/store';
+import { RootState } from '@/app/providers/ReduxProvider/config/store';
 import { Roles } from '../types';
 
 export const userRolesSelector = (state: RootState) => state.user.userData?.roles || [];

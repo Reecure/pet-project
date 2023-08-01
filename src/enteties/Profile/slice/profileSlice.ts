@@ -1,8 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-import { User } from 'enteties/User/model/types';
+import { User } from '@/enteties/User/model/types';
 import { getUserProfile } from '../services/getUserProfile';
-import { updateUserProfile } from '../services/updateUserProfile';
 
 interface State {
     userInfo: User;
@@ -19,7 +18,7 @@ const initialState: State = {
     readonly: true,
 };
 
-const profileSlice = createSlice({
+export const profileSlice = createSlice({
     name: 'profile',
     initialState,
     reducers: {

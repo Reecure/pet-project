@@ -1,11 +1,19 @@
 {
   "version" : "1.2",
   "profiles" : [ {
+<<<<<<< HEAD
     "id" : "0bc92e69-768b-46ef-b262-156f1186f022",
     "name" : "React-i18n",
     "keyNamingPattern" : "CAMEL_CASE_PATTERN",
     "sink" : {
       "id" : "70266e5a-f41e-450a-9f9a-ba4886c59a1e",
+=======
+    "id" : "135ac310-d7f5-4adb-bae6-60694e3aec3f",
+    "name" : "React-i18n",
+    "keyNamingPattern" : "CAMEL_CASE_PATTERN",
+    "sink" : {
+      "id" : "59a52739-a845-47bb-ba67-844398088802",
+>>>>>>> origin/main
       "type" : "namespaced",
       "translationsDirectory" : "$PROJECT_DIR$/public/locales",
       "fileType" : "json",
@@ -16,7 +24,11 @@
       "placeholderFormatterName" : "I18NEXT"
     },
     "sources" : [ {
+<<<<<<< HEAD
       "id" : "36140faf-509e-40ac-b003-7070bcda6c56",
+=======
+      "id" : "bee12011-9a89-4d86-ae09-43e5583ea370",
+>>>>>>> origin/main
       "type" : "js",
       "scopeName" : "Project Files",
       "scopePattern" : "",
@@ -24,7 +36,11 @@
       "recognizedReplacementTemplates" : [ ],
       "skipDefaultNamespace" : true
     }, {
+<<<<<<< HEAD
       "id" : "04620f82-cbd2-4ae0-8f7d-e70d387dc5bd",
+=======
+      "id" : "ce559df1-05fa-4cb9-8251-9471753d94b7",
+>>>>>>> origin/main
       "type" : "jsx",
       "scopeName" : "Project Files",
       "scopePattern" : "",

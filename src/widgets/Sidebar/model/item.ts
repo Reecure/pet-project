@@ -1,45 +1,39 @@
-import { AppRoutes } from 'shared/config/routeConfig/routeConfig';
-import { AppLinkTheme } from 'shared/ui/AppLink';
+import { getAboutRoute, getArticlesRoute, getMainRoute } from '@/shared/config/routeConfig/routeConfig';
+import { AppLinkTheme } from '@/shared/ui/AppLink';
 
 export const enum Links {
     Main = 'Main',
     About = 'About',
-    Profile = 'Profile',
     Articles = 'Articles',
 }
 
 export interface SidebarLink {
     theme: AppLinkTheme,
-    to: AppRoutes,
+    to: string,
     text: Links
-    icon: string
+    icon: Links
     authOnly?: boolean
 }
-export const SidebarLinks :SidebarLink[] = [
+
+export const SidebarLinks: SidebarLink[] = [
     {
-        to: AppRoutes.MAIN,
+        to: getMainRoute(),
         theme: AppLinkTheme.SECONDARY,
         text: Links.Main,
-        icon: 'AiOutlineHome',
+        icon: Links.Main,
     },
     {
-        to: AppRoutes.ABOUT,
+        to: getAboutRoute(),
         theme: AppLinkTheme.SECONDARY,
         text: Links.About,
-        icon: 'BsListStars',
+        icon: Links.About,
     },
+
     {
-        to: AppRoutes.PROFILE,
-        theme: AppLinkTheme.SECONDARY,
-        text: Links.Profile,
-        icon: 'BsFillPersonLinesFill',
-        authOnly: true,
-    },
-    {
-        to: AppRoutes.ARTICLES,
+        to: getArticlesRoute(),
         theme: AppLinkTheme.SECONDARY,
         text: Links.Articles,
-        icon: 'PiArticleMediumBold',
+        icon: Links.Articles,
         authOnly: true,
     },
 ];

@@ -1,6 +1,7 @@
-import { RootState } from 'app/providers/ReduxProvider/config/store';
+import { RootState } from '@/app/providers/ReduxProvider/config/store';
 
 export const articlesLoadingSelector = (state: RootState) => state.articlesReducer.loading;
+
 // export const articlesErrorSelector = (state: RootState) => state.articlesReducer.error;
 
 export const articlesViewsSelector = (state: RootState) => state.articlesReducer.viewsType;

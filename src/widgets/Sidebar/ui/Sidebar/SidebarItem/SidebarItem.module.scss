@@ -1,16 +1,18 @@
 
-  .link{
-    display: flex;
-    align-items: center;
-    margin-bottom: 10px;
+.link {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
 
-    .linkIcon{
-      margin-right: 10px;
-      font-size: 24px;
-   }
+
+  .linkIcon {
+    margin-right: 10px;
+    font-size: 24px;
+
   }
+}
 
-  .linkTextWhenClose {
+.linkTextWhenClose {
   animation-duration: .2s;
-   display: none;
+  display: none;
 }

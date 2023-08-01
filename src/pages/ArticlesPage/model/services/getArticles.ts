@@ -1,13 +1,16 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import { useAppSelector } from 'app/providers/ReduxProvider/config/hooks';
 import axios from 'axios';
-import { USER_LOCALSTORAGE_KEY } from 'shared/constants/localStorage';
-import { Article, ArticleTypes } from 'enteties/Article/model/types/article';
+import { USER_LOCALSTORAGE_KEY } from '@/shared/constants/localStorage';
+import { Article } from '@/enteties/Article/model/types/article';
 import {
-    articleFieldSelector, articleOrderSelector, articlePageSelector, articleTypesSelector, articlesLimitSelector,
+    articleFieldSelector,
+    articleOrderSelector,
+    articlePageSelector,
+    articlesLimitSelector,
+    articleTypesSelector,
 } from '../selector/articlesSelector';
 
-export const getAllArticles = createAsyncThunk<Article[], void>('profile/getAllArticles', async (_, thunkApi:any) => {
+export const getAllArticles = createAsyncThunk<Article[], void>('articles/getAllArticles', async (_, thunkApi: any) => {
     const { getState } = thunkApi;
 
     const pageState = articlePageSelector(getState());
@@ -16,13 +19,13 @@ export const getAllArticles = createAsyncThunk<Article[], void>('profile/getAllA
     const orderState = articleOrderSelector(getState());
     const typeState = articleTypesSelector(getState());
     try {
-        const params:any = {
+        const params: any = {
             _page: pageState,
             _limit: limitState,
         };
 
         if (typeState.length > 0) {
-            typeState.forEach((type:any, index:number) => {
+            typeState.forEach((type: any, index: number) => {
                 params[`type_like[${index}]`] = type;
             });
         }

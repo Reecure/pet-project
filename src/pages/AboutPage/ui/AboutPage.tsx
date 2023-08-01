@@ -1,7 +1,7 @@
-import React, { memo, useEffect } from 'react';
+import React, { memo } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Loader } from 'shared/ui/Loader';
-import { Skeleton } from 'shared/ui/Skeleton';
+import { Loader } from '@/shared/ui/Loader';
+import { Skeleton } from '@/shared/ui/Skeleton';
 
 const AboutPage = () => {
     const { t } = useTranslation('about');

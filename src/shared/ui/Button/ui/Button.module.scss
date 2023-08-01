@@ -5,6 +5,7 @@
   border: none;
   outline: none;
   background-color: var(--primary-color);
+
   &:hover {
     opacity: 0.8;
     cursor: pointer;
@@ -14,6 +15,8 @@
 .clear {
   border: none;
   outline: none;
+  padding: 0;
+  height: auto;
   background-color: transparent;
   color: var(--primary-color);
 }
@@ -25,14 +28,15 @@
 }
 
 .outline_inverted {
-    background-color: transparent;
-    border: 2px solid var(--inverted-primary-color);
-  }
- .outline_red {
-    background-color: transparent;
-    color: var(--primary-red);
-    border: 2px solid var(--primary-red)
-  }
+  background-color: transparent;
+  border: 2px solid var(--inverted-primary-color);
+}
+
+.outline_red {
+  background-color: transparent;
+  color: var(--primary-red);
+  border: 2px solid var(--primary-red)
+}
 
 .disabled {
   opacity: 0.8;

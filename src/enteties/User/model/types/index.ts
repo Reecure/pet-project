@@ -1,11 +1,12 @@
-import { COUNTRIES } from 'enteties/Country/model/types/countries';
-import { CURRENCIES } from 'enteties/Currency/model/types/currencies';
+import { COUNTRIES } from '@/enteties/Country/model/types/countries';
+import { CURRENCIES } from '@/enteties/Currency/model/types/currencies';
 
 export enum Roles {
     ADMIN = 'ADMIN',
     MANAGER = 'MANAGER',
     USER = 'USER',
 }
+
 export interface User {
     id: string;
     first: string;

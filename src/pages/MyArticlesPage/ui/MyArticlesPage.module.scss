@@ -1,0 +1,13 @@
+.articleWrapper {
+  width: 100%;
+  border: var(--inverted-primary-color) 2px solid;
+  padding: 5px 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.articleButtonsWrapper {
+  display: flex;
+  column-gap: 10px;
+}
