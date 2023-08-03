@@ -1,20 +1,20 @@
-import { useTranslation } from 'react-i18next';
-import { FC } from 'react';
-import { classNames } from '@/shared/lib/classNames/classNames';
-import { useAppSelector } from '@/app/providers/ReduxProvider/config/hooks';
-import { isLoggedSelector } from '@/enteties/User/model/selectors/isLoggedSelector';
-import { AppLink } from '@/shared/ui/AppLink';
-import { SidebarLink } from '../../../model/item';
+import {useTranslation} from 'react-i18next';
+import {FC} from 'react';
+import {classNames} from '@/shared/lib/classNames/classNames';
+import {useAppSelector} from '@/app/providers/ReduxProvider/config/hooks';
+import {isLoggedSelector} from '@/enteties/User/model/selectors/isLoggedSelector';
+import {AppLink} from '@/shared/ui/AppLink';
+import {SidebarLink} from '../../../model/item';
 import cls from './SidebarItem.module.scss';
-import { sidebarIconRender } from '@/widgets/Sidebar/helpers/sidebarIconRender';
+import {sidebarIconRender} from '@/widgets/Sidebar/helpers/sidebarIconRender';
 
 interface Props {
     link: SidebarLink
     open: boolean
 }
 
-const SidebarItem: FC<Props> = ({ link, open }) => {
-    const { t } = useTranslation();
+const SidebarItem: FC<Props> = ({link, open}) => {
+    const {t} = useTranslation();
 
     const selectIsLogged = useAppSelector(isLoggedSelector);
 
@@ -23,10 +23,10 @@ const SidebarItem: FC<Props> = ({ link, open }) => {
     }
 
     return (
-        <AppLink theme={link.theme} to={link.to} className={cls.link}>
+        <AppLink to={link.to} className={cls.link}>
             <span className={cls.linkIcon}>{sidebarIconRender(link.icon)}</span>
 
-            <span className={classNames('', { [cls.linkTextWhenClose]: !open }, [])}>
+            <span className={classNames('', {[cls.linkTextWhenClose]: !open}, [])}>
                 {t(link.text)}
             </span>
         </AppLink>

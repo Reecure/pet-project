@@ -129,6 +129,7 @@
       "age": "23",
       "country": "Poland",
       "city": "Kyiv",
+      "username": "admin",
       "avatar": "https://e0.pxfuel.com/wallpapers/668/829/desktop-wallpaper-killua-zoldyck-killuazoldyck-hunterxhunter-killuazoldyck-hunterxhunterkillua-killua.jpg",
       "currency": "PL"
     },
@@ -140,7 +141,7 @@
       "currency": "UAH",
       "country": "Ukraine",
       "city": "Kyiv",
-      "username": "admin",
+      "username": "user13",
       "avatar": "https://hatrabbits.com/wp-content/uploads/2017/01/random.jpg"
     }
   ]

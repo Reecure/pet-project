@@ -1,6 +1,6 @@
 .UserDropdownProfile {
   cursor: pointer;
-  color: var(--inverted-primary-color)
+  color: var(--inverted-secondary-color) !important;
 }
 
 .menuWrapper {
@@ -21,7 +21,7 @@
   padding: 12px;
   display: flex;
   flex-direction: column;
-  background-color: var(--secondary-color);
+  background-color: var(--secondary-bg-color);
   z-index: 111111;
 
 }

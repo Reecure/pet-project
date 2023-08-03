@@ -1,54 +1,53 @@
 .types {
-    display: flex;
-    overflow-y: auto;
+  display: flex;
+  overflow-y: auto;
 }
 
 .type {
-    padding: 5px 10px;
-    margin-right: 10px;
-    margin-bottom: 5px;
-    width: min-content;
-    white-space: nowrap;
-    height: 40px;
-    background-color: var(--secondary-color);
-    color: var(--bg-color);
-    cursor: pointer;
+  padding: 5px 10px;
+  margin-right: 10px;
+  margin-bottom: 5px;
+  width: min-content;
+  white-space: nowrap;
+  height: 40px;
+  border: 2px solid var(--secondary-bg-color);
+  color: var(--inverted-primary-color);
+  cursor: pointer;
 
-    &:hover {
-        opacity: 0.8;
-    }
-    .selected {
-        opacity: 0.8;
-    }
+  &:hover {
+    opacity: 0.5;
+  }
+
+  .selected {
+    opacity: 0.5;
+  }
 }
 
 .sortingWrapper {
-    display: flex;
-    justify-content:  space-between;
+  display: flex;
+  justify-content: space-between;
 
-    .selectWrapper {
-        max-width: 200px;
-        width: 100%;
-        select {
-            width: 100%;
-            outline: none;
-            border: none;
-            background-color: var(--secondary-color);
-            color: var(--bg-color);
-            cursor: pointer;
+  .selectWrapper {
+    max-width: 200px;
+    width: 100%;
 
-            
-        }
+    select {
+      width: 100%;
+      outline: none;
+      background-color: var(--bg-color);
+      border: 2px solid var(--primary-color);
+      color: var(--inverted-secondary-color);
+      cursor: pointer;
     }
+  }
 }
 
 
-
 .inputWrapper {
-    margin: 20px 0;
+  margin: 20px 0;
 }
 
 
 .selected {
-    opacity: 0.8;
+  opacity: 0.5;
 }

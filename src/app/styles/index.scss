@@ -8,7 +8,7 @@
   font: var(--font-m);
 
   background-color: var(--bg-color);
-  color: var(--primary-color);
+  color: var(--inverted-primary-color);
 
   min-height: 100vh;
 
@@ -35,10 +35,10 @@
 }
 
 *::-webkit-scrollbar-thumb {
-  background-color: var(--primary-color);
+  background-color: var(--inverted-primary-color);
 }
 
 svg {
   stroke-width: 1;
-  stroke: var(--primary-color) !important;
+  stroke: var(--inverted-primary-color) !important;
 }

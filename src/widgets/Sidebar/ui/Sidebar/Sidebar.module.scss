@@ -1,12 +1,12 @@
 .Sidebar {
   position: relative;
   padding: 20px;
-  display:  flex;
+  display: flex;
   flex-direction: column;
   justify-content: space-between;
   height: calc(100vh - var(--navbar-height));
   width: var(--sidebar-close-width);
-  background-color: var(--inverted-bg-color);
+  background-color: var(--secondary-bg-color);
   transition: width 1s;
 }
 
@@ -18,7 +18,7 @@
 .links {
   display: flex;
   flex-direction: column;
-  
+
 
 }
 
@@ -34,5 +34,5 @@
   position: absolute;
   bottom: 0;
   right: -28px;
-  padding: 5px 10px ;
+  padding: 5px 10px;
 }

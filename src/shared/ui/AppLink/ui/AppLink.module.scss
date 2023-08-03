@@ -1,13 +1,5 @@
 .AppLink {
   white-space: nowrap;
-  color: var(--primary-color);
-  text-decoration: none;
-}
-
-.primary {
-  color: var(--primary-color);
-}
-
-.secondary{
   color: var(--inverted-primary-color);
+  text-decoration: none;
 }

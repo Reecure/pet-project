@@ -1,17 +1,14 @@
-import { useTranslation } from 'react-i18next';
-import { FC } from 'react';
-import { Field, Form, Formik } from 'formik';
+import {useTranslation} from 'react-i18next';
+import {FC} from 'react';
+import {ErrorMessage, Field, Form, Formik} from 'formik';
 import * as Yup from 'yup';
-import { classNames } from '@/shared/lib/classNames/classNames';
+import {classNames} from '@/shared/lib/classNames/classNames';
 import Avatar from '@/shared/ui/Avatar/ui/Avatar';
-import { useAppDispatch, useAppSelector } from '@/app/providers/ReduxProvider/config/hooks';
-import { userDataSelector } from '@/enteties/User/model/selectors/userDataSelector';
-import { Button } from '@/shared/ui/Button';
-import { ThemeButton } from '@/shared/ui/Button/ui/Button';
-
+import {useAppDispatch, useAppSelector} from '@/app/providers/ReduxProvider/config/hooks';
+import {userDataSelector} from '@/enteties/User/model/selectors/userDataSelector';
 import cls from './AddComment.module.scss';
-import { Text } from '@/shared/ui/Text';
-import { addComment } from '@/features/addComment/model/services/addComment';
+import {addComment} from '@/features/addComment/model/services/addComment';
+import {Button, ThemeButton} from "@/shared/ui/Button";
 
 const SignupSchema = Yup.object().shape({
     comment: Yup.string().min(4, 'Too short!!'),
@@ -22,7 +19,7 @@ interface Props {
 }
 
 const AddComment: FC<Props> = () => {
-    const { t } = useTranslation();
+    const {t} = useTranslation();
 
     const dispatch = useAppDispatch();
 
@@ -31,16 +28,13 @@ const AddComment: FC<Props> = () => {
     return (
         <div className={classNames(cls.AddComment, {}, [])}>
             <div className={cls.contentWrapper}>
-                <div className={cls.commentUserAvatar}>
-
-                    <Avatar
-                        src={currentUser.avatar}
-                        size={35}
-                    />
-                </div>
+                <Avatar
+                    src={currentUser.avatar}
+                    size={35}
+                />
                 <Formik
                     initialValues={
-                        { comment: '' }
+                        {comment: ''}
                     }
                     validationSchema={SignupSchema}
                     onSubmit={(values, formikHelpers) => {
@@ -49,32 +43,28 @@ const AddComment: FC<Props> = () => {
 
                 >
                     {({
-                        values, errors, touched, handleChange,
-                    }) => (
-                        <Form>
-                            <label htmlFor="comment" className={cls.contentWrapper}>
-                                <div>
-                                    <Field
-                                        id="comment"
-                                        name="comment"
-                                        placeholder="Comment..."
-                                        className={cls.commentContent}
-                                    />
-                                    {errors.comment && touched.comment ? (
-                                        <Text haveError={true} mainText={errors.comment} />
-                                    ) : null}
-                                </div>
-                                <Button type="submit" theme={ThemeButton.OUTLINE}>
-                                    {'>'}
-
-                                </Button>
+                          values, errors, touched, handleChange,
+                      }) => (
+                        <Form className={cls.form}>
+                            <label htmlFor="comment" className={cls.labelWrapper}>
+                                <Field
+                                    id="comment"
+                                    name="comment"
+                                    placeholder="Comment..."
+                                    className={cls.field}
+                                />
+                                <ErrorMessage name={'comment'}/>
                             </label>
+                            <Button type="submit" theme={ThemeButton.OUTLINE}>
+                                {'>'}
+
+                            </Button>
 
                         </Form>
                     )}
                 </Formik>
             </div>
-            <div className={cls.sendButton} />
+            <div className={cls.sendButton}/>
         </div>
     );
 };
