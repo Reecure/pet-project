@@ -1,6 +1,12 @@
-.UserDropdownProfile {
+.menuItem {
+  padding: 5px 10px;
   cursor: pointer;
   color: var(--inverted-secondary-color) !important;
+}
+
+.active {
+  background-color: var(--inverted-secondary-color);
+  color: var(--secondary-bg-color) !important;
 }
 
 .menuWrapper {
@@ -21,6 +27,7 @@
   padding: 12px;
   display: flex;
   flex-direction: column;
+  border: 1px solid var(--bg-color);
   background-color: var(--secondary-bg-color);
   z-index: 111111;
 
@@ -28,4 +35,35 @@
 
 .menuItem {
   text-overflow: unset;
+}
+
+.menuItemsTiming {
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms
+}
+
+.menuItemsFrom {
+  transform: scale(.95);
+  opacity: 0;
+}
+
+.menuItemsTo {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.menuItemsExit {
+  animation: show .4s reverse ease-in-out forwards;
+}
+
+
+@keyframes show {
+  0% {
+    scale: 0;
+    opacity: 0;
+  }
+  100% {
+    scale: 1;
+    opacity: 1;
+  }
 }

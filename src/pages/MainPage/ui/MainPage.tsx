@@ -14,6 +14,7 @@ const MainPage: FC<Props> = () => {
         <div>
             <Header/>
             <MainContent/>
+
         </div>
     );
 };

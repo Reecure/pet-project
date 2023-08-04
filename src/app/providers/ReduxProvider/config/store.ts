@@ -1,12 +1,13 @@
-import { configureStore } from '@reduxjs/toolkit';
+import {configureStore} from '@reduxjs/toolkit';
 import user from '@/enteties/User/model/slice/userSlice';
-import { loginReducer } from '@/features/AuthByUsername';
-import { profileReducer } from '@/enteties/Profile';
-import { articleReducer } from '@/enteties/Article';
-import { commentsReducer } from '@/features/getComments';
-import { articlesReducer } from '@/pages/ArticlesPage';
-import { addArticleReducer } from '@/features/CRUDArticle';
-import { myArticlesReducer } from '@/pages/MyArticlesPage';
+import {loginReducer} from '@/features/AuthByUsername';
+import {profileReducer} from '@/enteties/Profile';
+import {articleReducer} from '@/enteties/Article';
+import {commentsReducer} from '@/features/getComments';
+import {articlesReducer} from '@/pages/ArticlesPage';
+import {addArticleReducer} from '@/features/CRUDArticle';
+import {myArticlesReducer} from '@/pages/MyArticlesPage';
+import {RecommendationArticleReducer} from '@/pages/MainPage'
 
 export const store = configureStore({
     reducer: {
@@ -19,6 +20,7 @@ export const store = configureStore({
         articlesReducer,
         addArticleReducer,
         myArticlesReducer,
+        RecommendationArticleReducer
 
     },
 });

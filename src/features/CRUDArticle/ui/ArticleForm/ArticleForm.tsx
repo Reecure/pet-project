@@ -25,8 +25,8 @@ const ArticleForm: FC<Props> = ({article, loading, onSubmit}) => {
         blocks: article?.blocks || [],
     };
     const validationSchema = Yup.object().shape({
-        title: Yup.string().required('Title is required'),
-        subtitle: Yup.string().required('Subtitle is required'),
+        title: Yup.string().required('Title is required').min(4, 'Too short!').max(30, 'Too long!'),
+        subtitle: Yup.string().required('Subtitle is required').min(4, 'Too short!'),
         img: Yup.string().url('Please enter a valid URL').required('Image URL is required'),
         // blocks: Yup.array().of(
         //     Yup.object().shape({

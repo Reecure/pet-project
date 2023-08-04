@@ -1,0 +1,12 @@
+.MainContent {
+  margin-top: 20px;
+}
+
+.articlesWraper {
+  margin-top: 20px;
+  display: flex;
+  gap: 20px;
+  overflow-y: hidden;
+  overflow-x: scroll;
+
+}

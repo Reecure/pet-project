@@ -1,11 +1,12 @@
 import {useTranslation} from 'react-i18next';
-import {ChangeEvent, FC, useCallback, useMemo,} from 'react';
+import {ChangeEvent, FC, useCallback, useEffect, useMemo,} from 'react';
 import {classNames} from '@/shared/lib/classNames/classNames';
 
 import {useAppDispatch, useAppSelector} from '@/app/providers/ReduxProvider/config/hooks';
 import {
     OrderType,
     resetPage,
+    setQueryString,
     setSortByField,
     setSortByOrder,
     setSortByType,
@@ -15,10 +16,11 @@ import {
 } from '@/pages/ArticlesPage/model/slice/articlesSlice';
 import {ArticleTypes} from '@/enteties/Article/model/types/article';
 import {getAllArticles} from '@/pages/ArticlesPage/model/services/getArticles';
-import {articleTypesSelector} from '@/pages/ArticlesPage/model/selector/articlesSelector';
+import {articleQuerySelector, articleTypesSelector} from '@/pages/ArticlesPage/model/selector/articlesSelector';
 import {Button, ThemeButton} from '@/shared/ui/Button';
 import {Input, ThemeInput} from '@/shared/ui/Input';
 import cls from './ArticleHeader.module.scss';
+import {useDebounce} from "@/shared/lib/useDebounce/useDebounce";
 
 interface Props {
 }
@@ -37,9 +39,12 @@ const options = [
 const ArticleHeader: FC<Props> = () => {
     const {t} = useTranslation();
 
-    const dispatch = useAppDispatch();
 
+    const dispatch = useAppDispatch();
+    const query = useAppSelector(articleQuerySelector)
     const types = useAppSelector(articleTypesSelector);
+
+    const debouncedQuery = useDebounce(query, 500);
 
     const setBigArticles = useCallback(
         () => {
@@ -47,6 +52,17 @@ const ArticleHeader: FC<Props> = () => {
         },
         [dispatch],
     );
+
+    const searchHandler = useCallback(
+        (e: ChangeEvent<HTMLInputElement>) => {
+            dispatch(setQueryString(e.currentTarget.value));
+        },
+        [dispatch]
+    );
+
+    useEffect(() => {
+        dispatch(getAllArticles())
+    }, [debouncedQuery, dispatch])
 
     const setSmallArticles = useCallback(
         () => {
@@ -141,7 +157,8 @@ const ArticleHeader: FC<Props> = () => {
             </div>
 
             <div className={cls.inputWrapper}>
-                <Input theme={ThemeInput.OUTLINE} placeholder={`${t('Search')}...`}/>
+                <Input theme={ThemeInput.OUTLINE} placeholder={`${t('Search')}...`}
+                       onChange={searchHandler}/>
             </div>
 
             <div className={cls.types}>

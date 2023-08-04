@@ -1,6 +1,5 @@
 import {useTranslation} from 'react-i18next';
-import {FC, useCallback, useEffect, useState,} from 'react';
-import {useNavigate} from 'react-router-dom';
+import {FC, useEffect, useState,} from 'react';
 import {classNames} from '@/shared/lib/classNames/classNames';
 import {Article, BlockTypes} from '@/enteties/Article/model/types/article';
 import Avatar from '@/shared/ui/Avatar/ui/Avatar';
@@ -12,6 +11,7 @@ import {useAppDispatch, useAppSelector} from "@/app/providers/ReduxProvider/conf
 import {profileSelector} from "@/enteties/Profile/selectors/profileSelector";
 import {getUserProfile} from "@/enteties/Profile/services/getUserProfile";
 import {profileIsLoadingSelector} from "@/enteties/Profile/selectors/profileIsLoadingSelector";
+import {AppLink} from "@/shared/ui/AppLink";
 
 interface Props {
     article: Article
@@ -25,15 +25,6 @@ const ArticleBigComponent: FC<Props> = ({article}) => {
     const user = useAppSelector(profileSelector)
     const loader = useAppSelector(profileIsLoadingSelector)
     const dispatch = useAppDispatch()
-
-    const navigate = useNavigate();
-
-    const readMoreHandler = useCallback(
-        () => {
-            navigate(getArticleRoute(article.id));
-        },
-        [article.id, navigate],
-    );
 
     useEffect(() => {
         dispatch(getUserProfile('1'))
@@ -80,7 +71,10 @@ const ArticleBigComponent: FC<Props> = ({article}) => {
                 </p>
             </div>
             <div className={cls.ArticleBigComponentFooter}>
-                <Button onClick={readMoreHandler} theme={ThemeButton.OUTLINE}>{t('Read more')}</Button>
+                <AppLink to={getArticleRoute(article.id)}>
+                    <Button theme={ThemeButton.OUTLINE}>{t('Read more')}</Button>
+                </AppLink>
+
                 <Views views={article?.views}/>
             </div>
         </div>

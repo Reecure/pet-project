@@ -1,9 +1,7 @@
-import {
-    createEntityAdapter, createSlice, EntityState, PayloadAction,
-} from '@reduxjs/toolkit';
-import { Article, ArticleTypes } from '@/enteties/Article/model/types/article';
-import { RootState } from '@/app/providers/ReduxProvider/config/store';
-import { getAllArticles } from '../services/getArticles';
+import {createEntityAdapter, createSlice, EntityState, PayloadAction,} from '@reduxjs/toolkit';
+import {Article, ArticleTypes} from '@/enteties/Article/model/types/article';
+import {RootState} from '@/app/providers/ReduxProvider/config/store';
+import {getAllArticles} from '../services/getArticles';
 
 export enum viewTypes {
     BIG = 'BIG',
@@ -31,6 +29,7 @@ interface Props extends EntityState<Article> {
     order: OrderType,
     page: number,
     limit: number,
+    q: string,
     viewsType?: viewTypes
 }
 
@@ -53,6 +52,7 @@ const initialState = articlesAdapter.getInitialState<Props>({
     sortByField: sortFields.NONE,
     order: OrderType.NONE,
     types: [],
+    q: '',
     page: 1,
     limit: 6,
     viewsType: viewTypes.SMALL,
@@ -82,6 +82,9 @@ const articlesSlice = createSlice({
         setSortByField: (state, action: PayloadAction<sortFields>) => {
             state.sortByField = action.payload;
         },
+        setQueryString: (state, action: PayloadAction<string>) => {
+            state.q = action.payload
+        },
         setSortByType: (state, action: PayloadAction<ArticleTypes>) => {
             if (state.types.indexOf(action.payload) === -1) {
                 state.types.push(action.payload);
@@ -110,5 +113,5 @@ const articlesSlice = createSlice({
 export default articlesSlice.reducer;
 
 export const {
-    setViewType, setNextPage, setPrevPage, setSortByOrder, setSortByField, resetPage, setSortByType,
+    setViewType, setNextPage, setQueryString, setPrevPage, setSortByOrder, setSortByField, resetPage, setSortByType,
 } = articlesSlice.actions;
