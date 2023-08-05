@@ -7,7 +7,7 @@ import Avatar from '@/shared/ui/Avatar/ui/Avatar';
 import {useAppDispatch, useAppSelector} from '@/app/providers/ReduxProvider/config/hooks';
 import {userDataSelector} from '@/enteties/User/model/selectors/userDataSelector';
 import cls from './AddComment.module.scss';
-import {addComment} from '@/features/addComment/model/services/addComment';
+import {addComment} from '../model/services/addComment';
 import {Button, ThemeButton} from "@/shared/ui/Button";
 
 const SignupSchema = Yup.object().shape({

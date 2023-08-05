@@ -1,14 +1,14 @@
-import React, { FC } from 'react';
+import React, {FC, memo} from 'react';
 
 interface Props {
     children: React.ReactNode
 }
 
-const Code: FC<Props> = ({ children }) => (
+const Code: FC<Props> = ({children}) => (
     <pre>
         <code>{children}</code>
     </pre>
 
 );
 
-export default Code;
+export default memo(Code);

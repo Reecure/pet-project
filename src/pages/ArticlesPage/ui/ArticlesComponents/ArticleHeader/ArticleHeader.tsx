@@ -39,7 +39,6 @@ const options = [
 const ArticleHeader: FC<Props> = () => {
     const {t} = useTranslation();
 
-
     const dispatch = useAppDispatch();
     const query = useAppSelector(articleQuerySelector)
     const types = useAppSelector(articleTypesSelector);

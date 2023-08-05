@@ -1,4 +1,4 @@
-import React, {FC, InputHTMLAttributes} from 'react';
+import React, {FC, InputHTMLAttributes, memo} from 'react';
 import {classNames} from '@/shared/lib/classNames/classNames';
 import cls from './Input.module.scss';
 
@@ -12,11 +12,11 @@ interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
     className?: string
 }
 
-const InputWithValidation: FC<InputProps> = ({
-                                                 theme,
-                                                 className,
-                                                 ...otherProps
-                                             }) => {
+const Input: FC<InputProps> = ({
+                                   theme,
+                                   className,
+                                   ...otherProps
+                               }) => {
 
 
     return (
@@ -31,4 +31,4 @@ const InputWithValidation: FC<InputProps> = ({
     );
 };
 
-export default InputWithValidation;
+export default memo(Input);

@@ -1,6 +1,6 @@
-import { FC, ReactNode } from 'react';
-import { CSSTransition } from 'react-transition-group';
-import { classNames } from '@/shared/lib/classNames/classNames';
+import {FC, memo, ReactNode} from 'react';
+import {CSSTransition} from 'react-transition-group';
+import {classNames} from '@/shared/lib/classNames/classNames';
 import cls from './Modal.module.scss';
 
 export enum ModalPositions {
@@ -16,8 +16,8 @@ type Props = {
 }
 
 const Modal: FC<Props> = ({
-    children, isOpen, setIsOpen, childrenPosition, className,
-}) => (
+                              children, isOpen, setIsOpen, childrenPosition, className,
+                          }) => (
     <CSSTransition
         in={isOpen}
         timeout={400}
@@ -49,4 +49,4 @@ const Modal: FC<Props> = ({
 
 );
 
-export default Modal;
+export default memo(Modal);

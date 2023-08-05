@@ -1,5 +1,5 @@
 import {useTranslation} from 'react-i18next';
-import {FC} from 'react';
+import {FC, memo} from 'react';
 import {classNames} from '@/shared/lib/classNames/classNames';
 import {useAppSelector} from '@/app/providers/ReduxProvider/config/hooks';
 import {isLoggedSelector} from '@/enteties/User/model/selectors/isLoggedSelector';
@@ -33,4 +33,4 @@ const SidebarItem: FC<Props> = ({link, open}) => {
     );
 };
 
-export default SidebarItem;
+export default memo(SidebarItem);
