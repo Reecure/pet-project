@@ -8,8 +8,14 @@
 .ProfilePageContent {
   padding: 15px 20px;
   border: 2px solid var(--primary-color);
-  width: 60%;
+  width: 90%;
   height: min-content;
+}
+
+@media (min-width: 640px) {
+  .ProfilePageContent {
+    width: 60%;
+  }
 }
 
 .loaderWrapper {

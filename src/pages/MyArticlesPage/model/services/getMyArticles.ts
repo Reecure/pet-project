@@ -20,7 +20,7 @@ export const getAllMyArticles = createAsyncThunk('articles/getAllArticles', asyn
             _limit: limitState,
             q: query
         };
-        const res = await axios.get(`http://localhost:8000/articles?userId=${id}`, {
+        const res = await axios.get(`https://production-project-server-psi-ivory.vercel.app/articles?userId=${id}`, {
             headers: {
                 authorization: localStorage.getItem(USER_LOCALSTORAGE_KEY) || '',
             },

@@ -11,7 +11,7 @@ import {addComment} from '../model/services/addComment';
 import {Button, ThemeButton} from "@/shared/ui/Button";
 
 const SignupSchema = Yup.object().shape({
-    comment: Yup.string().min(4, 'Too short!!'),
+    comment: Yup.string().required('Should have 4 more symbols').min(4, 'Too short!!'),
 });
 
 interface Props {

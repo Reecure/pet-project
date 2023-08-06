@@ -1,11 +1,11 @@
-import { createAsyncThunk } from '@reduxjs/toolkit';
+import {createAsyncThunk} from '@reduxjs/toolkit';
 import axios from 'axios';
-import { IComment } from '@/enteties/Comment/model/types/comment';
-import { USER_LOCALSTORAGE_KEY } from '@/shared/constants/localStorage';
+import {IComment} from '@/enteties/Comment/model/types/comment';
+import {USER_LOCALSTORAGE_KEY} from '@/shared/constants/localStorage';
 
 export const getCommentsByArticleId = createAsyncThunk('comments/getCommentsByArticleId', async (articleId: string) => {
     try {
-        const res = await axios.get<IComment[]>('http://localhost:8000/comments', {
+        const res = await axios.get<IComment[]>('https://production-project-server-psi-ivory.vercel.app/comments', {
             headers: {
                 authorization: localStorage.getItem(USER_LOCALSTORAGE_KEY) || '',
             },

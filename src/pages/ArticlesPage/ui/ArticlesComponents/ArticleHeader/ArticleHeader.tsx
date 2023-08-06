@@ -95,9 +95,9 @@ const ArticleHeader: FC<Props> = () => {
     const memoTypes = useMemo(() => Object.values(ArticleTypes).map((type) => (
         <p
             key={type}
-            onClick={() => {
-                dispatch(setSortByType(type));
-                dispatch(getAllArticles());
+            onClick={async () => {
+                await dispatch(setSortByType(type));
+                await dispatch(getAllArticles());
             }}
             className={classNames(cls.type, {[cls.selected]: types.indexOf(type) !== -1}, [])}
         >

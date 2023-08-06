@@ -1,0 +1,16 @@
+.ArticleForAccept {
+  width: 100%;
+  padding: 10px 15px;
+  border: 2px solid var(--primary-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.buttonsWrapper {
+
+  button {
+    margin-right: 5px;
+  }
+
+}

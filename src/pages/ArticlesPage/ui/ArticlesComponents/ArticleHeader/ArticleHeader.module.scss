@@ -13,13 +13,18 @@
   border: 2px solid var(--secondary-bg-color);
   color: var(--inverted-primary-color);
   cursor: pointer;
-
-  &:hover {
-    opacity: 0.5;
-  }
+  transition: opacity .5s;
 
   .selected {
     opacity: 0.5;
+  }
+}
+
+@media (min-width: 768px) {
+  .type {
+    &:hover {
+      opacity: 0.5;
+    }
   }
 }
 

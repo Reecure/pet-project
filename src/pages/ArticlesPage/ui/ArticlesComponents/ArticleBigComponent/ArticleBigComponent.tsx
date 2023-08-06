@@ -9,7 +9,6 @@ import {Views} from '@/shared/ui/Views';
 import cls from './ArticleBigComponent.module.scss';
 import {useAppDispatch, useAppSelector} from "@/app/providers/ReduxProvider/config/hooks";
 import {profileSelector} from "@/enteties/Profile/selectors/profileSelector";
-import {getUserProfile} from "@/enteties/Profile/services/getUserProfile";
 import {profileIsLoadingSelector} from "@/enteties/Profile/selectors/profileIsLoadingSelector";
 import {AppLink} from "@/shared/ui/AppLink";
 
@@ -27,12 +26,8 @@ const ArticleBigComponent: FC<Props> = ({article}) => {
     const dispatch = useAppDispatch()
 
     useEffect(() => {
-        dispatch(getUserProfile('1'))
+        // dispatch(getUserProfile(article?.user?.id))
     }, [dispatch])
-
-    useEffect(() => {
-        console.log(user)
-    }, [user])
 
     useEffect(() => {
         const selectParagraph = (artic: Article) => artic?.blocks?.find((block) => {

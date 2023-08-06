@@ -31,7 +31,7 @@ export const updateArticle = createAsyncThunk<Article, SendProps, ThunkConfig>('
     const formattedDate = `${day.toString().padStart(2, '0')}.${month.toString().padStart(2, '0')}.${year.toString().padStart(2, '0')}`;
 
     try {
-        const res = await axios.put(`http://localhost:8000/articles/${id}`, {
+        const res = await axios.put(`https://production-project-server-psi-ivory.vercel.app/articles/${id}`, {
             userId: user.id,
             createdAt: formattedDate,
             ...article,

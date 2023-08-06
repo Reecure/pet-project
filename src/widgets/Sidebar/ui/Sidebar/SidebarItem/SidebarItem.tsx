@@ -1,5 +1,5 @@
 import {useTranslation} from 'react-i18next';
-import {FC, memo, useEffect} from 'react';
+import {FC, memo} from 'react';
 import {classNames} from '@/shared/lib/classNames/classNames';
 import {useAppSelector} from '@/app/providers/ReduxProvider/config/hooks';
 import {isLoggedSelector} from '@/enteties/User/model/selectors/isLoggedSelector';
@@ -17,10 +17,6 @@ const SidebarItem: FC<Props> = ({link, open}) => {
     const {t} = useTranslation();
 
     const selectIsLogged = useAppSelector(isLoggedSelector);
-
-    useEffect(() => {
-        console.log(open)
-    }, [open])
 
     if (!selectIsLogged && link.authOnly) {
         return null;
