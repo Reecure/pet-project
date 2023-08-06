@@ -8,15 +8,15 @@
 }
 
 .titleWelcome {
-  margin-left: 20%;
-  font-size: 64px;
+  margin-left: 10%;
+  font-size: 24px;
   font-weight: 600;
-
+  animation: titleAnimationWelcome 5s ease-in-out forwards;
 }
 
 .titleBottom {
-  margin-left: 30%;
-  font-size: 64px;
+  margin-left: 15%;
+  font-size: 24px;
   font-weight: 600;
   white-space: nowrap;
   width: min-content;
@@ -27,13 +27,82 @@
 .titleBottom::before {
   content: '';
   position: absolute;
-  bottom: 35px;
-  right: -40px;
-  width: 35px;
-  height: 15px;
+  bottom: 13px;
+  right: -15px;
+  width: 15px;
+  height: 5px;
   background-color: var(--inverted-primary-color);
   animation: caretAnimation 1s infinite;
 }
+
+@media (min-width: 390px) {
+  .titleWelcome {
+    margin-left: 15%;
+    font-size: 34px;
+  }
+
+  .titleBottom {
+    margin-left: 25%;
+    font-size: 34px;
+  }
+
+  .titleBottom::before {
+    bottom: 18px;
+    right: -15px;
+    width: 15px;
+    height: 5px;
+  }
+}
+
+@media (min-width: 768px) {
+  .titleWelcome {
+    margin-left: 17%;
+    font-size: 48px;
+  }
+
+  .titleBottom {
+    margin-left: 27%;
+    font-size: 48px;
+  }
+
+  .titleBottom::before {
+    bottom: 27px;
+    right: -20px;
+    width: 20px;
+    height: 8px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .titleWelcome {
+    margin-left: 20%;
+    font-size: 64px;
+    font-weight: 600;
+    animation: titleAnimationWelcome 5s ease-in-out forwards;
+  }
+
+  .titleBottom {
+    margin-left: 30%;
+    font-size: 64px;
+    font-weight: 600;
+    white-space: nowrap;
+    width: min-content;
+    position: relative;
+    line-height: 1.8;
+  }
+
+  .titleBottom::before {
+    content: '';
+    position: absolute;
+    bottom: 35px;
+    right: -40px;
+    width: 35px;
+    height: 15px;
+    background-color: var(--inverted-primary-color);
+    animation: caretAnimation 1s infinite;
+  }
+}
+
 
 @keyframes caretAnimation {
   0% {
@@ -46,3 +115,4 @@
     opacity: 1;
   }
 }
+

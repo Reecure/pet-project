@@ -2,7 +2,29 @@
   height: var(--navbar-height);
   background: var(--secondary-bg-color);
   display: flex;
-  justify-content: end;
+  width: 100%;
+  justify-content: space-between;
   align-items: center;
   padding: 0 20px;
+}
+
+.sidebarWrapper {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.sidebarButton {
+  display: block;
+}
+
+@media (min-width: 640px) {
+  .sidebarButton {
+    display: none;
+  }
+  .Navbar {
+    justify-content: end;
+    width: 100%;
+
+  }
 }

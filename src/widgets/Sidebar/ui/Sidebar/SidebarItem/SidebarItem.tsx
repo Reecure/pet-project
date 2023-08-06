@@ -1,5 +1,5 @@
 import {useTranslation} from 'react-i18next';
-import {FC, memo} from 'react';
+import {FC, memo, useEffect} from 'react';
 import {classNames} from '@/shared/lib/classNames/classNames';
 import {useAppSelector} from '@/app/providers/ReduxProvider/config/hooks';
 import {isLoggedSelector} from '@/enteties/User/model/selectors/isLoggedSelector';
@@ -18,6 +18,10 @@ const SidebarItem: FC<Props> = ({link, open}) => {
 
     const selectIsLogged = useAppSelector(isLoggedSelector);
 
+    useEffect(() => {
+        console.log(open)
+    }, [open])
+
     if (!selectIsLogged && link.authOnly) {
         return null;
     }
@@ -26,7 +30,8 @@ const SidebarItem: FC<Props> = ({link, open}) => {
         <AppLink to={link.to} className={cls.link}>
             <span className={cls.linkIcon}>{sidebarIconRender(link.icon)}</span>
 
-            <span className={classNames('', {[cls.linkTextWhenClose]: !open}, [])}>
+            <span
+                className={classNames(`${!open ? `${cls.linkTextWhenClose}` : ''}`, {}, [])}>
                 {t(link.text)}
             </span>
         </AppLink>

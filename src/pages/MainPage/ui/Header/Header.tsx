@@ -10,7 +10,8 @@ const Header: FC<Props> = () => {
     const {t} = useTranslation();
     return (
         <div className={classNames(cls.Header, {}, [])}>
-            <p className={cls.titleWelcome}>Welcome</p>{' '}
+            <div className={cls.titleWelcome}><p>Welcome</p></div>
+            
             <p className={cls.titleBottom}>to MyArticle!</p>
         </div>
     );

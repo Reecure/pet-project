@@ -1,25 +1,57 @@
 .Sidebar {
-  position: relative;
+  position: fixed;
+  top: 40px;
+  left: 0;
   padding: 20px;
-  display: flex;
+  display: none;
   flex-direction: column;
   justify-content: space-between;
-  height: calc(100vh - var(--navbar-height));
-  width: var(--sidebar-close-width);
+  height: calc(100vh - 40px);
+  width: var(--sidebar-open-width);
   background-color: var(--secondary-bg-color);
   transition: width 1s;
+  z-index: 11111;
 }
-
 
 .open {
-  width: var(--sidebar-open-width);
+  display: flex;
 }
+
+.ToggleButton {
+  display: none;
+}
+
 
 .links {
   display: flex;
   flex-direction: column;
+}
 
 
+@media (min-width: 640px) {
+  .Sidebar {
+    position: relative;
+    top: 0;
+    left: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: calc(100vh - var(--navbar-height));
+    width: var(--sidebar-close-width);
+    background-color: var(--secondary-bg-color);
+    transition: width 1s;
+  }
+  .open {
+    width: var(--sidebar-open-width);
+  }
+  .ToggleButton {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    right: -28px;
+    padding: 5px 10px;
+  }
 }
 
 .switchersWrapper {
@@ -30,9 +62,3 @@
 }
 
 
-.ToggleButton {
-  position: absolute;
-  bottom: 0;
-  right: -28px;
-  padding: 5px 10px;
-}
