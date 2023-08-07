@@ -117,7 +117,7 @@ const ArticleHeader: FC<Props> = () => {
         <div className={classNames(cls.ArticleHeader, {}, [])}>
             <div className={cls.sortingWrapper}>
                 <div className={cls.selectWrapper}>
-                    <select defaultValue="Sort by" onChange={setSortBy} name="Sort by">
+                    <select defaultValue="Sort by" onChange={setSortBy} name={t("Sort by")}>
                         <option disabled selected hidden>{t('Sort by')}</option>
                         {
                             options.map((item) => <option value={item.value} key={item.value}>{t(item.name)}</option>)

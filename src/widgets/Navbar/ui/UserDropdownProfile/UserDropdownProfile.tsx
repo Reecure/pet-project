@@ -1,14 +1,14 @@
-import { useTranslation } from 'react-i18next';
-import { FC } from 'react';
-import { Menu, Transition } from '@headlessui/react';
-import { useNavigate } from 'react-router-dom';
-import { classNames } from '@/shared/lib/classNames';
-import { useAppDispatch, useAppSelector } from '@/app/providers/ReduxProvider/config/hooks';
-import { User } from '@/enteties/User/model/types';
-import { isAdmin, isManager, logout } from '@/enteties/User';
+import {useTranslation} from 'react-i18next';
+import {FC} from 'react';
+import {Menu, Transition} from '@headlessui/react';
+import {useNavigate} from 'react-router-dom';
+import {classNames} from '@/shared/lib/classNames';
+import {useAppDispatch, useAppSelector} from '@/app/providers/ReduxProvider/config/hooks';
+import {User} from '@/enteties/User/model/types';
+import {isAdmin, isManager, logout} from '@/enteties/User';
 import cls from './UserDropdownProfile.module.scss';
-import { Avatar } from '@/shared/ui/Avatar';
-import { AppLink } from '@/shared/ui/AppLink';
+import {Avatar} from '@/shared/ui/Avatar';
+import {AppLink} from '@/shared/ui/AppLink';
 import {
     getAdminRoute,
     getCreateArticleRoute,
@@ -20,8 +20,8 @@ interface Props {
     user: User;
 }
 
-const UserDropdownProfile: FC<Props> = ({ user }) => {
-    const { t } = useTranslation();
+const UserDropdownProfile: FC<Props> = ({user}) => {
+    const {t} = useTranslation();
 
     const navigate = useNavigate();
     const dispatch = useAppDispatch();
@@ -37,11 +37,11 @@ const UserDropdownProfile: FC<Props> = ({ user }) => {
     return (
         <div className={classNames(cls.UserDropdownProfile, {}, [])}>
             <Menu as="div" className={cls.menuWrapper}>
-                {({ open }) => (
+                {({open}) => (
                     <>
                         <div>
                             <Menu.Button className={cls.menuButton}>
-                                <Avatar size={37} src={user.avatar} />
+                                <Avatar size={37} src={user.avatar}/>
                             </Menu.Button>
                         </div>
                         <Transition
@@ -54,54 +54,54 @@ const UserDropdownProfile: FC<Props> = ({ user }) => {
                         >
                             <Menu.Items className={cls.menuItems}>
                                 <Menu.Item>
-                                    {({ active }) => (
+                                    {({active}) => (
                                         <AppLink
                                             to={getProfileRoute(user.id)}
-                                            className={classNames(cls.menuItem, { [cls.active]: active }, [])}
+                                            className={classNames(cls.menuItem, {[cls.active]: active}, [])}
                                         >
-                                            Profile
+                                            {t('Profile')}
                                         </AppLink>
                                     )}
                                 </Menu.Item>
                                 <Menu.Item>
-                                    {({ active }) => (
+                                    {({active}) => (
                                         <AppLink
                                             to={getCreateArticleRoute()}
-                                            className={classNames(cls.menuItem, { [cls.active]: active }, [])}
+                                            className={classNames(cls.menuItem, {[cls.active]: active}, [])}
                                         >
-                                            Create article
+                                            {t('Create article')}
                                         </AppLink>
                                     )}
                                 </Menu.Item>
                                 <Menu.Item>
-                                    {({ active }) => (
+                                    {({active}) => (
                                         <AppLink
                                             to={getMyArticlesRoute()}
-                                            className={classNames(cls.menuItem, { [cls.active]: active }, [])}
+                                            className={classNames(cls.menuItem, {[cls.active]: active}, [])}
                                         >
-                                            My articles
+                                            {t('My articles')}
                                         </AppLink>
                                     )}
                                 </Menu.Item>
                                 {haveAccessToAdmiPanel && (
                                     <Menu.Item>
-                                        {({ active }) => (
+                                        {({active}) => (
                                             <AppLink
                                                 to={getAdminRoute()}
-                                                className={classNames(cls.menuItem, { [cls.active]: active }, [])}
+                                                className={classNames(cls.menuItem, {[cls.active]: active}, [])}
                                             >
-                                                Admin
+                                                {t("Admin")}
                                             </AppLink>
                                         )}
                                     </Menu.Item>
                                 )}
                                 <Menu.Item>
-                                    {({ active }) => (
+                                    {({active}) => (
                                         <div
                                             onClick={onLogoutHandler}
-                                            className={classNames(cls.menuItem, { [cls.active]: active }, [])}
+                                            className={classNames(cls.menuItem, {[cls.active]: active}, [])}
                                         >
-                                            Logout
+                                            {t("Logout")}
                                         </div>
                                     )}
                                 </Menu.Item>

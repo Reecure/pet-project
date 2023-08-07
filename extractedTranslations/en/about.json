@@ -1,3 +1,21 @@
 {
-  "About Page": ""
+  "About Page": "",
+  "Welcome to MyArticle!": "Welcome to MyArticle!",
+  "MyArticle is a knowledge hub dedicated to providing valuable insights, in-depth articles, and thought-provoking content across a wide range of subjects": {
+    " Our mission is to foster a community of learners, enthusiasts, and experts who can come together to explore and exchange knowledge on diverse topics": {
+      "": "MyArticle is a knowledge hub dedicated to providing valuable insights, in-depth articles, and thought-provoking content across a wide range of subjects. Our mission is to foster a community of learners, enthusiasts, and experts who can come together to explore and exchange knowledge on diverse topics."
+    }
+  },
+  "We encourage you to be an active participant in our growing community": {
+    " Share your expertise, experiences, and insights by contributing articles and engaging in discussions with fellow members": {
+      " Together, we can create a collaborative environment where knowledge knows no bounds": {
+        ")": "We encourage you to be an active participant in our growing community. Share your expertise, experiences, and insights by contributing articles and engaging in discussions with fellow members. Together, we can create a collaborative environment where knowledge knows no bounds.)"
+      }
+    }
+  },
+  "Subscribe to our newsletter to receive regular updates on the latest articles and trends in your favorite categories": {
+    " Connect with us on social media to stay engaged with our community and participate in exciting events and discussions": {
+      "": "Subscribe to our newsletter to receive regular updates on the latest articles and trends in your favorite categories. Connect with us on social media to stay engaged with our community and participate in exciting events and discussions."
+    }
+  }
 }

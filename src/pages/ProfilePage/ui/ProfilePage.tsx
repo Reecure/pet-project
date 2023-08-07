@@ -1,9 +1,9 @@
-import { useEffect } from 'react';
-import { useParams } from 'react-router-dom';
-import { useTranslation } from 'react-i18next';
-import { useAppDispatch, useAppSelector } from '@/app/providers/ReduxProvider/config/hooks';
-import { getUserProfile, profileIsLoadingSelector, profileSelector } from '@/enteties/Profile';
-import { Loader } from '@/shared/ui/Loader';
+import {useEffect} from 'react';
+import {useParams} from 'react-router-dom';
+import {useTranslation} from 'react-i18next';
+import {useAppDispatch, useAppSelector} from '@/app/providers/ReduxProvider/config/hooks';
+import {getUserProfile, profileIsLoadingSelector, profileSelector} from '@/enteties/Profile';
+import {Loader} from '@/shared/ui/Loader';
 import ProfileCard from './ProfileCard/ProfileCard';
 import ProfilePageHeader from './ProfilePageHeader/ProfilePageHeader';
 import cls from './ProfilePage.module.scss';
@@ -11,13 +11,14 @@ import cls from './ProfilePage.module.scss';
 type Props = {};
 
 const ProfilePage = (props: Props) => {
-    const { t } = useTranslation();
+    const {t} = useTranslation();
     const dispatch = useAppDispatch();
 
-    const { id } = useParams();
+    const {id} = useParams();
 
     const profileData = useAppSelector(profileSelector);
     const profileLoading = useAppSelector(profileIsLoadingSelector);
+
     useEffect(() => {
         dispatch(getUserProfile(id));
     }, [dispatch, id]);
@@ -25,7 +26,7 @@ const ProfilePage = (props: Props) => {
     if (profileLoading) {
         return (
             <div className={cls.loaderWrapper}>
-                <Loader />
+                <Loader/>
             </div>
         );
     }
@@ -37,8 +38,8 @@ const ProfilePage = (props: Props) => {
     return (
         <div className={cls.ProfilePageWrapper}>
             <div className={cls.ProfilePageContent}>
-                <ProfilePageHeader userInfo={profileData} />
-                <ProfileCard userInfo={profileData} />
+                <ProfilePageHeader userInfo={profileData}/>
+                <ProfileCard userInfo={profileData}/>
             </div>
         </div>
     );
