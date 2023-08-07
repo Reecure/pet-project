@@ -11,9 +11,7 @@
     "build:prod": "webpack --env mode=production apiUrl=production-project-server-psi-ivory.vercel.app",
     "lint:ts": "eslint \"**/*.{ts,tsx}\"",
     "lint:ts:fix": "eslint \"**/*.{ts,tsx}\" --fix",
-    "test": "jest --config ./config/jest/jest.config.ts",
-    "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "test": "jest --config ./config/jest/jest.config.ts"
   },
   "keywords": [],
   "author": "",
