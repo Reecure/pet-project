@@ -1,23 +1,23 @@
 import { FC, memo, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-import { classNames } from '@/shared/lib/classNames/classNames';
+import { classNames } from '@/shared/lib/classNames';
 import { useAppDispatch, useAppSelector } from '@/app/providers/ReduxProvider/config/hooks';
 import {
     articleHaveMoreSelector,
     articlePageSelector,
     articlesLoadingSelector,
     articlesViewsSelector,
-} from '@/pages/ArticlesPage/model/selector/articlesSelector';
+} from '../../../model/selector/articlesSelector';
 import {
     getArticles, setNextPage, setPrevPage, viewTypes,
-} from '@/pages/ArticlesPage/model/slice/articlesSlice';
-import { getAllArticles } from '@/pages/ArticlesPage/model/services/getArticles';
+} from '../../../model/slice/articlesSlice';
+import { getAllArticles } from '../../../model/services/getArticles';
 import { Button } from '@/shared/ui/Button';
 import { Loader } from '@/shared/ui/Loader';
 import cls from './ArticleMainContent.module.scss';
 import ArticleBigComponent from '../ArticleBigComponent/ArticleBigComponent';
 import ArticleSmallComponent from '../ArticleSmallComponent/ArticleSmallComponent';
-import ArticlesIsEmpty from '@/shared/ui/ArticlesIsEmpty/ui/ArticlesIsEmpty';
+import { ArticlesIsEmpty } from '@/shared/ui/ArticlesIsEmpty';
 
 interface Props {
 }

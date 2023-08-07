@@ -1,4 +1,4 @@
-import {getAboutRoute, getArticlesRoute, getMainRoute} from '@/shared/config/routeConfig/routeConfig';
+import { getAboutRoute, getArticlesRoute, getMainRoute } from '@/shared/config/routeConfig/routeConfig';
 
 export const enum Links {
     Main = 'Main',

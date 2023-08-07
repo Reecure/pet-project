@@ -1,3 +1,3 @@
-import Stack from "./ui/Stack";
+import Stack, { StackPosition } from './ui/Stack';
 
-export {Stack}
+export { Stack, StackPosition };

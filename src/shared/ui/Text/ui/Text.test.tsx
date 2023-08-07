@@ -1,5 +1,5 @@
 import { screen } from '@testing-library/react';
-import { ComponentRender } from '@/shared/lib/tests/componentRender/ComponentRender';
+import { ComponentRender } from '@/shared/lib/tests/ui/ComponentRender/ComponentRender';
 import Text, { TextPosition } from './Text';
 
 describe('Text', () => {

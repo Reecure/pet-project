@@ -4,17 +4,174 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="054dcfbb-5232-4235-a308-8c1e1cec3020" name="Changes" comment="documentation">
-      <change afterPath="$PROJECT_DIR$/src/enteties/Comment/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/enteties/Country/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/enteties/Currency/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/enteties/Profile/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/enteties/User/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/features/AuthByUsername/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/features/CRUDArticle/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/features/getComments/README.md" afterDir="false" />
+    <list default="true" id="054dcfbb-5232-4235-a308-8c1e1cec3020" name="Changes" comment="add documentation">
+      <change afterPath="$PROJECT_DIR$/src/enteties/Country/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/enteties/Currency/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/shared/config/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/shared/lib/classNames/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/shared/lib/hooks/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/shared/lib/tests/index.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/build/buildLoaders.ts" beforeDir="false" afterPath="$PROJECT_DIR$/config/build/buildLoaders.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/build/buildPlugins.ts" beforeDir="false" afterPath="$PROJECT_DIR$/config/build/buildPlugins.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/build/buildResolvers.ts" beforeDir="false" afterPath="$PROJECT_DIR$/config/build/buildResolvers.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/build/loaders/buildBabelLoader.ts" beforeDir="false" afterPath="$PROJECT_DIR$/config/build/loaders/buildBabelLoader.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/jest/jest.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/config/jest/jest.config.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/jest/jestEmptyComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/config/jest/jestEmptyComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/updateImports.ts" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/updateImports.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/providers/ErrorBoundary/ui/ErrorBoundary.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/providers/ErrorBoundary/ui/ErrorBoundary.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/providers/ReduxProvider/config/store.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/providers/ReduxProvider/config/store.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/providers/ThemeProvider/ui/ThemeProvider.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/providers/ThemeProvider/ui/ThemeProvider.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/providers/router/ui/AppRouter.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/providers/router/ui/AppRouter.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/types/global.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/types/global.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/enteties/Article/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/enteties/Article/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/enteties/Article/model/selectors/articleSelector.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/enteties/Article/model/selectors/articleSelector.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/enteties/Article/model/services/getArticleById.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/enteties/Article/model/services/getArticleById.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/enteties/Article/model/slice/articleSlice.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/enteties/Article/model/slice/articleSlice.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/enteties/Article/model/types/article.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/enteties/Article/model/types/article.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/enteties/Article/ui/ArticleCodeComponent/ArticleCodeComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/enteties/Article/ui/ArticleCodeComponent/ArticleCodeComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/enteties/Article/ui/ArticleDetails/ArticleDetails.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/enteties/Article/ui/ArticleDetails/ArticleDetails.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/enteties/Article/ui/ArticleImageComponent/ArticleImageComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/enteties/Article/ui/ArticleImageComponent/ArticleImageComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/enteties/Article/ui/ArticleTextComponent/ArticleTextComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/enteties/Article/ui/ArticleTextComponent/ArticleTextComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/enteties/Comment/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/enteties/Comment/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/enteties/Comment/model/types/comment.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/enteties/Comment/model/types/comment.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/enteties/Comment/ui/Comment.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/enteties/Comment/ui/Comment.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/enteties/Country/ui/CountriesDropDown.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/enteties/Country/ui/CountriesDropDown.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/enteties/Currency/ui/CurrenciesDropDown.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/enteties/Currency/ui/CurrenciesDropDown.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/enteties/Profile/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/enteties/Profile/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/enteties/Profile/selectors/profileFormSelector.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/enteties/Profile/selectors/profileFormSelector.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/enteties/Profile/selectors/profileIsLoadingSelector.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/enteties/Profile/selectors/profileIsLoadingSelector.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/enteties/Profile/selectors/profileReadOnlySelector.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/enteties/Profile/selectors/profileReadOnlySelector.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/enteties/Profile/selectors/profileSelector.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/enteties/Profile/selectors/profileSelector.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/enteties/Profile/services/getUserProfile.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/enteties/Profile/services/getUserProfile.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/enteties/Profile/services/updateUserProfile.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/enteties/Profile/services/updateUserProfile.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/enteties/Profile/slice/profileSlice.test.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/enteties/Profile/slice/profileSlice.test.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/enteties/Profile/slice/profileSlice.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/enteties/Profile/slice/profileSlice.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/enteties/User/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/enteties/User/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/enteties/User/model/selectors/isLoggedSelector.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/enteties/User/model/selectors/isLoggedSelector.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/enteties/User/model/selectors/userDataSelector.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/enteties/User/model/selectors/userDataSelector.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/enteties/User/model/selectors/userRoleSelector.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/enteties/User/model/selectors/userRoleSelector.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/enteties/User/model/slice/userSlice.test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/enteties/User/model/slice/userSlice.test.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/enteties/User/model/slice/userSlice.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/enteties/User/model/slice/userSlice.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/enteties/User/model/types/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/enteties/User/model/types/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/AuthByUsername/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/AuthByUsername/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/AuthByUsername/model/services/getUserByCredentials.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/AuthByUsername/model/services/getUserByCredentials.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/AuthByUsername/model/slice/loginSlice.test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/AuthByUsername/model/slice/loginSlice.test.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/AuthByUsername/model/slice/loginSlice.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/AuthByUsername/model/slice/loginSlice.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/AuthByUsername/ui/LoginForm/LoginForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/AuthByUsername/ui/LoginForm/LoginForm.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/CRUDArticle/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/CRUDArticle/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/CRUDArticle/model/selectors/getCreateArticle.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/CRUDArticle/model/services/addArticle.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/CRUDArticle/model/services/addArticle.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/CRUDArticle/model/services/deleteArticle.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/CRUDArticle/model/services/deleteArticle.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/CRUDArticle/model/services/updateArticle.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/CRUDArticle/model/services/updateArticle.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/CRUDArticle/model/slices/addArticleSlice.test.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/CRUDArticle/model/slices/addArticleSlice.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/CRUDArticle/ui/ArticleForm/ArticleForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/CRUDArticle/ui/ArticleForm/ArticleForm.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/CRUDArticle/ui/ArticleForm/BlockButtons/BlockButtons.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/CRUDArticle/ui/ArticleForm/BlockButtons/BlockButtons.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/addComment/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/addComment/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/addComment/model/services/addComment.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/addComment/model/services/addComment.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/addComment/ui/AddComment.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/addComment/ui/AddComment.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/getComments/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/getComments/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/getComments/model/selectors/commentPropsSelector.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/getComments/model/selectors/commentPropsSelector.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/getComments/model/services/getCommentsByArticleId.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/getComments/model/services/getCommentsByArticleId.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/getComments/model/slice/commentsSlice.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/getComments/model/slice/commentsSlice.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/getComments/ui/Comments.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/getComments/ui/Comments.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/AboutPage/ui/AboutPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/AboutPage/ui/AboutPage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/AdminPage/ui/AdminPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/AdminPage/ui/AdminPage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/AdminPage/ui/ArticleForAccept/ArticleForAccept.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/AdminPage/ui/ArticleForAccept/ArticleForAccept.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/ArticlePage/ui/ArticlePage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ArticlePage/ui/ArticlePage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/ArticlesPage/model/selector/articlesSelector.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ArticlesPage/model/selector/articlesSelector.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/ArticlesPage/model/services/getArticles.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ArticlesPage/model/services/getArticles.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/ArticlesPage/model/slice/articlesSlice.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ArticlesPage/model/slice/articlesSlice.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/ArticlesPage/ui/ArticlesComponents/ArticleBigComponent/ArticleBigComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ArticlesPage/ui/ArticlesComponents/ArticleBigComponent/ArticleBigComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/ArticlesPage/ui/ArticlesComponents/ArticleHeader/ArticleHeader.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ArticlesPage/ui/ArticlesComponents/ArticleHeader/ArticleHeader.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/ArticlesPage/ui/ArticlesComponents/ArticleMainContent/ArticleMainContent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ArticlesPage/ui/ArticlesComponents/ArticleMainContent/ArticleMainContent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/ArticlesPage/ui/ArticlesComponents/ArticleSmallComponent/ArticleSmallComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ArticlesPage/ui/ArticlesComponents/ArticleSmallComponent/ArticleSmallComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/ArticlesPage/ui/ArticlesPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ArticlesPage/ui/ArticlesPage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/CreateArticlePage/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/CreateArticlePage/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/CreateArticlePage/ui/CreateArticlePage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/CreateArticlePage/ui/CreateArticlePage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/EditArticlePage/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/EditArticlePage/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/EditArticlePage/ui/EditArticlePage.async.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/EditArticlePage/ui/EditArticlePage.async.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/EditArticlePage/ui/EditArticlePage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/EditArticlePage/ui/EditArticlePage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/MainPage/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/MainPage/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/MainPage/model/selectors/RecommendationArticles.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/MainPage/model/selectors/RecommendationArticles.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/MainPage/model/services/getRecommendationArticles.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/MainPage/model/services/getRecommendationArticles.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/MainPage/model/slices/recommendationArticles.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/MainPage/model/slices/recommendationArticles.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/MainPage/ui/Header/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/MainPage/ui/Header/Header.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/MainPage/ui/MainContent/MainContent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/MainPage/ui/MainContent/MainContent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/MainPage/ui/MainPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/MainPage/ui/MainPage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/MyArticlesPage/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/MyArticlesPage/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/MyArticlesPage/model/selectors/myArticlesSelectors.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/MyArticlesPage/model/selectors/myArticlesSelectors.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/MyArticlesPage/model/services/getMyArticles.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/MyArticlesPage/model/services/getMyArticles.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/MyArticlesPage/model/slice/myArticlesSlice.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/MyArticlesPage/model/slice/myArticlesSlice.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/MyArticlesPage/ui/MyArticleButtons/MyArticleButtons.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/MyArticlesPage/ui/MyArticleButtons/MyArticleButtons.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/MyArticlesPage/ui/MyArticlesHeader/MyArticlesHeader.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/MyArticlesPage/ui/MyArticlesHeader/MyArticlesHeader.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/MyArticlesPage/ui/MyArticlesPage.async.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/MyArticlesPage/ui/MyArticlesPage.async.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/MyArticlesPage/ui/MyArticlesPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/MyArticlesPage/ui/MyArticlesPage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/MyArticlesPage/ui/UserHasntArticles/UserHasntArticles.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/MyArticlesPage/ui/UserHasntArticles/UserHasntArticles.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/NotFoundPage/ui/NotFoundPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/NotFoundPage/ui/NotFoundPage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/ProfilePage/ui/ProfileCard/ProfileCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ProfilePage/ui/ProfileCard/ProfileCard.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/ProfilePage/ui/ProfilePage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ProfilePage/ui/ProfilePage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/ProfilePage/ui/ProfilePageHeader/ProfilePageHeader.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ProfilePage/ui/ProfilePageHeader/ProfilePageHeader.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/config/routeConfig/routeConfig.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/config/routeConfig/routeConfig.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/config/storybook/RouterDecorator/RouterDecorator.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/config/storybook/StyleDecorator/StyleDecorator.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/config/storybook/ThemeDecorator/ThemeDecorator.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/lib/tests/componentRender/ComponentRender.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/lib/tests/ui/ComponentRender/ComponentRender.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/lib/useDebounce/useDebounce.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/lib/hooks/useDebounce/useDebounce.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/lib/validation/validationUtils.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/ui/AppLink/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/ui/AppLink/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/ui/AppLink/ui/AppLink.test.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/ui/AppLink/ui/AppLink.test.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/ui/AppLink/ui/AppLink.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/ui/AppLink/ui/AppLink.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/ui/ArticlesIsEmpty/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/ui/ArticlesIsEmpty/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/ui/ArticlesIsEmpty/ui/ArticlesIsEmpty.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/ui/ArticlesIsEmpty/ui/ArticlesIsEmpty.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/ui/Avatar/ui/Avatar.test.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/ui/Avatar/ui/Avatar.test.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/ui/Avatar/ui/Avatar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/ui/Avatar/ui/Avatar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/ui/Button/ui/Button.stories.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/ui/Button/ui/Button.stories.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/ui/Button/ui/Button.test.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/ui/Button/ui/Button.test.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/ui/Button/ui/Button.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/ui/Button/ui/Button.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/ui/Code/ui/Code.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/ui/Code/ui/Code.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/ui/Image/Image.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/ui/Image/Image.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/ui/Input/ui/Input.test.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/ui/Input/ui/Input.test.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/ui/Input/ui/Input.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/ui/Input/ui/Input.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/ui/Loader/ui/Loader.test.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/ui/Loader/ui/Loader.test.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/ui/Loader/ui/Loader.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/ui/Loader/ui/Loader.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/ui/Notify/ui/Notify.test.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/ui/Notify/ui/Notify.test.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/ui/Notify/ui/Notify.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/ui/Notify/ui/Notify.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/ui/Skeleton/ui/Skeleton.test.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/ui/Skeleton/ui/Skeleton.test.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/ui/Skeleton/ui/Skeleton.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/ui/Skeleton/ui/Skeleton.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/ui/Stack/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/ui/Stack/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/ui/Stack/ui/Stack.test.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/ui/Stack/ui/Stack.test.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/ui/Stack/ui/Stack.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/ui/Stack/ui/Stack.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/ui/SvgIcon/SvgIcon.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/ui/SvgIcon/SvgIcon.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/ui/Text/ui/Text.test.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/ui/Text/ui/Text.test.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/ui/Text/ui/Text.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/ui/Text/ui/Text.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/ui/Views/ui/Views.test.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/ui/Views/ui/Views.test.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/ui/Views/ui/Views.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/ui/Views/ui/Views.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/widgets/LangSwitcher/ui/LangSwitcher.test.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/widgets/LangSwitcher/ui/LangSwitcher.test.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/widgets/LangSwitcher/ui/LangSwitcher.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/widgets/LangSwitcher/ui/LangSwitcher.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/widgets/Modal/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/widgets/Modal/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/widgets/Modal/ui/Modal.test.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/widgets/Modal/ui/Modal.test.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/widgets/Modal/ui/Modal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/widgets/Modal/ui/Modal.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/widgets/Navbar/ui/Navbar.test.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/widgets/Navbar/ui/Navbar.test.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/widgets/Navbar/ui/Navbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/widgets/Navbar/ui/Navbar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/widgets/Navbar/ui/UserDropdownProfile/UserDropdownProfile.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/widgets/Navbar/ui/UserDropdownProfile/UserDropdownProfile.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/widgets/Page/ui/Page.test.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/widgets/Page/ui/Page.test.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/widgets/Page/ui/Page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/widgets/Page/ui/Page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/widgets/PageError/ui/PageError.test.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/widgets/PageError/ui/PageError.test.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/widgets/PageError/ui/PageError.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/widgets/PageError/ui/PageError.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/widgets/Sidebar/helpers/sidebarIconRender.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/widgets/Sidebar/helpers/sidebarIconRender.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/widgets/Sidebar/model/item.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/widgets/Sidebar/model/item.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/widgets/Sidebar/ui/Sidebar/Sidebar.test.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/widgets/Sidebar/ui/Sidebar/Sidebar.test.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/widgets/Sidebar/ui/Sidebar/Sidebar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/widgets/Sidebar/ui/Sidebar/Sidebar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/widgets/Sidebar/ui/Sidebar/SidebarItem/SidebarItem.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/widgets/Sidebar/ui/Sidebar/SidebarItem/SidebarItem.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/widgets/ThemeSwitcher/ui/ThemeSwitcher.test.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/widgets/ThemeSwitcher/ui/ThemeSwitcher.test.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/widgets/ThemeSwitcher/ui/ThemeSwitcher.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/widgets/ThemeSwitcher/ui/ThemeSwitcher.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vite.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/vite.config.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webpack.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.config.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,29 +245,29 @@
       <recent name="C:\Users\user\Desktop\pet" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\user\Desktop\pet\src\shared\lib\hooks" />
+      <recent name="C:\Users\user\Desktop\pet\src\shared\lib\tests\ui" />
       <recent name="C:\Users\user\Desktop\pet\src\shared\fonts" />
       <recent name="C:\Users\user\Desktop\pet\src\features\CRUDArticle\ui\ArticleForm" />
       <recent name="C:\Users\user\Desktop\pet\src\enteties\Article\model" />
-      <recent name="C:\Users\user\Desktop\pet\src\shared\assets" />
-      <recent name="C:\Users\user\Desktop\pet\src\shared\ui\SvgImage" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.lint:ts:fix">
-    <configuration name="lint:ts:fix" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="npm.lint:ts">
+    <configuration name="lint:ts" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
       <scripts>
-        <script value="lint:ts:fix" />
+        <script value="lint:ts" />
       </scripts>
       <node-interpreter value="project" />
       <envs />
       <method v="2" />
     </configuration>
-    <configuration name="start" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+    <configuration name="lint:ts:fix" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
       <scripts>
-        <script value="start" />
+        <script value="lint:ts:fix" />
       </scripts>
       <node-interpreter value="project" />
       <envs />
@@ -148,11 +305,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="npm.lint:ts:fix" />
         <item itemvalue="npm.start:vite" />
+        <item itemvalue="npm.lint:ts" />
         <item itemvalue="npm.test" />
         <item itemvalue="npm.start:dev:server" />
-        <item itemvalue="npm.start" />
-        <item itemvalue="npm.lint:ts:fix" />
       </list>
     </recent_temporary>
   </component>
@@ -194,7 +351,7 @@
       <workItem from="1691302880556" duration="9000" />
       <workItem from="1691314315385" duration="6465000" />
       <workItem from="1691333479407" duration="10175000" />
-      <workItem from="1691384757485" duration="2360000" />
+      <workItem from="1691384757485" duration="6875000" />
     </task>
     <task id="LOCAL-00001" summary="some fix">
       <created>1689795990367</created>
@@ -322,7 +479,14 @@
       <option name="project" value="LOCAL" />
       <updated>1691386564431</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="add documentation">
+      <created>1691387158529</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1691387158529</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -344,6 +508,7 @@
     <MESSAGE value="refactored" />
     <MESSAGE value="netlify config" />
     <MESSAGE value="documentation" />
-    <option name="LAST_COMMIT_MESSAGE" value="documentation" />
+    <MESSAGE value="add documentation" />
+    <option name="LAST_COMMIT_MESSAGE" value="add documentation" />
   </component>
 </project>

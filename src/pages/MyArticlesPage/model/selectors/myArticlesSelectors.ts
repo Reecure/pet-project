@@ -1,4 +1,4 @@
-import {RootState} from '@/app/providers/ReduxProvider/config/store';
+import { RootState } from '@/app/providers/ReduxProvider/config/store';
 
 export const myArticlePageLoading = (state: RootState) => state.myArticlesReducer.loading;
 export const myArticleHaveMoreLoading = (state: RootState) => state.myArticlesReducer.haveMore;

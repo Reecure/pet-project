@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import { FC } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { classNames } from '@/shared/lib/classNames/classNames';
+import { classNames } from '@/shared/lib/classNames';
 import cls from './UserHasntArticles.module.scss';
 import { Text } from '@/shared/ui/Text';
 import { Button, ThemeButton } from '@/shared/ui/Button';

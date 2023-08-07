@@ -1,3 +1,4 @@
-import AddComment from "./ui/AddComment";
+import AddComment from './ui/AddComment';
+import { addComment } from './model/services/addComment';
 
-export {AddComment,}
+export { AddComment, addComment };

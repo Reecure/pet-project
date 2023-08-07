@@ -1,8 +1,8 @@
 import { useTranslation } from 'react-i18next';
-import { classNames } from '@/shared/lib/classNames/classNames';
 import {
     FC, useState, useEffect, useCallback, memo,
 } from 'react';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import { Button, ThemeButton } from '@/shared/ui/Button';
 import { Code } from '@/shared/ui/Code';
 import { Notify } from '@/shared/ui/Notify';

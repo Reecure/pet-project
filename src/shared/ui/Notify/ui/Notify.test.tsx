@@ -1,5 +1,5 @@
 import { screen } from '@testing-library/react';
-import { ComponentRender } from '@/shared/lib/tests/componentRender/ComponentRender';
+import { ComponentRender } from '@/shared/lib/tests/ui/ComponentRender/ComponentRender';
 import Notify from './Notify';
 
 describe('Notify', () => {

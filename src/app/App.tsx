@@ -1,22 +1,22 @@
-import {Suspense, useEffect, useState} from 'react';
-import {useTheme} from '@/app/providers/ThemeProvider';
-import {classNames} from '@/shared/lib/classNames/classNames';
-import {AppRouter} from '@/app/providers/router';
-import {Navbar} from '@/widgets/Navbar';
-import {Sidebar} from '@/widgets/Sidebar';
+import { Suspense, useEffect, useState } from 'react';
+import { useTheme } from '@/app/providers/ThemeProvider';
+import { classNames } from '@/shared/lib/classNames';
+import { AppRouter } from '@/app/providers/router';
+import { Navbar } from '@/widgets/Navbar';
+import { Sidebar } from '@/widgets/Sidebar';
 import './styles/index.scss';
-import {initAuthData} from '@/enteties/User/model/slice/userSlice';
-import {useAppDispatch} from './providers/ReduxProvider/config/hooks';
+import { initAuthData } from '@/enteties/User';
+import { useAppDispatch } from './providers/ReduxProvider/config/hooks';
 
 const App = () => {
-    const {theme} = useTheme();
+    const { theme } = useTheme();
     const dispatch = useAppDispatch();
 
-    const [sidebarOpen, setSidebarOpen] = useState(false)
+    const [sidebarOpen, setSidebarOpen] = useState(false);
 
     const sidebarOpenHandler = () => {
-        setSidebarOpen(prev => !prev)
-    }
+        setSidebarOpen((prev) => !prev);
+    };
 
     useEffect(() => {
         dispatch(initAuthData());
@@ -24,14 +24,14 @@ const App = () => {
     return (
         <div className={classNames('app', {}, [theme])}>
             <Suspense fallback="">
-                <Navbar openSideBar={sidebarOpenHandler}/>
+                <Navbar openSideBar={sidebarOpenHandler} />
 
                 <div className={classNames('page-wrapper', {}, [])}>
                     <div>
-                        <Sidebar sidebarIsOpen={sidebarOpen} openSidebar={sidebarOpenHandler}/>
+                        <Sidebar sidebarIsOpen={sidebarOpen} openSidebar={sidebarOpenHandler} />
                     </div>
                     <div className="page-component-wrapper">
-                        <AppRouter/>
+                        <AppRouter />
                     </div>
 
                 </div>

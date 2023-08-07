@@ -1,5 +1,5 @@
 import { fireEvent, screen } from '@testing-library/react';
-import { ComponentRender } from '@/shared/lib/tests/componentRender/ComponentRender';
+import { ComponentRender } from '@/shared/lib/tests/ui/ComponentRender/ComponentRender';
 import Input, { ThemeInput } from './Input';
 
 describe('Input', () => {

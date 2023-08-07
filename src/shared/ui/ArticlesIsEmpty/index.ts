@@ -1,3 +1,3 @@
-import ArticlesIsEmpty from "./ui/ArticlesIsEmpty";
+import ArticlesIsEmpty from './ui/ArticlesIsEmpty';
 
-export {ArticlesIsEmpty}
+export { ArticlesIsEmpty };

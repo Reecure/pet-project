@@ -1,10 +1,10 @@
 import { FC, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useAppDispatch, useAppSelector } from '@/app/providers/ReduxProvider/config/hooks';
-import { profileReadOnlySelector } from '@/enteties/Profile/selectors/profileReadOnlySelector';
-import { updateUserProfile } from '@/enteties/Profile/services/updateUserProfile';
-import { canselEditing, setEditable } from '@/enteties/Profile/slice/profileSlice';
-import { userDataSelector } from '@/enteties/User/model/selectors/userDataSelector';
+import {
+    canselEditing, profileReadOnlySelector, setEditable, updateUserProfile,
+} from '@/enteties/Profile';
+import { userDataSelector } from '@/enteties/User';
 import { Button, ThemeButton } from '@/shared/ui/Button';
 import { User } from '@/enteties/User/model/types';
 import cls from './ProfilePageHeader.module.scss';

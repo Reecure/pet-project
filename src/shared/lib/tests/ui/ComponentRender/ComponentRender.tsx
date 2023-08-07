@@ -6,7 +6,7 @@ import React, { ReactNode } from 'react';
 import { RootState } from '@/app/providers/ReduxProvider/config/store';
 import ReduxProvider from '@/app/providers/ReduxProvider/ui/ReduxProvider';
 import { ThemeProvider } from '@/app/providers/ThemeProvider';
-import i18nForTest from '@/shared/config/i18n/i18nForTest';
+import { i18nForTests } from '../../../../config/index';
 
 export interface componentRenderOptions {
     route?: string;
@@ -21,7 +21,7 @@ export function ComponentRender(component: ReactNode, options: componentRenderOp
         <ReduxProvider>
             <MemoryRouter initialEntries={[route]}>
                 <ThemeProvider>
-                    <I18nextProvider i18n={i18nForTest}>
+                    <I18nextProvider i18n={i18nForTests}>
                         {component}
                     </I18nextProvider>
                 </ThemeProvider>

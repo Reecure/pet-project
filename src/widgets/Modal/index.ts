@@ -1,3 +1,3 @@
-import Modal from './ui/Modal';
+import Modal, { ModalPositions } from './ui/Modal';
 
-export { Modal };
+export { Modal, ModalPositions };

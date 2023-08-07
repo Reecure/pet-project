@@ -1,7 +1,9 @@
-import {createEntityAdapter, createSlice, EntityState, PayloadAction} from '@reduxjs/toolkit';
-import {Article} from '@/enteties/Article/model/types/article';
-import {RootState} from '@/app/providers/ReduxProvider/config/store';
-import {getAllMyArticles} from '@/pages/MyArticlesPage/model/services/getMyArticles';
+import {
+    createEntityAdapter, createSlice, EntityState, PayloadAction,
+} from '@reduxjs/toolkit';
+import { Article } from '@/enteties/Article/model/types/article';
+import { RootState } from '@/app/providers/ReduxProvider/config/store';
+import { getAllMyArticles } from '@/pages/MyArticlesPage/model/services/getMyArticles';
 
 interface Props extends EntityState<Article> {
     error?: string,
@@ -32,7 +34,7 @@ const initialState = myArticlesAdapter.getInitialState<Props>({
     haveMore: true,
     page: 1,
     limit: 10,
-    query: ''
+    query: '',
 });
 
 const myArticlesSlice = createSlice({
@@ -48,7 +50,7 @@ const myArticlesSlice = createSlice({
             }
         },
         setSearchQuery: (state, action: PayloadAction<string>) => {
-            state.query = action.payload
+            state.query = action.payload;
         },
         resetPage: (state) => {
             state.page = 1;

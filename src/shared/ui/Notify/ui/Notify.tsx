@@ -1,7 +1,7 @@
-import {useTranslation} from 'react-i18next';
-import React, {FC, memo} from 'react';
-import {CSSTransition} from 'react-transition-group';
-import {classNames} from '@/shared/lib/classNames/classNames';
+import { useTranslation } from 'react-i18next';
+import React, { FC, memo } from 'react';
+import { CSSTransition } from 'react-transition-group';
+import { classNames } from '@/shared/lib/classNames';
 import cls from './Notify.module.scss';
 
 interface Props {
@@ -9,8 +9,8 @@ interface Props {
     open: boolean
 }
 
-const Notify: FC<Props> = ({children, open}) => {
-    const {t} = useTranslation();
+const Notify: FC<Props> = ({ children, open }) => {
+    const { t } = useTranslation();
 
     return (
         <CSSTransition

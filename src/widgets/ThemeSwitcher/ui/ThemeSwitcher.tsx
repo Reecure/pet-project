@@ -1,8 +1,8 @@
 import { FC, memo } from 'react';
 import { Theme, useTheme } from '@/app/providers/ThemeProvider';
-import { classNames } from '@/shared/lib/classNames/classNames';
-import sun from '../../../shared/assets/sun.svg';
-import moon from '../../../shared/assets/moon.svg';
+import { classNames } from '@/shared/lib/classNames';
+import sun from '@/shared/assets/sun.svg';
+import moon from '@/shared/assets/moon.svg';
 import { Button, ThemeButton } from '@/shared/ui/Button';
 import cls from './ThemeSwitcher.module.scss';
 import Image from '@/shared/ui/Image/Image';

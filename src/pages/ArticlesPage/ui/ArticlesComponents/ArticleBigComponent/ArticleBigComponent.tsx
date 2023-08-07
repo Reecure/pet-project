@@ -1,33 +1,32 @@
-import {useTranslation} from 'react-i18next';
-import {FC, useEffect, useState,} from 'react';
-import {classNames} from '@/shared/lib/classNames/classNames';
-import {Article, BlockTypes} from '@/enteties/Article/model/types/article';
-import Avatar from '@/shared/ui/Avatar/ui/Avatar';
-import {getArticleRoute} from '@/shared/config/routeConfig/routeConfig';
-import {Button, ThemeButton} from '@/shared/ui/Button';
-import {Views} from '@/shared/ui/Views';
+import { useTranslation } from 'react-i18next';
+import { FC, useEffect, useState } from 'react';
+import { classNames } from '@/shared/lib/classNames';
+import { Article, BlockTypes } from '@/enteties/Article/model/types/article';
+import { getArticleRoute } from '@/shared/config/routeConfig/routeConfig';
+import { Button, ThemeButton } from '@/shared/ui/Button';
+import { Views } from '@/shared/ui/Views';
 import cls from './ArticleBigComponent.module.scss';
-import {useAppDispatch, useAppSelector} from "@/app/providers/ReduxProvider/config/hooks";
-import {profileSelector} from "@/enteties/Profile/selectors/profileSelector";
-import {profileIsLoadingSelector} from "@/enteties/Profile/selectors/profileIsLoadingSelector";
-import {AppLink} from "@/shared/ui/AppLink";
+import { useAppDispatch, useAppSelector } from '@/app/providers/ReduxProvider/config/hooks';
+import { profileIsLoadingSelector, profileSelector } from '@/enteties/Profile';
+import { AppLink } from '@/shared/ui/AppLink';
+import { Avatar } from '@/shared/ui/Avatar';
 
 interface Props {
     article: Article
 }
 
-const ArticleBigComponent: FC<Props> = ({article}) => {
-    const {t} = useTranslation();
+const ArticleBigComponent: FC<Props> = ({ article }) => {
+    const { t } = useTranslation();
 
     const [paragraph, setParagraph] = useState('');
 
-    const user = useAppSelector(profileSelector)
-    const loader = useAppSelector(profileIsLoadingSelector)
-    const dispatch = useAppDispatch()
+    const user = useAppSelector(profileSelector);
+    const loader = useAppSelector(profileIsLoadingSelector);
+    const dispatch = useAppDispatch();
 
     useEffect(() => {
         // dispatch(getUserProfile(article?.user?.id))
-    }, [dispatch])
+    }, [dispatch]);
 
     useEffect(() => {
         const selectParagraph = (artic: Article) => artic?.blocks?.find((block) => {
@@ -38,13 +37,12 @@ const ArticleBigComponent: FC<Props> = ({article}) => {
         selectParagraph(article);
     }, [article]);
 
-
     return (
         <div className={classNames(cls.ArticleBigComponent, {}, [])}>
             <div className={cls.ArticleBigComponentHeader}>
                 <div className={cls.userInfoWrapper}>
                     <div className={cls.userInfo}>
-                        <Avatar size={25} src={user?.avatar}/>
+                        <Avatar size={25} src={user?.avatar} />
                         <p>{user?.username}</p>
                     </div>
                     <p>{article?.createdAt}</p>
@@ -55,7 +53,7 @@ const ArticleBigComponent: FC<Props> = ({article}) => {
                 </div>
             </div>
             <div className={cls.imageWrapper}>
-                <img style={{height: 200, objectFit: 'cover'}} src={article?.img} alt="scs"/>
+                <img style={{ height: 200, objectFit: 'cover' }} src={article?.img} alt="scs" />
 
             </div>
             <div className={cls.ArticleBigComponentMain}>
@@ -70,7 +68,7 @@ const ArticleBigComponent: FC<Props> = ({article}) => {
                     <Button theme={ThemeButton.OUTLINE}>{t('Read more')}</Button>
                 </AppLink>
 
-                <Views views={article?.views}/>
+                <Views views={article?.views} />
             </div>
         </div>
     );

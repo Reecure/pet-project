@@ -1,8 +1,8 @@
 import { useTranslation } from 'react-i18next';
 import { FC } from 'react';
-import { classNames } from '@/shared/lib/classNames/classNames';
-import Comment from '@/enteties/Comment/ui/Comment';
-import AddComment from '@/features/addComment/ui/AddComment';
+import { classNames } from '@/shared/lib/classNames';
+import { Comment } from '@/enteties/Comment';
+import { AddComment } from '@/features/addComment';
 import { IComment } from '@/enteties/Comment/model/types/comment';
 import { Loader } from '@/shared/ui/Loader';
 import cls from './Comments.module.scss';

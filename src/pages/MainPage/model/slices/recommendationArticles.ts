@@ -1,7 +1,6 @@
-import {createSlice} from '@reduxjs/toolkit';
-import {Article} from "@/enteties/Article/model/types/article";
-import {getRecommendationArticles} from "@/pages/MainPage/model/services/getRecommendationArticles";
-
+import { createSlice } from '@reduxjs/toolkit';
+import { Article } from '@/enteties/Article/model/types/article';
+import { getRecommendationArticles } from '@/pages/MainPage/model/services/getRecommendationArticles';
 
 interface Props {
     article: Article[],

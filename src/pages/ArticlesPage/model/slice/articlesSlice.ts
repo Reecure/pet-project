@@ -1,7 +1,9 @@
-import {createEntityAdapter, createSlice, EntityState, PayloadAction,} from '@reduxjs/toolkit';
-import {Article, ArticleTypes} from '@/enteties/Article/model/types/article';
-import {RootState} from '@/app/providers/ReduxProvider/config/store';
-import {getAllArticles} from '../services/getArticles';
+import {
+    createEntityAdapter, createSlice, EntityState, PayloadAction,
+} from '@reduxjs/toolkit';
+import { Article, ArticleTypes } from '@/enteties/Article/model/types/article';
+import { RootState } from '@/app/providers/ReduxProvider/config/store';
+import { getAllArticles } from '../services/getArticles';
 
 export enum viewTypes {
     BIG = 'BIG',
@@ -83,7 +85,7 @@ const articlesSlice = createSlice({
             state.sortByField = action.payload;
         },
         setQueryString: (state, action: PayloadAction<string>) => {
-            state.q = action.payload
+            state.q = action.payload;
         },
         setSortByType: (state, action: PayloadAction<ArticleTypes>) => {
             if (state.types.indexOf(action.payload) === -1) {

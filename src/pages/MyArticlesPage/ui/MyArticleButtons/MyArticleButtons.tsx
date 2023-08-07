@@ -1,13 +1,13 @@
 import { useTranslation } from 'react-i18next';
 import { FC, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { classNames } from '@/shared/lib/classNames/classNames';
+import { classNames } from '@/shared/lib/classNames';
 import cls from './MyArticleButtons.module.scss';
 import { Button, ThemeButton } from '@/shared/ui/Button';
 import { getArticleRoute, getEditArticleRoute } from '@/shared/config/routeConfig/routeConfig';
 import { useAppDispatch } from '@/app/providers/ReduxProvider/config/hooks';
-import { deleteArticle } from '@/features/CRUDArticle/model/services/deleteArticle';
-import { getAllMyArticles } from '@/pages/MyArticlesPage/model/services/getMyArticles';
+import { deleteArticle } from '@/features/CRUDArticle';
+import { getAllMyArticles } from '../../model/services/getMyArticles';
 import { User } from '@/enteties/User/model/types';
 
 interface Props {

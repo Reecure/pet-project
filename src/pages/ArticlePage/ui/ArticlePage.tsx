@@ -1,17 +1,13 @@
 import { useTranslation } from 'react-i18next';
 import { FC, memo, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import { classNames } from '@/shared/lib/classNames/classNames';
+import { classNames } from '@/shared/lib/classNames';
 import { useAppDispatch, useAppSelector } from '@/app/providers/ReduxProvider/config/hooks';
-import { getArticleById } from '@/enteties/Article/model/services/getArticleById';
-import { ArticleAllProps } from '@/enteties/Article/model/selectors/articleSelector';
-import { ArticleDetails } from '@/enteties/Article';
-import Comments from '@/features/getComments/ui/Comments';
-import { getCommentsByArticleId } from '@/features/getComments/model/services/getCommentsByArticleId';
-import { getArticleComments } from '@/features/getComments/model/slice/commentsSlice';
-import { commentisLoading } from '@/features/getComments/model/selectors/commentPropsSelector';
+import { ArticleAllProps, ArticleDetails, getArticleById } from '@/enteties/Article';
 import { Loader } from '@/shared/ui/Loader';
 import cls from './ArticlePage.module.scss';
+import { commentisLoading, Comments, getCommentsByArticleId } from '@/features/getComments';
+import { getArticleComments } from '@/features/getComments/model/slice/commentsSlice';
 
 interface Props {
 }

@@ -1,6 +1,6 @@
 import { screen } from '@testing-library/react';
 import Avatar from './Avatar';
-import { ComponentRender } from '@/shared/lib/tests/componentRender/ComponentRender';
+import { ComponentRender } from '@/shared/lib/tests/ui/ComponentRender/ComponentRender';
 
 describe('Avatar', () => {
     test('avatar rendered', () => {
