@@ -25,7 +25,7 @@ const Navbar: FC<NavbarProps> = ({className, openSideBar}) => {
 
     return (
         <nav data-testid="navbar" className={classNames(cls.Navbar, {}, [className])}>
-            <Button onClick={openSideBar} className={cls.sasd}>
+            <Button onClick={openSideBar} className={cls.sidebarButton}>
                 <svg width='35' height='35' viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
                     <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>

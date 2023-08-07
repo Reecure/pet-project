@@ -1,17 +1,22 @@
-.ArticleCodeComponent {
+.copyButtonWrapper {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  padding: 5px;
+  border-bottom: 1px solid var(--inverted-secondary-color);
+}
+
+.codeBlock {
   position: relative;
   overflow: auto;
-  margin: 20px 0;
+  padding: 10px;
 }
 
 .ArticleCodeComponent {
-  padding: 20px;
   background-color: var(--secondary-bg-color);
   color: var(--inverted-primary-color);
 }
 
 .codeCopyButton {
-  position: absolute;
-  top: 20px;
-  right: 20px;
+
 }

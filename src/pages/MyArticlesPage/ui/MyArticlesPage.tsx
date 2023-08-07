@@ -12,13 +12,13 @@ import {
     myArticlePageSelector,
     myArticlesQuerySelector,
 } from '../model/selectors/myArticlesSelectors';
-import {Loader} from '@/shared/ui/Loader';
 import {Stack, StackPosition} from '@/shared/ui/Stack';
 import MyArticleButtons from './MyArticleButtons/MyArticleButtons';
 import UserHasntArticles from './UserHasntArticles/UserHasntArticles';
 import {Input, ThemeInput} from '@/shared/ui/Input';
 import {Button} from '@/shared/ui/Button';
 import {useDebounce} from '@/shared/lib/hooks';
+import {Loader} from "@/shared/ui/Loader";
 
 interface Props {
 }
@@ -57,26 +57,16 @@ const MyArticlesPage: FC<Props> = () => {
         dispatch(setPrevPage());
     };
 
-    if (isLoading) {
-        return (
-            <Stack>
-                <Input theme={ThemeInput.OUTLINE} onChange={searchHandler} placeholder={t('Search...')} value={query}/>
+    return (
+        <div className={classNames(cls.MyArticlesPage, {}, [])}>
+            <Input theme={ThemeInput.OUTLINE} onChange={searchHandler} placeholder={t('Search...')} value={query}/>
+            {isLoading ? (
                 <Stack childrenPosition={StackPosition.CENTER}>
                     <Loader/>
                 </Stack>
 
-            </Stack>
-
-        );
-    }
-
-    return (
-        <div className={classNames(cls.MyArticlesPage, {}, [])}>
-            <Input theme={ThemeInput.OUTLINE} onChange={searchHandler} placeholder={t('Search...')} value={query}/>
-            {articles.length === 0 ? (
-                <UserHasntArticles/>
             ) : (
-                <div>
+                articles.length === 0 ? (<UserHasntArticles/>) : (<div>
                     <div>
                         {articles.map((article) => (
                             <div key={article.id} className={cls.articleWrapper}>
@@ -96,7 +86,7 @@ const MyArticlesPage: FC<Props> = () => {
                         <Button disabled={!haveMore} onClick={setNextPageHandler}>{'>'}</Button>
                     </Stack>
 
-                </div>
+                </div>)
             )}
 
         </div>

@@ -6,22 +6,20 @@
 
 .app {
   font: var(--font-m);
-
   background-color: var(--bg-color);
   color: var(--inverted-primary-color);
-
   min-height: 100vh;
-
 }
 
 .page-wrapper {
   display: flex;
+
 }
 
 .page-component-wrapper {
   width: 100%;
   padding: 5px;
-  max-height: calc(100vh - 50px);
+  max-height: calc(100vh - var(--navbar-height));
   overflow-y: auto;
 }
 

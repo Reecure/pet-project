@@ -5,7 +5,6 @@ import {useAppDispatch, useAppSelector} from '@/app/providers/ReduxProvider/conf
 import {getUserProfile, profileIsLoadingSelector, profileSelector} from '@/enteties/Profile';
 import {Loader} from '@/shared/ui/Loader';
 import ProfileCard from './ProfileCard/ProfileCard';
-import ProfilePageHeader from './ProfilePageHeader/ProfilePageHeader';
 import cls from './ProfilePage.module.scss';
 
 type Props = {};
@@ -38,7 +37,6 @@ const ProfilePage = (props: Props) => {
     return (
         <div className={cls.ProfilePageWrapper}>
             <div className={cls.ProfilePageContent}>
-                <ProfilePageHeader userInfo={profileData}/>
                 <ProfileCard userInfo={profileData}/>
             </div>
         </div>

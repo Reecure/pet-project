@@ -27,22 +27,28 @@ const Sidebar: FC<SidebarProps> = ({className, openSidebar, sidebarIsOpen}) => {
     }, [selectIsLogged]);
 
     return (
-
-        <div data-testid="sidebar" className={classNames(cls.Sidebar, {[cls.open]: sidebarIsOpen}, [className])}>
-            <div className={cls.links}>
-                {
-                    links
-                }
-            </div>
-            <div>
-                <Button data-testid="sidebar-toggle" className={cls.ToggleButton} onClick={openSidebar}>
-                    {sidebarIsOpen ? '<' : '>'}
-                </Button>
-                <div className={cls.switchersWrapper}>
-                    <LangSwitcher/>
-                    <ThemeSwitcher className={cls.themeSwitcher}/>
+        <div className={cls.sidebarWrapper}>
+            <div data-testid="sidebar" className={classNames(cls.Sidebar, {[cls.open]: sidebarIsOpen}, [className])}>
+                <div className={cls.links}>
+                    {
+                        links
+                    }
+                </div>
+                <div>
+                    <Button data-testid="sidebar-toggle" className={cls.ToggleButton} onClick={openSidebar}>
+                        {sidebarIsOpen ? '<' : '>'}
+                    </Button>
+                    <div className={cls.switchersWrapper}>
+                        <LangSwitcher/>
+                        <ThemeSwitcher className={cls.themeSwitcher}/>
+                    </div>
                 </div>
             </div>
+            {
+                sidebarIsOpen && <div className={cls.overlay} onClick={openSidebar}>
+                </div>
+            }
+
         </div>
     );
 };

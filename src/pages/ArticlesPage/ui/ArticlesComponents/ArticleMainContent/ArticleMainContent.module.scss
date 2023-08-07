@@ -2,6 +2,13 @@
   margin: 20px 0;
 }
 
+.emptyArticlesWrapper {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .smallComponentsWrapper {
   display: flex;
   flex-wrap: wrap;

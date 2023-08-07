@@ -51,7 +51,11 @@ const ArticleMainContent: FC<Props> = () => {
     };
 
     if (articles.length === 0) {
-        return (<ArticlesIsEmpty/>);
+        return (
+            <div className={cls.emptyArticlesWrapper}>
+                <ArticlesIsEmpty/>
+            </div>
+        );
     }
 
     return (

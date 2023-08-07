@@ -1,7 +1,7 @@
-import { createSlice } from '@reduxjs/toolkit';
+import {createSlice} from '@reduxjs/toolkit';
 
-import { User } from '@/enteties/User/model/types';
-import { getUserProfile } from '../services/getUserProfile';
+import {User} from '@/enteties/User/model/types';
+import {getUserProfile} from '../services/getUserProfile';
 
 interface State {
     userInfo: User;
@@ -23,17 +23,7 @@ export const profileSlice = createSlice({
     initialState,
     reducers: {
         setEditable: (state) => {
-            state.readonly = false;
-        },
-        canselEditing: (state) => {
-            state.readonly = true;
-            state.form = state.userInfo;
-        },
-        updateProfile: (state, action) => {
-            state.form = {
-                ...state.form,
-                ...action.payload,
-            };
+            state.readonly = !state.readonly;
         },
     },
     extraReducers: (builder) => {
@@ -55,4 +45,4 @@ export const profileSlice = createSlice({
 
 export default profileSlice.reducer;
 
-export const { canselEditing, setEditable, updateProfile } = profileSlice.actions;
+export const {setEditable} = profileSlice.actions;
