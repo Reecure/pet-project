@@ -1,20 +1,20 @@
-import React, { FC, useCallback } from 'react';
-import { useTranslation } from 'react-i18next';
-import { useAppDispatch, useAppSelector } from '@/app/providers/ReduxProvider/config/hooks';
-import { CountriesDropDown } from '@/enteties/Country';
-import { CurrenciesDropDown } from '@/enteties/Currency';
-import { profileFormSelector, profileReadOnlySelector, updateProfile } from '@/enteties/Profile';
-import { Avatar } from '@/shared/ui/Avatar';
-import { Input } from '@/shared/ui/Input';
-import { User } from '@/enteties/User/model/types';
+import React, {FC, useCallback} from 'react';
+import {useTranslation} from 'react-i18next';
+import {useAppDispatch, useAppSelector} from '@/app/providers/ReduxProvider/config/hooks';
+import {CountriesDropDown} from '@/enteties/Country';
+import {CurrenciesDropDown} from '@/enteties/Currency';
+import {profileFormSelector, profileReadOnlySelector, updateProfile} from '@/enteties/Profile';
+import {Avatar} from '@/shared/ui/Avatar';
+import {Input} from '@/shared/ui/Input';
+import {User} from '@/enteties/User/model/types';
 import cls from './ProfileCard.module.scss';
 
 type Props = {
     userInfo: User;
 };
 
-const ProfileCard: FC<Props> = ({ userInfo }) => {
-    const { t } = useTranslation();
+const ProfileCard: FC<Props> = ({userInfo}) => {
+    const {t} = useTranslation();
     const isReadOnly = useAppSelector(profileReadOnlySelector);
 
     const dispatch = useAppDispatch();
@@ -23,44 +23,44 @@ const ProfileCard: FC<Props> = ({ userInfo }) => {
 
     const setUsernameHandler = useCallback(
         (e: React.ChangeEvent<HTMLInputElement>) => {
-            dispatch(updateProfile({ first: e.currentTarget.value }));
+            dispatch(updateProfile({first: e.currentTarget.value}));
         },
         [dispatch],
     );
     const setLastnameHandler = useCallback(
         (e: React.ChangeEvent<HTMLInputElement>) => {
-            dispatch(updateProfile({ lastname: e.currentTarget.value }));
+            dispatch(updateProfile({lastname: e.currentTarget.value}));
         },
         [dispatch],
     );
     const setAgeHandler = useCallback(
         (e: React.ChangeEvent<HTMLInputElement>) => {
-            dispatch(updateProfile({ age: e.currentTarget.value }));
+            dispatch(updateProfile({age: e.currentTarget.value}));
         },
         [dispatch],
     );
     const setCityHandler = useCallback(
         (e: React.ChangeEvent<HTMLInputElement>) => {
-            dispatch(updateProfile({ city: e.currentTarget.value }));
+            dispatch(updateProfile({city: e.currentTarget.value}));
         },
         [dispatch],
     );
     const setAvatarHandler = useCallback(
         (e: React.ChangeEvent<HTMLInputElement>) => {
-            dispatch(updateProfile({ avatar: e.currentTarget.value }));
+            dispatch(updateProfile({avatar: e.currentTarget.value}));
         },
         [dispatch],
     );
 
     const setCurrencyHandler = useCallback(
         (value: string) => {
-            dispatch(updateProfile({ currency: value }));
+            dispatch(updateProfile({currency: value}));
         },
         [dispatch],
     );
     const setCountryHandler = useCallback(
         (value: string) => {
-            dispatch(updateProfile({ country: value }));
+            dispatch(updateProfile({country: value}));
         },
         [dispatch],
     );
@@ -68,7 +68,7 @@ const ProfileCard: FC<Props> = ({ userInfo }) => {
     return (
         <div className={cls.ProfileCardWrapper}>
             <div className={cls.avatar}>
-                <Avatar src={userInfo?.avatar} />
+                <Avatar src={userInfo?.avatar}/>
             </div>
 
             <label htmlFor="username" className={cls.fieldWrapper}>
@@ -114,7 +114,7 @@ const ProfileCard: FC<Props> = ({ userInfo }) => {
                 />
             </label>
 
-            <div />
+            <div/>
             <div className={cls.selectorWrapper}>
                 {t('Country')}
                 :

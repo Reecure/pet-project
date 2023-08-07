@@ -12,6 +12,7 @@
 .menuWrapper {
   position: relative;
   display: inline-block;
+  z-index: 100000;
 }
 
 .menuButton {
