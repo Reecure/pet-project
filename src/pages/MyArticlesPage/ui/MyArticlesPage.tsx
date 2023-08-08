@@ -59,7 +59,7 @@ const MyArticlesPage: FC<Props> = () => {
 
     return (
         <div className={classNames(cls.MyArticlesPage, {}, [])}>
-            <Input theme={ThemeInput.OUTLINE} onChange={searchHandler} placeholder={t('Search...')} value={query}/>
+            <Input theme={ThemeInput.OUTLINE} onChange={searchHandler} placeholder={'Search...'} value={query}/>
             {isLoading ? (
                 <Stack childrenPosition={StackPosition.CENTER}>
                     <Loader/>

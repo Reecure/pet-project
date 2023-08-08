@@ -4,29 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="054dcfbb-5232-4235-a308-8c1e1cec3020" name="Changes" comment="refactored add validation profile">
-      <change afterPath="$PROJECT_DIR$/src/shared/lib/hooks/useOuterWidth/useOuterWidth.ts" afterDir="false" />
+    <list default="true" id="054dcfbb-5232-4235-a308-8c1e1cec3020" name="Changes" comment="fix input style articleBigComponent, fix Sidebar bugs">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/styles/variables/global.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/styles/variables/global.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/enteties/Article/model/types/article.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/enteties/Article/model/types/article.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/AuthByUsername/ui/LoginForm/LoginForm.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/AuthByUsername/ui/LoginForm/LoginForm.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/AuthByUsername/ui/LoginForm/LoginForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/AuthByUsername/ui/LoginForm/LoginForm.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/ArticlesPage/ui/ArticlesComponents/ArticleMainContent/ArticleMainContent.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ArticlesPage/ui/ArticlesComponents/ArticleMainContent/ArticleMainContent.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/ArticlesPage/ui/ArticlesComponents/ArticleMainContent/ArticleMainContent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ArticlesPage/ui/ArticlesComponents/ArticleMainContent/ArticleMainContent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/ProfilePage/ui/ProfileCard/ProfileCard.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ProfilePage/ui/ProfileCard/ProfileCard.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/ProfilePage/ui/ProfileCard/ProfileCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ProfilePage/ui/ProfileCard/ProfileCard.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shared/lib/hooks/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/lib/hooks/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shared/ui/ArticleBigComponent/ArticleBigComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/ui/ArticleBigComponent/ArticleBigComponent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shared/ui/ArticleSmallComponent/ArticleSmallComponent.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/ui/ArticleSmallComponent/ArticleSmallComponent.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shared/ui/Input/ui/Input.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/ui/Input/ui/Input.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shared/ui/Input/ui/Input.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/ui/Input/ui/Input.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shared/ui/Notify/ui/Notify.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/ui/Notify/ui/Notify.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shared/ui/Skeleton/ui/Skeleton.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/ui/Skeleton/ui/Skeleton.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/widgets/Modal/ui/Modal.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/widgets/Modal/ui/Modal.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/widgets/Navbar/ui/UserDropdownProfile/UserDropdownProfile.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/widgets/Navbar/ui/UserDropdownProfile/UserDropdownProfile.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/widgets/Sidebar/ui/Sidebar/Sidebar.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/widgets/Sidebar/ui/Sidebar/Sidebar.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/widgets/Sidebar/ui/Sidebar/Sidebar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/widgets/Sidebar/ui/Sidebar/Sidebar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/widgets/Sidebar/ui/Sidebar/SidebarItem/SidebarItem.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/widgets/Sidebar/ui/Sidebar/SidebarItem/SidebarItem.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/extractedTranslations/en/about.json" beforeDir="false" afterPath="$PROJECT_DIR$/extractedTranslations/en/about.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/extractedTranslations/en/translation.json" beforeDir="false" afterPath="$PROJECT_DIR$/extractedTranslations/en/translation.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/enteties/Profile/slice/profileSlice.test.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/enteties/Profile/slice/profileSlice.test.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -108,6 +90,16 @@
     </key>
   </component>
   <component name="RunManager" selected="npm.lint:ts">
+    <configuration name="build:prod" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="build:prod" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
     <configuration name="lint:ts" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
@@ -123,16 +115,6 @@
       <command value="run" />
       <scripts>
         <script value="lint:ts:fix" />
-      </scripts>
-      <node-interpreter value="project" />
-      <envs />
-      <method v="2" />
-    </configuration>
-    <configuration name="start:dev:server" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
-      <package-json value="$PROJECT_DIR$/package.json" />
-      <command value="run" />
-      <scripts>
-        <script value="start:dev:server" />
       </scripts>
       <node-interpreter value="project" />
       <envs />
@@ -160,11 +142,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="npm.build:prod" />
         <item itemvalue="npm.start:vite" />
         <item itemvalue="npm.lint:ts:fix" />
         <item itemvalue="npm.lint:ts" />
         <item itemvalue="npm.test" />
-        <item itemvalue="npm.start:dev:server" />
       </list>
     </recent_temporary>
   </component>
@@ -207,7 +189,7 @@
       <workItem from="1691314315385" duration="6465000" />
       <workItem from="1691333479407" duration="10175000" />
       <workItem from="1691384757485" duration="30534000" />
-      <workItem from="1691468463175" duration="5327000" />
+      <workItem from="1691468463175" duration="5688000" />
     </task>
     <task id="LOCAL-00001" summary="some fix">
       <created>1689795990367</created>
@@ -377,7 +359,14 @@
       <option name="project" value="LOCAL" />
       <updated>1691439385253</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="fix input style articleBigComponent, fix Sidebar bugs">
+      <created>1691474002051</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1691474002051</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -402,6 +391,7 @@
     <MESSAGE value="refactored and translates" />
     <MESSAGE value="refactored" />
     <MESSAGE value="refactored add validation profile" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactored add validation profile" />
+    <MESSAGE value="fix input style articleBigComponent, fix Sidebar bugs" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix input style articleBigComponent, fix Sidebar bugs" />
   </component>
 </project>
