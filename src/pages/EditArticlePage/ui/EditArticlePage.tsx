@@ -18,6 +18,7 @@ const EditArticlePage: FC<Props> = () => {
 
     const [notifyOpen, setNotifyOpen] = useState(false);
     const [notifySuccess, setNotifySuccess] = useState(false);
+    const [serverError, setServerError] = useState(false)
 
     const article = useAppSelector(ArticleAllProps);
     const isLoading = useAppSelector(ArticleLoadig);
@@ -28,9 +29,9 @@ const EditArticlePage: FC<Props> = () => {
 
     useEffect(() => {
         dispatch(getArticleById(id)).unwrap().then((res) => {
-            console.log("not error")
+            setServerError(false)
         }).catch(error => {
-            console.log('error')
+            setServerError(true)
         });
     }, [dispatch, id]);
 
@@ -48,13 +49,12 @@ const EditArticlePage: FC<Props> = () => {
     const updateHandler = (values: ArticleForSend) => {
         setNotifyOpen(true);
         dispatch(updateArticle({id: article.article.id, article: values}))
-            .unwrap() // Unwrap the promise to access the fulfilled value or rejectWithValue error
-            .then((response) => {
-                setNotifySuccess(true); // Set success notification
-            })
-            .catch((error) => {
-                setNotifySuccess(false); // Set error notification
-            });
+            .unwrap().then((res) => {
+            setNotifySuccess(true);
+            setServerError(false)
+        }).catch(error => {
+            setServerError(true)
+        });
     };
 
     if (isLoading) {
@@ -65,7 +65,8 @@ const EditArticlePage: FC<Props> = () => {
 
     return (
         <div className={classNames(cls.EditArticlePage, {}, [])}>
-            <ArticleForm article={article.article} loading={article.loading} onSubmit={updateHandler}/>
+            <ArticleForm submitError={serverError} article={article.article} loading={article.loading}
+                         onSubmit={updateHandler}/>
             <Notify open={notifyOpen}>
                 {notifySuccess ? t('Article update success') : t('Article update failed')}
             </Notify>

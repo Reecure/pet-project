@@ -67,11 +67,7 @@ const ArticleHeader: FC<Props> = () => {
     );
 
     useEffect(() => {
-        dispatch(getAllArticles()).unwrap().then((res) => {
-            console.log("not error")
-        }).catch(error => {
-            console.log('error')
-        });
+        dispatch(getAllArticles());
     }, [debouncedQuery, dispatch]);
 
     const setSmallArticles = useCallback(
@@ -88,21 +84,13 @@ const ArticleHeader: FC<Props> = () => {
                     dispatch(setSortByOrder(OrderType.ASC));
                     dispatch(setSortByField(sortFields.VIEWS));
                     dispatch(resetPage());
-                    dispatch(getAllArticles()).unwrap().then((res) => {
-                        console.log("not error")
-                    }).catch(error => {
-                        console.log('error')
-                    });
+                    dispatch(getAllArticles());
                     break;
                 case 'viewsDesc':
                     dispatch(setSortByOrder(OrderType.DESC));
                     dispatch(setSortByField(sortFields.VIEWS));
                     dispatch(resetPage());
-                    dispatch(getAllArticles()).unwrap().then((res) => {
-                        console.log("not error")
-                    }).catch(error => {
-                        console.log('error')
-                    });
+                    dispatch(getAllArticles());
                     break;
                 default:
                     break;
@@ -117,11 +105,7 @@ const ArticleHeader: FC<Props> = () => {
             onClick={() => {
                 dispatch(setSortByType(type));
                 dispatch(resetPage());
-                dispatch(getAllArticles()).unwrap().then((res) => {
-                    console.log("not error")
-                }).catch(error => {
-                    console.log('error')
-                });
+                dispatch(getAllArticles());
             }}
             className={classNames(cls.type, {[cls.selected]: types.indexOf(type) !== -1}, [])}
         >

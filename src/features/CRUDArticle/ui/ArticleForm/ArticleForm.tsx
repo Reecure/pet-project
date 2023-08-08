@@ -13,9 +13,10 @@ interface Props {
     article?: ArticleForSend
     loading?: boolean,
     onSubmit: (values: ArticleForSend) => void
+    submitError: boolean
 }
 
-const ArticleForm: FC<Props> = ({article, loading, onSubmit}) => {
+const ArticleForm: FC<Props> = ({article, loading, onSubmit, submitError}) => {
     const {t} = useTranslation();
 
     const initialValues: ArticleForSend = {
@@ -57,190 +58,193 @@ const ArticleForm: FC<Props> = ({article, loading, onSubmit}) => {
     });
 
     return (
-        <Formik
-            initialValues={initialValues}
-            validationSchema={validationSchema}
-            onSubmit={(values) => {
-                onSubmit(values);
-            }}
-        >
-            {
-                ({values, errors}) => (
-                    <Form>
+        <>
+            {submitError && <p>Article doesn`t send some server error</p>}
+            <Formik
+                initialValues={initialValues}
+                validationSchema={validationSchema}
+                onSubmit={(values) => {
+                    onSubmit(values);
+                }}
+            >
+                {
+                    ({values, errors}) => (
+                        <Form>
 
-                        <div className={cls.headerFields}>
-                            <label htmlFor="title">
-                                <Text title={t("Title")}/>
-                                <Field type="text" id="title" name="title" className={cls.field}/>
-                                <ErrorMessage name="title" component="div" className={cls.error}/>
-                            </label>
+                            <div className={cls.headerFields}>
+                                <label htmlFor="title">
+                                    <Text title={t("Title")}/>
+                                    <Field type="text" id="title" name="title" className={cls.field}/>
+                                    <ErrorMessage name="title" component="div" className={cls.error}/>
+                                </label>
 
-                            <label htmlFor="subtitle">
-                                <Text title={t("Subtitle")}/>
-                                <Field type="text" id="subtitle" name="subtitle" className={cls.field}/>
-                                <ErrorMessage name="subtitle" component="div" className={cls.error}/>
-                            </label>
+                                <label htmlFor="subtitle">
+                                    <Text title={t("Subtitle")}/>
+                                    <Field type="text" id="subtitle" name="subtitle" className={cls.field}/>
+                                    <ErrorMessage name="subtitle" component="div" className={cls.error}/>
+                                </label>
 
-                            <label htmlFor="img">
-                                <Text title={t("Image")}/>
-                                <Field type="text" id="img" name="img" className={cls.field}/>
-                                <ErrorMessage name="img" component="div" className={cls.error}/>
-                            </label>
-                        </div>
+                                <label htmlFor="img">
+                                    <Text title={t("Image")}/>
+                                    <Field type="text" id="img" name="img" className={cls.field}/>
+                                    <ErrorMessage name="img" component="div" className={cls.error}/>
+                                </label>
+                            </div>
 
-                        <div className={cls.types}>
-                            <Text title={t("Types")}/>
-                            <FieldArray name="type">
+                            <div className={cls.types}>
+                                <Text title={t("Types")}/>
+                                <FieldArray name="type">
+                                    {({push, remove}) => (
+                                        <div className={cls.types}>
+                                            {Object.values(ArticleTypes).map((type) => (
+                                                <div key={type} className={cls.type}>
+                                                    <label>
+                                                        <Field type="checkbox" name="type" value={type}/>
+                                                        {type}
+                                                    </label>
+                                                </div>
+                                            ))}
+                                        </div>
+                                    )}
+                                </FieldArray>
+                            </div>
+
+                            <Text title={t("Blocks")}/>
+                            <FieldArray name="blocks">
                                 {({push, remove}) => (
-                                    <div className={cls.types}>
-                                        {Object.values(ArticleTypes).map((type) => (
-                                            <div key={type} className={cls.type}>
-                                                <label>
-                                                    <Field type="checkbox" name="type" value={type}/>
-                                                    {type}
-                                                </label>
+                                    <div>
+                                        {values.blocks.map((block: ArticleBlocks, index: number) => (
+                                            <div key={index} className={cls.blockWrapper}>
+                                                {block.type === BlockTypes.TEXT && (
+                                                    <div className={cls.block}>
+                                                        <Text title={t("Text Block")}/>
+                                                        <Text mainText={t("Text Block Title")}/>
+                                                        <Field
+                                                            type="text"
+                                                            name={`blocks.${index}.title`}
+                                                            className={cls.field}
+                                                        />
+                                                        <ErrorMessage
+                                                            name={`blocks.${index}.title`}
+                                                            component="div"
+                                                            className={cls.error}
+                                                        />
+
+                                                        <Text mainText={t("Paragraphs")}/>
+                                                        <FieldArray name={`blocks.${index}.paragraphs`}>
+                                                            {({push: pushParagraph, remove: removeParagraph}) => (
+                                                                <div>
+                                                                    {block.paragraphs.map((paragraph, paraIndex) => (
+                                                                        <div
+                                                                            key={paraIndex}
+                                                                            className={cls.blockWrapper}
+                                                                        >
+                                                                            <Field
+                                                                                type="text"
+                                                                                as="textarea"
+                                                                                name={`blocks.${index}.paragraphs.${paraIndex}.text`}
+                                                                                className={cls.textareaField}
+                                                                            />
+                                                                            <ErrorMessage
+                                                                                name={`blocks.${index}.paragraphs.${paraIndex}.text`}
+                                                                                component="div"
+                                                                                className={cls.error}
+                                                                            />
+
+                                                                            <Button
+                                                                                theme={ThemeButton.OUTLINE_RED}
+                                                                                type="button"
+                                                                                onClick={() => removeParagraph(paraIndex)}
+                                                                            >
+                                                                                {t("Remove")}
+                                                                            </Button>
+                                                                        </div>
+                                                                    ))}
+                                                                    <Button
+                                                                        theme={ThemeButton.OUTLINE}
+                                                                        type="button"
+                                                                        onClick={() => pushParagraph({
+                                                                            id: nanoid(),
+                                                                            text: '',
+                                                                        })}
+                                                                    >
+                                                                        {t('Add Paragraph')}
+                                                                    </Button>
+                                                                </div>
+                                                            )}
+                                                        </FieldArray>
+                                                    </div>
+                                                )}
+
+                                                {block.type === BlockTypes.CODE && (
+                                                    <div className={cls.block}>
+                                                        <Text title={t("Code Block")}/>
+                                                        <Field
+                                                            as="textarea"
+                                                            name={`blocks.${index}.code`}
+                                                            id={`blocks.${index}.code`}
+                                                            className={cls.textareaField}
+                                                        />
+                                                        <ErrorMessage
+                                                            name={`blocks.${index}.code`}
+                                                            component="div"
+                                                            className={cls.error}
+                                                        />
+                                                    </div>
+                                                )}
+
+                                                {block.type === BlockTypes.IMAGE && (
+                                                    <div className={cls.block}>
+                                                        <Text title={t("Image Block")}/>
+                                                        <Text mainText={t("Image URL")}/>
+                                                        <Field
+                                                            type="text"
+                                                            name={`blocks.${index}.src`}
+                                                            id={`blocks.${index}.src`}
+                                                            className={cls.field}
+                                                        />
+                                                        <ErrorMessage
+                                                            name={`blocks.${index}.src`}
+                                                            component="div"
+                                                            className={cls.error}
+                                                        />
+
+                                                        <Text mainText={t("Image Title")}/>
+                                                        <Field
+                                                            type="text"
+                                                            name={`blocks.${index}.title`}
+                                                            id={`blocks.${index}.title`}
+                                                            className={cls.field}
+                                                        />
+                                                        <ErrorMessage
+                                                            name={`blocks.${index}.title`}
+                                                            component="div"
+                                                            className={cls.error}
+                                                        />
+                                                    </div>
+                                                )}
+
+                                                <Button
+                                                    theme={ThemeButton.OUTLINE_RED}
+                                                    type="button"
+                                                    onClick={() => remove(index)}
+                                                >
+                                                    {t('Delete')}
+                                                </Button>
                                             </div>
                                         ))}
+                                        <BlockButtons push={push}/>
                                     </div>
                                 )}
                             </FieldArray>
-                        </div>
 
-                        <Text title={t("Blocks")}/>
-                        <FieldArray name="blocks">
-                            {({push, remove}) => (
-                                <div>
-                                    {values.blocks.map((block: ArticleBlocks, index: number) => (
-                                        <div key={index} className={cls.blockWrapper}>
-                                            {block.type === BlockTypes.TEXT && (
-                                                <div className={cls.block}>
-                                                    <Text title={t("Text Block")}/>
-                                                    <Text mainText={t("Text Block Title")}/>
-                                                    <Field
-                                                        type="text"
-                                                        name={`blocks.${index}.title`}
-                                                        className={cls.field}
-                                                    />
-                                                    <ErrorMessage
-                                                        name={`blocks.${index}.title`}
-                                                        component="div"
-                                                        className={cls.error}
-                                                    />
-
-                                                    <Text mainText={t("Paragraphs")}/>
-                                                    <FieldArray name={`blocks.${index}.paragraphs`}>
-                                                        {({push: pushParagraph, remove: removeParagraph}) => (
-                                                            <div>
-                                                                {block.paragraphs.map((paragraph, paraIndex) => (
-                                                                    <div
-                                                                        key={paraIndex}
-                                                                        className={cls.blockWrapper}
-                                                                    >
-                                                                        <Field
-                                                                            type="text"
-                                                                            as="textarea"
-                                                                            name={`blocks.${index}.paragraphs.${paraIndex}.text`}
-                                                                            className={cls.textareaField}
-                                                                        />
-                                                                        <ErrorMessage
-                                                                            name={`blocks.${index}.paragraphs.${paraIndex}.text`}
-                                                                            component="div"
-                                                                            className={cls.error}
-                                                                        />
-
-                                                                        <Button
-                                                                            theme={ThemeButton.OUTLINE_RED}
-                                                                            type="button"
-                                                                            onClick={() => removeParagraph(paraIndex)}
-                                                                        >
-                                                                            {t("Remove")}
-                                                                        </Button>
-                                                                    </div>
-                                                                ))}
-                                                                <Button
-                                                                    theme={ThemeButton.OUTLINE}
-                                                                    type="button"
-                                                                    onClick={() => pushParagraph({
-                                                                        id: nanoid(),
-                                                                        text: '',
-                                                                    })}
-                                                                >
-                                                                    {t('Add Paragraph')}
-                                                                </Button>
-                                                            </div>
-                                                        )}
-                                                    </FieldArray>
-                                                </div>
-                                            )}
-
-                                            {block.type === BlockTypes.CODE && (
-                                                <div className={cls.block}>
-                                                    <Text title={t("Code Block")}/>
-                                                    <Field
-                                                        as="textarea"
-                                                        name={`blocks.${index}.code`}
-                                                        id={`blocks.${index}.code`}
-                                                        className={cls.textareaField}
-                                                    />
-                                                    <ErrorMessage
-                                                        name={`blocks.${index}.code`}
-                                                        component="div"
-                                                        className={cls.error}
-                                                    />
-                                                </div>
-                                            )}
-
-                                            {block.type === BlockTypes.IMAGE && (
-                                                <div className={cls.block}>
-                                                    <Text title={t("Image Block")}/>
-                                                    <Text mainText={t("Image URL")}/>
-                                                    <Field
-                                                        type="text"
-                                                        name={`blocks.${index}.src`}
-                                                        id={`blocks.${index}.src`}
-                                                        className={cls.field}
-                                                    />
-                                                    <ErrorMessage
-                                                        name={`blocks.${index}.src`}
-                                                        component="div"
-                                                        className={cls.error}
-                                                    />
-
-                                                    <Text mainText={t("Image Title")}/>
-                                                    <Field
-                                                        type="text"
-                                                        name={`blocks.${index}.title`}
-                                                        id={`blocks.${index}.title`}
-                                                        className={cls.field}
-                                                    />
-                                                    <ErrorMessage
-                                                        name={`blocks.${index}.title`}
-                                                        component="div"
-                                                        className={cls.error}
-                                                    />
-                                                </div>
-                                            )}
-
-                                            <Button
-                                                theme={ThemeButton.OUTLINE_RED}
-                                                type="button"
-                                                onClick={() => remove(index)}
-                                            >
-                                                {t('Delete')}
-                                            </Button>
-                                        </div>
-                                    ))}
-                                    <BlockButtons push={push}/>
-                                </div>
-                            )}
-                        </FieldArray>
-
-                        <Button theme={ThemeButton.OUTLINE} type="submit"
-                                className={cls.submitButton}>{t('Submit')}</Button>
-                    </Form>
-                )
-            }
-        </Formik>
+                            <Button theme={ThemeButton.OUTLINE} type="submit"
+                                    className={cls.submitButton}>{t('Submit')}</Button>
+                        </Form>
+                    )
+                }
+            </Formik>
+        </>
     );
 };
 export default ArticleForm;

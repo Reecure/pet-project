@@ -2131,14 +2131,14 @@
   "profiles": [
     {
       "id": "1",
+      "username": "admin",
       "first": "Yura",
       "lastname": "Jsds",
       "age": "23",
+      "currency": "PL",
       "country": "Poland",
       "city": "Kyiv",
-      "username": "admin",
-      "avatar": "https://e0.pxfuel.com/wallpapers/668/829/desktop-wallpaper-killua-zoldyck-killuazoldyck-hunterxhunter-killuazoldyck-hunterxhunterkillua-killua.jpg",
-      "currency": "PL"
+      "avatar": "https://e0.pxfuel.com/wallpapers/668/829/desktop-wallpaper-killua-zoldyck-killuazoldyck-hunterxhunter-killuazoldyck-hunterxhunterkillua-killua.jpg"
     },
     {
       "id": "2",

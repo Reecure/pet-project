@@ -1,5 +1,5 @@
 import {useTranslation} from 'react-i18next';
-import {FC, memo, useEffect} from 'react';
+import {FC, memo, useEffect, useState} from 'react';
 import {useParams} from 'react-router-dom';
 import {classNames} from '@/shared/lib/classNames';
 import {useAppDispatch, useAppSelector} from '@/app/providers/ReduxProvider/config/hooks';
@@ -16,9 +16,12 @@ interface Props {
 const ArticlePage: FC<Props> = () => {
     const {t} = useTranslation();
 
+    const [articleError, setArticleError] = useState(false)
+    const [commentError, setCommentError] = useState(false)
     const {id} = useParams();
 
     const dispatch = useAppDispatch();
+
 
     const {article, error, loading} = useAppSelector(ArticleAllProps);
     const commentLoading = useAppSelector(commentisLoading);
@@ -26,14 +29,14 @@ const ArticlePage: FC<Props> = () => {
 
     useEffect(() => {
         dispatch(getArticleById(id)).unwrap().then((res) => {
-            console.log("not error")
+            setArticleError(false)
         }).catch(error => {
-            console.log('error')
+            setArticleError(true)
         });
         dispatch(getCommentsByArticleId(id)).unwrap().then((res) => {
-            console.log("not error")
+            setCommentError(false)
         }).catch(error => {
-            console.log('error')
+            setCommentError(true)
         });
     }, [dispatch, id]);
 
@@ -44,17 +47,22 @@ const ArticlePage: FC<Props> = () => {
             </Stack>
         );
     }
-    if (error) {
-        return <div>{t('Error')}</div>;
+
+    if (articleError || commentError) {
+        return <p>Server error reload Page</p>
     }
+
     if (article === undefined) {
         return <div>{t('Article doesn`t exist')}</div>;
     }
 
     return (
         <div className={classNames(cls.ArticlePage, {}, [])}>
+
             <ArticleDetails article={article}/>
             <Comments isLoading={commentLoading} comments={comments}/>
+
+
         </div>
     );
 };

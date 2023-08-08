@@ -1,4 +1,4 @@
-import {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import {useParams} from 'react-router-dom';
 import {useTranslation} from 'react-i18next';
 import {useAppDispatch, useAppSelector} from '@/app/providers/ReduxProvider/config/hooks';
@@ -12,7 +12,9 @@ type Props = {};
 const ProfilePage = (props: Props) => {
     const {t} = useTranslation();
     const dispatch = useAppDispatch();
+    const [updateServerError, setUpdateServerError] = useState(false)
 
+    const [serverError, setServerError] = useState(false)
     const {id} = useParams();
 
     const profileData = useAppSelector(profileSelector);
@@ -20,9 +22,9 @@ const ProfilePage = (props: Props) => {
 
     useEffect(() => {
         dispatch(getUserProfile(id)).unwrap().then((res) => {
-            console.log("not error")
+            setServerError(false)
         }).catch(error => {
-            console.log('error')
+            setServerError(true)
         });
     }, [dispatch, id]);
 
@@ -34,6 +36,10 @@ const ProfilePage = (props: Props) => {
         );
     }
 
+    if (serverError) {
+        return <p>Some server error</p>
+    }
+
     if (!profileData) {
         return <div>{t('User is not found')}</div>;
     }
@@ -41,7 +47,8 @@ const ProfilePage = (props: Props) => {
     return (
         <div className={cls.ProfilePageWrapper}>
             <div className={cls.ProfilePageContent}>
-                <ProfileCard userInfo={profileData}/>
+                {updateServerError && <p>Profile doesnt update some server error</p>}
+                <ProfileCard userInfo={profileData} setUpdateServerError={setUpdateServerError}/>
             </div>
         </div>
     );

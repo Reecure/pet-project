@@ -1,4 +1,4 @@
-import {FC, memo, useEffect} from 'react';
+import {FC, memo, useEffect, useState} from 'react';
 import {useTranslation} from 'react-i18next';
 import {classNames} from '@/shared/lib/classNames';
 import {useAppDispatch, useAppSelector} from '@/app/providers/ReduxProvider/config/hooks';
@@ -23,6 +23,8 @@ interface Props {
 const ArticleMainContent: FC<Props> = () => {
     const {t} = useTranslation();
 
+    const [articlesServerError, setArticlesServerError] = useState(false)
+
     const selectViewType = useAppSelector(articlesViewsSelector);
     const articles = useAppSelector(getArticles.selectAll);
     const articlesLoading = useAppSelector(articlesLoadingSelector);
@@ -31,26 +33,21 @@ const ArticleMainContent: FC<Props> = () => {
 
     const dispatch = useAppDispatch();
 
+
     useEffect(() => {
         dispatch(getAllArticles()).unwrap().then((res) => {
-            console.log("not error")
+            setArticlesServerError(false)
         }).catch(error => {
-            console.log('error')
+            setArticlesServerError(true)
         });
-    }, [dispatch]);
-
-    if (articlesLoading) {
-        return (
-            <div className={cls.loaderWrapper}><Loader/></div>
-        );
-    }
+    }, [dispatch])
 
     const nextPageHandler = () => {
         dispatch(setNextPage());
         dispatch(getAllArticles()).unwrap().then((res) => {
-            console.log("not error")
+            setArticlesServerError(false)
         }).catch(error => {
-            console.log('error')
+            setArticlesServerError(true)
         });
 
     };
@@ -58,11 +55,21 @@ const ArticleMainContent: FC<Props> = () => {
     const prevPageHandler = () => {
         dispatch(setPrevPage());
         dispatch(getAllArticles()).unwrap().then((res) => {
-            console.log("not error")
+            setArticlesServerError(false)
         }).catch(error => {
-            console.log('error')
+            setArticlesServerError(true)
         });
     };
+
+    if (articlesLoading) {
+        return (
+            <div className={cls.loaderWrapper}><Loader/></div>
+        );
+    }
+
+    if (articlesServerError) {
+        return <p>Server error</p>
+    }
 
     if (articles.length === 0) {
         return (

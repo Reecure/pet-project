@@ -40,7 +40,7 @@ export const getAllArticles = createAsyncThunk<Article[], void>('articles/getAll
             params._order = orderState;
         }
 
-        const res = await axios.get('https://production-project-server-psi-ivory.vercel.app/articles', {
+        const res = await axios.get('http://production-project-server-psi-ivory.vercel.app/articles', {
             headers: {
                 authorization: localStorage.getItem(USER_LOCALSTORAGE_KEY) || '',
             },

@@ -10,11 +10,9 @@ interface ThunkConfig {
 }
 
 export const updateUserProfile = createAsyncThunk<User, User, ThunkConfig>('profile/getUserProfile', async (form, thunkApi) => {
-    const {getState} = thunkApi;
-
-
     try {
-        const res = await axios.put(`https://production-project-server-psi-ivory.vercel.app/profiles/${form.id}`, form, {
+
+        const res = await axios.put(`http://localhost:8000/profiles/${form.id}`, form, {
             headers: {
                 authorization: localStorage.getItem(USER_LOCALSTORAGE_KEY) || '',
             },
