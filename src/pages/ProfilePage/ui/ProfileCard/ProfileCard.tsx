@@ -1,8 +1,6 @@
 import React, {FC} from 'react';
 import {useTranslation} from 'react-i18next';
 import {useAppDispatch, useAppSelector} from '@/app/providers/ReduxProvider/config/hooks';
-import {CountriesDropDown} from '@/enteties/Country';
-import {CurrenciesDropDown} from '@/enteties/Currency';
 import {profileFormSelector, profileReadOnlySelector, setEditable} from '@/enteties/Profile';
 import {Avatar} from '@/shared/ui/Avatar';
 import {User} from '@/enteties/User/model/types';
@@ -12,6 +10,8 @@ import {userDataSelector} from "@/enteties/User";
 import {Button} from "@/shared/ui/Button";
 import {Stack, StackPosition} from "@/shared/ui/Stack";
 import * as Yup from "yup";
+import {COUNTRIES} from "@/enteties/Country/model/types/countries";
+import {CURRENCIES} from "@/enteties/Currency/model/types/currencies";
 
 type Props = {
     userInfo: User;
@@ -53,7 +53,7 @@ const ProfileCard: FC<Props> = ({userInfo}) => {
                         age: profileForm?.age || '',
                         roles: profileForm.roles,
                         currency: profileForm?.currency,
-                        country: profileForm?.country,
+                        country: profileForm?.country || '',
                         city: profileForm?.city || '',
                         avatar: userInfo?.avatar || '',
 
@@ -91,6 +91,7 @@ const ProfileCard: FC<Props> = ({userInfo}) => {
                                 name="first"
                                 readOnly={isReadOnly}
                                 value={values.first}
+                                className={cls.field}
                             />
                             <ErrorMessage name="first" component="div" className={cls.error}/>
                         </label>
@@ -103,6 +104,7 @@ const ProfileCard: FC<Props> = ({userInfo}) => {
                                 name="lastname"
                                 readOnly={isReadOnly}
                                 value={values.lastname}
+                                className={cls.field}
                             />
                             <ErrorMessage name="lastname" component="div" className={cls.error}/>
                         </label>
@@ -116,19 +118,10 @@ const ProfileCard: FC<Props> = ({userInfo}) => {
                                 readOnly={isReadOnly}
                                 type="number"
                                 value={values.age}
+                                className={cls.field}
                             />
                             <ErrorMessage name="age" component="div" className={cls.error}/>
                         </label>
-                        <div className={cls.selectorWrapper}>
-                            {t('Country')}
-                            :
-                            <CountriesDropDown
-                                setCurrentCountry={() => {
-                                }}
-                                canEdit={isReadOnly}
-                                defaultCountrie={userInfo?.country}
-                            />
-                        </div>
                         <label htmlFor="city" className={cls.fieldWrapper}>
                 <span>
                     {' '}
@@ -139,19 +132,11 @@ const ProfileCard: FC<Props> = ({userInfo}) => {
                                 name="city"
                                 readOnly={isReadOnly}
                                 value={values.city}
+                                className={cls.field}
                             />
                             <ErrorMessage name="city" component="div" className={cls.error}/>
                         </label>
-                        <div className={cls.selectorWrapper}>
-                            {t('Currency')}
-                            :
-                            <CurrenciesDropDown
-                                setCurrentCurrency={() => {
-                                }}
-                                canEdit={isReadOnly}
-                                defaultCurrency={userInfo?.currency}
-                            />
-                        </div>
+
                         <label htmlFor="avatar" className={cls.fieldWrapper}>
                 <span>
                     {' '}
@@ -161,11 +146,50 @@ const ProfileCard: FC<Props> = ({userInfo}) => {
                             <Field
                                 name="avatar"
                                 readOnly={isReadOnly}
-                                className={cls.avatarInput}
                                 value={values.avatar}
+                                className={cls.field}
                             />
                             <ErrorMessage name="avatar" component="div" className={cls.error}/>
                         </label>
+                        <div className={cls.selectorWrapper}>
+                            {t('Country')}
+                            :
+                            <Field
+                                as="select"
+                                className={cls.select}
+                                name="country"
+                                disabled={isReadOnly}
+
+                            >
+                                <option value="" label={values.country}/>
+                                {Object.values(COUNTRIES).map((item) => (
+                                    item !== values.country &&
+                                    <option key={item} value={item}>
+                                        {item}
+                                    </option>
+                                ))}
+                            </Field>
+                            <ErrorMessage name="currentCountry" component="div" className={cls.error}/>
+                        </div>
+                        <div className={cls.selectorWrapper}>
+                            {t('Currency')}
+                            :
+                            <Field
+                                as="select"
+                                className={cls.select}
+                                name="currency"
+                                disabled={isReadOnly}
+
+                            >
+                                <option value="" label={values.currency}/>
+                                {Object.values(CURRENCIES).map((item) => (
+                                    item !== values.currency &&
+                                    <option key={item} value={item}>
+                                        {item}
+                                    </option>
+                                ))}
+                            </Field>
+                        </div>
 
                     </Form>
                 )}

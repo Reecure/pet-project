@@ -1,4 +1,4 @@
-import {FC, memo, useEffect, useMemo, useState,} from 'react';
+import {FC, memo, useEffect, useMemo,} from 'react';
 import {classNames} from '@/shared/lib/classNames';
 import {ThemeSwitcher} from '@/widgets/ThemeSwitcher';
 import {LangSwitcher} from '@/widgets/LangSwitcher';
@@ -8,6 +8,7 @@ import {Button} from '@/shared/ui/Button';
 import {SidebarLinks} from '../../model/item';
 import SidebarItem from './SidebarItem/SidebarItem';
 import cls from './Sidebar.module.scss';
+import {useOuterWidth} from "@/shared/lib/hooks";
 
 interface SidebarProps {
     sidebarIsOpen: boolean
@@ -20,23 +21,9 @@ const Sidebar: FC<SidebarProps> = ({className, openSidebar, sidebarIsOpen}) => {
         <SidebarItem key={link.to} link={link} open={sidebarIsOpen} openSidebar={openSidebar}/>
     )), [sidebarIsOpen]);
 
-    const [windowWidth, setWindowWidth] = useState(0)
-
+    const outerWidth = useOuterWidth()
     const selectIsLogged = useAppSelector(isLoggedSelector);
 
-
-    useEffect(() => {
-
-        const handleResize = () => {
-            setWindowWidth(window.outerWidth)
-        }
-
-        window.addEventListener('resize', handleResize)
-
-        return () => {
-            window.removeEventListener('resize', handleResize)
-        }
-    }, [])
 
     useEffect(() => {
 
@@ -61,7 +48,7 @@ const Sidebar: FC<SidebarProps> = ({className, openSidebar, sidebarIsOpen}) => {
                 </div>
             </div>
             {
-                sidebarIsOpen && windowWidth < 640 && <div className={cls.overlay} onClick={openSidebar}>
+                sidebarIsOpen && outerWidth < 640 && <div className={cls.overlay} onClick={openSidebar}>
                 </div>
             }
 

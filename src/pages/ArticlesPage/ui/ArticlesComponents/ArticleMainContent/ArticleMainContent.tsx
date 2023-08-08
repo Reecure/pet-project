@@ -73,13 +73,13 @@ const ArticleMainContent: FC<Props> = () => {
                     <ArticleBigComponent
                         key={item.id}
                         article={item}
+                        userId={item.userId}
                     />
                 ))}
             </div>
 
             <div className={cls.pagination}>
                 <Button disabled={page <= 1} onClick={prevPageHandler}>{'<'}</Button>
-
                 <Button disabled={!haveMore} onClick={nextPageHandler}>{'>'}</Button>
             </div>
         </div>

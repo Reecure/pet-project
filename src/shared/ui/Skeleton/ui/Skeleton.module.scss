@@ -1,8 +1,8 @@
 .Skeleton {
-    position: relative;
-    width: 200px;
-    height: 200px;
-    background-color: rgb(190, 190, 190);
+  position: relative;
+  width: 200px;
+  height: 200px;
+  background-color: rgb(190, 190, 190);
 
 }
 
@@ -14,8 +14,8 @@
   right: 0;
   bottom: 0;
   background-color: rgb(190, 190, 190); /* Set the background color for the skeleton */
-  z-index: 1;
-   animation: skeletonPulse 1.2s infinite alternate; /* Animation effect */
+  z-index: var(--z-index-1);
+  animation: skeletonPulse 1.2s infinite alternate; /* Animation effect */
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Ensure the skeleton is placed above the content */
 }
 
@@ -28,6 +28,6 @@
     background-color: #b6b6b6; /* End color */
   }
   100% {
-     background-color: #e4e1e1;
+    background-color: #e4e1e1;
   }
 }

@@ -12,7 +12,7 @@
 .menuWrapper {
   position: relative;
   display: inline-block;
-  z-index: 100000;
+  z-index: var(--z-index-100);
 }
 
 .menuButton {
@@ -30,7 +30,7 @@
   flex-direction: column;
   border: 1px solid var(--bg-color);
   background-color: var(--secondary-bg-color);
-  z-index: 111111;
+  z-index: var(--z-index-10);
 
 }
 

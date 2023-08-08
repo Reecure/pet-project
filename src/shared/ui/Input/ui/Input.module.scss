@@ -14,3 +14,10 @@
 .outline {
   border: 1px solid var(--primary-color);
 }
+
+.borderBottom {
+  border-bottom: 1px solid var(--inverted-primary-color);
+  margin-bottom: 10px;
+  margin-top: 5px;
+  line-height: 1;
+}

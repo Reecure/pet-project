@@ -1,5 +1,6 @@
 .ArticleSmallComponent {
-  width: 200px;
+  max-width: 300px;
+  width: 100%;
   background-color: var(--secondary-bg-color);
   transition: 0.3s;
   cursor: pointer;

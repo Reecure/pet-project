@@ -1,5 +1,3 @@
-import { User } from '@/enteties/User/model/types';
-
 export enum ArticleTypes {
     IT = 'IT',
     Science = 'Science',
@@ -55,7 +53,7 @@ export interface Article {
     id: string;
     title: string;
     subtitle: string;
-    user: User;
+    userId: string;
     img: string;
     views: number;
     createdAt: string;

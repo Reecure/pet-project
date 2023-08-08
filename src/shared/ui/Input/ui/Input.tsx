@@ -5,6 +5,7 @@ import cls from './Input.module.scss';
 export const enum ThemeInput {
     CLEAR = 'clear',
     OUTLINE = 'outline',
+    BORDER_BOTTOM = 'borderBottom'
 }
 
 interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
