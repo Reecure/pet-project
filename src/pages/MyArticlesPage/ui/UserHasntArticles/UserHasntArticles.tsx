@@ -3,7 +3,6 @@ import {FC} from 'react';
 import {useNavigate} from 'react-router-dom';
 import {classNames} from '@/shared/lib/classNames';
 import cls from './UserHasntArticles.module.scss';
-import {Text} from '@/shared/ui/Text';
 import {Button, ThemeButton} from '@/shared/ui/Button';
 import {getCreateArticleRoute} from '@/shared/config/routeConfig/routeConfig';
 
@@ -18,7 +17,7 @@ const UserHasntArticles: FC<Props> = () => {
     };
     return (
         <div className={classNames(cls.UserHasntArticles, {}, [])}>
-            <Text title={t("It`s looks that you haven`t articles")}/>
+            <p>{t("It`s looks that you haven`t articles")}</p>
             <Button theme={ThemeButton.CLEAR} onClick={redirectToCreateArticles}>{t("Create")}?</Button>
         </div>
     );

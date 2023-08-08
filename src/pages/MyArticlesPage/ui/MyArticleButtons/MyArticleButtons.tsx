@@ -33,8 +33,16 @@ const MyArticleButtons: FC<Props> = ({articleId, className, user}) => {
     const deleteHandler = useCallback(() => {
         const confirmed = window.confirm('Confirm delete article?');
         if (confirmed) {
-            dispatch(deleteArticle(articleId));
-            dispatch(getAllMyArticles(user.id));
+            dispatch(deleteArticle(articleId)).unwrap().then((res) => {
+                console.log("not error")
+            }).catch(error => {
+                console.log('error')
+            });
+            dispatch(getAllMyArticles(user.id)).unwrap().then((res) => {
+                console.log("not error")
+            }).catch(error => {
+                console.log('error')
+            });
         }
     }, [dispatch]);
 

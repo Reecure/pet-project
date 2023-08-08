@@ -25,8 +25,16 @@ const ArticlePage: FC<Props> = () => {
     const comments = useAppSelector(getArticleComments.selectAll);
 
     useEffect(() => {
-        dispatch(getArticleById(id));
-        dispatch(getCommentsByArticleId(id));
+        dispatch(getArticleById(id)).unwrap().then((res) => {
+            console.log("not error")
+        }).catch(error => {
+            console.log('error')
+        });
+        dispatch(getCommentsByArticleId(id)).unwrap().then((res) => {
+            console.log("not error")
+        }).catch(error => {
+            console.log('error')
+        });
     }, [dispatch, id]);
 
     if (loading) {

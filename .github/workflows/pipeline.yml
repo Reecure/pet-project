@@ -4,6 +4,7 @@ jobs:
   pipeline:
     runs-on: ubuntu-latest
     strategy:
+      fail-fast: false
       matrix:
         node-version: [ 17.x ]
     steps:

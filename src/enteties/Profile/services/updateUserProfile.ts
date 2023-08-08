@@ -27,5 +27,6 @@ export const updateUserProfile = createAsyncThunk<User, User, ThunkConfig>('prof
         return res.data;
     } catch (error) {
         console.log(error);
+        return thunkApi.rejectWithValue(error.response.data)
     }
 });

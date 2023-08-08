@@ -38,11 +38,19 @@ const MyArticlesPage: FC<Props> = () => {
     const debouncedQuery = useDebounce(query, 500);
 
     useEffect(() => {
-        dispatch(getAllMyArticles(user.id));
+        dispatch(getAllMyArticles(user.id)).unwrap().then((res) => {
+            console.log("not error")
+        }).catch(error => {
+            console.log('error')
+        });
     }, [dispatch, user, page]);
 
     useEffect(() => {
-        dispatch(getAllMyArticles(user.id));
+        dispatch(getAllMyArticles(user.id)).unwrap().then((res) => {
+            console.log("not error")
+        }).catch(error => {
+            console.log('error')
+        });
         dispatch(resetPage());
     }, [dispatch, debouncedQuery]);
 

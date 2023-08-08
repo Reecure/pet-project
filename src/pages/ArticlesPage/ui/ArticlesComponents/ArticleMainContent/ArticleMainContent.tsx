@@ -32,7 +32,11 @@ const ArticleMainContent: FC<Props> = () => {
     const dispatch = useAppDispatch();
 
     useEffect(() => {
-        dispatch(getAllArticles());
+        dispatch(getAllArticles()).unwrap().then((res) => {
+            console.log("not error")
+        }).catch(error => {
+            console.log('error')
+        });
     }, [dispatch]);
 
     if (articlesLoading) {
@@ -43,13 +47,21 @@ const ArticleMainContent: FC<Props> = () => {
 
     const nextPageHandler = () => {
         dispatch(setNextPage());
-        dispatch(getAllArticles());
+        dispatch(getAllArticles()).unwrap().then((res) => {
+            console.log("not error")
+        }).catch(error => {
+            console.log('error')
+        });
 
     };
 
     const prevPageHandler = () => {
         dispatch(setPrevPage());
-        dispatch(getAllArticles());
+        dispatch(getAllArticles()).unwrap().then((res) => {
+            console.log("not error")
+        }).catch(error => {
+            console.log('error')
+        });
     };
 
     if (articles.length === 0) {

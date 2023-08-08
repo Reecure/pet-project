@@ -19,7 +19,11 @@ const ProfilePage = (props: Props) => {
     const profileLoading = useAppSelector(profileIsLoadingSelector);
 
     useEffect(() => {
-        dispatch(getUserProfile(id));
+        dispatch(getUserProfile(id)).unwrap().then((res) => {
+            console.log("not error")
+        }).catch(error => {
+            console.log('error')
+        });
     }, [dispatch, id]);
 
     if (profileLoading) {

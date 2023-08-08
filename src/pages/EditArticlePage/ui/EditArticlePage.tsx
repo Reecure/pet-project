@@ -17,6 +17,7 @@ const EditArticlePage: FC<Props> = () => {
     const {t} = useTranslation();
 
     const [notifyOpen, setNotifyOpen] = useState(false);
+    const [notifySuccess, setNotifySuccess] = useState(false);
 
     const article = useAppSelector(ArticleAllProps);
     const isLoading = useAppSelector(ArticleLoadig);
@@ -26,12 +27,17 @@ const EditArticlePage: FC<Props> = () => {
     const {id} = useParams();
 
     useEffect(() => {
-        dispatch(getArticleById(id));
+        dispatch(getArticleById(id)).unwrap().then((res) => {
+            console.log("not error")
+        }).catch(error => {
+            console.log('error')
+        });
     }, [dispatch, id]);
 
     useEffect(() => {
         const notifyTimeout = setTimeout(() => {
             setNotifyOpen(false);
+            setNotifySuccess(false);
         }, 3000);
 
         return () => {
@@ -41,7 +47,14 @@ const EditArticlePage: FC<Props> = () => {
 
     const updateHandler = (values: ArticleForSend) => {
         setNotifyOpen(true);
-        dispatch(updateArticle({id: article.article.id, article: values}));
+        dispatch(updateArticle({id: article.article.id, article: values}))
+            .unwrap() // Unwrap the promise to access the fulfilled value or rejectWithValue error
+            .then((response) => {
+                setNotifySuccess(true); // Set success notification
+            })
+            .catch((error) => {
+                setNotifySuccess(false); // Set error notification
+            });
     };
 
     if (isLoading) {
@@ -54,7 +67,7 @@ const EditArticlePage: FC<Props> = () => {
         <div className={classNames(cls.EditArticlePage, {}, [])}>
             <ArticleForm article={article.article} loading={article.loading} onSubmit={updateHandler}/>
             <Notify open={notifyOpen}>
-                {t('Article update success')}
+                {notifySuccess ? t('Article update success') : t('Article update failed')}
             </Notify>
         </div>
     );

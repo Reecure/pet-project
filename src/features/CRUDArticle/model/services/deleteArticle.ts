@@ -1,8 +1,8 @@
-import { createAsyncThunk } from '@reduxjs/toolkit';
+import {createAsyncThunk} from '@reduxjs/toolkit';
 import axios from 'axios';
-import { USER_LOCALSTORAGE_KEY } from '@/shared/constants/localStorage';
+import {USER_LOCALSTORAGE_KEY} from '@/shared/constants/localStorage';
 
-export const deleteArticle = createAsyncThunk('article/updateArticle', async (id: string) => {
+export const deleteArticle = createAsyncThunk('article/updateArticle', async (id: string, thunkAPI) => {
     try {
         const res = await axios.delete(`https://production-project-server-psi-ivory.vercel.app/articles/${id}`, {
             headers: {
@@ -17,5 +17,6 @@ export const deleteArticle = createAsyncThunk('article/updateArticle', async (id
         return res.data;
     } catch (error) {
         console.log(error);
+        return thunkAPI.rejectWithValue(error.response.data)
     }
 });

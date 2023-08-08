@@ -38,7 +38,11 @@ const AddComment: FC<Props> = () => {
                     }
                     validationSchema={SignupSchema}
                     onSubmit={(values, formikHelpers) => {
-                        dispatch(addComment(values.comment));
+                        dispatch(addComment(values.comment)).unwrap().then((res) => {
+                            console.log("not error")
+                        }).catch(error => {
+                            console.log('error')
+                        });
                     }}
 
                 >

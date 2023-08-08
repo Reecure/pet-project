@@ -4,20 +4,38 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="054dcfbb-5232-4235-a308-8c1e1cec3020" name="Changes" comment="webpack config update">
+    <list default="true" id="054dcfbb-5232-4235-a308-8c1e1cec3020" name="Changes" comment="refactored styles">
+      <change beforePath="$PROJECT_DIR$/.github/workflows/pipeline.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/pipeline.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/styles/index.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/styles/index.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/ArticlePage/ui/ArticlePage.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ArticlePage/ui/ArticlePage.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/json-server/db.json" beforeDir="false" afterPath="$PROJECT_DIR$/json-server/db.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/enteties/Article/model/services/getArticleById.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/enteties/Article/model/services/getArticleById.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/enteties/Country/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/enteties/Country/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/enteties/Country/ui/CountriesDropDown.module.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/enteties/Country/ui/CountriesDropDown.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/enteties/Currency/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/enteties/Currency/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/enteties/Currency/ui/CurrenciesDropDown.module.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/enteties/Currency/ui/CurrenciesDropDown.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/enteties/Profile/services/getUserProfile.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/enteties/Profile/services/getUserProfile.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/enteties/Profile/services/updateUserProfile.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/enteties/Profile/services/updateUserProfile.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/AuthByUsername/model/services/getUserByCredentials.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/AuthByUsername/model/services/getUserByCredentials.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/CRUDArticle/model/services/addArticle.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/CRUDArticle/model/services/addArticle.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/CRUDArticle/model/services/deleteArticle.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/CRUDArticle/model/services/deleteArticle.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/CRUDArticle/model/services/updateArticle.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/CRUDArticle/model/services/updateArticle.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/addComment/model/services/addComment.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/addComment/model/services/addComment.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/addComment/ui/AddComment.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/addComment/ui/AddComment.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/getComments/model/services/getCommentsByArticleId.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/getComments/model/services/getCommentsByArticleId.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/ArticlePage/ui/ArticlePage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ArticlePage/ui/ArticlePage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/ArticlesPage/model/services/getArticles.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ArticlesPage/model/services/getArticles.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/ArticlesPage/ui/ArticlesComponents/ArticleHeader/ArticleHeader.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ArticlesPage/ui/ArticlesComponents/ArticleHeader/ArticleHeader.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/ArticlesPage/ui/ArticlesComponents/ArticleMainContent/ArticleMainContent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ArticlesPage/ui/ArticlesComponents/ArticleMainContent/ArticleMainContent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/MyArticlesPage/ui/MyArticlesPage.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/MyArticlesPage/ui/MyArticlesPage.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/CreateArticlePage/ui/CreateArticlePage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/CreateArticlePage/ui/CreateArticlePage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/EditArticlePage/ui/EditArticlePage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/EditArticlePage/ui/EditArticlePage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/MyArticlesPage/ui/MyArticleButtons/MyArticleButtons.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/MyArticlesPage/ui/MyArticleButtons/MyArticleButtons.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/MyArticlesPage/ui/MyArticlesPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/MyArticlesPage/ui/MyArticlesPage.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/ProfilePage/ui/ProfileCard/ProfileCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ProfilePage/ui/ProfileCard/ProfileCard.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shared/ui/ArticleImageComponent/ArticleImageComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/ui/ArticleImageComponent/ArticleImageComponent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shared/ui/Loader/ui/Loader.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/ui/Loader/ui/Loader.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shared/ui/Stack/ui/Stack.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/ui/Stack/ui/Stack.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/widgets/Modal/ui/Modal.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/widgets/Modal/ui/Modal.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/widgets/Navbar/ui/UserDropdownProfile/UserDropdownProfile.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/widgets/Navbar/ui/UserDropdownProfile/UserDropdownProfile.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/MyArticlesPage/ui/UserHasntArticles/UserHasntArticles.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/MyArticlesPage/ui/UserHasntArticles/UserHasntArticles.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/MyArticlesPage/ui/UserHasntArticles/UserHasntArticles.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/MyArticlesPage/ui/UserHasntArticles/UserHasntArticles.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/ProfilePage/ui/ProfilePage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ProfilePage/ui/ProfilePage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/ui/Button/ui/Button.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/ui/Button/ui/Button.module.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -130,6 +148,16 @@
       <envs />
       <method v="2" />
     </configuration>
+    <configuration name="start:dev:server" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start:dev:server" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
     <configuration name="start:vite" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
@@ -140,23 +168,13 @@
       <envs />
       <method v="2" />
     </configuration>
-    <configuration name="test" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
-      <package-json value="$PROJECT_DIR$/package.json" />
-      <command value="run" />
-      <scripts>
-        <script value="test" />
-      </scripts>
-      <node-interpreter value="project" />
-      <envs />
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="npm.start:dev:server" />
         <item itemvalue="npm.start:vite" />
         <item itemvalue="npm.build:prod" />
         <item itemvalue="npm.lint:ts:fix" />
         <item itemvalue="npm.lint:ts" />
-        <item itemvalue="npm.test" />
       </list>
     </recent_temporary>
   </component>
@@ -199,7 +217,7 @@
       <workItem from="1691314315385" duration="6465000" />
       <workItem from="1691333479407" duration="10175000" />
       <workItem from="1691384757485" duration="30534000" />
-      <workItem from="1691468463175" duration="9844000" />
+      <workItem from="1691468463175" duration="16097000" />
     </task>
     <task id="LOCAL-00001" summary="some fix">
       <created>1689795990367</created>
@@ -390,7 +408,14 @@
       <option name="project" value="LOCAL" />
       <updated>1691474843106</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="refactored styles">
+      <created>1691485329841</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1691485329841</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -419,6 +444,7 @@
     <MESSAGE value="fix input style articleBigComponent, fix Sidebar bugs" />
     <MESSAGE value="fix bugs" />
     <MESSAGE value="webpack config update" />
-    <option name="LAST_COMMIT_MESSAGE" value="webpack config update" />
+    <MESSAGE value="refactored styles" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactored styles" />
   </component>
 </project>
