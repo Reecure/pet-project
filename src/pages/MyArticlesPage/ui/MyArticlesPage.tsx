@@ -57,13 +57,14 @@ const MyArticlesPage: FC<Props> = () => {
         dispatch(setPrevPage());
     };
 
+
     return (
         <div className={classNames(cls.MyArticlesPage, {}, [])}>
             <Input theme={ThemeInput.OUTLINE} onChange={searchHandler} placeholder={'Search...'} value={query}/>
             {isLoading ? (
-                <Stack childrenPosition={StackPosition.CENTER}>
+                <div className={cls.loaderWrapper}>
                     <Loader/>
-                </Stack>
+                </div>
 
             ) : (
                 articles.length === 0 ? (<UserHasntArticles/>) : (<div>

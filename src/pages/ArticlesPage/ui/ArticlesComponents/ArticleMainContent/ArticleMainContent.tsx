@@ -40,9 +40,11 @@ const ArticleMainContent: FC<Props> = () => {
             <div className={cls.loaderWrapper}><Loader/></div>
         );
     }
+
     const nextPageHandler = () => {
         dispatch(setNextPage());
         dispatch(getAllArticles());
+
     };
 
     const prevPageHandler = () => {

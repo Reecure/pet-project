@@ -137,20 +137,22 @@ const ProfileCard: FC<Props> = ({userInfo}) => {
                             <ErrorMessage name="city" component="div" className={cls.error}/>
                         </label>
 
-                        <label htmlFor="avatar" className={cls.fieldWrapper}>
+                        {
+                            !isReadOnly && <label htmlFor="avatar" className={cls.fieldWrapper}>
                 <span>
                     {' '}
                     {t('Avatar')}
                     :
                 </span>
-                            <Field
-                                name="avatar"
-                                readOnly={isReadOnly}
-                                value={values.avatar}
-                                className={cls.field}
-                            />
-                            <ErrorMessage name="avatar" component="div" className={cls.error}/>
-                        </label>
+                                <Field
+                                    name="avatar"
+                                    readOnly={isReadOnly}
+                                    value={values.avatar}
+                                    className={cls.field}
+                                />
+                                <ErrorMessage name="avatar" component="div" className={cls.error}/>
+                            </label>
+                        }
                         <div className={cls.selectorWrapper}>
                             {t('Country')}
                             :

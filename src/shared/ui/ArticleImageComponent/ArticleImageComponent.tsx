@@ -2,7 +2,6 @@ import {FC, memo, useState} from 'react';
 import {classNames} from '@/shared/lib/classNames/classNames';
 import {ImageBlock} from '@/enteties/Article/model/types/article';
 import Image from '@/shared/ui/Image/Image';
-import Stack, {StackPosition} from '@/shared/ui/Stack/ui/Stack';
 import {Text} from '@/shared/ui/Text';
 import {TextPosition} from '@/shared/ui/Text/ui/Text';
 import cls from './ArticleImageComponent.module.scss';
@@ -22,12 +21,12 @@ const ArticleImageComponent: FC<Props> = ({block}) => {
     return (
 
         <div className={classNames(cls.ArticleImageComponent, {}, [])}>
-            <Stack childrenPosition={StackPosition.CENTER}>
+            <div>
                 <div onClick={popupOpenHanler}>
                     <Image width={400} height={300} src={block.src}/>
                 </div>
 
-            </Stack>
+            </div>
             <Text mainText={block.title} textPosition={TextPosition.CENTER}/>
 
             <Modal isOpen={popupOpen} setIsOpen={popupOpenHanler} childrenPosition={ModalPositions.CENTER}>
