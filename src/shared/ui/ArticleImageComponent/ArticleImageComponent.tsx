@@ -22,7 +22,7 @@ const ArticleImageComponent: FC<Props> = ({block}) => {
 
         <div className={classNames(cls.ArticleImageComponent, {}, [])}>
             <div>
-                <div onClick={popupOpenHanler}>
+                <div onClick={popupOpenHanler} className={cls.ArticleImageWrapper}>
                     <Image width={400} height={300} src={block.src}/>
                 </div>
 

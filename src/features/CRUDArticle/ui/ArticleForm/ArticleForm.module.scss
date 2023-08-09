@@ -56,3 +56,31 @@
   margin-top: 20px;
   width: 100%;
 }
+
+.checkboxLabel {
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+}
+
+.hiddenCheckbox {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.checkboxBlock {
+  display: inline-block;
+  padding: 5px 10px;
+  border: 1px solid #ccc;
+  opacity: 0.5;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.checkboxBlock:hover {
+  opacity: 0.7;
+}
+
+.hiddenCheckbox:checked + .checkboxBlock {
+  opacity: 1;
+}

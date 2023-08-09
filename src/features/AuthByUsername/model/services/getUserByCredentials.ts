@@ -23,6 +23,5 @@ export const getUserByCredentials = createAsyncThunk<User, LoginByCredentials>('
         return res.data;
     } catch (error) {
         console.log(error);
-        return thunkApi.rejectWithValue(error.response.data)
     }
 });

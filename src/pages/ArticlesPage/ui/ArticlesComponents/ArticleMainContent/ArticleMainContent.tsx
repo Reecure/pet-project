@@ -25,6 +25,7 @@ const ArticleMainContent: FC<Props> = () => {
 
     const [articlesServerError, setArticlesServerError] = useState(false)
 
+
     const selectViewType = useAppSelector(articlesViewsSelector);
     const articles = useAppSelector(getArticles.selectAll);
     const articlesLoading = useAppSelector(articlesLoadingSelector);

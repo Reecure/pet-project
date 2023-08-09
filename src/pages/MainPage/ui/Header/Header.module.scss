@@ -8,14 +8,16 @@
 }
 
 .titleWelcome {
-  margin-left: 10%;
+  margin-left: 40%;
+  transform: translateX(-25%);
   font-size: 24px;
   font-weight: 600;
   animation: titleAnimationWelcome 5s ease-in-out forwards;
 }
 
 .titleBottom {
-  margin-left: 15%;
+  margin-left: 45%;
+  transform: translateX(-25%);
   font-size: 24px;
   font-weight: 600;
   white-space: nowrap;
@@ -37,12 +39,12 @@
 
 @media (min-width: 390px) {
   .titleWelcome {
-    margin-left: 15%;
+
     font-size: 34px;
   }
 
   .titleBottom {
-    margin-left: 25%;
+
     font-size: 34px;
   }
 
@@ -56,12 +58,12 @@
 
 @media (min-width: 768px) {
   .titleWelcome {
-    margin-left: 17%;
+
     font-size: 48px;
   }
 
   .titleBottom {
-    margin-left: 27%;
+
     font-size: 48px;
   }
 
@@ -73,16 +75,18 @@
   }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1280px) {
   .titleWelcome {
-    margin-left: 20%;
+    margin-left: 50%;
+    transform: translateX(-25%);
     font-size: 64px;
     font-weight: 600;
     animation: titleAnimationWelcome 5s ease-in-out forwards;
   }
 
   .titleBottom {
-    margin-left: 30%;
+    margin-left: 50%;
+    transform: translateX(-25%);
     font-size: 64px;
     font-weight: 600;
     white-space: nowrap;

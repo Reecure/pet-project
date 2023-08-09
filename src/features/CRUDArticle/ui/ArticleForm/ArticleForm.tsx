@@ -97,10 +97,15 @@ const ArticleForm: FC<Props> = ({article, loading, onSubmit, submitError}) => {
                                     {({push, remove}) => (
                                         <div className={cls.types}>
                                             {Object.values(ArticleTypes).map((type) => (
-                                                <div key={type} className={cls.type}>
-                                                    <label>
-                                                        <Field type="checkbox" name="type" value={type}/>
-                                                        {type}
+                                                <div key={type} className={''}>
+                                                    <label className={cls.checkboxLabel}>
+                                                        <Field
+                                                            type="checkbox"
+                                                            name="type"
+                                                            value={type}
+                                                            className={cls.hiddenCheckbox}
+                                                        />
+                                                        <div className={cls.checkboxBlock}>{type}</div>
                                                     </label>
                                                 </div>
                                             ))}

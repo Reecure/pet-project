@@ -4,7 +4,7 @@ import {useParams} from 'react-router-dom';
 import {classNames} from '@/shared/lib/classNames';
 import cls from './EditArticlePage.module.scss';
 import {useAppDispatch, useAppSelector} from '@/app/providers/ReduxProvider/config/hooks';
-import {ArticleAllProps, ArticleLoadig, getArticleById} from '@/enteties/Article';
+import {ArticleAllProps, ArticleLoading, getArticleById} from '@/enteties/Article';
 import {Loader} from '@/shared/ui/Loader';
 import {ArticleForSend} from '@/enteties/Article/model/types/article';
 import {ArticleForm, updateArticle} from '@/features/CRUDArticle';
@@ -21,7 +21,7 @@ const EditArticlePage: FC<Props> = () => {
     const [serverError, setServerError] = useState(false)
 
     const article = useAppSelector(ArticleAllProps);
-    const isLoading = useAppSelector(ArticleLoadig);
+    const isLoading = useAppSelector(ArticleLoading);
 
     const dispatch = useAppDispatch();
 

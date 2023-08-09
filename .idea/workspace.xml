@@ -4,9 +4,37 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="054dcfbb-5232-4235-a308-8c1e1cec3020" name="Changes" comment="now show errors for user">
+    <list default="true" id="054dcfbb-5232-4235-a308-8c1e1cec3020" name="Changes" comment="update">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/ArticlesPage/model/services/getArticles.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ArticlesPage/model/services/getArticles.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/enteties/Article/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/enteties/Article/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/enteties/Article/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/enteties/Article/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/enteties/Article/model/selectors/articleSelector.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/enteties/Article/model/selectors/articleSelector.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/enteties/Article/model/types/article.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/enteties/Article/model/types/article.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/enteties/Comment/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/enteties/Comment/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/enteties/Country/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/enteties/Country/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/enteties/Currency/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/enteties/Currency/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/enteties/Profile/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/enteties/Profile/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/enteties/User/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/enteties/User/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/AuthByUsername/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/AuthByUsername/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/AuthByUsername/model/services/getUserByCredentials.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/AuthByUsername/model/services/getUserByCredentials.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/AuthByUsername/ui/LoginForm/LoginForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/AuthByUsername/ui/LoginForm/LoginForm.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/CRUDArticle/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/CRUDArticle/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/CRUDArticle/ui/ArticleForm/ArticleForm.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/CRUDArticle/ui/ArticleForm/ArticleForm.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/CRUDArticle/ui/ArticleForm/ArticleForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/CRUDArticle/ui/ArticleForm/ArticleForm.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/addComment/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/addComment/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/addComment/ui/AddComment.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/addComment/ui/AddComment.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/getComments/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/getComments/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/ArticlesPage/ui/ArticlesComponents/ArticleHeader/ArticleHeader.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ArticlesPage/ui/ArticlesComponents/ArticleHeader/ArticleHeader.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/ArticlesPage/ui/ArticlesComponents/ArticleMainContent/ArticleMainContent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ArticlesPage/ui/ArticlesComponents/ArticleMainContent/ArticleMainContent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/EditArticlePage/ui/EditArticlePage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/EditArticlePage/ui/EditArticlePage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/MainPage/ui/Header/Header.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/MainPage/ui/Header/Header.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/ProfilePage/ui/ProfileCard/ProfileCard.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ProfilePage/ui/ProfileCard/ProfileCard.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/ui/ArticleImageComponent/ArticleImageComponent.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/ui/ArticleImageComponent/ArticleImageComponent.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/ui/ArticleImageComponent/ArticleImageComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/ui/ArticleImageComponent/ArticleImageComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/ui/ArticleSmallComponent/ArticleSmallComponent.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/ui/ArticleSmallComponent/ArticleSmallComponent.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/ui/ArticleTextComponent/ArticleTextComponent.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/ui/ArticleTextComponent/ArticleTextComponent.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/widgets/Sidebar/helpers/sidebarIconRender.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/widgets/Sidebar/helpers/sidebarIconRender.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/widgets/Sidebar/model/item.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/widgets/Sidebar/model/item.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,30 +78,30 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "main",
-    "js.linters.configure.manually.selectedeslint": "true",
-    "last_opened_file_path": "C:/Users/user/Desktop/pet/src/shared/ui",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.standard": "true",
-    "node.js.detected.package.stylelint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.standard": "C:\\Users\\user\\Desktop\\pet\\node_modules\\standard",
-    "node.js.selected.package.stylelint": "C:\\Users\\user\\Desktop\\pet\\node_modules\\stylelint",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "prettierjs.PrettierConfiguration.Package": "C:\\Users\\user\\Desktop\\pet\\node_modules\\prettier",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "ts.external.directory.path": "C:\\Users\\user\\Desktop\\pet\\node_modules\\typescript\\lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;js.linters.configure.manually.selectedeslint&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/user/Desktop/pet/src/shared/ui&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.stylelint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.standard&quot;: &quot;C:\\Users\\user\\Desktop\\pet\\node_modules\\standard&quot;,
+    &quot;node.js.selected.package.stylelint&quot;: &quot;C:\\Users\\user\\Desktop\\pet\\node_modules\\stylelint&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;C:\\Users\\user\\Desktop\\pet\\node_modules\\prettier&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\user\\Desktop\\pet\\node_modules\\typescript\\lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\user\Desktop\pet\src\features\updateArticle\model" />
@@ -141,8 +169,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="npm.start:dev:server" />
         <item itemvalue="npm.start:vite" />
+        <item itemvalue="npm.start:dev:server" />
         <item itemvalue="npm.build:prod" />
         <item itemvalue="npm.lint:ts:fix" />
         <item itemvalue="npm.lint:ts" />
@@ -188,7 +216,9 @@
       <workItem from="1691314315385" duration="6465000" />
       <workItem from="1691333479407" duration="10175000" />
       <workItem from="1691384757485" duration="30534000" />
-      <workItem from="1691468463175" duration="22737000" />
+      <workItem from="1691468463175" duration="24196000" />
+      <workItem from="1691512099845" duration="7550000" />
+      <workItem from="1691560998732" duration="6119000" />
     </task>
     <task id="LOCAL-00001" summary="some fix">
       <created>1689795990367</created>
@@ -400,7 +430,14 @@
       <option name="project" value="LOCAL" />
       <updated>1691504596526</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="update">
+      <created>1691506084798</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1691506084798</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -432,6 +469,7 @@
     <MESSAGE value="refactored styles" />
     <MESSAGE value="refactored articles and now handle errors when request" />
     <MESSAGE value="now show errors for user" />
-    <option name="LAST_COMMIT_MESSAGE" value="now show errors for user" />
+    <MESSAGE value="update" />
+    <option name="LAST_COMMIT_MESSAGE" value="update" />
   </component>
 </project>

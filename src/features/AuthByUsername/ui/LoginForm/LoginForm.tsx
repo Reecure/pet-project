@@ -59,6 +59,7 @@ const LoginForm: FC<Props> = ({isOpen, setIsOpen}) => {
         [dispatch, password, username, setIsOpen],
     );
 
+
     return (
         <Modal isOpen={isOpen} setIsOpen={setIsOpen} childrenPosition={ModalPositions.CENTER}>
             <div className={classNames(cls.LoginForm, {}, [])}>
@@ -74,6 +75,7 @@ const LoginForm: FC<Props> = ({isOpen, setIsOpen}) => {
                     </span>
                     <Input onChange={(e) => setUsernameHandler(e.currentTarget.value)} value={username}
                            theme={ThemeInput.BORDER_BOTTOM}
+
                     />
                 </label>
                 <label className={cls.labelWrapper}>
