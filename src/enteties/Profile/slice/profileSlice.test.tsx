@@ -1,9 +1,9 @@
-import {Roles, User} from '@/enteties/User/model/types';
-import {COUNTRIES} from '@/enteties/Country/model/types/countries';
-import {CURRENCIES} from '@/enteties/Currency/model/types/currencies';
-import {profileReducer} from '@/enteties/Profile';
-import {profileSlice} from './profileSlice';
-import {setEditable} from '@/enteties/Profile/slice/profileSlice';
+import { Roles, User } from '@/enteties/User/model/types';
+import { COUNTRIES } from '@/enteties/Country/model/types/countries';
+import { CURRENCIES } from '@/enteties/Currency/model/types/currencies';
+import { profileReducer } from '@/enteties/Profile';
+import { profileSlice } from './profileSlice';
+import { setEditable } from '@/enteties/Profile/slice/profileSlice';
 
 const mockUser: User = {
     id: '1',

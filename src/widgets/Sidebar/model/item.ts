@@ -3,7 +3,7 @@ import {
     getArticlesRoute,
     getCreateArticleRoute,
     getMainRoute,
-    getMyArticlesRoute
+    getMyArticlesRoute,
 } from '@/shared/config/routeConfig/routeConfig';
 
 export const enum Links {

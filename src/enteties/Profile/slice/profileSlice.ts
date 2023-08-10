@@ -1,7 +1,7 @@
-import {createSlice} from '@reduxjs/toolkit';
+import { createSlice } from '@reduxjs/toolkit';
 
-import {User} from '@/enteties/User/model/types';
-import {getUserProfile} from '../services/getUserProfile';
+import { User } from '@/enteties/User/model/types';
+import { getUserProfile } from '../services/getUserProfile';
 
 interface State {
     userInfo: User;
@@ -45,4 +45,4 @@ export const profileSlice = createSlice({
 
 export default profileSlice.reducer;
 
-export const {setEditable} = profileSlice.actions;
+export const { setEditable } = profileSlice.actions;

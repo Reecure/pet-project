@@ -1,6 +1,6 @@
-import {createAsyncThunk} from '@reduxjs/toolkit';
+import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
-import {USER_LOCALSTORAGE_KEY} from '@/shared/constants/localStorage';
+import { USER_LOCALSTORAGE_KEY } from '@/shared/constants/localStorage';
 
 export const getUserProfile = createAsyncThunk('profile/getUserProfile', async (id: string, thunkApi) => {
     try {
@@ -13,6 +13,6 @@ export const getUserProfile = createAsyncThunk('profile/getUserProfile', async (
         return res.data[0];
     } catch (error) {
         console.log(error);
-        return thunkApi.rejectWithValue(error.response.data)
+        return thunkApi.rejectWithValue(error.response.data);
     }
 });

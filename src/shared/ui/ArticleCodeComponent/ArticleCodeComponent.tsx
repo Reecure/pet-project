@@ -1,19 +1,21 @@
-import {useTranslation} from 'react-i18next';
-import {FC, memo, useCallback, useEffect, useState,} from 'react';
-import {classNames} from '@/shared/lib/classNames/classNames';
-import {Button, ThemeButton} from '@/shared/ui/Button';
-import {Code} from '@/shared/ui/Code';
-import {Notify} from '@/shared/ui/Notify';
-import {CodeBlock} from '../../../enteties/Article/model/types/article';
+import { useTranslation } from 'react-i18next';
+import {
+    FC, memo, useCallback, useEffect, useState,
+} from 'react';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { Button, ThemeButton } from '@/shared/ui/Button';
+import { Code } from '@/shared/ui/Code';
+import { Notify } from '@/shared/ui/Notify';
+import { CodeBlock } from '../../../enteties/Article/model/types/article';
 import cls from './ArticleCodeComponent.module.scss';
 
 interface Props {
     block: CodeBlock;
 }
 
-const ArticleCodeComponent: FC<Props> = ({block}) => {
+const ArticleCodeComponent: FC<Props> = ({ block }) => {
     const [coppied, setCoppied] = useState(false);
-    const {t} = useTranslation();
+    const { t } = useTranslation();
 
     const codeCopyHandler = useCallback(() => {
         navigator.clipboard.writeText(block.code);

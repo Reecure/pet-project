@@ -1,13 +1,13 @@
-import {useTranslation} from 'react-i18next';
-import {FC, memo} from 'react';
-import {classNames} from '@/shared/lib/classNames';
-import {useAppSelector} from '@/app/providers/ReduxProvider/config/hooks';
-import {isLoggedSelector} from '@/enteties/User';
-import {AppLink} from '@/shared/ui/AppLink';
-import {SidebarLink} from '../../../model/item';
+import { useTranslation } from 'react-i18next';
+import { FC, memo } from 'react';
+import { classNames } from '@/shared/lib/classNames';
+import { useAppSelector } from '@/app/providers/ReduxProvider/config/hooks';
+import { isLoggedSelector } from '@/enteties/User';
+import { AppLink } from '@/shared/ui/AppLink';
+import { SidebarLink } from '../../../model/item';
 import cls from './SidebarItem.module.scss';
-import {sidebarIconRender} from '../../../helpers/sidebarIconRender';
-import {useOuterWidth} from "@/shared/lib/hooks";
+import { sidebarIconRender } from '../../../helpers/sidebarIconRender';
+import { useOuterWidth } from '@/shared/lib/hooks';
 
 interface Props {
     link: SidebarLink
@@ -15,12 +15,11 @@ interface Props {
     openSidebar: () => void
 }
 
-const SidebarItem: FC<Props> = ({link, open, openSidebar}) => {
-    const {t} = useTranslation();
+const SidebarItem: FC<Props> = ({ link, open, openSidebar }) => {
+    const { t } = useTranslation();
 
-    const outerWidth = useOuterWidth()
+    const outerWidth = useOuterWidth();
     const selectIsLogged = useAppSelector(isLoggedSelector);
-
 
     if (!selectIsLogged && link.authOnly) {
         return null;

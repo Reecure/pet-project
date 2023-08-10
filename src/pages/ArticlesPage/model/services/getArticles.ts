@@ -1,7 +1,7 @@
-import {createAsyncThunk} from '@reduxjs/toolkit';
+import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
-import {USER_LOCALSTORAGE_KEY} from '@/shared/constants/localStorage';
-import {Article} from '@/enteties/Article/model/types/article';
+import { USER_LOCALSTORAGE_KEY } from '@/shared/constants/localStorage';
+import { Article } from '@/enteties/Article/model/types/article';
 import {
     articleFieldSelector,
     articleOrderSelector,
@@ -12,7 +12,7 @@ import {
 } from '../selector/articlesSelector';
 
 export const getAllArticles = createAsyncThunk<Article[], void>('articles/getAllArticles', async (_, thunkApi: any) => {
-    const {getState} = thunkApi;
+    const { getState } = thunkApi;
 
     const pageState = articlePageSelector(getState());
     const limitState = articlesLimitSelector(getState());
@@ -50,6 +50,6 @@ export const getAllArticles = createAsyncThunk<Article[], void>('articles/getAll
         return res.data;
     } catch (error) {
         console.log(error);
-        return thunkApi.rejectWithValue(error.response.data)
+        return thunkApi.rejectWithValue(error.response.data);
     }
 });

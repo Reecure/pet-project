@@ -1,12 +1,16 @@
-import {useTranslation} from 'react-i18next';
-import {FC} from 'react';
-import {ErrorMessage, Field, FieldArray, Form, Formik,} from 'formik';
-import {nanoid} from '@reduxjs/toolkit';
+import { useTranslation } from 'react-i18next';
+import { FC } from 'react';
+import {
+    ErrorMessage, Field, FieldArray, Form, Formik,
+} from 'formik';
+import { nanoid } from '@reduxjs/toolkit';
 import * as Yup from 'yup';
 import cls from './ArticleForm.module.scss';
-import {Text} from '@/shared/ui/Text';
-import {ArticleBlocks, ArticleForSend, ArticleTypes, BlockTypes,} from '@/enteties/Article/model/types/article';
-import {Button, ThemeButton} from '@/shared/ui/Button';
+import { Text } from '@/shared/ui/Text';
+import {
+    ArticleBlocks, ArticleForSend, ArticleTypes, BlockTypes,
+} from '@/enteties/Article/model/types/article';
+import { Button, ThemeButton } from '@/shared/ui/Button';
 import BlockButtons from './BlockButtons/BlockButtons';
 
 interface Props {
@@ -16,8 +20,10 @@ interface Props {
     submitError: boolean
 }
 
-const ArticleForm: FC<Props> = ({article, loading, onSubmit, submitError}) => {
-    const {t} = useTranslation();
+const ArticleForm: FC<Props> = ({
+    article, loading, onSubmit, submitError,
+}) => {
+    const { t } = useTranslation();
 
     const initialValues: ArticleForSend = {
         title: article?.title || '',
@@ -68,36 +74,36 @@ const ArticleForm: FC<Props> = ({article, loading, onSubmit, submitError}) => {
                 }}
             >
                 {
-                    ({values, errors}) => (
+                    ({ values, errors }) => (
                         <Form>
 
                             <div className={cls.headerFields}>
                                 <label htmlFor="title">
-                                    <Text title={t("Title")}/>
-                                    <Field type="text" id="title" name="title" className={cls.field}/>
-                                    <ErrorMessage name="title" component="div" className={cls.error}/>
+                                    <Text title={t('Title')} />
+                                    <Field type="text" id="title" name="title" className={cls.field} />
+                                    <ErrorMessage name="title" component="div" className={cls.error} />
                                 </label>
 
                                 <label htmlFor="subtitle">
-                                    <Text title={t("Subtitle")}/>
-                                    <Field type="text" id="subtitle" name="subtitle" className={cls.field}/>
-                                    <ErrorMessage name="subtitle" component="div" className={cls.error}/>
+                                    <Text title={t('Subtitle')} />
+                                    <Field type="text" id="subtitle" name="subtitle" className={cls.field} />
+                                    <ErrorMessage name="subtitle" component="div" className={cls.error} />
                                 </label>
 
                                 <label htmlFor="img">
-                                    <Text title={t("Image")}/>
-                                    <Field type="text" id="img" name="img" className={cls.field}/>
-                                    <ErrorMessage name="img" component="div" className={cls.error}/>
+                                    <Text title={t('Image')} />
+                                    <Field type="text" id="img" name="img" className={cls.field} />
+                                    <ErrorMessage name="img" component="div" className={cls.error} />
                                 </label>
                             </div>
 
                             <div className={cls.types}>
-                                <Text title={t("Types")}/>
+                                <Text title={t('Types')} />
                                 <FieldArray name="type">
-                                    {({push, remove}) => (
+                                    {({ push, remove }) => (
                                         <div className={cls.types}>
                                             {Object.values(ArticleTypes).map((type) => (
-                                                <div key={type} className={''}>
+                                                <div key={type} className="">
                                                     <label className={cls.checkboxLabel}>
                                                         <Field
                                                             type="checkbox"
@@ -114,16 +120,16 @@ const ArticleForm: FC<Props> = ({article, loading, onSubmit, submitError}) => {
                                 </FieldArray>
                             </div>
 
-                            <Text title={t("Blocks")}/>
+                            <Text title={t('Blocks')} />
                             <FieldArray name="blocks">
-                                {({push, remove}) => (
+                                {({ push, remove }) => (
                                     <div>
                                         {values.blocks.map((block: ArticleBlocks, index: number) => (
                                             <div key={index} className={cls.blockWrapper}>
                                                 {block.type === BlockTypes.TEXT && (
                                                     <div className={cls.block}>
-                                                        <Text title={t("Text Block")}/>
-                                                        <Text mainText={t("Text Block Title")}/>
+                                                        <Text title={t('Text Block')} />
+                                                        <Text mainText={t('Text Block Title')} />
                                                         <Field
                                                             type="text"
                                                             name={`blocks.${index}.title`}
@@ -135,9 +141,9 @@ const ArticleForm: FC<Props> = ({article, loading, onSubmit, submitError}) => {
                                                             className={cls.error}
                                                         />
 
-                                                        <Text mainText={t("Paragraphs")}/>
+                                                        <Text mainText={t('Paragraphs')} />
                                                         <FieldArray name={`blocks.${index}.paragraphs`}>
-                                                            {({push: pushParagraph, remove: removeParagraph}) => (
+                                                            {({ push: pushParagraph, remove: removeParagraph }) => (
                                                                 <div>
                                                                     {block.paragraphs.map((paragraph, paraIndex) => (
                                                                         <div
@@ -161,7 +167,7 @@ const ArticleForm: FC<Props> = ({article, loading, onSubmit, submitError}) => {
                                                                                 type="button"
                                                                                 onClick={() => removeParagraph(paraIndex)}
                                                                             >
-                                                                                {t("Remove")}
+                                                                                {t('Remove')}
                                                                             </Button>
                                                                         </div>
                                                                     ))}
@@ -183,7 +189,7 @@ const ArticleForm: FC<Props> = ({article, loading, onSubmit, submitError}) => {
 
                                                 {block.type === BlockTypes.CODE && (
                                                     <div className={cls.block}>
-                                                        <Text title={t("Code Block")}/>
+                                                        <Text title={t('Code Block')} />
                                                         <Field
                                                             as="textarea"
                                                             name={`blocks.${index}.code`}
@@ -200,8 +206,8 @@ const ArticleForm: FC<Props> = ({article, loading, onSubmit, submitError}) => {
 
                                                 {block.type === BlockTypes.IMAGE && (
                                                     <div className={cls.block}>
-                                                        <Text title={t("Image Block")}/>
-                                                        <Text mainText={t("Image URL")}/>
+                                                        <Text title={t('Image Block')} />
+                                                        <Text mainText={t('Image URL')} />
                                                         <Field
                                                             type="text"
                                                             name={`blocks.${index}.src`}
@@ -214,7 +220,7 @@ const ArticleForm: FC<Props> = ({article, loading, onSubmit, submitError}) => {
                                                             className={cls.error}
                                                         />
 
-                                                        <Text mainText={t("Image Title")}/>
+                                                        <Text mainText={t('Image Title')} />
                                                         <Field
                                                             type="text"
                                                             name={`blocks.${index}.title`}
@@ -238,13 +244,18 @@ const ArticleForm: FC<Props> = ({article, loading, onSubmit, submitError}) => {
                                                 </Button>
                                             </div>
                                         ))}
-                                        <BlockButtons push={push}/>
+                                        <BlockButtons push={push} />
                                     </div>
                                 )}
                             </FieldArray>
 
-                            <Button theme={ThemeButton.OUTLINE} type="submit"
-                                    className={cls.submitButton}>{t('Submit')}</Button>
+                            <Button
+                                theme={ThemeButton.OUTLINE}
+                                type="submit"
+                                className={cls.submitButton}
+                            >
+                                {t('Submit')}
+                            </Button>
                         </Form>
                     )
                 }

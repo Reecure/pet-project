@@ -1,37 +1,37 @@
-import {useTranslation} from 'react-i18next';
-import {FC, useEffect, useState} from 'react';
-import {useParams} from 'react-router-dom';
-import {classNames} from '@/shared/lib/classNames';
+import { useTranslation } from 'react-i18next';
+import { FC, useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
+import { classNames } from '@/shared/lib/classNames';
 import cls from './EditArticlePage.module.scss';
-import {useAppDispatch, useAppSelector} from '@/app/providers/ReduxProvider/config/hooks';
-import {ArticleAllProps, ArticleLoading, getArticleById} from '@/enteties/Article';
-import {Loader} from '@/shared/ui/Loader';
-import {ArticleForSend} from '@/enteties/Article/model/types/article';
-import {ArticleForm, updateArticle} from '@/features/CRUDArticle';
-import {Notify} from '@/shared/ui/Notify';
+import { useAppDispatch, useAppSelector } from '@/app/providers/ReduxProvider/config/hooks';
+import { ArticleAllProps, ArticleLoading, getArticleById } from '@/enteties/Article';
+import { Loader } from '@/shared/ui/Loader';
+import { ArticleForSend } from '@/enteties/Article/model/types/article';
+import { ArticleForm, updateArticle } from '@/features/CRUDArticle';
+import { Notify } from '@/shared/ui/Notify';
 
 interface Props {
 }
 
 const EditArticlePage: FC<Props> = () => {
-    const {t} = useTranslation();
+    const { t } = useTranslation();
 
     const [notifyOpen, setNotifyOpen] = useState(false);
     const [notifySuccess, setNotifySuccess] = useState(false);
-    const [serverError, setServerError] = useState(false)
+    const [serverError, setServerError] = useState(false);
 
     const article = useAppSelector(ArticleAllProps);
     const isLoading = useAppSelector(ArticleLoading);
 
     const dispatch = useAppDispatch();
 
-    const {id} = useParams();
+    const { id } = useParams();
 
     useEffect(() => {
         dispatch(getArticleById(id)).unwrap().then((res) => {
-            setServerError(false)
-        }).catch(error => {
-            setServerError(true)
+            setServerError(false);
+        }).catch((error) => {
+            setServerError(true);
         });
     }, [dispatch, id]);
 
@@ -48,25 +48,29 @@ const EditArticlePage: FC<Props> = () => {
 
     const updateHandler = (values: ArticleForSend) => {
         setNotifyOpen(true);
-        dispatch(updateArticle({id: article.article.id, article: values}))
+        dispatch(updateArticle({ id: article.article.id, article: values }))
             .unwrap().then((res) => {
-            setNotifySuccess(true);
-            setServerError(false)
-        }).catch(error => {
-            setServerError(true)
-        });
+                setNotifySuccess(true);
+                setServerError(false);
+            }).catch((error) => {
+                setServerError(true);
+            });
     };
 
     if (isLoading) {
         return (
-            <Loader/>
+            <Loader />
         );
     }
 
     return (
         <div className={classNames(cls.EditArticlePage, {}, [])}>
-            <ArticleForm submitError={serverError} article={article.article} loading={article.loading}
-                         onSubmit={updateHandler}/>
+            <ArticleForm
+                submitError={serverError}
+                article={article.article}
+                loading={article.loading}
+                onSubmit={updateHandler}
+            />
             <Notify open={notifyOpen}>
                 {notifySuccess ? t('Article update success') : t('Article update failed')}
             </Notify>

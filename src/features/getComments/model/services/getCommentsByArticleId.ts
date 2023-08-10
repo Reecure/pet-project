@@ -1,10 +1,10 @@
-import {createAsyncThunk} from '@reduxjs/toolkit';
+import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
-import {IComment} from '@/enteties/Comment/model/types/comment';
-import {USER_LOCALSTORAGE_KEY} from '@/shared/constants/localStorage';
+import { IComment } from '@/enteties/Comment/model/types/comment';
+import { USER_LOCALSTORAGE_KEY } from '@/shared/constants/localStorage';
 
 export const getCommentsByArticleId = createAsyncThunk('comments/getCommentsByArticleId', async (articleId: string, thunkAPI) => {
-    const {} = thunkAPI
+    const {} = thunkAPI;
 
     try {
         const res = await axios.get<IComment[]>('https://production-project-server-psi-ivory.vercel.app/comments', {
@@ -20,6 +20,6 @@ export const getCommentsByArticleId = createAsyncThunk('comments/getCommentsByAr
         return res.data;
     } catch (error) {
         console.log(error);
-        return thunkAPI.rejectWithValue(error.response.data)
+        return thunkAPI.rejectWithValue(error.response.data);
     }
 });

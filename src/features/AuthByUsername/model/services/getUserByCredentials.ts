@@ -1,8 +1,8 @@
-import {createAsyncThunk} from '@reduxjs/toolkit';
+import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
-import {USER_LOCALSTORAGE_KEY} from '@/shared/constants/localStorage';
-import {User} from '@/enteties/User/model/types';
-import {setAuthData} from '@/enteties/User/model/slice/userSlice';
+import { USER_LOCALSTORAGE_KEY } from '@/shared/constants/localStorage';
+import { User } from '@/enteties/User/model/types';
+import { setAuthData } from '@/enteties/User/model/slice/userSlice';
 
 interface LoginByCredentials {
     username: string;
@@ -10,7 +10,7 @@ interface LoginByCredentials {
 }
 
 export const getUserByCredentials = createAsyncThunk<User, LoginByCredentials>('login/getUserByCredentials', async (authData, thunkApi) => {
-    const {dispatch} = thunkApi;
+    const { dispatch } = thunkApi;
 
     try {
         const res = await axios.post('https://production-project-server-psi-ivory.vercel.app/login', authData);

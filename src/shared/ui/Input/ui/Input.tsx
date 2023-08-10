@@ -1,5 +1,5 @@
-import React, {FC, InputHTMLAttributes, memo} from 'react';
-import {classNames} from '@/shared/lib/classNames';
+import React, { FC, InputHTMLAttributes, memo } from 'react';
+import { classNames } from '@/shared/lib/classNames';
 import cls from './Input.module.scss';
 
 export const enum ThemeInput {
@@ -14,13 +14,13 @@ interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
 }
 
 const Input: FC<InputProps> = ({
-                                   theme,
-                                   className,
-                                   ...otherProps
-                               }) => (
+    theme,
+    className,
+    ...otherProps
+}) => (
 
     <input
-        data-testid='input'
+        data-testid="input"
         {...otherProps}
 
         className={classNames(cls.Input, {}, [className, cls[theme]])}

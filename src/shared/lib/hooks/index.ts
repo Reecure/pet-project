@@ -1,3 +1,3 @@
-export {useOuterWidth} from "./useOuterWidth/useOuterWidth";
+export { useOuterWidth } from './useOuterWidth/useOuterWidth';
 
-export {useDebounce} from './useDebounce/useDebounce';
+export { useDebounce } from './useDebounce/useDebounce';
