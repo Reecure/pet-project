@@ -1,4 +1,7 @@
 export enum CURRENCIES {
     UAH = 'UAH',
-    PL = 'PL',
+    PL = 'PLN',
+    USD = 'USD',
+    EUR = 'EUR',
+    GBP = 'GBP',
 }

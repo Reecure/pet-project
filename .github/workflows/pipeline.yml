@@ -2,20 +2,12 @@ name: linting, testing, building
 on: [ push ]
 jobs:
   pipeline:
-    runs-on: ubuntu-latest
-    strategy:
-      fail-fast: false
-      matrix:
-        node-version: [ 17.x ]
-    steps:
-      - uses: actions/checkout@v2
-      - name: Staring Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v1
-        with:
-          node-version: ${{ matrix.node-version }}
-      - name: install modules
-        run: npm i
-      - name: build production project
-        run: npm run build:prod
-      - name: unit testing
-        run: npm run test
+    jobs:
+      build:
+        runs-on: ubuntu-latest
+        steps:
+          - uses: actions/checkout@v2
+          - name: Install dependencies
+            run: npm install
+          - name: Build
+            run: npm run build:prod

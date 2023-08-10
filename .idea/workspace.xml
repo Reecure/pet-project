@@ -4,37 +4,47 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="054dcfbb-5232-4235-a308-8c1e1cec3020" name="Changes" comment="update">
+    <list default="true" id="054dcfbb-5232-4235-a308-8c1e1cec3020" name="Changes" comment="add documentation">
+      <change afterPath="$PROJECT_DIR$/cypress.config.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cypress/e2e/1-getting-started/todo.cy.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cypress/e2e/2-advanced-examples/actions.cy.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cypress/e2e/2-advanced-examples/aliasing.cy.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cypress/e2e/2-advanced-examples/assertions.cy.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cypress/e2e/2-advanced-examples/connectors.cy.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cypress/e2e/2-advanced-examples/cookies.cy.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cypress/e2e/2-advanced-examples/cypress_api.cy.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cypress/e2e/2-advanced-examples/files.cy.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cypress/e2e/2-advanced-examples/location.cy.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cypress/e2e/2-advanced-examples/misc.cy.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cypress/e2e/2-advanced-examples/navigation.cy.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cypress/e2e/2-advanced-examples/network_requests.cy.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cypress/e2e/2-advanced-examples/querying.cy.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cypress/e2e/2-advanced-examples/spies_stubs_clocks.cy.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cypress/e2e/2-advanced-examples/storage.cy.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cypress/e2e/2-advanced-examples/traversal.cy.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cypress/e2e/2-advanced-examples/utilities.cy.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cypress/e2e/2-advanced-examples/viewport.cy.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cypress/e2e/2-advanced-examples/waiting.cy.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cypress/e2e/2-advanced-examples/window.cy.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cypress/fixtures/example.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cypress/support/commands.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cypress/support/component-index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cypress/support/component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cypress/support/e2e.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.github/workflows/pipeline.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/pipeline.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/enteties/Article/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/enteties/Article/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/enteties/Article/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/enteties/Article/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/enteties/Article/model/selectors/articleSelector.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/enteties/Article/model/selectors/articleSelector.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/enteties/Article/model/types/article.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/enteties/Article/model/types/article.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/enteties/Comment/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/enteties/Comment/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/enteties/Country/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/enteties/Country/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/enteties/Currency/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/enteties/Currency/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/enteties/Profile/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/enteties/Profile/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/enteties/User/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/enteties/User/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/AuthByUsername/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/AuthByUsername/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/AuthByUsername/model/services/getUserByCredentials.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/AuthByUsername/model/services/getUserByCredentials.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/AuthByUsername/ui/LoginForm/LoginForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/AuthByUsername/ui/LoginForm/LoginForm.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/CRUDArticle/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/CRUDArticle/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/CRUDArticle/ui/ArticleForm/ArticleForm.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/CRUDArticle/ui/ArticleForm/ArticleForm.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/CRUDArticle/ui/ArticleForm/ArticleForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/CRUDArticle/ui/ArticleForm/ArticleForm.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/addComment/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/addComment/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/addComment/ui/AddComment.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/addComment/ui/AddComment.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/getComments/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/getComments/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/ArticlesPage/ui/ArticlesComponents/ArticleHeader/ArticleHeader.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ArticlesPage/ui/ArticlesComponents/ArticleHeader/ArticleHeader.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/ArticlesPage/ui/ArticlesComponents/ArticleMainContent/ArticleMainContent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ArticlesPage/ui/ArticlesComponents/ArticleMainContent/ArticleMainContent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/EditArticlePage/ui/EditArticlePage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/EditArticlePage/ui/EditArticlePage.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/MainPage/ui/Header/Header.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/MainPage/ui/Header/Header.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/ProfilePage/ui/ProfileCard/ProfileCard.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ProfilePage/ui/ProfileCard/ProfileCard.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shared/ui/ArticleImageComponent/ArticleImageComponent.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/ui/ArticleImageComponent/ArticleImageComponent.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shared/ui/ArticleImageComponent/ArticleImageComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/ui/ArticleImageComponent/ArticleImageComponent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shared/ui/ArticleSmallComponent/ArticleSmallComponent.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/ui/ArticleSmallComponent/ArticleSmallComponent.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shared/ui/ArticleTextComponent/ArticleTextComponent.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/ui/ArticleTextComponent/ArticleTextComponent.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/widgets/Sidebar/helpers/sidebarIconRender.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/widgets/Sidebar/helpers/sidebarIconRender.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/widgets/Sidebar/model/item.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/widgets/Sidebar/model/item.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html-report/jest-html-reporters-attach/report/result.js" beforeDir="false" afterPath="$PROJECT_DIR$/html-report/jest-html-reporters-attach/report/result.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/enteties/Country/model/types/countries.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/enteties/Country/model/types/countries.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/enteties/Currency/model/types/currencies.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/enteties/Currency/model/types/currencies.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/ArticlesPage/model/slice/articlesSlice.test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/cypress/tsconfig.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/MyArticlesPage/model/slice/myArticlesSlice.test.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/ui/Input/ui/Input.test.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/ui/Input/ui/Input.test.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/ui/Input/ui/Input.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/ui/Input/ui/Input.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/widgets/Navbar/ui/Navbar.test.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/widgets/Navbar/ui/Navbar.test.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/widgets/Navbar/ui/Navbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/widgets/Navbar/ui/Navbar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/widgets/ThemeSwitcher/ui/ThemeSwitcher.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/widgets/ThemeSwitcher/ui/ThemeSwitcher.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,30 +88,30 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;js.linters.configure.manually.selectedeslint&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/user/Desktop/pet/src/shared/ui&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.stylelint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.standard&quot;: &quot;C:\\Users\\user\\Desktop\\pet\\node_modules\\standard&quot;,
-    &quot;node.js.selected.package.stylelint&quot;: &quot;C:\\Users\\user\\Desktop\\pet\\node_modules\\stylelint&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;C:\\Users\\user\\Desktop\\pet\\node_modules\\prettier&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\user\\Desktop\\pet\\node_modules\\typescript\\lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "main",
+    "js.linters.configure.manually.selectedeslint": "true",
+    "last_opened_file_path": "C:/Users/user/Desktop/pet/src/shared/ui",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.standard": "true",
+    "node.js.detected.package.stylelint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.standard": "C:\\Users\\user\\Desktop\\pet\\node_modules\\standard",
+    "node.js.selected.package.stylelint": "C:\\Users\\user\\Desktop\\pet\\node_modules\\stylelint",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "prettierjs.PrettierConfiguration.Package": "C:\\Users\\user\\Desktop\\pet\\node_modules\\prettier",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "ts.external.directory.path": "C:\\Users\\user\\Desktop\\pet\\node_modules\\typescript\\lib",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\user\Desktop\pet\src\features\updateArticle\model" />
@@ -116,22 +126,15 @@
       <recent name="C:\Users\user\Desktop\pet\src\shared\fonts" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.lint:ts">
+  <component name="RunManager" selected="JavaScript Debug.report.html">
+    <configuration name="report.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/pet/html-report/report.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
     <configuration name="build:prod" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
       <scripts>
         <script value="build:prod" />
-      </scripts>
-      <node-interpreter value="project" />
-      <envs />
-      <method v="2" />
-    </configuration>
-    <configuration name="lint:ts" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
-      <package-json value="$PROJECT_DIR$/package.json" />
-      <command value="run" />
-      <scripts>
-        <script value="lint:ts" />
       </scripts>
       <node-interpreter value="project" />
       <envs />
@@ -169,11 +172,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JavaScript Debug.report.html" />
         <item itemvalue="npm.start:vite" />
         <item itemvalue="npm.start:dev:server" />
         <item itemvalue="npm.build:prod" />
         <item itemvalue="npm.lint:ts:fix" />
-        <item itemvalue="npm.lint:ts" />
       </list>
     </recent_temporary>
   </component>
@@ -218,7 +221,8 @@
       <workItem from="1691384757485" duration="30534000" />
       <workItem from="1691468463175" duration="24196000" />
       <workItem from="1691512099845" duration="7550000" />
-      <workItem from="1691560998732" duration="6119000" />
+      <workItem from="1691560998732" duration="9210000" />
+      <workItem from="1691662418976" duration="4222000" />
     </task>
     <task id="LOCAL-00001" summary="some fix">
       <created>1689795990367</created>
@@ -437,7 +441,14 @@
       <option name="project" value="LOCAL" />
       <updated>1691506084798</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="add documentation">
+      <created>1691567577503</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1691567577503</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -459,7 +470,6 @@
     <MESSAGE value="main page and about page" />
     <MESSAGE value="netlify config" />
     <MESSAGE value="documentation" />
-    <MESSAGE value="add documentation" />
     <MESSAGE value="refactored and translates" />
     <MESSAGE value="refactored" />
     <MESSAGE value="refactored add validation profile" />
@@ -470,6 +480,7 @@
     <MESSAGE value="refactored articles and now handle errors when request" />
     <MESSAGE value="now show errors for user" />
     <MESSAGE value="update" />
-    <option name="LAST_COMMIT_MESSAGE" value="update" />
+    <MESSAGE value="add documentation" />
+    <option name="LAST_COMMIT_MESSAGE" value="add documentation" />
   </component>
 </project>
