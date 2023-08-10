@@ -4,31 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="054dcfbb-5232-4235-a308-8c1e1cec3020" name="Changes" comment="linting and change pipline">
-      <change afterPath="$PROJECT_DIR$/src/shared/helpers/ApiHelper.ts" afterDir="false" />
+    <list default="true" id="054dcfbb-5232-4235-a308-8c1e1cec3020" name="Changes" comment="refactored code">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/build/buildPlugins.ts" beforeDir="false" afterPath="$PROJECT_DIR$/config/build/buildPlugins.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/build/types/config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/config/build/types/config.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/extractedTranslations/en/translation.json" beforeDir="false" afterPath="$PROJECT_DIR$/extractedTranslations/en/translation.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/json-server/db.json" beforeDir="false" afterPath="$PROJECT_DIR$/json-server/db.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/types/global.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/types/global.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/enteties/Article/model/services/getArticleById.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/enteties/Article/model/services/getArticleById.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/enteties/Profile/services/getUserProfile.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/enteties/Profile/services/getUserProfile.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/enteties/Profile/services/updateUserProfile.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/enteties/Profile/services/updateUserProfile.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/AuthByUsername/model/services/getUserByCredentials.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/AuthByUsername/model/services/getUserByCredentials.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/CRUDArticle/model/services/addArticle.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/CRUDArticle/model/services/addArticle.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/CRUDArticle/model/services/deleteArticle.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/CRUDArticle/model/services/deleteArticle.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/CRUDArticle/model/services/updateArticle.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/CRUDArticle/model/services/updateArticle.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/addComment/model/services/addComment.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/addComment/model/services/addComment.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/getComments/model/services/getCommentsByArticleId.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/getComments/model/services/getCommentsByArticleId.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/ArticlesPage/model/services/getArticles.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ArticlesPage/model/services/getArticles.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/ArticlesPage/ui/ArticlesComponents/ArticleMainContent/ArticleMainContent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ArticlesPage/ui/ArticlesComponents/ArticleMainContent/ArticleMainContent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/MainPage/model/services/getRecommendationArticles.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/MainPage/model/services/getRecommendationArticles.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/MyArticlesPage/model/services/getMyArticles.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/MyArticlesPage/model/services/getMyArticles.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/ProfilePage/ui/ProfileCard/ProfileCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ProfilePage/ui/ProfileCard/ProfileCard.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vite.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/vite.config.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webpack.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.config.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/helpers/ApiHelper.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/helpers/ApiHelper.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -156,9 +134,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="npm.start" />
         <item itemvalue="npm.start:dev:server" />
         <item itemvalue="npm.start:vite" />
-        <item itemvalue="npm.start" />
         <item itemvalue="JavaScript Debug.report.html" />
         <item itemvalue="npm.build:prod" />
       </list>
@@ -206,7 +184,7 @@
       <workItem from="1691468463175" duration="24196000" />
       <workItem from="1691512099845" duration="7550000" />
       <workItem from="1691560998732" duration="9210000" />
-      <workItem from="1691662418976" duration="13425000" />
+      <workItem from="1691662418976" duration="13886000" />
     </task>
     <task id="LOCAL-00001" summary="some fix">
       <created>1689795990367</created>
@@ -453,7 +431,14 @@
       <option name="project" value="LOCAL" />
       <updated>1691667371622</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="refactored code">
+      <created>1691680089724</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1691680089724</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -461,7 +446,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="update imports" />
     <MESSAGE value="some fix" />
     <MESSAGE value="pre commit before stories realisation" />
     <MESSAGE value="widgets now have tests" />
@@ -486,6 +470,7 @@
     <MESSAGE value="add documentation" />
     <MESSAGE value="add cypress tests navbar test" />
     <MESSAGE value="linting and change pipline" />
-    <option name="LAST_COMMIT_MESSAGE" value="linting and change pipline" />
+    <MESSAGE value="refactored code" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactored code" />
   </component>
 </project>
