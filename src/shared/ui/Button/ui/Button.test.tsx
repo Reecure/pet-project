@@ -1,5 +1,5 @@
-import { fireEvent, render, screen } from '@testing-library/react';
-import Button, { ThemeButton } from './Button';
+import {fireEvent, render, screen} from '@testing-library/react';
+import Button, {ThemeButton} from './Button';
 
 describe('button', () => {
     test('default button', () => {

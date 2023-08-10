@@ -23,12 +23,12 @@ export const fetchData = async (url: string, options: FetchDataOptions = {}): Pr
 
         const response = await axios({
             method,
-            url: `${__API__}/${url}`,
+            url: `https://production-project-server-psi-ivory.vercel.app/${url}`,
             headers,
             data: method !== 'GET' ? data : undefined,
             params: method === 'GET' ? params : undefined,
         });
-        console.log(__API__)
+        console.log()
         return response.data;
     } catch (error) {
         console.error('Error while making request:', error);

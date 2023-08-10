@@ -38,8 +38,8 @@ export const getAllArticles = createAsyncThunk<Article[], void>('articles/getAll
         if (orderState.length > 0) {
             params._order = orderState;
         }
-        const res = await fetchData(`articles`, {params: params})
 
+        const res = await fetchData(`articles`, {params: params})
 
         return res;
     } catch (error) {

@@ -10,6 +10,7 @@ export const addComment = createAsyncThunk<IComment, string>('comments/addCommen
     const userData = userDataSelector(getState());
     const article = ArticleFields(getState());
     try {
+
         const res = await fetchData('comments', {
             method: "POST", data: {
                 text: comment,
