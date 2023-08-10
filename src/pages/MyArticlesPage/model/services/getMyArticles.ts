@@ -1,14 +1,13 @@
-import { createAsyncThunk } from '@reduxjs/toolkit';
-import axios from 'axios';
-import { USER_LOCALSTORAGE_KEY } from '@/shared/constants/localStorage';
+import {createAsyncThunk} from '@reduxjs/toolkit';
 import {
     myArticlePageSelector,
     myArticlesLimitSelector,
     myArticlesQuerySelector,
 } from '@/pages/MyArticlesPage/model/selectors/myArticlesSelectors';
+import fetchData from "@/shared/helpers/ApiHelper";
 
 export const getAllMyArticles = createAsyncThunk('articles/getAllArticles', async (id: string, thunkApi: any) => {
-    const { getState } = thunkApi;
+    const {getState} = thunkApi;
 
     const pageState = myArticlePageSelector(getState());
     const limitState = myArticlesLimitSelector(getState());
@@ -20,14 +19,11 @@ export const getAllMyArticles = createAsyncThunk('articles/getAllArticles', asyn
             _limit: limitState,
             q: query,
         };
-        const res = await axios.get(`https://production-project-server-psi-ivory.vercel.app/articles?userId=${id}`, {
-            headers: {
-                authorization: localStorage.getItem(USER_LOCALSTORAGE_KEY) || '',
-            },
-            params,
-        });
 
-        return res.data;
+        const res = await fetchData(`articles?userId=${id}`, {params: params})
+
+
+        return res;
     } catch (error) {
         console.log(error);
     }

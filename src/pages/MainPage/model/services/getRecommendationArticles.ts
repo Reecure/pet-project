@@ -1,16 +1,13 @@
-import { createAsyncThunk } from '@reduxjs/toolkit';
-import axios from 'axios';
-import { USER_LOCALSTORAGE_KEY } from '@/shared/constants/localStorage';
+import {createAsyncThunk} from '@reduxjs/toolkit';
+import fetchData from "@/shared/helpers/ApiHelper";
 
 export const getRecommendationArticles = createAsyncThunk('article/getRecommendationsArticleById', async () => {
     try {
-        const res = await axios.get('https://production-project-server-psi-ivory.vercel.app/recommendations', {
-            headers: {
-                authorization: localStorage.getItem(USER_LOCALSTORAGE_KEY) || '',
-            },
-        });
 
-        return res.data;
+        const res = await fetchData('recommendations')
+
+
+        return res;
     } catch (e) {
         console.log(e);
     }

@@ -1785,7 +1785,7 @@
     },
     {
       "userId": "1",
-      "createdAt": "04.08.23",
+      "createdAt": "10.08.23",
       "title": "Rust",
       "subtitle": "Rust: Empowering Systems Programming",
       "img": "https://www.rust-lang.org/static/images/rust-social-wide.jpg",
@@ -1934,17 +1934,6 @@
       "blocks": [],
       "createdAt": "03.08.23",
       "userId": "1",
-      "id": "7IkA_Gk"
-    },
-    {
-      "title": "title 2",
-      "subtitle": "title 3",
-      "img": "https://kotlinlang.org/assets/images/twitter/general.png",
-      "views": 0,
-      "type": [],
-      "blocks": [],
-      "createdAt": "03.08.23",
-      "userId": "1",
       "id": "LYwPXMc"
     },
     {
@@ -2033,78 +2022,42 @@
       "blocks": [],
       "createdAt": "03.08.23",
       "userId": "1",
-      "id": "NZLwfqc"
-    },
-    {
-      "title": "title 2",
-      "subtitle": "title 3",
-      "img": "https://kotlinlang.org/assets/images/twitter/general.png",
-      "views": 0,
-      "type": [],
-      "blocks": [],
-      "createdAt": "03.08.23",
-      "userId": "1",
       "id": "RT00itO"
     },
     {
-      "title": "title 2",
-      "subtitle": "title 3",
-      "img": "https://kotlinlang.org/assets/images/twitter/general.png",
+      "title": "JKlksdlfsd",
+      "subtitle": "sdafasdfasd",
+      "img": "http://localhost.png",
       "views": 0,
-      "type": [],
+      "type": [
+        "Science",
+        "Education",
+        "Economics"
+      ],
       "blocks": [],
-      "createdAt": "03.08.23",
+      "createdAt": "10.08.23",
       "userId": "1",
-      "id": "FE_Oc4U"
-    },
-    {
-      "title": "title 2",
-      "subtitle": "title 3",
-      "img": "https://kotlinlang.org/assets/images/twitter/general.png",
-      "views": 0,
-      "type": [],
-      "blocks": [],
-      "createdAt": "03.08.23",
-      "userId": "1",
-      "id": "GISZENo"
+      "id": "0uYLFpN"
     }
   ],
   "comments": [
     {
-      "text": "eqwe",
+      "text": "asdfasdfg",
       "articleId": "k2nvbFr",
       "userId": "1",
       "id": 1
     },
     {
-      "text": "asdds",
+      "text": "1234",
       "articleId": "k2nvbFr",
       "userId": "1",
       "id": 2
     },
     {
-      "text": "nice articele!!",
-      "articleId": "d3ab89c",
-      "userId": "1",
+      "text": "hehehe",
+      "articleId": "k2nvbFr",
+      "userId": "2",
       "id": 3
-    },
-    {
-      "text": "dfsafsdaf",
-      "articleId": "k2nvbFr",
-      "userId": "1",
-      "id": 4
-    },
-    {
-      "text": "",
-      "articleId": "d3ab89c",
-      "userId": "1",
-      "id": 5
-    },
-    {
-      "text": "asdf",
-      "articleId": "k2nvbFr",
-      "userId": "1",
-      "id": 6
     }
   ],
   "users": [
@@ -2132,23 +2085,23 @@
     {
       "id": "1",
       "username": "admin",
-      "first": "Yura",
-      "lastname": "Jsds",
-      "age": "23",
-      "currency": "PL",
-      "country": "Poland",
-      "city": "Kyiv",
+      "first": "Anton",
+      "lastname": "Antonenko",
+      "age": 20,
+      "currency": "USD",
+      "country": "United States",
+      "city": "New York",
       "avatar": "https://e0.pxfuel.com/wallpapers/668/829/desktop-wallpaper-killua-zoldyck-killuazoldyck-hunterxhunter-killuazoldyck-hunterxhunterkillua-killua.jpg"
     },
     {
       "id": "2",
-      "first": "Yura",
+      "username": "user13",
+      "first": "Yuras",
       "lastname": "Jks",
       "age": "21",
       "currency": "UAH",
       "country": "Ukraine",
       "city": "Kyiv",
-      "username": "user13",
       "avatar": "https://hatrabbits.com/wp-content/uploads/2017/01/random.jpg"
     }
   ]

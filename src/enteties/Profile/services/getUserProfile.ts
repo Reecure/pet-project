@@ -1,16 +1,11 @@
-import { createAsyncThunk } from '@reduxjs/toolkit';
-import axios from 'axios';
-import { USER_LOCALSTORAGE_KEY } from '@/shared/constants/localStorage';
+import {createAsyncThunk} from '@reduxjs/toolkit';
+import {fetchData} from "@/shared/helpers/ApiHelper";
 
 export const getUserProfile = createAsyncThunk('profile/getUserProfile', async (id: string, thunkApi) => {
     try {
-        const res = await axios.get(`https://production-project-server-psi-ivory.vercel.app/profiles?id=${id}`, {
-            headers: {
-                authorization: localStorage.getItem(USER_LOCALSTORAGE_KEY) || '',
-            },
-        });
+        const res: any = await fetchData(`profiles?id=${id}`)
 
-        return res.data[0];
+        return res[0];
     } catch (error) {
         console.log(error);
         return thunkApi.rejectWithValue(error.response.data);

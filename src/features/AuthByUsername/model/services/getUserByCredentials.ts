@@ -1,8 +1,8 @@
-import { createAsyncThunk } from '@reduxjs/toolkit';
-import axios from 'axios';
-import { USER_LOCALSTORAGE_KEY } from '@/shared/constants/localStorage';
-import { User } from '@/enteties/User/model/types';
-import { setAuthData } from '@/enteties/User/model/slice/userSlice';
+import {createAsyncThunk} from '@reduxjs/toolkit';
+import {USER_LOCALSTORAGE_KEY} from '@/shared/constants/localStorage';
+import {User} from '@/enteties/User/model/types';
+import {setAuthData} from '@/enteties/User/model/slice/userSlice';
+import fetchData from "@/shared/helpers/ApiHelper";
 
 interface LoginByCredentials {
     username: string;
@@ -10,17 +10,19 @@ interface LoginByCredentials {
 }
 
 export const getUserByCredentials = createAsyncThunk<User, LoginByCredentials>('login/getUserByCredentials', async (authData, thunkApi) => {
-    const { dispatch } = thunkApi;
+    const {dispatch} = thunkApi;
 
     try {
-        const res = await axios.post('https://production-project-server-psi-ivory.vercel.app/login', authData);
 
-        if (!res.data) {
+        const res = await fetchData('login', {method: "POST", data: authData})
+
+
+        if (!res) {
             throw new Error();
         }
-        localStorage.setItem(USER_LOCALSTORAGE_KEY, JSON.stringify(res.data));
-        dispatch(setAuthData(res.data));
-        return res.data;
+        localStorage.setItem(USER_LOCALSTORAGE_KEY, JSON.stringify(res));
+        dispatch(setAuthData(res));
+        return res;
     } catch (error) {
         console.log(error);
     }

@@ -1,11 +1,10 @@
-import { createAsyncThunk } from '@reduxjs/toolkit';
-import axios from 'axios';
-import { Article, ArticleForSend } from '@/enteties/Article/model/types/article';
-import { userDataSelector } from '@/enteties/User/model/selectors/userDataSelector';
-import { USER_LOCALSTORAGE_KEY } from '@/shared/constants/localStorage';
+import {createAsyncThunk} from '@reduxjs/toolkit';
+import {Article, ArticleForSend} from '@/enteties/Article/model/types/article';
+import {userDataSelector} from '@/enteties/User/model/selectors/userDataSelector';
+import fetchData from "@/shared/helpers/ApiHelper";
 
 export const addArticle = createAsyncThunk<Article, ArticleForSend>('comments/addComment', async (article, thunkApi: any) => {
-    const { getState } = thunkApi;
+    const {getState} = thunkApi;
 
     const currentDate = new Date();
 
@@ -16,20 +15,18 @@ export const addArticle = createAsyncThunk<Article, ArticleForSend>('comments/ad
 
     const userData = userDataSelector(getState());
     try {
-        const res = await axios.post('https://production-project-server-psi-ivory.vercel.app/articles', {
-            ...article,
-            createdAt: formattedDate,
-            userId: userData.id,
+        const res = await fetchData('articles', {
+            method: 'POST', data: {
+                ...article,
+                createdAt: formattedDate,
+                userId: userData.id,
+            }
+        })
 
-        }, {
-            headers: {
-                authorization: localStorage.getItem(USER_LOCALSTORAGE_KEY) || '',
-            },
-        });
-        if (!res.data) {
+        if (!res) {
             throw new Error();
         }
-        return res.data;
+        return res;
     } catch (error) {
         console.log(error);
         return thunkApi.rejectWithValue(error.response.data);

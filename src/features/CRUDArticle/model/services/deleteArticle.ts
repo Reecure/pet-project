@@ -1,20 +1,14 @@
-import { createAsyncThunk } from '@reduxjs/toolkit';
-import axios from 'axios';
-import { USER_LOCALSTORAGE_KEY } from '@/shared/constants/localStorage';
+import {createAsyncThunk} from '@reduxjs/toolkit';
+import fetchData from "@/shared/helpers/ApiHelper";
 
 export const deleteArticle = createAsyncThunk('article/updateArticle', async (id: string, thunkAPI) => {
     try {
-        const res = await axios.delete(`https://production-project-server-psi-ivory.vercel.app/articles/${id}`, {
-            headers: {
-                authorization: localStorage.getItem(USER_LOCALSTORAGE_KEY) || '',
-            },
-        });
-
-        if (!res.data) {
+        const res = await fetchData(`articles/${id}`, {method: "DELETE"})
+        if (!res) {
             throw new Error();
         }
 
-        return res.data;
+        return res;
     } catch (error) {
         console.log(error);
         return thunkAPI.rejectWithValue(error.response.data);
