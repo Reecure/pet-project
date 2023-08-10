@@ -1,13 +1,16 @@
 name: linting, testing, building
 on: [ push ]
 jobs:
-  pipeline:
-    jobs:
-      build:
-        runs-on: ubuntu-latest
-        steps:
-          - uses: actions/checkout@v2
-          - name: Install dependencies
-            run: npm install
-          - name: Build
-            run: npm run build:prod
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install dependencies
+        run: npm install
+      - name: Run linting
+        run: npm run lint
+      - name: Run unit tests
+        run: npm run test
+      - name: Build production project
+        run: npm run build:prod
+

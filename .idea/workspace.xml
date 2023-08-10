@@ -4,47 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="054dcfbb-5232-4235-a308-8c1e1cec3020" name="Changes" comment="add documentation">
-      <change afterPath="$PROJECT_DIR$/cypress.config.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cypress/e2e/1-getting-started/todo.cy.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cypress/e2e/2-advanced-examples/actions.cy.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cypress/e2e/2-advanced-examples/aliasing.cy.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cypress/e2e/2-advanced-examples/assertions.cy.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cypress/e2e/2-advanced-examples/connectors.cy.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cypress/e2e/2-advanced-examples/cookies.cy.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cypress/e2e/2-advanced-examples/cypress_api.cy.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cypress/e2e/2-advanced-examples/files.cy.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cypress/e2e/2-advanced-examples/location.cy.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cypress/e2e/2-advanced-examples/misc.cy.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cypress/e2e/2-advanced-examples/navigation.cy.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cypress/e2e/2-advanced-examples/network_requests.cy.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cypress/e2e/2-advanced-examples/querying.cy.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cypress/e2e/2-advanced-examples/spies_stubs_clocks.cy.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cypress/e2e/2-advanced-examples/storage.cy.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cypress/e2e/2-advanced-examples/traversal.cy.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cypress/e2e/2-advanced-examples/utilities.cy.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cypress/e2e/2-advanced-examples/viewport.cy.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cypress/e2e/2-advanced-examples/waiting.cy.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cypress/e2e/2-advanced-examples/window.cy.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cypress/fixtures/example.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cypress/support/commands.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cypress/support/component-index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cypress/support/component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cypress/support/e2e.ts" afterDir="false" />
+    <list default="true" id="054dcfbb-5232-4235-a308-8c1e1cec3020" name="Changes" comment="add cypress tests navbar test">
       <change beforePath="$PROJECT_DIR$/.github/workflows/pipeline.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/pipeline.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/html-report/jest-html-reporters-attach/report/result.js" beforeDir="false" afterPath="$PROJECT_DIR$/html-report/jest-html-reporters-attach/report/result.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/enteties/Country/model/types/countries.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/enteties/Country/model/types/countries.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/enteties/Currency/model/types/currencies.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/enteties/Currency/model/types/currencies.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/ArticlesPage/model/slice/articlesSlice.test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/cypress/tsconfig.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/MyArticlesPage/model/slice/myArticlesSlice.test.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shared/ui/Input/ui/Input.test.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/ui/Input/ui/Input.test.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shared/ui/Input/ui/Input.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/ui/Input/ui/Input.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/widgets/Navbar/ui/Navbar.test.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/widgets/Navbar/ui/Navbar.test.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/widgets/Navbar/ui/Navbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/widgets/Navbar/ui/Navbar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/widgets/ThemeSwitcher/ui/ThemeSwitcher.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/widgets/ThemeSwitcher/ui/ThemeSwitcher.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -222,7 +184,7 @@
       <workItem from="1691468463175" duration="24196000" />
       <workItem from="1691512099845" duration="7550000" />
       <workItem from="1691560998732" duration="9210000" />
-      <workItem from="1691662418976" duration="4222000" />
+      <workItem from="1691662418976" duration="4669000" />
     </task>
     <task id="LOCAL-00001" summary="some fix">
       <created>1689795990367</created>
@@ -448,7 +410,14 @@
       <option name="project" value="LOCAL" />
       <updated>1691567577503</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="add cypress tests navbar test">
+      <created>1691666800227</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1691666800227</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -456,7 +425,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="some fix styling" />
     <MESSAGE value="update alise and add vite some optimisation with babel loader" />
     <MESSAGE value="update imports" />
     <MESSAGE value="some fix" />
@@ -481,6 +449,7 @@
     <MESSAGE value="now show errors for user" />
     <MESSAGE value="update" />
     <MESSAGE value="add documentation" />
-    <option name="LAST_COMMIT_MESSAGE" value="add documentation" />
+    <MESSAGE value="add cypress tests navbar test" />
+    <option name="LAST_COMMIT_MESSAGE" value="add cypress tests navbar test" />
   </component>
 </project>
