@@ -1,14 +1,14 @@
-import { useTranslation } from 'react-i18next';
-import { FC, useCallback, useState } from 'react';
-import { ArticleForSend } from '@/enteties/Article/model/types/article';
-import { useAppDispatch } from '@/app/providers/ReduxProvider/config/hooks';
-import { addArticle, ArticleForm } from '@/features/CRUDArticle';
+import {useTranslation} from 'react-i18next';
+import {FC, useCallback, useState} from 'react';
+import {ArticleForSend} from '@/enteties/Article/model/types/article';
+import {useAppDispatch} from '@/app/providers/ReduxProvider/config/hooks';
+import {addArticle, ArticleForm} from '@/features/CRUDArticle';
 
 interface Props {
 }
 
 const CreateArticlePage: FC<Props> = () => {
-    const { t } = useTranslation();
+    const {t} = useTranslation();
 
     const [serverError, setServerError] = useState(false);
 
@@ -26,7 +26,7 @@ const CreateArticlePage: FC<Props> = () => {
     );
 
     return (
-        <ArticleForm onSubmit={sendArticleHandler} submitError={serverError} />
+        <ArticleForm data-testid='articleForm' onSubmit={sendArticleHandler} submitError={serverError}/>
     );
 };
 

@@ -1,6 +1,6 @@
-import React, { memo } from 'react';
-import { useTranslation } from 'react-i18next';
-import { Text } from '@/shared/ui/Text';
+import React, {memo} from 'react';
+import {useTranslation} from 'react-i18next';
+import {Text} from '@/shared/ui/Text';
 
 const categories = [
     {
@@ -59,20 +59,20 @@ const categories = [
 ];
 
 const AboutPage = () => {
-    const { t } = useTranslation('about');
+    const {t} = useTranslation('about');
 
     return (
-        <div>
-            <Text title={t('Welcome to MyArticle!')} />
+        <div data-testid='aboutPage'>
+            <Text title={t('Welcome to MyArticle!')}/>
 
             <Text
                 mainText={t('MyArticle is a knowledge hub dedicated to providing valuable insights, in-depth articles, and thought-provoking content across a wide range of subjects. Our mission is to foster a community of learners, enthusiasts, and experts who can come together to explore and exchange knowledge on diverse topics.')}
             />
 
-            <Text title={t('Explore Our Categories:')} />
+            <Text title={t('Explore Our Categories:')}/>
 
             {
-                categories.map((category) => <Text title={category.title} mainText={category.paragraph} />)
+                categories.map((category) => <Text title={category.title} mainText={category.paragraph}/>)
             }
 
             <Text

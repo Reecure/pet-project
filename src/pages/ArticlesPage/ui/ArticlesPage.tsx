@@ -1,8 +1,8 @@
-import { useTranslation } from 'react-i18next';
-import { FC, useEffect } from 'react';
+import {useTranslation} from 'react-i18next';
+import {FC, useEffect} from 'react';
 import qs from 'qs';
-import { useNavigate } from 'react-router-dom';
-import { useAppSelector } from '@/app/providers/ReduxProvider/config/hooks';
+import {useNavigate} from 'react-router-dom';
+import {useAppSelector} from '@/app/providers/ReduxProvider/config/hooks';
 import ArticleHeader from './ArticlesComponents/ArticleHeader/ArticleHeader';
 import ArticleMainContent from './ArticlesComponents/ArticleMainContent/ArticleMainContent';
 import {
@@ -17,7 +17,7 @@ interface Props {
 }
 
 const ArticlesPage: FC<Props> = () => {
-    const { t } = useTranslation();
+    const {t} = useTranslation();
 
     const page = useAppSelector(articlePageSelector);
     const sort = useAppSelector(articleFieldSelector);
@@ -44,10 +44,10 @@ const ArticlesPage: FC<Props> = () => {
     }, [navigate, page, sort, order, type, query]);
 
     return (
-        <>
-            <ArticleHeader />
-            <ArticleMainContent />
-        </>
+        <div data-testid='articlesPage'>
+            <ArticleHeader/>
+            <ArticleMainContent/>
+        </div>
     );
 };
 

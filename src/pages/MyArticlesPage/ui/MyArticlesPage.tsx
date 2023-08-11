@@ -1,34 +1,30 @@
-import { useTranslation } from 'react-i18next';
-import {
-    ChangeEvent, FC, useCallback, useEffect,
-} from 'react';
-import { classNames } from '@/shared/lib/classNames';
+import {useTranslation} from 'react-i18next';
+import {ChangeEvent, FC, useCallback, useEffect,} from 'react';
+import {classNames} from '@/shared/lib/classNames';
 import cls from './MyArticlesPage.module.scss';
-import { useAppDispatch, useAppSelector } from '@/app/providers/ReduxProvider/config/hooks';
-import { userDataSelector } from '@/enteties/User';
-import {
-    getMyArticles, resetPage, setNextPage, setPrevPage, setSearchQuery,
-} from '../model/slice/myArticlesSlice';
-import { getAllMyArticles } from '../model/services/getMyArticles';
+import {useAppDispatch, useAppSelector} from '@/app/providers/ReduxProvider/config/hooks';
+import {userDataSelector} from '@/enteties/User';
+import {getMyArticles, resetPage, setNextPage, setPrevPage, setSearchQuery,} from '../model/slice/myArticlesSlice';
+import {getAllMyArticles} from '../model/services/getMyArticles';
 import {
     myArticleHaveMoreLoading,
     myArticlePageLoading,
     myArticlePageSelector,
     myArticlesQuerySelector,
 } from '../model/selectors/myArticlesSelectors';
-import { Stack, StackPosition } from '@/shared/ui/Stack';
+import {Stack, StackPosition} from '@/shared/ui/Stack';
 import MyArticleButtons from './MyArticleButtons/MyArticleButtons';
 import UserHasntArticles from './UserHasntArticles/UserHasntArticles';
-import { Input, ThemeInput } from '@/shared/ui/Input';
-import { Button } from '@/shared/ui/Button';
-import { useDebounce } from '@/shared/lib/hooks';
-import { Loader } from '@/shared/ui/Loader';
+import {Input, ThemeInput} from '@/shared/ui/Input';
+import {Button} from '@/shared/ui/Button';
+import {useDebounce} from '@/shared/lib/hooks';
+import {Loader} from '@/shared/ui/Loader';
 
 interface Props {
 }
 
 const MyArticlesPage: FC<Props> = () => {
-    const { t } = useTranslation();
+    const {t} = useTranslation();
 
     const dispatch = useAppDispatch();
 
@@ -70,15 +66,15 @@ const MyArticlesPage: FC<Props> = () => {
     };
 
     return (
-        <div className={classNames(cls.MyArticlesPage, {}, [])}>
-            <Input theme={ThemeInput.OUTLINE} onChange={searchHandler} placeholder="Search..." value={query} />
+        <div data-testid='myArticlesPage' className={classNames(cls.MyArticlesPage, {}, [])}>
+            <Input theme={ThemeInput.OUTLINE} onChange={searchHandler} placeholder="Search..." value={query}/>
             {isLoading ? (
                 <div className={cls.loaderWrapper}>
-                    <Loader />
+                    <Loader/>
                 </div>
 
             ) : (
-                articles.length === 0 ? (<UserHasntArticles />) : (
+                articles.length === 0 ? (<UserHasntArticles/>) : (
                     <div>
                         <div>
                             {articles.map((article) => (
