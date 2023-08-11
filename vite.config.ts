@@ -11,8 +11,9 @@ export default defineConfig({
     },
     define: {
         __IS_DEV__: JSON.stringify(true),
-        __API__: JSON.stringify('http://localhost:8000'),
+        __API__: JSON.stringify('https://production-project-server-psi-ivory.vercel.app'),
         // 'https://production-project-server-psi-ivory.vercel.app'
+        //http://localhost:8000
     },
 
 });
