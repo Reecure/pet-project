@@ -1,16 +1,14 @@
-import {
-    FC, memo, useEffect, useMemo,
-} from 'react';
-import { classNames } from '@/shared/lib/classNames';
-import { ThemeSwitcher } from '@/widgets/ThemeSwitcher';
-import { LangSwitcher } from '@/widgets/LangSwitcher';
-import { useAppSelector } from '@/app/providers/ReduxProvider/config/hooks';
-import { isLoggedSelector } from '@/enteties/User';
-import { Button } from '@/shared/ui/Button';
-import { SidebarLinks } from '../../model/item';
+import {FC, memo, useEffect, useMemo,} from 'react';
+import {classNames} from '@/shared/lib/classNames';
+import {LangSwitcher} from '@/widgets/LangSwitcher';
+import {useAppSelector} from '@/app/providers/ReduxProvider/config/hooks';
+import {isLoggedSelector} from '@/enteties/User';
+import {Button} from '@/shared/ui/Button';
+import {SidebarLinks} from '../../model/item';
 import SidebarItem from './SidebarItem/SidebarItem';
 import cls from './Sidebar.module.scss';
-import { useOuterWidth } from '@/shared/lib/hooks';
+import {useOuterWidth} from '@/shared/lib/hooks';
+import {AiOutlineLeft, AiOutlineRight} from "react-icons/ai";
 
 interface SidebarProps {
     sidebarIsOpen: boolean
@@ -18,9 +16,9 @@ interface SidebarProps {
     className?: string;
 }
 
-const Sidebar: FC<SidebarProps> = ({ className, openSidebar, sidebarIsOpen }) => {
+const Sidebar: FC<SidebarProps> = ({className, openSidebar, sidebarIsOpen}) => {
     const links = useMemo(() => SidebarLinks.map((link) => (
-        <SidebarItem key={link.to} link={link} open={sidebarIsOpen} openSidebar={openSidebar} />
+        <SidebarItem key={link.to} link={link} open={sidebarIsOpen} openSidebar={openSidebar}/>
     )), [sidebarIsOpen]);
 
     const outerWidth = useOuterWidth();
@@ -32,7 +30,7 @@ const Sidebar: FC<SidebarProps> = ({ className, openSidebar, sidebarIsOpen }) =>
 
     return (
         <div className={cls.sidebarWrapper}>
-            <div data-testid="sidebar" className={classNames(cls.Sidebar, { [cls.open]: sidebarIsOpen }, [className])}>
+            <div data-testid="sidebar" className={classNames(cls.Sidebar, {[cls.open]: sidebarIsOpen}, [className])}>
                 <div className={cls.links}>
                     {
                         links
@@ -40,17 +38,16 @@ const Sidebar: FC<SidebarProps> = ({ className, openSidebar, sidebarIsOpen }) =>
                 </div>
                 <div>
                     <Button data-testid="sidebar-toggle" className={cls.ToggleButton} onClick={openSidebar}>
-                        {sidebarIsOpen ? '<' : '>'}
+                        {sidebarIsOpen ? <AiOutlineLeft/> : <AiOutlineRight/>}
                     </Button>
                     <div className={cls.switchersWrapper}>
-                        <LangSwitcher />
-                        <ThemeSwitcher className={cls.themeSwitcher} />
+                        <LangSwitcher/>
                     </div>
                 </div>
             </div>
             {
                 sidebarIsOpen && outerWidth < 640 && (
-                    <div className={cls.overlay} onClick={openSidebar} />
+                    <div className={cls.overlay} onClick={openSidebar}/>
                 )
             }
 

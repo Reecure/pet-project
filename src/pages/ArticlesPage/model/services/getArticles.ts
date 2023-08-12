@@ -9,8 +9,13 @@ import {
     articleTypesSelector,
 } from '../selector/articlesSelector';
 import fetchData from "@/shared/helpers/ApiHelper";
+import {RootState} from "@/app/providers/ReduxProvider/config/store";
 
-export const getAllArticles = createAsyncThunk<Article[], void>('articles/getAllArticles', async (_, thunkApi: any) => {
+interface ThunkConfig {
+    state: RootState;
+}
+
+export const getAllArticles = createAsyncThunk<Article[], void, ThunkConfig>('articles/getAllArticles', async (_, thunkApi) => {
     const {getState} = thunkApi;
 
     const pageState = articlePageSelector(getState());

@@ -1,9 +1,7 @@
-import {
-    createEntityAdapter, createSlice, EntityState, PayloadAction,
-} from '@reduxjs/toolkit';
-import { Article, ArticleTypes } from '@/enteties/Article/model/types/article';
-import { RootState } from '@/app/providers/ReduxProvider/config/store';
-import { getAllArticles } from '../services/getArticles';
+import {createEntityAdapter, createSlice, EntityState, PayloadAction,} from '@reduxjs/toolkit';
+import {Article, ArticleTypes} from '@/enteties/Article/model/types/article';
+import {RootState} from '@/app/providers/ReduxProvider/config/store';
+import {getAllArticles} from '../services/getArticles';
 
 export enum viewTypes {
     BIG = 'BIG',
@@ -56,7 +54,7 @@ const initialState = articlesAdapter.getInitialState<Props>({
     types: [],
     q: '',
     page: 1,
-    limit: 6,
+    limit: 15,
     viewsType: viewTypes.SMALL,
 });
 
@@ -66,6 +64,7 @@ const articlesSlice = createSlice({
     reducers: {
         setViewType: (state, action: PayloadAction<viewTypes>) => {
             state.viewsType = action.payload;
+            state.limit = action.payload === viewTypes.BIG ? 6 : 15
         },
         setNextPage: (state) => {
             state.page += 1;

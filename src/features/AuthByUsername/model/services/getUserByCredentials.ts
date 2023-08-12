@@ -3,13 +3,18 @@ import {USER_LOCALSTORAGE_KEY} from '@/shared/constants/localStorage';
 import {User} from '@/enteties/User/model/types';
 import {setAuthData} from '@/enteties/User/model/slice/userSlice';
 import fetchData from "@/shared/helpers/ApiHelper";
+import {RootState} from "@/app/providers/ReduxProvider/config/store";
+
+interface ThunkConfig {
+    state: RootState;
+}
 
 interface LoginByCredentials {
     username: string;
     password: string;
 }
 
-export const getUserByCredentials = createAsyncThunk<User, LoginByCredentials>('login/getUserByCredentials', async (authData, thunkApi) => {
+export const getUserByCredentials = createAsyncThunk<User, LoginByCredentials, ThunkConfig>('login/getUserByCredentials', async (authData, thunkApi) => {
     const {dispatch} = thunkApi;
 
     try {

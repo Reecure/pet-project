@@ -7,15 +7,10 @@
 
 .ProfilePageContent {
   padding: 15px 20px;
-  border: 2px solid var(--primary-color);
+  border-radius: 10px;
+  border: 2px solid var(--secondary-color);
   width: 90%;
   height: min-content;
-}
-
-@media (min-width: 640px) {
-  .ProfilePageContent {
-    width: 60%;
-  }
 }
 
 .loaderWrapper {
@@ -26,3 +21,20 @@
   align-items: center;
 }
 
+.userIsNotFound {
+  height: var(--error-page-height);
+  color: var(--error-color);
+  font-size: 22px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (min-width: 640px) {
+  .ProfilePageContent {
+    width: 60%;
+  }
+  .userIsNotFound {
+    font-size: 42px;
+  }
+}

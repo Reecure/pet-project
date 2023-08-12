@@ -1,5 +1,5 @@
 import {useTranslation} from 'react-i18next';
-import {ChangeEvent, FC, useCallback, useEffect,} from 'react';
+import {ChangeEvent, FC, useCallback, useEffect, useState,} from 'react';
 import {classNames} from '@/shared/lib/classNames';
 import cls from './MyArticlesPage.module.scss';
 import {useAppDispatch, useAppSelector} from '@/app/providers/ReduxProvider/config/hooks';
@@ -19,12 +19,15 @@ import {Input, ThemeInput} from '@/shared/ui/Input';
 import {Button} from '@/shared/ui/Button';
 import {useDebounce} from '@/shared/lib/hooks';
 import {Loader} from '@/shared/ui/Loader';
+import ServerError from "@/widgets/ServerError/ServerError";
 
 interface Props {
 }
 
 const MyArticlesPage: FC<Props> = () => {
     const {t} = useTranslation();
+
+    const [serverError, setServerError] = useState(false)
 
     const dispatch = useAppDispatch();
 
@@ -39,17 +42,17 @@ const MyArticlesPage: FC<Props> = () => {
 
     useEffect(() => {
         dispatch(getAllMyArticles(user.id)).unwrap().then((res) => {
-            console.log('not error');
+            setServerError(false)
         }).catch((error) => {
-            console.log('error');
+            setServerError(true)
         });
     }, [dispatch, user, page]);
 
     useEffect(() => {
         dispatch(getAllMyArticles(user.id)).unwrap().then((res) => {
-            console.log('not error');
+            setServerError(false)
         }).catch((error) => {
-            console.log('error');
+            setServerError(true)
         });
         dispatch(resetPage());
     }, [dispatch, debouncedQuery]);
@@ -64,6 +67,10 @@ const MyArticlesPage: FC<Props> = () => {
     const setPrevPageHandler = () => {
         dispatch(setPrevPage());
     };
+
+    if (serverError) {
+        return <ServerError/>
+    }
 
     return (
         <div data-testid='myArticlesPage' className={classNames(cls.MyArticlesPage, {}, [])}>

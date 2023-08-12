@@ -3,7 +3,5 @@
   height: 100%;
   margin: 0 auto;
   overflow: hidden;
-  fill: none;
-  stroke-width: 3;
-  stroke: var(--inverted-primary-color);
+  object-fit: cover;
 }

@@ -7,6 +7,7 @@ interface ThunkConfig {
     state: RootState;
 }
 
+
 export const updateUserProfile = createAsyncThunk<User, User, ThunkConfig>('profile/getUserProfile', async (form, thunkApi) => {
     try {
 

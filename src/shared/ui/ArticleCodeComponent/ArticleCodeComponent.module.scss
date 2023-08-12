@@ -3,20 +3,18 @@
   justify-content: end;
   align-items: center;
   padding: 5px;
-  border-bottom: 1px solid var(--inverted-secondary-color);
+  border-bottom: 1px solid var(--secondary-color);
 }
 
 .codeBlock {
   position: relative;
   overflow: auto;
   padding: 10px;
+
 }
 
 .ArticleCodeComponent {
   background-color: var(--secondary-bg-color);
-  color: var(--inverted-primary-color);
-}
-
-.codeCopyButton {
-
+  color: var(--text-color);
+  border-radius: 10px;
 }

@@ -12,8 +12,7 @@ const AdminPage: FC<Props> = () => {
 
     return (
         <div data-testid='adminPage' className={classNames(cls.AdminPage, {}, [])}>
-            <div>{t('AdminPage')}</div>
-
+            
             {
                 Array(15).fill(null).map((item) => <ArticleForAccept/>)
             }

@@ -5,9 +5,15 @@ import {
     myArticlesQuerySelector,
 } from '@/pages/MyArticlesPage/model/selectors/myArticlesSelectors';
 import fetchData from "@/shared/helpers/ApiHelper";
+import {RootState} from "@/app/providers/ReduxProvider/config/store";
+import {Article} from "@/enteties/Article/model/types/article";
 
-export const getAllMyArticles = createAsyncThunk('articles/getAllArticles', async (id: string, thunkApi: any) => {
-    const {getState} = thunkApi;
+interface ThunkConfig {
+    state: RootState;
+}
+
+export const getAllMyArticles = createAsyncThunk<Article[], string, ThunkConfig>('articles/getAllArticles', async (id, thunkApi) => {
+    const {getState, rejectWithValue} = thunkApi;
 
     const pageState = myArticlePageSelector(getState());
     const limitState = myArticlesLimitSelector(getState());
@@ -26,5 +32,6 @@ export const getAllMyArticles = createAsyncThunk('articles/getAllArticles', asyn
         return res;
     } catch (error) {
         console.log(error);
+        return rejectWithValue(error.response.data);
     }
 });

@@ -1,12 +1,13 @@
-import { ButtonHTMLAttributes, memo } from 'react';
+import {ButtonHTMLAttributes, memo} from 'react';
 
 import cls from './Button.module.scss';
-import { classNames } from '@/shared/lib/classNames';
+import {classNames} from '@/shared/lib/classNames';
 
 export const enum ThemeButton {
     CLEAR = 'clear',
     OUTLINE = 'outline',
     OUTLINE_INVERTED = 'outline_inverted',
+    SUCCESS = 'success',
     OUTLINE_RED = 'outline_red'
 }
 
@@ -28,7 +29,7 @@ const Button = memo(
                 type="button"
                 disabled={disabled}
                 {...otherProps}
-                className={classNames(cls.Button, { [cls.disabled]: disabled }, [className, cls[theme]])}
+                className={classNames(cls.Button, {[cls.disabled]: disabled}, [className, cls[theme]])}
             >
                 {children}
             </button>

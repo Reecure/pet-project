@@ -28,7 +28,6 @@ export const fetchData = async (url: string, options: FetchDataOptions = {}): Pr
             data: method !== 'GET' ? data : undefined,
             params: method === 'GET' ? params : undefined,
         });
-        console.log()
         return response.data;
     } catch (error) {
         console.error('Error while making request:', error);

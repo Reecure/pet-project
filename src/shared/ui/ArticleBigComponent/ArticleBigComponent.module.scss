@@ -13,15 +13,12 @@
   padding: 5px 20px;
 }
 
-.userInfo {
-  display: flex;
-
-}
 
 .imageWrapper {
   width: 100%;
   display: flex;
   justify-content: center;
+  margin-bottom: 20px;
 }
 
 .articleTypes {
@@ -32,11 +29,6 @@
   }
 }
 
-.userInfoWrapper {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 10px;
-}
 
 .articleInfo {
   font-size: 14px;
@@ -51,7 +43,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 5px 20px;
+  padding: 0 20px 20px 20px;
   margin-top: 30px;
 }
 

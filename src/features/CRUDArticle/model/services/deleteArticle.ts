@@ -1,7 +1,14 @@
 import {createAsyncThunk} from '@reduxjs/toolkit';
 import fetchData from "@/shared/helpers/ApiHelper";
+import {RootState} from "@/app/providers/ReduxProvider/config/store";
+import {Article} from "@/enteties/Article/model/types/article";
 
-export const deleteArticle = createAsyncThunk('article/updateArticle', async (id: string, thunkAPI) => {
+interface ThunkConfig {
+    state: RootState;
+}
+
+
+export const deleteArticle = createAsyncThunk<Article, string, ThunkConfig>('article/updateArticle', async (id, thunkAPI) => {
     try {
         const res = await fetchData(`articles/${id}`, {method: "DELETE"})
         if (!res) {

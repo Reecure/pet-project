@@ -1,9 +1,7 @@
-import {
-    createEntityAdapter, createSlice, EntityState, PayloadAction,
-} from '@reduxjs/toolkit';
-import { Article } from '@/enteties/Article/model/types/article';
-import { RootState } from '@/app/providers/ReduxProvider/config/store';
-import { getAllMyArticles } from '@/pages/MyArticlesPage/model/services/getMyArticles';
+import {createEntityAdapter, createSlice, EntityState, PayloadAction,} from '@reduxjs/toolkit';
+import {Article} from '@/enteties/Article/model/types/article';
+import {RootState} from '@/app/providers/ReduxProvider/config/store';
+import {getAllMyArticles} from '@/pages/MyArticlesPage/model/services/getMyArticles';
 
 interface Props extends EntityState<Article> {
     error?: string,

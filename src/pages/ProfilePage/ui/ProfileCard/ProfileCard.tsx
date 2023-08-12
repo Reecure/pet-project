@@ -8,8 +8,7 @@ import {Avatar} from '@/shared/ui/Avatar';
 import {User} from '@/enteties/User/model/types';
 import cls from './ProfileCard.module.scss';
 import {userDataSelector} from '@/enteties/User';
-import {Button} from '@/shared/ui/Button';
-import {Stack, StackPosition} from '@/shared/ui/Stack';
+import {Button, ThemeButton} from '@/shared/ui/Button';
 import {COUNTRIES} from '@/enteties/Country/model/types/countries';
 import {CURRENCIES} from '@/enteties/Currency/model/types/currencies';
 
@@ -74,11 +73,11 @@ const ProfileCard: FC<Props> = ({userInfo, setUpdateServerError}) => {
             >
                 {({errors, values, resetForm}) => (
                     <Form>
-                        <Stack childrenPosition={StackPosition.RIGHT}>
+                        <div className={cls.actionButtons}>
                             {isReadOnly ? (
-                                <div className={cls.actionButtons}>
+                                <div>
                                     {canEdit && (
-                                        <Button onClick={() => {
+                                        <Button theme={ThemeButton.OUTLINE} onClick={() => {
                                             dispatch(setEditable());
                                         }}
                                         >
@@ -88,19 +87,20 @@ const ProfileCard: FC<Props> = ({userInfo, setUpdateServerError}) => {
                                 </div>
                             ) : (
                                 <>
-                                    <Button type="submit">Submit</Button>
+                                    <Button type="submit" theme={ThemeButton.SUCCESS}>{t("Submit")}</Button>
                                     <Button
+                                        theme={ThemeButton.OUTLINE_RED}
                                         type="button"
                                         onClick={() => {
                                             dispatch(setEditable());
                                             resetForm();
                                         }}
                                     >
-                                        Cansel
+                                        {t("Cancel")}
                                     </Button>
                                 </>
                             )}
-                        </Stack>
+                        </div>
 
                         <div className={cls.avatar}>
                             <Avatar src={userInfo?.avatar}/>

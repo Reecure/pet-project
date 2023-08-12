@@ -1,0 +1,14 @@
+.ServerError {
+  width: 100%;
+  height: var(--error-page-height);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ServerError {
+  p {
+    font-size: 32px;
+    color: var(--error-color);
+  }
+}

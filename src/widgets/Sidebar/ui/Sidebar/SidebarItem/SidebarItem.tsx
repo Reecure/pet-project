@@ -1,13 +1,15 @@
-import { useTranslation } from 'react-i18next';
-import { FC, memo } from 'react';
-import { classNames } from '@/shared/lib/classNames';
-import { useAppSelector } from '@/app/providers/ReduxProvider/config/hooks';
-import { isLoggedSelector } from '@/enteties/User';
-import { AppLink } from '@/shared/ui/AppLink';
-import { SidebarLink } from '../../../model/item';
+import {useTranslation} from 'react-i18next';
+import {FC, memo} from 'react';
+import {classNames} from '@/shared/lib/classNames';
+import {useAppSelector} from '@/app/providers/ReduxProvider/config/hooks';
+import {isLoggedSelector} from '@/enteties/User';
+import {AppLink} from '@/shared/ui/AppLink';
+import {SidebarLink} from '../../../model/item';
 import cls from './SidebarItem.module.scss';
-import { sidebarIconRender } from '../../../helpers/sidebarIconRender';
-import { useOuterWidth } from '@/shared/lib/hooks';
+import {sidebarIconRender} from '../../../helpers/sidebarIconRender';
+import {useOuterWidth} from '@/shared/lib/hooks';
+import {Text} from "@/shared/ui/Text";
+import {FontWeight} from "@/shared/ui/Text/model/types";
 
 interface Props {
     link: SidebarLink
@@ -15,8 +17,8 @@ interface Props {
     openSidebar: () => void
 }
 
-const SidebarItem: FC<Props> = ({ link, open, openSidebar }) => {
-    const { t } = useTranslation();
+const SidebarItem: FC<Props> = ({link, open, openSidebar}) => {
+    const {t} = useTranslation();
 
     const outerWidth = useOuterWidth();
     const selectIsLogged = useAppSelector(isLoggedSelector);
@@ -28,11 +30,11 @@ const SidebarItem: FC<Props> = ({ link, open, openSidebar }) => {
     return (
         <AppLink to={link.to} className={cls.link} onClick={outerWidth < 640 && openSidebar}>
             <span className={cls.linkIcon}>{sidebarIconRender(link.icon)}</span>
-            <span
+            <div
                 className={classNames(`${!open ? `${cls.linkTextWhenClose}` : ''}`, {}, [])}
             >
-                {t(link.text)}
-            </span>
+                <Text text={t(link.text)} fontWeight={FontWeight.FONTBOLD}/>
+            </div>
         </AppLink>
     );
 };

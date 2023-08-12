@@ -1,6 +1,7 @@
 import {createAsyncThunk} from '@reduxjs/toolkit';
 import fetchData from "@/shared/helpers/ApiHelper";
 
+
 export const getRecommendationArticles = createAsyncThunk('article/getRecommendationsArticleById', async () => {
     try {
 

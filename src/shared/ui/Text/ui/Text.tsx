@@ -1,6 +1,7 @@
-import { FC, memo } from 'react';
-import { classNames } from '@/shared/lib/classNames';
+import {FC, memo} from 'react';
+import {classNames} from '@/shared/lib/classNames';
 import cls from './Text.module.scss';
+import {FontWeight, TextSizes} from "@/shared/ui/Text/model/types";
 
 export enum TextPosition {
     CENTER = 'center',
@@ -9,25 +10,28 @@ export enum TextPosition {
 
 interface Props {
     className?: string
-    title?: string
-    mainText?: string
-    subText?: string
+    text?: string
+    textSize?: TextSizes,
+    fontWeight?: FontWeight
     haveError?: boolean
     textPosition?: TextPosition
 }
 
 const Text: FC<Props> = ({
-    mainText, title, haveError, className, textPosition, subText,
-}) => (
+
+                             haveError, className, textPosition, textSize, text, fontWeight
+                         }) => (
     <div data-testid="text" className={classNames(cls.Text, {}, [])}>
-        <p className={cls.title}>{title}</p>
         <p
             data-testid="text-error"
-            className={classNames(cls.mainText, { [cls.error]: haveError }, [className, cls[textPosition]])}
+            className={classNames(cls.mainText, {[cls.error]: haveError}, [className, cls[textPosition]])}
+            style={{
+                fontWeight: fontWeight || 400,
+                fontSize: textSize || '16px'
+            }}
         >
-            {mainText}
+            {text}
         </p>
-        <p className={cls.subText}>{subText}</p>
     </div>
 );
 

@@ -1,14 +1,14 @@
 .app.dark {
-  --bg-color: #273344;
-  --secondary-bg-color: #525252;
+  --bg-color: #121212;
+  --secondary-bg-color: #1E1E1E; /* Чуть светлее основного фона */
+  --text-color: #EAEAEA;
+  --primary-color: #9C65E0;
+  --secondary-color: #8B98A7;
 
-  --primary-color: #39495E;
-  --secondary-color: #40596F;
-  --inverted-primary-color: #E7D7BA;
-  --inverted-secondary-color: #E5D4B6;
-
-  --primary-black: #000000;
-  --primary-white: #FFFFFF;
-  --primary-red: #FF4545;
-
+  --border-color: var(--secondary-color);
+  --black: #000000;
+  --white: #FFFFFF;
+  --accent-color: #FF8800;
+  --success-color: #28A745;
+  --error-color: #DC3545;
 }

@@ -1,16 +1,18 @@
 :root {
-  --bg-color: #FFFFFF;
-  --secondary-bg-color: #F5F5F5;
+  --bg-color: #F4F4F4;
+  --secondary-bg-color: #E0E0E0; /* Чуть светлее основного фона */
+  --text-color: #333333;
+  --primary-color: #007BFF;
+  --secondary-color: #6C757D;
 
-  --primary-color: #212529;
-  --secondary-color: #2C3238;
-  --inverted-primary-color: #273344;
-  --inverted-secondary-color: #40596F;
-
-  --primary-black: #000000;
-  --primary-white: #FFFFFF;
-  --primary-red: #FF4545;
+  --border-color: var(--secondary-color);
+  --black: #000000;
+  --white: #FFFFFF;
+  --accent-color: #FF8800;
+  --success-color: #28A745;
+  --error-color: #DC3545;
 
 }
+
 
 

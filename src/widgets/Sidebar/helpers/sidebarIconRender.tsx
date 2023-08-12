@@ -1,156 +1,24 @@
-import { Links } from '@/widgets/Sidebar/model/item';
-import SvgIcon from '@/shared/ui/SvgIcon/SvgIcon';
+import {Links} from '@/widgets/Sidebar/model/item';
+import {AiOutlineFileAdd, AiOutlineHome} from "react-icons/ai";
+import {MdArticle} from "react-icons/md";
+import {PiFolderSimpleUser} from "react-icons/pi";
+import {GiPapers} from "react-icons/gi";
 
-const homeSvg = (
-    <svg
-        width="25px"
-        height="25px"
-        viewBox="0 0 24 24"
-        fill="none"
-        className="stroke-color"
-        xmlns="http://www.w3.org/2000/svg"
-    >
-
-        <g id="SVGRepo_bgCarrier" strokeWidth="0" />
-
-        <g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round" />
-
-        <g id="SVGRepo_iconCarrier">
-            <path d="M22 22L2 22" strokeWidth="1.5" strokeLinecap="round" />
-            <path
-                d="M2 11L6.06296 7.74968M22 11L13.8741 4.49931C12.7784 3.62279 11.2216 3.62279 10.1259 4.49931L9.34398 5.12486"
-                strokeWidth="1.5"
-                strokeLinecap="round"
-            />
-            <path
-                d="M15.5 5.5V3.5C15.5 3.22386 15.7239 3 16 3H18.5C18.7761 3 19 3.22386 19 3.5V8.5"
-                strokeWidth="1.5"
-                strokeLinecap="round"
-            />
-            <path d="M4 22V9.5" strokeWidth="1.5" strokeLinecap="round" />
-            <path d="M20 9.5V13.5M20 22V17.5" strokeWidth="1.5" strokeLinecap="round" />
-            <path
-                d="M15 22V17C15 15.5858 15 14.8787 14.5607 14.4393C14.1213 14 13.4142 14 12 14C10.5858 14 9.87868 14 9.43934 14.4393M9 22V17"
-                strokeWidth="1.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-            />
-            <path
-                d="M14 9.5C14 10.6046 13.1046 11.5 12 11.5C10.8954 11.5 10 10.6046 10 9.5C10 8.39543 10.8954 7.5 12 7.5C13.1046 7.5 14 8.39543 14 9.5Z"
-                strokeWidth="1.5"
-            />
-        </g>
-
-    </svg>
-);
-
-const articleSvg = (
-    <svg
-        viewBox="0 0 16 16"
-        width="25px"
-        height="25px"
-        xmlns="http://www.w3.org/2000/svg"
-
-    >
-        <g id="SVGRepo_bgCarrier" strokeWidth="0" />
-        <g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round" />
-        <g id="SVGRepo_iconCarrier">
-            <path
-
-                d="M8.6,4.99999 L8.6,12.6 L1.4,12.6 L1.4,1.4 L5,1.4 L5,4.99999 L8.6,4.99999 Z M7.6201,3.59999 L6.4,2.3799 L6.4,3.59999 L7.6201,3.59999 Z M10,4 L6,0 L0,0 L0,14 L10,14 L10,4 Z M2.79688,7 L7.2,7 L7.2,8.4 L2.79688,8.4 L2.79688,7 Z M7.2,9.8 L2.79688,9.8 L2.79688,11.2 L7.2,11.2 L7.2,9.8 Z"
-                transform="translate(3 1)"
-            />
-        </g>
-    </svg>
-);
-
-const listSvg = (
-    <svg
-        width="25px"
-        height="25px"
-        viewBox="0 0 24 24"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-    >
-
-        <g id="SVGRepo_bgCarrier" strokeWidth="0" />
-
-        <g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round" />
-
-        <g id="SVGRepo_iconCarrier">
-            <path
-                d="M8 6.00067L21 6.00139M8 12.0007L21 12.0015M8 18.0007L21 18.0015M3.5 6H3.51M3.5 12H3.51M3.5 18H3.51M4 6C4 6.27614 3.77614 6.5 3.5 6.5C3.22386 6.5 3 6.27614 3 6C3 5.72386 3.22386 5.5 3.5 5.5C3.77614 5.5 4 5.72386 4 6ZM4 12C4 12.2761 3.77614 12.5 3.5 12.5C3.22386 12.5 3 12.2761 3 12C3 11.7239 3.22386 11.5 3.5 11.5C3.77614 11.5 4 11.7239 4 12ZM4 18C4 18.2761 3.77614 18.5 3.5 18.5C3.22386 18.5 3 18.2761 3 18C3 17.7239 3.22386 17.5 3.5 17.5C3.77614 17.5 4 17.7239 4 18Z"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-            />
-        </g>
-
-    </svg>
-);
-
-const createArticle = (
-    <svg
-        width="25px"
-        height="25px"
-        viewBox="0 0 24 24"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-    >
-        <g id="SVGRepo_bgCarrier" strokeWidth="0" />
-        <g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round" />
-        <g id="SVGRepo_iconCarrier">
-            <path
-                d="M9 13H15M12 10V16M12.0627 6.06274L11.9373 5.93726C11.5914 5.59135 11.4184 5.4184 11.2166 5.29472C11.0376 5.18506 10.8425 5.10425 10.6385 5.05526C10.4083 5 10.1637 5 9.67452 5H6.2C5.0799 5 4.51984 5 4.09202 5.21799C3.71569 5.40973 3.40973 5.71569 3.21799 6.09202C3 6.51984 3 7.07989 3 8.2V15.8C3 16.9201 3 17.4802 3.21799 17.908C3.40973 18.2843 3.71569 18.5903 4.09202 18.782C4.51984 19 5.07989 19 6.2 19H17.8C18.9201 19 19.4802 19 19.908 18.782C20.2843 18.5903 20.5903 18.2843 20.782 17.908C21 17.4802 21 16.9201 21 15.8V10.2C21 9.0799 21 8.51984 20.782 8.09202C20.5903 7.71569 20.2843 7.40973 19.908 7.21799C19.4802 7 18.9201 7 17.8 7H14.3255C13.8363 7 13.5917 7 13.3615 6.94474C13.1575 6.89575 12.9624 6.81494 12.7834 6.70528C12.5816 6.5816 12.4086 6.40865 12.0627 6.06274Z"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-            />
-        </g>
-    </svg>
-);
-
-const myArticles = (
-    <svg
-        width="25px"
-        height="25px"
-        viewBox="0 0 24 24"
-        xmlns="http://www.w3.org/2000/svg"
-        fill="none"
-    >
-        <g id="SVGRepo_bgCarrier" strokeWidth="0" />
-        <g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round" />
-        <g id="SVGRepo_iconCarrier">
-            <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M15 8h2m-2 4h2m-5 4H7m14-4V6a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h7M7 8v4h4V8H7z"
-            />
-            <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M19.268 19.268a2.5 2.5 0 1 0-3.536-3.536 2.5 2.5 0 0 0 3.536 3.536zm0 0L21 21"
-            />
-        </g>
-    </svg>
-);
 
 export function sidebarIconRender(icon: Links) {
     switch (icon) {
-    case Links.Main:
-        return <SvgIcon Svg={homeSvg} />;
-    case Links.About:
-        return <SvgIcon Svg={articleSvg} />;
-    case Links.Articles:
-        return <SvgIcon Svg={listSvg} />;
-    case Links.CreateArticle:
-        return <SvgIcon Svg={createArticle} />;
-    case Links.MyArticles:
-        return <SvgIcon Svg={myArticles} />;
-    default:
-        break;
+        case Links.Main:
+            return <AiOutlineHome/>;
+        case Links.About:
+            return <MdArticle/>;
+        case Links.Articles:
+            return <GiPapers/>;
+        case Links.CreateArticle:
+            return <AiOutlineFileAdd/>;
+        case Links.MyArticles:
+            return <PiFolderSimpleUser/>;
+        default:
+            break;
     }
     return null;
 }

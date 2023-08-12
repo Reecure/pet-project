@@ -1,18 +1,20 @@
 .menuItem {
   padding: 5px 10px;
   cursor: pointer;
-  color: var(--inverted-secondary-color) !important;
+  color: var(--text-color) !important;
 }
 
 .active {
-  background-color: var(--inverted-secondary-color);
-  color: var(--secondary-bg-color) !important;
+  background-color: var(--primary-color);
+  color: var(--text-color) !important;
+  border-radius: 5px;
 }
 
 .menuWrapper {
   position: relative;
   display: inline-block;
   z-index: var(--z-index-10);
+
 }
 
 .menuButton {
@@ -31,6 +33,7 @@
   border: 1px solid var(--bg-color);
   background-color: var(--secondary-bg-color);
   z-index: var(--z-index-10);
+  border-radius: 10px;
 
 }
 

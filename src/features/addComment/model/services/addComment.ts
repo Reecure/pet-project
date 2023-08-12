@@ -4,8 +4,13 @@ import {IComment} from '@/enteties/Comment/model/types/comment';
 import {userDataSelector} from '@/enteties/User/model/selectors/userDataSelector';
 import {getCommentsByArticleId} from '@/features/getComments/model/services/getCommentsByArticleId';
 import fetchData from "@/shared/helpers/ApiHelper";
+import {RootState} from "@/app/providers/ReduxProvider/config/store";
 
-export const addComment = createAsyncThunk<IComment, string>('comments/addComment', async (comment, thunkApi: any) => {
+interface ThunkConfig {
+    state: RootState;
+}
+
+export const addComment = createAsyncThunk<IComment, string, ThunkConfig>('comments/addComment', async (comment, thunkApi) => {
     const {getState, dispatch} = thunkApi;
     const userData = userDataSelector(getState());
     const article = ArticleFields(getState());

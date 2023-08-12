@@ -16,6 +16,7 @@ import cls from './ArticleMainContent.module.scss';
 import ArticleBigComponent from '@/shared/ui/ArticleBigComponent/ArticleBigComponent';
 import ArticleSmallComponent from '@/shared/ui/ArticleSmallComponent/ArticleSmallComponent';
 import {ArticlesIsEmpty} from '@/shared/ui/ArticlesIsEmpty';
+import ServerError from "@/widgets/ServerError/ServerError";
 
 interface Props {
 }
@@ -50,10 +51,6 @@ const ArticleMainContent: FC<Props> = () => {
         });
     };
 
-    useEffect(() => {
-        console.log(haveMore)
-    }, [haveMore])
-
     const prevPageHandler = () => {
         dispatch(setPrevPage());
         dispatch(getAllArticles()).unwrap().then((res) => {
@@ -70,7 +67,7 @@ const ArticleMainContent: FC<Props> = () => {
     }
 
     if (articlesServerError) {
-        return <p>Server error</p>;
+        return <ServerError/>
     }
 
     if (articles.length === 0) {

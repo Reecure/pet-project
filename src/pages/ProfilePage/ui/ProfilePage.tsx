@@ -6,6 +6,7 @@ import {getUserProfile, profileIsLoadingSelector, profileSelector} from '@/entet
 import {Loader} from '@/shared/ui/Loader';
 import ProfileCard from './ProfileCard/ProfileCard';
 import cls from './ProfilePage.module.scss';
+import ServerError from "@/widgets/ServerError/ServerError";
 
 type Props = {};
 
@@ -37,17 +38,17 @@ const ProfilePage = (props: Props) => {
     }
 
     if (serverError) {
-        return <p>Some server error</p>;
+        return <ServerError/>;
     }
 
     if (!profileData) {
-        return <div>{t('User is not found')}</div>;
+        return <div className={cls.userIsNotFound}>{t('User is not found')}</div>;
     }
 
     return (
         <div data-testid='profilePage' className={cls.ProfilePageWrapper}>
             <div className={cls.ProfilePageContent}>
-                {updateServerError && <p>Profile doesnt update some server error</p>}
+                {updateServerError && <p className={'error'}>Profile doesnt update some server error</p>}
                 <ProfileCard userInfo={profileData} setUpdateServerError={setUpdateServerError}/>
             </div>
         </div>

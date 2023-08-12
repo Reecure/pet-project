@@ -8,6 +8,12 @@
   padding: 0 20px;
 }
 
+.rightSide {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
 .sidebarWrapper {
   width: 100%;
   display: flex;
@@ -15,6 +21,7 @@
 }
 
 .sidebarButton {
+  font-size: 24px;
   display: block;
 }
 

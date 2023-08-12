@@ -1,8 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Press+Start+2P&display=swap');
 
 :root {
-  --font-family-main: Consolas, sans-serif,
-  'Press Start 2P', cursive;;
+  --font-family-main: 'Open Sans', sans-serif;
 
   --font-size-m: 16px;
   --font-line-m: 24px;
@@ -24,6 +23,7 @@
   --navbar-height: 50px;
   --sidebar-open-width: 200px;
   --sidebar-close-width: 80px;
+  --error-page-height: calc(100vh - 130px);
 
   --screen-sm: 640px;
   --screen-md: 768px;

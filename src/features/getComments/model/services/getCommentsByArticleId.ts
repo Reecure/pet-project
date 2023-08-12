@@ -1,7 +1,13 @@
 import {createAsyncThunk} from '@reduxjs/toolkit';
 import fetchData from "@/shared/helpers/ApiHelper";
+import {RootState} from "@/app/providers/ReduxProvider/config/store";
+import {IComment} from "@/enteties/Comment/model/types/comment";
 
-export const getCommentsByArticleId = createAsyncThunk('comments/getCommentsByArticleId', async (articleId: string, thunkAPI) => {
+interface ThunkConfig {
+    state: RootState;
+}
+
+export const getCommentsByArticleId = createAsyncThunk<IComment[], string, ThunkConfig>('comments/getCommentsByArticleId', async (articleId, thunkAPI) => {
     const {} = thunkAPI;
 
     try {

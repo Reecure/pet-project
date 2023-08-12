@@ -1,21 +1,21 @@
-import { useTranslation } from 'react-i18next';
-import { FC, useEffect, useState } from 'react';
-import { classNames } from '@/shared/lib/classNames';
-import { Article, BlockTypes } from '@/enteties/Article/model/types/article';
-import { getArticleRoute } from '@/shared/config/routeConfig/routeConfig';
-import { Button, ThemeButton } from '@/shared/ui/Button';
-import { Views } from '@/shared/ui/Views';
+import {useTranslation} from 'react-i18next';
+import {FC, useEffect, useState} from 'react';
+import {classNames} from '@/shared/lib/classNames';
+import {Article, BlockTypes} from '@/enteties/Article/model/types/article';
+import {getArticleRoute} from '@/shared/config/routeConfig/routeConfig';
+import {Button, ThemeButton} from '@/shared/ui/Button';
+import {Views} from '@/shared/ui/Views';
 import cls from './ArticleBigComponent.module.scss';
-import { AppLink } from '@/shared/ui/AppLink';
-import { useOuterWidth } from '@/shared/lib/hooks';
+import {AppLink} from '@/shared/ui/AppLink';
+import {useOuterWidth} from '@/shared/lib/hooks';
 
 interface Props {
     article: Article
     userId: string
 }
 
-const ArticleBigComponent: FC<Props> = ({ article, userId }) => {
-    const { t } = useTranslation();
+const ArticleBigComponent: FC<Props> = ({article, userId}) => {
+    const {t} = useTranslation();
 
     const [paragraph, setParagraph] = useState('');
 
@@ -40,7 +40,7 @@ const ArticleBigComponent: FC<Props> = ({ article, userId }) => {
             </div>
             <div className={cls.imageWrapper}>
                 <img
-                    style={{ height: 300, objectFit: 'cover', width: `${outerWidth > 640 ? '50%' : '100%'}` }}
+                    style={{height: 300, objectFit: 'cover', width: `${outerWidth > 640 ? '50%' : '100%'}`}}
                     src={article?.img}
                     alt="scs"
                 />
@@ -58,7 +58,7 @@ const ArticleBigComponent: FC<Props> = ({ article, userId }) => {
                     <Button theme={ThemeButton.OUTLINE}>{t('Read more')}</Button>
                 </AppLink>
 
-                <Views views={article?.views} />
+                <Views views={article?.views}/>
             </div>
         </div>
     );

@@ -1,19 +1,20 @@
 .Comment {
-    display: flex;
-    align-items: center;
-    margin-bottom: 10px;
-    padding: 5px 10px;
-    border: var(--primary-color) 2px solid;
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  padding: 5px 10px;
+  border-radius: 10px;
+  border: var(--secondary-color) 2px solid;
 }
 
 .commentUserAvatar {
-    max-width: min-content;
+  max-width: min-content;
 }
 
-.commentContent{
-    margin-left: 10px;
+.commentContent {
+  margin-left: 10px;
 
-    p{
-        text-align: justify;
-    }
+  p {
+    text-align: justify;
+  }
 }

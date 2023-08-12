@@ -3,7 +3,7 @@
 
   .title {
     font-size: 20px;
-    color: var(--inverted-primary-color);
+    color: var(--text-color);
   }
 
   .mainText {
@@ -27,5 +27,5 @@
 
 .error {
   font-size: 30px;
-  color: red;
+  color: var(--error-color)
 }

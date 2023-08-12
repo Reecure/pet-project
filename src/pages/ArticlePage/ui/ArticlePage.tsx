@@ -9,6 +9,7 @@ import cls from './ArticlePage.module.scss';
 import {commentisLoading, Comments, getCommentsByArticleId} from '@/features/getComments';
 import {getArticleComments} from '@/features/getComments/model/slice/commentsSlice';
 import {Stack, StackPosition} from '@/shared/ui/Stack';
+import ServerError from "@/widgets/ServerError/ServerError";
 
 interface Props {
 }
@@ -48,7 +49,7 @@ const ArticlePage: FC<Props> = () => {
     }
 
     if (articleError || commentError) {
-        return <p>Server error reload Page</p>;
+        return <ServerError/>
     }
 
     if (article === undefined) {
@@ -57,10 +58,8 @@ const ArticlePage: FC<Props> = () => {
 
     return (
         <div data-testid='articlePage' className={classNames(cls.ArticlePage, {}, [])}>
-
             <ArticleDetails article={article}/>
             <Comments isLoading={commentLoading} comments={comments}/>
-
         </div>
     );
 };

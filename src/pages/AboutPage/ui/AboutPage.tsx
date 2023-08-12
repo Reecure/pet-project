@@ -1,6 +1,5 @@
 import React, {memo} from 'react';
 import {useTranslation} from 'react-i18next';
-import {Text} from '@/shared/ui/Text';
 
 const categories = [
     {
@@ -63,35 +62,7 @@ const AboutPage = () => {
 
     return (
         <div data-testid='aboutPage'>
-            <Text title={t('Welcome to MyArticle!')}/>
-
-            <Text
-                mainText={t('MyArticle is a knowledge hub dedicated to providing valuable insights, in-depth articles, and thought-provoking content across a wide range of subjects. Our mission is to foster a community of learners, enthusiasts, and experts who can come together to explore and exchange knowledge on diverse topics.')}
-            />
-
-            <Text title={t('Explore Our Categories:')}/>
-
-            {
-                categories.map((category) => <Text title={category.title} mainText={category.paragraph}/>)
-            }
-
-            <Text
-                title={t('Engaging Articles for Everyone:')}
-                mainText={'At MyArticle, we believe that knowledge should be accessible to all. Whether you are a seasoned professional, a curious learner, or an avid enthusiast, you\'ll find articles tailored to your interests and expertise level. Our team of expert writers and contributors ensures that each piece is well-researched, accurate, and engaging.\n'}
-            />
-            <Text
-                title={t('Contribute and Connect:')}
-                mainText={t('We encourage you to be an active participant in our growing community. Share your expertise, experiences, and insights by contributing articles and engaging in discussions with fellow members. Together, we can create a collaborative environment where knowledge knows no bounds.')}
-            />
-
-            <Text
-                title={t('Stay Connected:')}
-                mainText={t('Subscribe to our newsletter to receive regular updates on the latest articles and trends in your favorite categories. Connect with us on social media to stay engaged with our community and participate in exciting events and discussions.')}
-            />
-            <Text
-                mainText={t('Thank you for being a part of MyArticle. We are excited to embark on this knowledge-sharing journey with you. Let\'s explore the world of ideas and expand our horizons together!')}
-            />
-
+           
         </div>
     );
 };

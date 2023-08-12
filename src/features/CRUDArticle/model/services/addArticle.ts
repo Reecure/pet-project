@@ -2,8 +2,13 @@ import {createAsyncThunk} from '@reduxjs/toolkit';
 import {Article, ArticleForSend} from '@/enteties/Article/model/types/article';
 import {userDataSelector} from '@/enteties/User/model/selectors/userDataSelector';
 import fetchData from "@/shared/helpers/ApiHelper";
+import {RootState} from "@/app/providers/ReduxProvider/config/store";
 
-export const addArticle = createAsyncThunk<Article, ArticleForSend>('comments/addComment', async (article, thunkApi: any) => {
+interface ThunkConfig {
+    state: RootState;
+}
+
+export const addArticle = createAsyncThunk<Article, ArticleForSend, ThunkConfig>('comments/addComment', async (article, thunkApi) => {
     const {getState} = thunkApi;
 
     const currentDate = new Date();
