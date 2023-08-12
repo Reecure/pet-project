@@ -4,96 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="054dcfbb-5232-4235-a308-8c1e1cec3020" name="Changes" comment="upd build">
-      <change afterPath="$PROJECT_DIR$/src/shared/ui/Text/model/types.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/widgets/ServerError/ServerError.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/widgets/ServerError/ServerError.tsx" afterDir="false" />
+    <list default="true" id="054dcfbb-5232-4235-a308-8c1e1cec3020" name="Changes" comment="redesigned">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/json-server/db.json" beforeDir="false" afterPath="$PROJECT_DIR$/json-server/db.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/styles/index.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/styles/index.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/styles/themes/dark.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/styles/themes/dark.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/styles/themes/normal.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/styles/themes/normal.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/styles/variables/global.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/styles/variables/global.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/enteties/Article/model/services/getArticleById.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/enteties/Article/model/services/getArticleById.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/enteties/Article/ui/ArticleDetails/ArticleDetails.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/enteties/Article/ui/ArticleDetails/ArticleDetails.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/enteties/Comment/ui/Comment.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/enteties/Comment/ui/Comment.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/enteties/Profile/services/getUserProfile.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/enteties/Profile/services/getUserProfile.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/enteties/Profile/services/updateUserProfile.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/enteties/Profile/services/updateUserProfile.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/AuthByUsername/model/services/getUserByCredentials.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/AuthByUsername/model/services/getUserByCredentials.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/AuthByUsername/ui/LoginForm/LoginForm.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/AuthByUsername/ui/LoginForm/LoginForm.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/AuthByUsername/ui/LoginForm/LoginForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/AuthByUsername/ui/LoginForm/LoginForm.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/CRUDArticle/model/services/addArticle.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/CRUDArticle/model/services/addArticle.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/CRUDArticle/model/services/deleteArticle.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/CRUDArticle/model/services/deleteArticle.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/CRUDArticle/ui/ArticleForm/ArticleForm.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/CRUDArticle/ui/ArticleForm/ArticleForm.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/CRUDArticle/ui/ArticleForm/ArticleForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/CRUDArticle/ui/ArticleForm/ArticleForm.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/addComment/model/services/addComment.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/addComment/model/services/addComment.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/addComment/ui/AddComment.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/addComment/ui/AddComment.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/getComments/model/services/getCommentsByArticleId.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/getComments/model/services/getCommentsByArticleId.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/getComments/ui/Comments.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/getComments/ui/Comments.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/AboutPage/ui/AboutPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/AboutPage/ui/AboutPage.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/AdminPage/ui/AdminPage.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/AdminPage/ui/AdminPage.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/AdminPage/ui/AdminPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/AdminPage/ui/AdminPage.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/AdminPage/ui/ArticleForAccept/ArticleForAccept.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/AdminPage/ui/ArticleForAccept/ArticleForAccept.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/AdminPage/ui/ArticleForAccept/ArticleForAccept.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/AdminPage/ui/ArticleForAccept/ArticleForAccept.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/ArticlePage/ui/ArticlePage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ArticlePage/ui/ArticlePage.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/ArticlesPage/model/services/getArticles.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ArticlesPage/model/services/getArticles.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/ArticlesPage/model/slice/articlesSlice.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ArticlesPage/model/slice/articlesSlice.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/ArticlesPage/ui/ArticlesComponents/ArticleHeader/ArticleHeader.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ArticlesPage/ui/ArticlesComponents/ArticleHeader/ArticleHeader.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/ArticlesPage/ui/ArticlesComponents/ArticleHeader/ArticleHeader.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ArticlesPage/ui/ArticlesComponents/ArticleHeader/ArticleHeader.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/ArticlesPage/ui/ArticlesComponents/ArticleMainContent/ArticleMainContent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ArticlesPage/ui/ArticlesComponents/ArticleMainContent/ArticleMainContent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/CreateArticlePage/ui/CreateArticlePage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/CreateArticlePage/ui/CreateArticlePage.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/MainPage/model/services/getRecommendationArticles.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/MainPage/model/services/getRecommendationArticles.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/MainPage/ui/MainContent/MainContent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/MainPage/ui/MainContent/MainContent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/MyArticlesPage/model/services/getMyArticles.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/MyArticlesPage/model/services/getMyArticles.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/MyArticlesPage/model/slice/myArticlesSlice.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/MyArticlesPage/model/slice/myArticlesSlice.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/MyArticlesPage/ui/MyArticleButtons/MyArticleButtons.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/MyArticlesPage/ui/MyArticleButtons/MyArticleButtons.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/MyArticlesPage/ui/MyArticlesPage.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/MyArticlesPage/ui/MyArticlesPage.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/MyArticlesPage/ui/MyArticlesPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/MyArticlesPage/ui/MyArticlesPage.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/ProfilePage/ui/ProfileCard/ProfileCard.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ProfilePage/ui/ProfileCard/ProfileCard.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/ProfilePage/ui/ProfileCard/ProfileCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ProfilePage/ui/ProfileCard/ProfileCard.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/ProfilePage/ui/ProfilePage.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ProfilePage/ui/ProfilePage.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/ProfilePage/ui/ProfilePage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ProfilePage/ui/ProfilePage.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shared/assets/article.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shared/assets/home.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shared/assets/list.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shared/assets/moon.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shared/assets/sun.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shared/helpers/ApiHelper.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/helpers/ApiHelper.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shared/ui/AppLink/ui/AppLink.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/ui/AppLink/ui/AppLink.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shared/ui/ArticleBigComponent/ArticleBigComponent.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/ui/ArticleBigComponent/ArticleBigComponent.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shared/ui/ArticleBigComponent/ArticleBigComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/ui/ArticleBigComponent/ArticleBigComponent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shared/ui/ArticleCodeComponent/ArticleCodeComponent.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/ui/ArticleCodeComponent/ArticleCodeComponent.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shared/ui/ArticleImageComponent/ArticleImageComponent.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/ui/ArticleImageComponent/ArticleImageComponent.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shared/ui/ArticleImageComponent/ArticleImageComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/ui/ArticleImageComponent/ArticleImageComponent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shared/ui/ArticleSmallComponent/ArticleSmallComponent.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/ui/ArticleSmallComponent/ArticleSmallComponent.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shared/ui/ArticleSmallComponent/ArticleSmallComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/ui/ArticleSmallComponent/ArticleSmallComponent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shared/ui/ArticleTextComponent/ArticleTextComponent.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/ui/ArticleTextComponent/ArticleTextComponent.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shared/ui/ArticleTextComponent/ArticleTextComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/ui/ArticleTextComponent/ArticleTextComponent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shared/ui/Button/ui/Button.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/ui/Button/ui/Button.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shared/ui/Button/ui/Button.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/ui/Button/ui/Button.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shared/ui/Image/Image.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/ui/Image/Image.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shared/ui/Image/Image.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/ui/Image/Image.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/shared/ui/Input/ui/Input.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/ui/Input/ui/Input.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shared/ui/Loader/ui/Loader.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/ui/Loader/ui/Loader.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shared/ui/Notify/ui/Notify.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/ui/Notify/ui/Notify.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shared/ui/SvgIcon/SvgIcon.module.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shared/ui/SvgIcon/SvgIcon.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shared/ui/Text/ui/Text.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/ui/Text/ui/Text.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shared/ui/Text/ui/Text.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/ui/Text/ui/Text.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shared/ui/Views/ui/Views.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/ui/Views/ui/Views.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/widgets/LangSwitcher/ui/LangSwitcher.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/widgets/LangSwitcher/ui/LangSwitcher.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/widgets/Navbar/ui/Navbar.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/widgets/Navbar/ui/Navbar.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/widgets/Navbar/ui/Navbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/widgets/Navbar/ui/Navbar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/widgets/Navbar/ui/UserDropdownProfile/UserDropdownProfile.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/widgets/Navbar/ui/UserDropdownProfile/UserDropdownProfile.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/widgets/Sidebar/helpers/sidebarIconRender.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/widgets/Sidebar/helpers/sidebarIconRender.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/widgets/Sidebar/ui/Sidebar/Sidebar.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/widgets/Sidebar/ui/Sidebar/Sidebar.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/widgets/Sidebar/ui/Sidebar/Sidebar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/widgets/Sidebar/ui/Sidebar/Sidebar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/widgets/Sidebar/ui/Sidebar/SidebarItem/SidebarItem.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/widgets/Sidebar/ui/Sidebar/SidebarItem/SidebarItem.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/widgets/ThemeSwitcher/ui/ThemeSwitcher.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/widgets/ThemeSwitcher/ui/ThemeSwitcher.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/widgets/ThemeSwitcher/ui/ThemeSwitcher.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/widgets/ThemeSwitcher/ui/ThemeSwitcher.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vite.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/vite.config.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -229,10 +142,10 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="npm.build:vite" />
         <item itemvalue="npm.start:vite" />
         <item itemvalue="npm.start:dev:server" />
         <item itemvalue="npm.preview:vite" />
-        <item itemvalue="npm.build:vite" />
         <item itemvalue="npm.cypress:open" />
       </list>
     </recent_temporary>
@@ -282,7 +195,7 @@
       <workItem from="1691662418976" duration="17720000" />
       <workItem from="1691693457403" duration="5418000" />
       <workItem from="1691738846859" duration="21750000" />
-      <workItem from="1691847136172" duration="17412000" />
+      <workItem from="1691847136172" duration="17823000" />
     </task>
     <task id="LOCAL-00001" summary="some fix">
       <created>1689795990367</created>
@@ -564,7 +477,14 @@
       <option name="project" value="LOCAL" />
       <updated>1691757822747</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="redesigned">
+      <created>1691869268342</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1691869268342</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -572,7 +492,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="pre commit before stories realisation" />
     <MESSAGE value="widgets now have tests" />
     <MESSAGE value="shared folder elements now have tests" />
     <MESSAGE value="write test for slices tests" />
@@ -597,6 +516,7 @@
     <MESSAGE value="linting and change pipline" />
     <MESSAGE value="refactored code" />
     <MESSAGE value="upd build" />
-    <option name="LAST_COMMIT_MESSAGE" value="upd build" />
+    <MESSAGE value="redesigned" />
+    <option name="LAST_COMMIT_MESSAGE" value="redesigned" />
   </component>
 </project>
