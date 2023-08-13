@@ -8,7 +8,6 @@ import {ArticleAllProps, ArticleLoading, getArticleById} from '@/enteties/Articl
 import {Loader} from '@/shared/ui/Loader';
 import {ArticleForSend} from '@/enteties/Article/model/types/article';
 import {ArticleForm, updateArticle} from '@/features/CRUDArticle';
-import {Notify} from '@/shared/ui/Notify';
 
 interface Props {
 }
@@ -74,9 +73,7 @@ const EditArticlePage: FC<Props> = () => {
                 loading={article.loading}
                 onSubmit={updateHandler}
             />
-            <Notify open={notifyOpen} error={!notifySuccess}>
-                {notifySuccess ? t('Article update success') : t('Article update failed')}
-            </Notify>
+
         </div>
     );
 };

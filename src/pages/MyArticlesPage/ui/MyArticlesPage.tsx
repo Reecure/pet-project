@@ -1,16 +1,12 @@
-import { useTranslation } from 'react-i18next';
-import {
-    ChangeEvent, FC, useCallback, useEffect, useState,
-} from 'react';
-import { AiOutlineLeft, AiOutlineRight } from 'react-icons/ai';
-import { classNames } from '@/shared/lib/classNames';
+import {useTranslation} from 'react-i18next';
+import {ChangeEvent, FC, useCallback, useEffect, useState,} from 'react';
+import {AiOutlineLeft, AiOutlineRight} from 'react-icons/ai';
+import {classNames} from '@/shared/lib/classNames';
 import cls from './MyArticlesPage.module.scss';
-import { useAppDispatch, useAppSelector } from '@/app/providers/ReduxProvider/config/hooks';
-import { userDataSelector } from '@/enteties/User';
-import {
-    getMyArticles, resetPage, setNextPage, setPrevPage, setSearchQuery,
-} from '../model/slice/myArticlesSlice';
-import { getAllMyArticles } from '../model/services/getMyArticles';
+import {useAppDispatch, useAppSelector} from '@/app/providers/ReduxProvider/config/hooks';
+import {userDataSelector} from '@/enteties/User';
+import {getMyArticles, resetPage, setNextPage, setPrevPage, setSearchQuery,} from '../model/slice/myArticlesSlice';
+import {getAllMyArticles} from '../model/services/getMyArticles';
 import {
     myArticleHaveMoreLoading,
     myArticlePageLoading,
@@ -19,20 +15,20 @@ import {
 } from '../model/selectors/myArticlesSelectors';
 import MyArticleButtons from './MyArticleButtons/MyArticleButtons';
 import UserHasntArticles from './UserHasntArticles/UserHasntArticles';
-import { Input, ThemeInput } from '@/shared/ui/Input';
-import { Button } from '@/shared/ui/Button';
-import { useDebounce } from '@/shared/lib/hooks';
-import { Loader } from '@/shared/ui/Loader';
+import {Input, ThemeInput} from '@/shared/ui/Input';
+import {Button} from '@/shared/ui/Button';
+import {useDebounce} from '@/shared/lib/hooks';
+import {Loader} from '@/shared/ui/Loader';
 import ServerError from '@/widgets/ServerError/ServerError';
 
 interface Props {
 }
 
 const MyArticlesPage: FC<Props> = () => {
-    const { t } = useTranslation();
+    const {t} = useTranslation();
 
     const [serverError, setServerError] = useState(false);
-
+    const [deleteServerError, setDeleteServerError] = useState(false);
     const dispatch = useAppDispatch();
 
     const user = useAppSelector(userDataSelector);
@@ -72,20 +68,25 @@ const MyArticlesPage: FC<Props> = () => {
         dispatch(setPrevPage());
     };
 
-    if (serverError) {
-        return <ServerError />;
+    const setDeleteServerErrorHandler = () => {
+        setDeleteServerError(true)
+    }
+
+    if (serverError || deleteServerError) {
+        return <ServerError/>;
     }
 
     return (
+
         <div data-testid="myArticlesPage" className={classNames(cls.MyArticlesPage, {}, [])}>
-            <Input theme={ThemeInput.OUTLINE} onChange={searchHandler} placeholder="Search..." value={query} />
+            <Input theme={ThemeInput.OUTLINE} onChange={searchHandler} placeholder="Search..." value={query}/>
             {isLoading ? (
                 <div className={cls.loaderWrapper}>
-                    <Loader />
+                    <Loader/>
                 </div>
 
             ) : (
-                articles.length === 0 ? (<UserHasntArticles />) : (
+                articles.length === 0 ? (<UserHasntArticles/>) : (
                     <div>
                         <div>
                             {articles.map((article) => (
@@ -97,13 +98,15 @@ const MyArticlesPage: FC<Props> = () => {
                                         user={user}
                                         articleId={article.id}
                                         className={cls.articleButtonsWrapper}
+                                        deleteServerError={setDeleteServerErrorHandler}
+
                                     />
                                 </div>
                             ))}
                         </div>
                         <div className={cls.paginationButtonWrapper}>
-                            <Button disabled={page <= 1} onClick={setPrevPageHandler}><AiOutlineLeft /></Button>
-                            <Button disabled={!haveMore} onClick={setNextPageHandler}><AiOutlineRight /></Button>
+                            <Button disabled={page <= 1} onClick={setPrevPageHandler}><AiOutlineLeft/></Button>
+                            <Button disabled={!haveMore} onClick={setNextPageHandler}><AiOutlineRight/></Button>
                         </div>
 
                     </div>
@@ -111,6 +114,8 @@ const MyArticlesPage: FC<Props> = () => {
             )}
 
         </div>
+
+
     );
 };
 export default MyArticlesPage;
