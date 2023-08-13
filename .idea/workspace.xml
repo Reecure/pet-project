@@ -6,10 +6,31 @@
   <component name="ChangeListManager">
     <list default="true" id="054dcfbb-5232-4235-a308-8c1e1cec3020" name="Changes" comment="fix">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/ArticlesPage/model/services/getArticles.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ArticlesPage/model/services/getArticles.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/ArticlesPage/model/slice/articlesSlice.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ArticlesPage/model/slice/articlesSlice.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/ArticlesPage/ui/ArticlesComponents/ArticleMainContent/ArticleMainContent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ArticlesPage/ui/ArticlesComponents/ArticleMainContent/ArticleMainContent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/extractedTranslations/en/Contribute and Connect.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/extractedTranslations/en/Engaging Articles for Everyone.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/extractedTranslations/en/Explore Our Categories.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/extractedTranslations/en/Stay Connected.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/extractedTranslations/en/about.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/extractedTranslations/en/translation.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/json-server/db.json" beforeDir="false" afterPath="$PROJECT_DIR$/json-server/db.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/locales/en/pages/about.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/locales/en/pages/main.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/locales/en/translation.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/locales/en/translation.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/locales/ua/pages/about.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/locales/ua/pages/main.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/locales/ua/translation.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/locales/ua/translation.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/CRUDArticle/ui/ArticleForm/ArticleForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/CRUDArticle/ui/ArticleForm/ArticleForm.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/CRUDArticle/ui/ArticleForm/BlockButtons/BlockButtons.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/CRUDArticle/ui/ArticleForm/BlockButtons/BlockButtons.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/addComment/ui/AddComment.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/addComment/ui/AddComment.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/AboutPage/ui/AboutPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/AboutPage/ui/AboutPage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/AdminPage/ui/AdminPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/AdminPage/ui/AdminPage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/ArticlesPage/ui/ArticlesComponents/ArticleHeader/ArticleHeader.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ArticlesPage/ui/ArticlesComponents/ArticleHeader/ArticleHeader.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/EditArticlePage/ui/EditArticlePage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/EditArticlePage/ui/EditArticlePage.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/MainPage/ui/MainContent/MainContent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/MainPage/ui/MainContent/MainContent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/ProfilePage/ui/ProfileCard/ProfileCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ProfilePage/ui/ProfileCard/ProfileCard.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/lib/hooks/useMouseWheel/useMouseWheel.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/lib/hooks/useMouseWheel/useMouseWheel.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/widgets/PageError/ui/PageError.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/widgets/PageError/ui/PageError.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vite.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/vite.config.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,22 +112,22 @@
       <recent name="C:\Users\user\Desktop\pet\src\shared\lib\tests\ui" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.build:vite">
-    <configuration name="build:vite" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
-      <package-json value="$PROJECT_DIR$/package.json" />
-      <command value="run" />
-      <scripts>
-        <script value="build:vite" />
-      </scripts>
-      <node-interpreter value="project" />
-      <envs />
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="npm.lint:ts:fix">
     <configuration name="lint:ts:fix" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
       <scripts>
         <script value="lint:ts:fix" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="preview:vite" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="preview:vite" />
       </scripts>
       <node-interpreter value="project" />
       <envs />
@@ -144,11 +165,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="npm.start:dev:server" />
         <item itemvalue="npm.start:vite" />
+        <item itemvalue="npm.start:dev:server" />
+        <item itemvalue="npm.preview:vite" />
         <item itemvalue="npm.test" />
         <item itemvalue="npm.lint:ts:fix" />
-        <item itemvalue="npm.build:vite" />
       </list>
     </recent_temporary>
   </component>
@@ -198,7 +219,7 @@
       <workItem from="1691693457403" duration="5418000" />
       <workItem from="1691738846859" duration="21750000" />
       <workItem from="1691847136172" duration="18260000" />
-      <workItem from="1691906042776" duration="15202000" />
+      <workItem from="1691906042776" duration="23949000" />
     </task>
     <task id="LOCAL-00001" summary="some fix">
       <created>1689795990367</created>
@@ -515,7 +536,14 @@
       <option name="project" value="LOCAL" />
       <updated>1691919379741</updated>
     </task>
-    <option name="localTasksCounter" value="46" />
+    <task id="LOCAL-00046" summary="fix">
+      <created>1691921596319</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1691921596319</updated>
+    </task>
+    <option name="localTasksCounter" value="47" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

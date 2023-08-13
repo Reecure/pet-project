@@ -8,6 +8,7 @@ import {ArticleAllProps, ArticleLoading, getArticleById} from '@/enteties/Articl
 import {Loader} from '@/shared/ui/Loader';
 import {ArticleForSend} from '@/enteties/Article/model/types/article';
 import {ArticleForm, updateArticle} from '@/features/CRUDArticle';
+import {Notify} from '@/shared/ui/Notify';
 
 interface Props {
 }
@@ -45,15 +46,15 @@ const EditArticlePage: FC<Props> = () => {
         };
     }, [notifyOpen]);
 
-    const updateHandler = (values: ArticleForSend) => {
-        setNotifyOpen(true);
-        dispatch(updateArticle({id: article.article.id, article: values}))
+    const updateHandler = async (values: ArticleForSend) => {
+        await setNotifyOpen(true);
+        await dispatch(updateArticle({id: article.article.id, article: values}))
             .unwrap().then((res) => {
-            setNotifySuccess(true);
-            setServerError(false);
-        }).catch((error) => {
-            setServerError(true);
-        });
+                setNotifySuccess(true);
+                setServerError(false);
+            }).catch((error) => {
+                setServerError(true);
+            });
     };
 
     if (isLoading) {
@@ -66,15 +67,21 @@ const EditArticlePage: FC<Props> = () => {
     }
 
     return (
-        <div data-testid="editArticlePage" className={classNames(cls.EditArticlePage, {}, [])}>
-            <ArticleForm
-                submitError={serverError}
-                article={article.article}
-                loading={article.loading}
-                onSubmit={updateHandler}
-            />
+        <>
+            <div data-testid="editArticlePage" className={classNames(cls.EditArticlePage, {}, [])}>
+                <ArticleForm
+                    submitError={serverError}
+                    article={article.article}
+                    loading={article.loading}
+                    onSubmit={updateHandler}
+                />
 
-        </div>
+            </div>
+            <Notify open={notifyOpen} error={!notifySuccess}>
+                {notifySuccess ? t('Article update success') : t('Article update failed')}
+            </Notify>
+        </>
+
     );
 };
 export default EditArticlePage;

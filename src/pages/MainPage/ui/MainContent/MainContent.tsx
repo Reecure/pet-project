@@ -1,5 +1,5 @@
 import {useTranslation} from 'react-i18next';
-import {FC, useEffect, useRef} from 'react';
+import {FC, useEffect, useRef, WheelEvent} from 'react';
 import {classNames} from '@/shared/lib/classNames';
 import cls from './MainContent.module.scss';
 import {Text} from '@/shared/ui/Text';
@@ -26,7 +26,15 @@ const MainContent: FC<Props> = () => {
     const loading = useAppSelector(recommendationArticleLoadingsSelector);
     const isLogged = useAppSelector(userDataSelector)
 
-    const wrapperRef = useRef(null);
+    const divRef = useRef(null)
+
+    const handleMouseWheel = (e: WheelEvent<HTMLDivElement>) => {
+        const scrollSpeed = 5;
+
+        if (divRef.current) {
+            divRef.current.scrollLeft += e.deltaY * scrollSpeed;
+        }
+    }
 
 
     useEffect(() => {
@@ -37,10 +45,10 @@ const MainContent: FC<Props> = () => {
         <>
             {
                 isLogged ? <div className={classNames(cls.MainContent, {}, [])}>
-                    <Text text="New Articles" fontWeight={FontWeight.FONTBOLD} textSize={TextSizes.TEXT2XL}/>
+                    <Text text={t("New Articles")} fontWeight={FontWeight.FONTBOLD} textSize={TextSizes.TEXT2XL}/>
                     {
                         loading ? (
-                            <div className={cls.articlesWraper} ref={wrapperRef}>
+                            <div className={cls.articlesWraper} ref={divRef} onWheel={handleMouseWheel}>
                                 {
                                     Array(3).fill(null).map((item) => (
                                         <Skeleton height={200} width={300}/>
@@ -49,7 +57,7 @@ const MainContent: FC<Props> = () => {
                                 }
                             </div>
                         ) : (
-                            <div className={cls.articlesWraper} ref={wrapperRef}>
+                            <div className={cls.articlesWraper} ref={divRef} onWheel={handleMouseWheel}>
                                 {
                                     recommendations !== undefined ?
                                         recommendations.map((article, i) => {

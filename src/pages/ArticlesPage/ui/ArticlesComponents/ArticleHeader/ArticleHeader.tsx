@@ -1,11 +1,9 @@
-import { useTranslation } from 'react-i18next';
-import {
-    ChangeEvent, FC, useCallback, useEffect, useMemo,
-} from 'react';
-import { BsFillGrid3X3GapFill } from 'react-icons/bs';
-import { CiGrid2H } from 'react-icons/ci';
-import { classNames } from '@/shared/lib/classNames';
-import { useAppDispatch, useAppSelector } from '@/app/providers/ReduxProvider/config/hooks';
+import {useTranslation} from 'react-i18next';
+import {ChangeEvent, FC, useCallback, useEffect, useMemo,} from 'react';
+import {BsFillGrid3X3GapFill} from 'react-icons/bs';
+import {CiGrid2H} from 'react-icons/ci';
+import {classNames} from '@/shared/lib/classNames';
+import {useAppDispatch, useAppSelector} from '@/app/providers/ReduxProvider/config/hooks';
 import {
     OrderType,
     resetPage,
@@ -17,18 +15,18 @@ import {
     sortFields,
     viewTypes,
 } from '../../../model/slice/articlesSlice';
-import { ArticleTypes } from '@/enteties/Article/model/types/article';
-import { getAllArticles } from '../../../model/services/getArticles';
+import {ArticleTypes} from '@/enteties/Article/model/types/article';
+import {getAllArticles} from '../../../model/services/getArticles';
 import {
     articlePageSelector,
     articleQuerySelector,
     articlesLimitSelector,
     articleTypesSelector,
 } from '../../../model/selector/articlesSelector';
-import { Button, ThemeButton } from '@/shared/ui/Button';
-import { Input, ThemeInput } from '@/shared/ui/Input';
+import {Button, ThemeButton} from '@/shared/ui/Button';
+import {Input, ThemeInput} from '@/shared/ui/Input';
 import cls from './ArticleHeader.module.scss';
-import { useDebounce } from '@/shared/lib/hooks';
+import {useDebounce} from '@/shared/lib/hooks';
 
 interface Props {
 }
@@ -45,7 +43,7 @@ const options = [
 ];
 
 const ArticleHeader: FC<Props> = () => {
-    const { t } = useTranslation();
+    const {t} = useTranslation();
 
     const dispatch = useAppDispatch();
     const query = useAppSelector(articleQuerySelector);
@@ -91,20 +89,20 @@ const ArticleHeader: FC<Props> = () => {
     const setSortBy = useCallback(
         (e: ChangeEvent<HTMLSelectElement>) => {
             switch (e.currentTarget.value) {
-            case 'viewsAsc':
-                dispatch(setSortByOrder(OrderType.ASC));
-                dispatch(setSortByField(sortFields.VIEWS));
-                dispatch(resetPage());
-                dispatch(getAllArticles());
-                break;
-            case 'viewsDesc':
-                dispatch(setSortByOrder(OrderType.DESC));
-                dispatch(setSortByField(sortFields.VIEWS));
-                dispatch(resetPage());
-                dispatch(getAllArticles());
-                break;
-            default:
-                break;
+                case 'viewsAsc':
+                    dispatch(setSortByOrder(OrderType.ASC));
+                    dispatch(setSortByField(sortFields.VIEWS));
+                    dispatch(resetPage());
+                    dispatch(getAllArticles());
+                    break;
+                case 'viewsDesc':
+                    dispatch(setSortByOrder(OrderType.DESC));
+                    dispatch(setSortByField(sortFields.VIEWS));
+                    dispatch(resetPage());
+                    dispatch(getAllArticles());
+                    break;
+                default:
+                    break;
             }
         },
         [dispatch],
@@ -118,9 +116,9 @@ const ArticleHeader: FC<Props> = () => {
                 dispatch(resetPage());
                 dispatch(getAllArticles());
             }}
-            className={classNames(cls.type, { [cls.selected]: types.indexOf(type) !== -1 }, [])}
+            className={classNames(cls.type, {[cls.selected]: types.indexOf(type) !== -1}, [])}
         >
-            {type}
+            {t(type)}
         </p>
     )), [dispatch, types]);
 
@@ -137,10 +135,10 @@ const ArticleHeader: FC<Props> = () => {
                 </div>
                 <div>
                     <Button theme={ThemeButton.CLEAR} onClick={setBigArticles} className={cls.gridButton}>
-                        <CiGrid2H />
+                        <CiGrid2H/>
                     </Button>
                     <Button onClick={setSmallArticles} theme={ThemeButton.CLEAR} className={cls.gridButton}>
-                        <BsFillGrid3X3GapFill />
+                        <BsFillGrid3X3GapFill/>
                     </Button>
                 </div>
             </div>

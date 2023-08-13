@@ -1324,7 +1324,7 @@
   "articles": [
     {
       "userId": "1",
-      "createdAt": "12.08.23",
+      "createdAt": "13.08.23",
       "title": "Javascript news",
       "subtitle": "Что нового в JS за 2023 год?",
       "img": "https://teknotower.com/wp-content/uploads/2020/11/js.png",
@@ -1967,17 +1967,6 @@
       "blocks": [],
       "createdAt": "03.08.23",
       "userId": "1",
-      "id": "FNsxAna"
-    },
-    {
-      "title": "title 2",
-      "subtitle": "title 3",
-      "img": "https://kotlinlang.org/assets/images/twitter/general.png",
-      "views": 0,
-      "type": [],
-      "blocks": [],
-      "createdAt": "03.08.23",
-      "userId": "1",
       "id": "RT00itO"
     },
     {
@@ -1996,15 +1985,322 @@
       "id": "0uYLFpN"
     },
     {
+      "userId": "1",
+      "createdAt": "13.08.23",
       "title": "dsfkmdfskl",
       "subtitle": "dskdsfods",
       "img": "http://localhost.png",
       "views": 0,
       "type": [],
-      "blocks": [],
-      "createdAt": "11.08.23",
-      "userId": "1",
+      "blocks": [
+        {
+          "id": "aisWppc7fdCiqisd5uUZA",
+          "type": "TEXT",
+          "title": "",
+          "paragraphs": []
+        },
+        {
+          "id": "H5y1Iellng01laUgvwkXm",
+          "type": "CODE",
+          "code": "",
+          "lines": 12
+        },
+        {
+          "type": "IMAGE",
+          "id": "zb46dlzTyCds39FgwNEcY",
+          "src": "",
+          "title": ""
+        }
+      ],
       "id": "YvTbnXC"
+    },
+    {
+      "title": "dsafadsf",
+      "subtitle": "asdfdasf",
+      "img": "https://kotlinlang.org/assets/images/twitter/general.png",
+      "views": 0,
+      "type": [
+        "Economics",
+        "Physics",
+        "Languages",
+        "Web Development"
+      ],
+      "blocks": [],
+      "createdAt": "13.08.23",
+      "userId": "1",
+      "id": "VW_dkqs"
+    },
+    {
+      "title": "dsafadsf",
+      "subtitle": "asdfdasf",
+      "img": "https://kotlinlang.org/assets/images/twitter/general.png",
+      "views": 0,
+      "type": [
+        "Economics",
+        "Physics",
+        "Languages",
+        "Web Development"
+      ],
+      "blocks": [],
+      "createdAt": "13.08.23",
+      "userId": "1",
+      "id": "Pr_t8GK"
+    },
+    {
+      "title": "dsafadsf",
+      "subtitle": "asdfdasf",
+      "img": "https://kotlinlang.org/assets/images/twitter/general.png",
+      "views": 0,
+      "type": [
+        "Economics",
+        "Physics",
+        "Languages",
+        "Web Development"
+      ],
+      "blocks": [],
+      "createdAt": "13.08.23",
+      "userId": "1",
+      "id": "vza69Xc"
+    },
+    {
+      "title": "dsafadsf",
+      "subtitle": "asdfdasf",
+      "img": "https://kotlinlang.org/assets/images/twitter/general.png",
+      "views": 0,
+      "type": [
+        "Economics",
+        "Physics",
+        "Languages",
+        "Web Development"
+      ],
+      "blocks": [],
+      "createdAt": "13.08.23",
+      "userId": "1",
+      "id": "Fsu8Ylj"
+    },
+    {
+      "title": "dsafadsf",
+      "subtitle": "asdfdasf",
+      "img": "https://kotlinlang.org/assets/images/twitter/general.png",
+      "views": 0,
+      "type": [
+        "Economics",
+        "Physics",
+        "Languages",
+        "Web Development"
+      ],
+      "blocks": [],
+      "createdAt": "13.08.23",
+      "userId": "1",
+      "id": "mjg1tZh"
+    },
+    {
+      "title": "dsafadsf",
+      "subtitle": "asdfdasf",
+      "img": "https://kotlinlang.org/assets/images/twitter/general.png",
+      "views": 0,
+      "type": [
+        "Economics",
+        "Physics",
+        "Languages",
+        "Web Development"
+      ],
+      "blocks": [],
+      "createdAt": "13.08.23",
+      "userId": "1",
+      "id": "MiEb4o5"
+    },
+    {
+      "title": "dsafadsf",
+      "subtitle": "asdfdasf",
+      "img": "https://kotlinlang.org/assets/images/twitter/general.png",
+      "views": 0,
+      "type": [
+        "Economics",
+        "Physics",
+        "Languages",
+        "Web Development"
+      ],
+      "blocks": [],
+      "createdAt": "13.08.23",
+      "userId": "1",
+      "id": "_kkVf64"
+    },
+    {
+      "title": "dsafadsf",
+      "subtitle": "asdfdasf",
+      "img": "https://kotlinlang.org/assets/images/twitter/general.png",
+      "views": 0,
+      "type": [
+        "Economics",
+        "Physics",
+        "Languages",
+        "Web Development"
+      ],
+      "blocks": [],
+      "createdAt": "13.08.23",
+      "userId": "1",
+      "id": "oB4e9aN"
+    },
+    {
+      "title": "dsafadsf",
+      "subtitle": "asdfdasf",
+      "img": "https://kotlinlang.org/assets/images/twitter/general.png",
+      "views": 0,
+      "type": [
+        "Economics",
+        "Physics",
+        "Languages",
+        "Web Development"
+      ],
+      "blocks": [],
+      "createdAt": "13.08.23",
+      "userId": "1",
+      "id": "O3ZaEKa"
+    },
+    {
+      "title": "dsafadsf",
+      "subtitle": "asdfdasf",
+      "img": "https://kotlinlang.org/assets/images/twitter/general.png",
+      "views": 0,
+      "type": [
+        "Economics",
+        "Physics",
+        "Languages",
+        "Web Development"
+      ],
+      "blocks": [],
+      "createdAt": "13.08.23",
+      "userId": "1",
+      "id": "dXLN1qE"
+    },
+    {
+      "title": "dsafadsf",
+      "subtitle": "asdfdasf",
+      "img": "https://kotlinlang.org/assets/images/twitter/general.png",
+      "views": 0,
+      "type": [
+        "Economics",
+        "Physics",
+        "Languages",
+        "Web Development"
+      ],
+      "blocks": [],
+      "createdAt": "13.08.23",
+      "userId": "1",
+      "id": "bW5sVgU"
+    },
+    {
+      "title": "dsafadsf",
+      "subtitle": "asdfdasf",
+      "img": "https://kotlinlang.org/assets/images/twitter/general.png",
+      "views": 0,
+      "type": [
+        "Economics",
+        "Physics",
+        "Languages",
+        "Web Development"
+      ],
+      "blocks": [],
+      "createdAt": "13.08.23",
+      "userId": "1",
+      "id": "mj_VCW_"
+    },
+    {
+      "title": "dsafadsf",
+      "subtitle": "asdfdasf",
+      "img": "https://kotlinlang.org/assets/images/twitter/general.png",
+      "views": 0,
+      "type": [
+        "Economics",
+        "Physics",
+        "Languages",
+        "Web Development"
+      ],
+      "blocks": [],
+      "createdAt": "13.08.23",
+      "userId": "1",
+      "id": "KhtfsjC"
+    },
+    {
+      "title": "dsafadsf",
+      "subtitle": "asdfdasf",
+      "img": "https://kotlinlang.org/assets/images/twitter/general.png",
+      "views": 0,
+      "type": [
+        "Economics",
+        "Physics",
+        "Languages",
+        "Web Development"
+      ],
+      "blocks": [],
+      "createdAt": "13.08.23",
+      "userId": "1",
+      "id": "nDpsbPL"
+    },
+    {
+      "title": "dsafadsf",
+      "subtitle": "asdfdasf",
+      "img": "https://kotlinlang.org/assets/images/twitter/general.png",
+      "views": 0,
+      "type": [
+        "Economics",
+        "Physics",
+        "Languages",
+        "Web Development"
+      ],
+      "blocks": [],
+      "createdAt": "13.08.23",
+      "userId": "1",
+      "id": "UfrWGkc"
+    },
+    {
+      "title": "dsafadsf",
+      "subtitle": "asdfdasf",
+      "img": "https://kotlinlang.org/assets/images/twitter/general.png",
+      "views": 0,
+      "type": [
+        "Economics",
+        "Physics",
+        "Languages",
+        "Web Development"
+      ],
+      "blocks": [],
+      "createdAt": "13.08.23",
+      "userId": "1",
+      "id": "aJoQ31D"
+    },
+    {
+      "title": "dsafadsf",
+      "subtitle": "asdfdasf",
+      "img": "https://kotlinlang.org/assets/images/twitter/general.png",
+      "views": 0,
+      "type": [
+        "Economics",
+        "Physics",
+        "Languages",
+        "Web Development"
+      ],
+      "blocks": [],
+      "createdAt": "13.08.23",
+      "userId": "1",
+      "id": "5fqFJwr"
+    },
+    {
+      "title": "dsafadsf",
+      "subtitle": "asdfdasf",
+      "img": "https://kotlinlang.org/assets/images/twitter/general.png",
+      "views": 0,
+      "type": [
+        "Economics",
+        "Physics",
+        "Languages",
+        "Web Development"
+      ],
+      "blocks": [],
+      "createdAt": "13.08.23",
+      "userId": "1",
+      "id": "HPfsEHA"
     }
   ],
   "comments": [
@@ -2070,12 +2366,12 @@
     {
       "id": "1",
       "username": "admin",
-      "first": "Anton",
-      "lastname": "Antonenko",
-      "age": 20,
-      "currency": "USD",
-      "country": "United States",
-      "city": "New York",
+      "first": "Yurasa",
+      "lastname": "Ansdf",
+      "age": 22,
+      "currency": "PLN",
+      "country": "Poland",
+      "city": "New Yorks",
       "avatar": "https://e0.pxfuel.com/wallpapers/668/829/desktop-wallpaper-killua-zoldyck-killuazoldyck-hunterxhunter-killuazoldyck-hunterxhunterkillua-killua.jpg"
     },
     {

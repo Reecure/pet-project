@@ -30,7 +30,7 @@ const AddComment: FC<Props> = () => {
 
     return (
         <div className={classNames(cls.AddComment, {}, [])}>
-            {serverError && <Text haveError={serverError} text={'server error'}/>}
+            {serverError && <Text haveError={serverError} text={t('Server error')}/>}
             <div className={cls.contentWrapper}>
                 <Avatar
                     src={currentUser.avatar}

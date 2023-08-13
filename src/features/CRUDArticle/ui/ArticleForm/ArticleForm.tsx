@@ -1,18 +1,14 @@
-import { useTranslation } from 'react-i18next';
-import { FC } from 'react';
-import {
-    ErrorMessage, Field, FieldArray, Form, Formik,
-} from 'formik';
-import { nanoid } from '@reduxjs/toolkit';
+import {useTranslation} from 'react-i18next';
+import {FC} from 'react';
+import {ErrorMessage, Field, FieldArray, Form, Formik,} from 'formik';
+import {nanoid} from '@reduxjs/toolkit';
 import * as Yup from 'yup';
 import cls from './ArticleForm.module.scss';
-import { Text } from '@/shared/ui/Text';
-import {
-    ArticleBlocks, ArticleForSend, ArticleTypes, BlockTypes,
-} from '@/enteties/Article/model/types/article';
-import { Button, ThemeButton } from '@/shared/ui/Button';
+import {Text} from '@/shared/ui/Text';
+import {ArticleBlocks, ArticleForSend, ArticleTypes, BlockTypes,} from '@/enteties/Article/model/types/article';
+import {Button, ThemeButton} from '@/shared/ui/Button';
 import BlockButtons from './BlockButtons/BlockButtons';
-import { FontWeight, TextSizes } from '@/shared/ui/Text/model/types';
+import {FontWeight, TextSizes} from '@/shared/ui/Text/model/types';
 
 interface Props {
     article?: ArticleForSend
@@ -22,9 +18,9 @@ interface Props {
 }
 
 const ArticleForm: FC<Props> = ({
-    article, loading, onSubmit, submitError,
-}) => {
-    const { t } = useTranslation();
+                                    article, loading, onSubmit, submitError,
+                                }) => {
+    const {t} = useTranslation();
 
     const initialValues: ArticleForSend = {
         title: article?.title || '',
@@ -75,7 +71,7 @@ const ArticleForm: FC<Props> = ({
                 }}
             >
                 {
-                    ({ values, errors }) => (
+                    ({values, errors}) => (
                         <Form>
 
                             <div className={cls.headerFields}>
@@ -85,8 +81,8 @@ const ArticleForm: FC<Props> = ({
                                         fontWeight={FontWeight.FONTBOLD}
                                         textSize={TextSizes.TEXT2XL}
                                     />
-                                    <Field type="text" id="title" name="title" className={cls.field} />
-                                    <ErrorMessage name="title" component="div" className={cls.error} />
+                                    <Field type="text" id="title" name="title" className={cls.field}/>
+                                    <ErrorMessage name="title" component="div" className={cls.error}/>
                                 </label>
 
                                 <label htmlFor="subtitle">
@@ -95,8 +91,8 @@ const ArticleForm: FC<Props> = ({
                                         fontWeight={FontWeight.FONTBOLD}
                                         textSize={TextSizes.TEXT2XL}
                                     />
-                                    <Field type="text" id="subtitle" name="subtitle" className={cls.field} />
-                                    <ErrorMessage name="subtitle" component="div" className={cls.error} />
+                                    <Field type="text" id="subtitle" name="subtitle" className={cls.field}/>
+                                    <ErrorMessage name="subtitle" component="div" className={cls.error}/>
                                 </label>
 
                                 <label htmlFor="img">
@@ -105,8 +101,8 @@ const ArticleForm: FC<Props> = ({
                                         fontWeight={FontWeight.FONTBOLD}
                                         textSize={TextSizes.TEXT2XL}
                                     />
-                                    <Field type="text" id="img" name="img" className={cls.field} />
-                                    <ErrorMessage name="img" component="div" className={cls.error} />
+                                    <Field type="text" id="img" name="img" className={cls.field}/>
+                                    <ErrorMessage name="img" component="div" className={cls.error}/>
                                 </label>
                             </div>
 
@@ -118,7 +114,7 @@ const ArticleForm: FC<Props> = ({
                                 />
                                 <div>
                                     <FieldArray name="type">
-                                        {({ push, remove }) => (
+                                        {({push, remove}) => (
                                             <div className={cls.types}>
                                                 {Object.values(ArticleTypes).map((type) => (
                                                     <div key={type} className="">
@@ -129,7 +125,7 @@ const ArticleForm: FC<Props> = ({
                                                                 value={type}
                                                                 className={cls.hiddenCheckbox}
                                                             />
-                                                            <div className={cls.checkboxBlock}>{type}</div>
+                                                            <div className={cls.checkboxBlock}>{t(type)}</div>
                                                         </label>
                                                     </div>
                                                 ))}
@@ -146,7 +142,7 @@ const ArticleForm: FC<Props> = ({
                                 className={cls.blocks}
                             />
                             <FieldArray name="blocks">
-                                {({ push, remove }) => (
+                                {({push, remove}) => (
                                     <div>
                                         {values.blocks.map((block: ArticleBlocks, index: number) => (
                                             <div key={index} className={cls.blockWrapper}>
@@ -173,9 +169,9 @@ const ArticleForm: FC<Props> = ({
                                                             className={cls.error}
                                                         />
 
-                                                        <Text text={t('Paragraphs')} />
+                                                        <Text text={t('Paragraphs')}/>
                                                         <FieldArray name={`blocks.${index}.paragraphs`}>
-                                                            {({ push: pushParagraph, remove: removeParagraph }) => (
+                                                            {({push: pushParagraph, remove: removeParagraph}) => (
                                                                 <div>
                                                                     {block.paragraphs.map((paragraph, paraIndex) => (
                                                                         <div
@@ -247,7 +243,7 @@ const ArticleForm: FC<Props> = ({
                                                             fontWeight={FontWeight.FONTBOLD}
                                                             textSize={TextSizes.TEXTXL}
                                                         />
-                                                        <Text text={t('Image URL')} />
+                                                        <Text text={t('Image URL')}/>
                                                         <Field
                                                             type="text"
                                                             name={`blocks.${index}.src`}
@@ -260,7 +256,7 @@ const ArticleForm: FC<Props> = ({
                                                             className={cls.error}
                                                         />
 
-                                                        <Text text={t('Image Title')} />
+                                                        <Text text={t('Image Title')}/>
                                                         <Field
                                                             type="text"
                                                             name={`blocks.${index}.title`}
@@ -284,7 +280,7 @@ const ArticleForm: FC<Props> = ({
                                                 </Button>
                                             </div>
                                         ))}
-                                        <BlockButtons push={push} />
+                                        <BlockButtons push={push}/>
                                     </div>
                                 )}
                             </FieldArray>

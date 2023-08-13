@@ -1,28 +1,24 @@
-import React, { FC } from 'react';
-import { useTranslation } from 'react-i18next';
-import {
-    ErrorMessage, Field, Form, Formik,
-} from 'formik';
+import React, {FC} from 'react';
+import {useTranslation} from 'react-i18next';
+import {ErrorMessage, Field, Form, Formik,} from 'formik';
 import * as Yup from 'yup';
-import { useAppDispatch, useAppSelector } from '@/app/providers/ReduxProvider/config/hooks';
-import {
-    profileFormSelector, profileReadOnlySelector, setEditable, updateUserProfile,
-} from '@/enteties/Profile';
-import { Avatar } from '@/shared/ui/Avatar';
-import { User } from '@/enteties/User/model/types';
+import {useAppDispatch, useAppSelector} from '@/app/providers/ReduxProvider/config/hooks';
+import {profileFormSelector, profileReadOnlySelector, setEditable, updateUserProfile,} from '@/enteties/Profile';
+import {Avatar} from '@/shared/ui/Avatar';
+import {User} from '@/enteties/User/model/types';
 import cls from './ProfileCard.module.scss';
-import { userDataSelector } from '@/enteties/User';
-import { Button, ThemeButton } from '@/shared/ui/Button';
-import { COUNTRIES } from '@/enteties/Country/model/types/countries';
-import { CURRENCIES } from '@/enteties/Currency/model/types/currencies';
+import {userDataSelector} from '@/enteties/User';
+import {Button, ThemeButton} from '@/shared/ui/Button';
+import {COUNTRIES} from '@/enteties/Country/model/types/countries';
+import {CURRENCIES} from '@/enteties/Currency/model/types/currencies';
 
 type Props = {
     userInfo: User;
     setUpdateServerError: (val: boolean) => void
 };
 
-const ProfileCard: FC<Props> = ({ userInfo, setUpdateServerError }) => {
-    const { t } = useTranslation();
+const ProfileCard: FC<Props> = ({userInfo, setUpdateServerError}) => {
+    const {t} = useTranslation();
     const isReadOnly = useAppSelector(profileReadOnlySelector);
 
     const currentUser = useAppSelector(userDataSelector);
@@ -43,10 +39,8 @@ const ProfileCard: FC<Props> = ({ userInfo, setUpdateServerError }) => {
     const submitHandler = (values: User) => {
         dispatch(updateUserProfile(values)).unwrap().then((res) => {
             setUpdateServerError(false);
-            console.log('not error');
         }).catch((error) => {
             setUpdateServerError(true);
-            console.log('error');
         });
         dispatch(setEditable());
     };
@@ -71,11 +65,10 @@ const ProfileCard: FC<Props> = ({ userInfo, setUpdateServerError }) => {
                     }
                 }
                 onSubmit={async (values: User, formikHelpers) => {
-                    alert(JSON.stringify(values, null, 2));
                     await submitHandler(values);
                 }}
             >
-                {({ errors, values, resetForm }) => (
+                {({errors, values, resetForm}) => (
                     <Form>
                         <div className={cls.actionButtons}>
                             {isReadOnly ? (
@@ -109,7 +102,7 @@ const ProfileCard: FC<Props> = ({ userInfo, setUpdateServerError }) => {
                         </div>
 
                         <div className={cls.avatar}>
-                            <Avatar src={userInfo?.avatar} />
+                            <Avatar src={userInfo?.avatar}/>
                         </div>
                         <label htmlFor="first" className={cls.fieldWrapper}>
                             <span>
@@ -122,7 +115,7 @@ const ProfileCard: FC<Props> = ({ userInfo, setUpdateServerError }) => {
                                 value={values.first}
                                 className={cls.field}
                             />
-                            <ErrorMessage name="first" component="div" className={cls.error} />
+                            <ErrorMessage name="first" component="div" className={cls.error}/>
                         </label>
                         <label htmlFor="lastname" className={cls.fieldWrapper}>
                             <span>
@@ -135,7 +128,7 @@ const ProfileCard: FC<Props> = ({ userInfo, setUpdateServerError }) => {
                                 value={values.lastname}
                                 className={cls.field}
                             />
-                            <ErrorMessage name="lastname" component="div" className={cls.error} />
+                            <ErrorMessage name="lastname" component="div" className={cls.error}/>
                         </label>
                         <label htmlFor="age" className={cls.fieldWrapper}>
                             <span>
@@ -149,7 +142,7 @@ const ProfileCard: FC<Props> = ({ userInfo, setUpdateServerError }) => {
                                 value={values.age}
                                 className={cls.field}
                             />
-                            <ErrorMessage name="age" component="div" className={cls.error} />
+                            <ErrorMessage name="age" component="div" className={cls.error}/>
                         </label>
                         <label htmlFor="city" className={cls.fieldWrapper}>
                             <span>
@@ -163,7 +156,7 @@ const ProfileCard: FC<Props> = ({ userInfo, setUpdateServerError }) => {
                                 value={values.city}
                                 className={cls.field}
                             />
-                            <ErrorMessage name="city" component="div" className={cls.error} />
+                            <ErrorMessage name="city" component="div" className={cls.error}/>
                         </label>
 
                         {
@@ -180,7 +173,7 @@ const ProfileCard: FC<Props> = ({ userInfo, setUpdateServerError }) => {
                                         value={values.avatar}
                                         className={cls.field}
                                     />
-                                    <ErrorMessage name="avatar" component="div" className={cls.error} />
+                                    <ErrorMessage name="avatar" component="div" className={cls.error}/>
                                 </label>
                             )
                         }
@@ -194,7 +187,7 @@ const ProfileCard: FC<Props> = ({ userInfo, setUpdateServerError }) => {
                                 disabled={isReadOnly}
 
                             >
-                                <option value="" label={values.country} />
+                                <option value="" label={values.country}/>
                                 {Object.values(COUNTRIES).map((item) => (
                                     item !== values.country
                                     && (
@@ -204,7 +197,7 @@ const ProfileCard: FC<Props> = ({ userInfo, setUpdateServerError }) => {
                                     )
                                 ))}
                             </Field>
-                            <ErrorMessage name="currentCountry" component="div" className={cls.error} />
+                            <ErrorMessage name="currentCountry" component="div" className={cls.error}/>
                         </div>
                         <div className={cls.selectorWrapper}>
                             {t('Currency')}
@@ -216,7 +209,7 @@ const ProfileCard: FC<Props> = ({ userInfo, setUpdateServerError }) => {
                                 disabled={isReadOnly}
 
                             >
-                                <option value="" label={values.currency} />
+                                <option value="" label={values.currency}/>
                                 {Object.values(CURRENCIES).map((item) => (
                                     item !== values.currency
                                     && (
@@ -232,7 +225,7 @@ const ProfileCard: FC<Props> = ({ userInfo, setUpdateServerError }) => {
                 )}
 
             </Formik>
-            <div />
+            <div/>
         </div>
     );
 };
