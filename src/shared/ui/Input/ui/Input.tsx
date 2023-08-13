@@ -22,7 +22,6 @@ const Input: FC<InputProps> = ({
     <input
         data-testid="input"
         {...otherProps}
-
         className={classNames(cls.Input, {}, [className, cls[theme]])}
     />
 

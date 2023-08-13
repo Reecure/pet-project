@@ -1,16 +1,16 @@
-import React, {FC} from 'react';
-import {nanoid} from '@reduxjs/toolkit';
-import {Button, ThemeButton} from '@/shared/ui/Button';
-import {BlockTypes} from '@/enteties/Article/model/types/article';
+import React, { FC } from 'react';
+import { nanoid } from '@reduxjs/toolkit';
+import { useTranslation } from 'react-i18next';
+import { Button, ThemeButton } from '@/shared/ui/Button';
+import { BlockTypes } from '@/enteties/Article/model/types/article';
 import cls from './BlockButtons.module.scss';
-import {useTranslation} from "react-i18next";
 
 interface Props {
     push: (value: any) => void;
 }
 
-const BlockButtons: FC<Props> = ({push}) => {
-    const {t} = useTranslation();
+const BlockButtons: FC<Props> = ({ push }) => {
+    const { t } = useTranslation();
     return (
         <div className={cls.buttonsWrapper}>
             <Button
@@ -23,7 +23,7 @@ const BlockButtons: FC<Props> = ({push}) => {
                     paragraphs: [],
                 })}
             >
-                {t("Add Text Block")}
+                {t('Add Text Block')}
             </Button>
             <Button
                 theme={ThemeButton.OUTLINE}
@@ -50,7 +50,7 @@ const BlockButtons: FC<Props> = ({push}) => {
                 {t('Add Image Block')}
             </Button>
         </div>
-    )
-}
+    );
+};
 
 export default BlockButtons;

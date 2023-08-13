@@ -1,9 +1,11 @@
-import {useTranslation} from 'react-i18next';
-import {ChangeEvent, FC, useCallback, useEffect, useMemo,} from 'react';
-import {BsFillGrid3X3GapFill} from 'react-icons/bs';
-import {CiGrid2H} from 'react-icons/ci';
-import {classNames} from '@/shared/lib/classNames';
-import {useAppDispatch, useAppSelector} from '@/app/providers/ReduxProvider/config/hooks';
+import { useTranslation } from 'react-i18next';
+import {
+    ChangeEvent, FC, useCallback, useEffect, useMemo,
+} from 'react';
+import { BsFillGrid3X3GapFill } from 'react-icons/bs';
+import { CiGrid2H } from 'react-icons/ci';
+import { classNames } from '@/shared/lib/classNames';
+import { useAppDispatch, useAppSelector } from '@/app/providers/ReduxProvider/config/hooks';
 import {
     OrderType,
     resetPage,
@@ -15,18 +17,18 @@ import {
     sortFields,
     viewTypes,
 } from '../../../model/slice/articlesSlice';
-import {ArticleTypes} from '@/enteties/Article/model/types/article';
-import {getAllArticles} from '../../../model/services/getArticles';
+import { ArticleTypes } from '@/enteties/Article/model/types/article';
+import { getAllArticles } from '../../../model/services/getArticles';
 import {
     articlePageSelector,
     articleQuerySelector,
     articlesLimitSelector,
     articleTypesSelector,
 } from '../../../model/selector/articlesSelector';
-import {Button, ThemeButton} from '@/shared/ui/Button';
-import {Input, ThemeInput} from '@/shared/ui/Input';
+import { Button, ThemeButton } from '@/shared/ui/Button';
+import { Input, ThemeInput } from '@/shared/ui/Input';
 import cls from './ArticleHeader.module.scss';
-import {useDebounce} from '@/shared/lib/hooks';
+import { useDebounce } from '@/shared/lib/hooks';
 
 interface Props {
 }
@@ -43,7 +45,7 @@ const options = [
 ];
 
 const ArticleHeader: FC<Props> = () => {
-    const {t} = useTranslation();
+    const { t } = useTranslation();
 
     const dispatch = useAppDispatch();
     const query = useAppSelector(articleQuerySelector);
@@ -53,29 +55,29 @@ const ArticleHeader: FC<Props> = () => {
 
     const debouncedQuery = useDebounce(query, 500);
 
+    useEffect(() => {
+        dispatch(getAllArticles());
+    }, [debouncedQuery, dispatch]);
+
     const setBigArticles = useCallback(
         () => {
             dispatch(setViewType(viewTypes.BIG));
             dispatch(resetPage());
             dispatch(getAllArticles());
         },
-        [dispatch, limit],
+        [dispatch],
     );
 
     const searchHandler = useCallback(
         (e: ChangeEvent<HTMLInputElement>) => {
-            if (page != 1) {
+            if (page !== 1) {
                 dispatch(resetPage());
                 dispatch(getAllArticles());
             }
             dispatch(setQueryString(e.currentTarget.value));
         },
-        [dispatch],
+        [dispatch, page],
     );
-
-    useEffect(() => {
-        dispatch(getAllArticles());
-    }, [debouncedQuery, dispatch]);
 
     const setSmallArticles = useCallback(
         () => {
@@ -83,26 +85,26 @@ const ArticleHeader: FC<Props> = () => {
             dispatch(resetPage());
             dispatch(getAllArticles());
         },
-        [dispatch, limit],
+        [dispatch],
     );
 
     const setSortBy = useCallback(
         (e: ChangeEvent<HTMLSelectElement>) => {
             switch (e.currentTarget.value) {
-                case 'viewsAsc':
-                    dispatch(setSortByOrder(OrderType.ASC));
-                    dispatch(setSortByField(sortFields.VIEWS));
-                    dispatch(resetPage());
-                    dispatch(getAllArticles());
-                    break;
-                case 'viewsDesc':
-                    dispatch(setSortByOrder(OrderType.DESC));
-                    dispatch(setSortByField(sortFields.VIEWS));
-                    dispatch(resetPage());
-                    dispatch(getAllArticles());
-                    break;
-                default:
-                    break;
+            case 'viewsAsc':
+                dispatch(setSortByOrder(OrderType.ASC));
+                dispatch(setSortByField(sortFields.VIEWS));
+                dispatch(resetPage());
+                dispatch(getAllArticles());
+                break;
+            case 'viewsDesc':
+                dispatch(setSortByOrder(OrderType.DESC));
+                dispatch(setSortByField(sortFields.VIEWS));
+                dispatch(resetPage());
+                dispatch(getAllArticles());
+                break;
+            default:
+                break;
             }
         },
         [dispatch],
@@ -116,14 +118,14 @@ const ArticleHeader: FC<Props> = () => {
                 dispatch(resetPage());
                 dispatch(getAllArticles());
             }}
-            className={classNames(cls.type, {[cls.selected]: types.indexOf(type) !== -1}, [])}
+            className={classNames(cls.type, { [cls.selected]: types.indexOf(type) !== -1 }, [])}
         >
-            {t(type)}
+            {type}
         </p>
     )), [dispatch, types]);
 
     return (
-        <div className={classNames(cls.ArticleHeader, {}, [])}>
+        <section className={classNames(cls.ArticleHeader, {}, [])}>
             <div className={cls.sortingWrapper}>
                 <div className={cls.selectWrapper}>
                     <select defaultValue="Sort by" onChange={setSortBy} name={t('Sort by')}>
@@ -135,10 +137,10 @@ const ArticleHeader: FC<Props> = () => {
                 </div>
                 <div>
                     <Button theme={ThemeButton.CLEAR} onClick={setBigArticles} className={cls.gridButton}>
-                        <CiGrid2H/>
+                        <CiGrid2H />
                     </Button>
                     <Button onClick={setSmallArticles} theme={ThemeButton.CLEAR} className={cls.gridButton}>
-                        <BsFillGrid3X3GapFill/>
+                        <BsFillGrid3X3GapFill />
                     </Button>
                 </div>
             </div>
@@ -156,7 +158,7 @@ const ArticleHeader: FC<Props> = () => {
                     memoTypes
                 }
             </div>
-        </div>
+        </section>
     );
 };
 

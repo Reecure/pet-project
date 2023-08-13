@@ -46,12 +46,12 @@ const ProfilePage = (props: Props) => {
     }
 
     return (
-        <div data-testid="profilePage" className={cls.ProfilePageWrapper}>
+        <section data-testid="profilePage" className={cls.ProfilePageWrapper}>
             <div className={cls.ProfilePageContent}>
-                {updateServerError && <p className="error">Profile doesnt update some server error</p>}
+                {updateServerError && <p className="error">{t('Profile doesnt update some server error')}</p>}
                 <ProfileCard userInfo={profileData} setUpdateServerError={setUpdateServerError} />
             </div>
-        </div>
+        </section>
     );
 };
 

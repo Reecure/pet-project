@@ -90,20 +90,7 @@
   "Add Image Block": "Додати блок із зображенням",
   "Add Text Block": "Додати текстовий блок",
   "Add Code Block": "Додати блок з кодом",
-  "IT": "IT",
-  "Science": "Наука",
-  "Education": "Освіта",
-  "Economics": "Економіка",
-  "Physics": "Фізика",
-  "Mathematics": "Математика",
-  "Psychology": "Психологія",
-  "Languages": "Мови",
-  "Programming": "Програмування",
-  "WebDevelopment": "Розробка вебу",
-  "MobileDevelopment": "Розробка мобільних додатків",
-  "DataScience": "Наука про дані",
-  "MachineLearning": "Машинне навчання",
-  "Blockchain": "Блокчейн"
+  "Server Error": "Помилка на сервері"
 }
 
 

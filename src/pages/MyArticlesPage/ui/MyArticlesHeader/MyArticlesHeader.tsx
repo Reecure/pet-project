@@ -28,10 +28,10 @@ const MyArticlesHeader: FC<Props> = ({ user }) => {
 
     useEffect(() => {
         dispatch(getAllMyArticles(user.id));
-    }, [dispatch, debouncedQuery]);
+    }, [dispatch, debouncedQuery, user.id]);
 
     return (
-        <div className={classNames(cls.MyArticlesHeader, {}, [])} />
+        <section className={classNames(cls.MyArticlesHeader, {}, [])} />
     );
 };
 export default MyArticlesHeader;

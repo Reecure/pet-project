@@ -7,10 +7,15 @@ import {
 } from '@/shared/config/routeConfig/routeConfig';
 
 export const enum Links {
+    // eslint-disable-next-line no-unused-vars
     Main = 'Main',
+    // eslint-disable-next-line no-unused-vars
     About = 'About',
+    // eslint-disable-next-line no-unused-vars
     Articles = 'Articles',
+    // eslint-disable-next-line no-unused-vars
     CreateArticle = 'Create article',
+    // eslint-disable-next-line no-unused-vars
     MyArticles = 'My articles'
 }
 

@@ -21,6 +21,7 @@ export const fetchData = async (url: string, options: FetchDataOptions = {}): Pr
 
         const response = await axios({
             method,
+            // eslint-disable-next-line no-undef
             url: `${__API__}/${url}`,
             headers,
             data: method !== 'GET' ? data : undefined,

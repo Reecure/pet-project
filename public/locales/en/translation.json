@@ -90,18 +90,6 @@
   "Add Image Block": "Add Image Block",
   "Add Text Block": "Add Text Block",
   "Add Code Block": "Add Code Block",
-  "IT": "IT",
-  "Science": "Science",
-  "Education": "Education",
-  "Economics": "Economics",
-  "Physics": "Physics",
-  "Mathematics": "Mathematics",
-  "Psychology": "Psychology",
-  "Languages": "Languages",
-  "Programming": "Programming",
-  "WebDevelopment": "Web Development",
-  "MobileDevelopment": "Mobile Development",
-  "DataScience": "Data Science",
-  "MachineLearning": "Machine Learning",
-  "Blockchain": "Blockchain"
+  "Server Error": "Server Error",
+  "Profile doesnt update some server error": "Profile doesnt update some server error"
 }

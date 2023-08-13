@@ -14,19 +14,22 @@ interface LoginByCredentials {
     password: string;
 }
 
-export const getUserByCredentials = createAsyncThunk<User, LoginByCredentials, ThunkConfig>('login/getUserByCredentials', async (authData, thunkApi) => {
-    const { dispatch } = thunkApi;
+export const getUserByCredentials = createAsyncThunk<User, LoginByCredentials, ThunkConfig>(
+    'login/getUserByCredentials',
+    async (authData, thunkApi) => {
+        const { dispatch } = thunkApi;
 
-    try {
-        const res = await fetchData('login', { method: 'POST', data: authData });
+        try {
+            const res = await fetchData('login', { method: 'POST', data: authData });
 
-        if (!res) {
-            throw new Error();
+            if (!res) {
+                throw new Error();
+            }
+            localStorage.setItem(USER_LOCALSTORAGE_KEY, JSON.stringify(res));
+            dispatch(setAuthData(res));
+            return res;
+        } catch (error) {
+            console.log(error);
         }
-        localStorage.setItem(USER_LOCALSTORAGE_KEY, JSON.stringify(res));
-        dispatch(setAuthData(res));
-        return res;
-    } catch (error) {
-        console.log(error);
-    }
-});
+    },
+);

@@ -32,7 +32,7 @@ const ArticleCodeComponent: FC<Props> = ({ block }) => {
     }, [coppied]);
 
     return (
-        <div className={classNames(cls.ArticleCodeComponent, {}, [])}>
+        <article className={classNames(cls.ArticleCodeComponent, {}, [])}>
             <div className={cls.copyButtonWrapper}>
                 <Button className={cls.codeCopyButton} theme={ThemeButton.OUTLINE} onClick={codeCopyHandler}>
                     {t('Copy')}
@@ -46,7 +46,7 @@ const ArticleCodeComponent: FC<Props> = ({ block }) => {
                 {t('Coppied')}
                 !
             </Notify>
-        </div>
+        </article>
     );
 };
 

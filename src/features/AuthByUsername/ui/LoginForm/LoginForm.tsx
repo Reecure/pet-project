@@ -1,31 +1,33 @@
-import {FC, memo, useCallback, useState,} from 'react';
-import {useTranslation} from 'react-i18next';
-import {useAppDispatch, useAppSelector} from '@/app/providers/ReduxProvider/config/hooks';
-import {selectLoginField, setUsername, setUserPassword} from '../../model/slice/loginSlice';
-import {getUserByCredentials} from '@/features/AuthByUsername';
-import {classNames} from '@/shared/lib/classNames';
-import {Text} from '@/shared/ui/Text';
-import {Input, ThemeInput} from '@/shared/ui/Input';
-import {Button} from '@/shared/ui/Button';
-import {Modal, ModalPositions} from '@/widgets/Modal';
+import {
+    FC, memo, useCallback, useState,
+} from 'react';
+import { useTranslation } from 'react-i18next';
+import { useAppDispatch, useAppSelector } from '@/app/providers/ReduxProvider/config/hooks';
+import { selectLoginField, setUsername, setUserPassword } from '../../model/slice/loginSlice';
+import { getUserByCredentials } from '@/features/AuthByUsername';
+import { classNames } from '@/shared/lib/classNames';
+import { Text } from '@/shared/ui/Text';
+import { Input, ThemeInput } from '@/shared/ui/Input';
+import { Button } from '@/shared/ui/Button';
+import { Modal, ModalPositions } from '@/widgets/Modal';
 import cls from './LoginForm.module.scss';
-import {TextPosition} from "@/shared/ui/Text/ui/Text";
-import {FontWeight, TextSizes} from "@/shared/ui/Text/model/types";
+import { TextPosition } from '@/shared/ui/Text/ui/Text';
+import { FontWeight, TextSizes } from '@/shared/ui/Text/model/types';
 
 type Props = {
     isOpen: boolean
     setIsOpen: () => void
 }
 
-const LoginForm: FC<Props> = ({isOpen, setIsOpen}) => {
-    const {t} = useTranslation();
+const LoginForm: FC<Props> = ({ isOpen, setIsOpen }) => {
+    const { t } = useTranslation();
 
     const [pendingButton, setpendingButton] = useState(false);
     const [loginError, setLoginError] = useState(false);
 
     const dispatch = useAppDispatch();
 
-    const {password, username} = useAppSelector(selectLoginField);
+    const { password, username } = useAppSelector(selectLoginField);
 
     const setUsernameHandler = useCallback(
         (value: string) => {
@@ -44,7 +46,7 @@ const LoginForm: FC<Props> = ({isOpen, setIsOpen}) => {
     const onLoginClick = useCallback(
         async () => {
             setpendingButton(true);
-            const res = await dispatch(getUserByCredentials({password, username}));
+            const res = await dispatch(getUserByCredentials({ password, username }));
 
             if (res.meta.requestStatus === 'fulfilled' && res.payload !== undefined) {
                 setpendingButton(false);

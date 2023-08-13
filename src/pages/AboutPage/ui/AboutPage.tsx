@@ -1,11 +1,11 @@
-import React, {memo} from 'react';
-import {useTranslation} from 'react-i18next';
-import {Text} from '@/shared/ui/Text';
+import React, { memo } from 'react';
+import { useTranslation } from 'react-i18next';
+import { t } from 'i18next';
+import { Text } from '@/shared/ui/Text';
 import cls from './AboutPage.module.scss';
-import {FontWeight, TextSizes} from '@/shared/ui/Text/model/types';
-import {AppLink} from '@/shared/ui/AppLink';
-import {getArticlesRoute} from '@/shared/config/routeConfig/routeConfig';
-import {t} from "i18next";
+import { FontWeight, TextSizes } from '@/shared/ui/Text/model/types';
+import { AppLink } from '@/shared/ui/AppLink';
+import { getArticlesRoute } from '@/shared/config/routeConfig/routeConfig';
 
 const categories = [
     {
@@ -64,11 +64,11 @@ const categories = [
 ];
 
 const AboutPage = () => {
-    const {t} = useTranslation();
+    const { t } = useTranslation();
 
     return (
-        <div data-testid="aboutPage">
-            <Text text={t("About")} textSize={TextSizes.TEXT4XL} fontWeight={FontWeight.FONTBOLD}/>
+        <section data-testid="aboutPage">
+            <Text text={t('About')} textSize={TextSizes.TEXT4XL} fontWeight={FontWeight.FONTBOLD} />
 
             <div className={cls.categoriesWrapper}>
                 {
@@ -79,13 +79,13 @@ const AboutPage = () => {
                                 textSize={TextSizes.TEXT2XL}
                                 fontWeight={FontWeight.FONTMEDIUM}
                             />
-                            <Text text={t(category.paragraph)} textSize={TextSizes.TEXTBASE}/>
+                            <Text text={t(category.paragraph)} textSize={TextSizes.TEXTBASE} />
                         </AppLink>
                     ))
                 }
             </div>
 
-        </div>
+        </section>
     );
 };
 

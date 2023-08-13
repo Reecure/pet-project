@@ -19,7 +19,7 @@ const Comments: FC<Props> = ({ comments, isLoading }) => {
         return <div><Loader /></div>;
     }
     return (
-        <div className={classNames(cls.Comments, {}, [])}>
+        <section className={classNames(cls.Comments, {}, [])}>
             <h3 className={cls.Title}>{t('Comments')}</h3>
             <AddComment />
             {
@@ -28,7 +28,7 @@ const Comments: FC<Props> = ({ comments, isLoading }) => {
                     : <div>{t('No comments')}</div>
 
             }
-        </div>
+        </section>
     );
 };
 

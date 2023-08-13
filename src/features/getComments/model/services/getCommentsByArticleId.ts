@@ -7,19 +7,22 @@ interface ThunkConfig {
     state: RootState;
 }
 
-export const getCommentsByArticleId = createAsyncThunk<IComment[], string, ThunkConfig>('comments/getCommentsByArticleId', async (articleId, thunkAPI) => {
-    const {} = thunkAPI;
+export const getCommentsByArticleId = createAsyncThunk<IComment[], string, ThunkConfig>(
+    'comments/getCommentsByArticleId',
+    async (articleId, thunkAPI) => {
+        const { rejectWithValue } = thunkAPI;
 
-    try {
-        return await fetchData('comments', {
-            method: 'GET',
-            params: {
-                articleId,
-                _expand: 'user',
-            },
-        });
-    } catch (error) {
-        console.log(error);
-        return thunkAPI.rejectWithValue(error.response.data);
-    }
-});
+        try {
+            return await fetchData('comments', {
+                method: 'GET',
+                params: {
+                    articleId,
+                    _expand: 'user',
+                },
+            });
+        } catch (error) {
+            console.log(error);
+            return rejectWithValue(error.response.data);
+        }
+    },
+);

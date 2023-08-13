@@ -28,14 +28,16 @@ const SidebarItem: FC<Props> = ({ link, open, openSidebar }) => {
     }
 
     return (
-        <AppLink to={link.to} className={cls.link} onClick={outerWidth < 640 && openSidebar}>
-            <span className={cls.linkIcon}>{sidebarIconRender(link.icon)}</span>
-            <div
-                className={classNames(`${!open ? `${cls.linkTextWhenClose}` : ''}`, {}, [])}
-            >
-                <Text text={t(link.text)} fontWeight={FontWeight.FONTBOLD} />
-            </div>
-        </AppLink>
+        <li>
+            <AppLink to={link.to} className={cls.link} onClick={outerWidth < 640 && openSidebar}>
+                <span className={cls.linkIcon}>{sidebarIconRender(link.icon)}</span>
+                <div
+                    className={classNames(`${!open ? `${cls.linkTextWhenClose}` : ''}`, {}, [])}
+                >
+                    <Text text={t(link.text)} fontWeight={FontWeight.FONTBOLD} />
+                </div>
+            </AppLink>
+        </li>
     );
 };
 

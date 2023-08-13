@@ -9,11 +9,11 @@ interface Props {
 const Header: FC<Props> = () => {
     const { t } = useTranslation();
     return (
-        <div className={classNames(cls.Header, {}, [])}>
+        <section className={classNames(cls.Header, {}, [])}>
             <div className={cls.titleWelcome}><p>Welcome</p></div>
 
             <p className={cls.titleBottom}>to MyArticle!</p>
-        </div>
+        </section>
     );
 };
 export default Header;

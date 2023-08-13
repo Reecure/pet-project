@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next';
-import { FC, memo } from 'react';
+import React, { FC, memo } from 'react';
 import { classNames } from '@/shared/lib/classNames';
 import cls from './Image.module.scss';
 

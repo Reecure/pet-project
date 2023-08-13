@@ -1,29 +1,33 @@
-import {FC, memo, useEffect, useState,} from 'react';
-import {useTranslation} from 'react-i18next';
-import {AiOutlineLeft, AiOutlineRight} from 'react-icons/ai';
-import {classNames} from '@/shared/lib/classNames';
-import {useAppDispatch, useAppSelector} from '@/app/providers/ReduxProvider/config/hooks';
+import {
+    FC, memo, useCallback, useEffect, useState,
+} from 'react';
+import { useTranslation } from 'react-i18next';
+import { AiOutlineLeft, AiOutlineRight } from 'react-icons/ai';
+import { classNames } from '@/shared/lib/classNames';
+import { useAppDispatch, useAppSelector } from '@/app/providers/ReduxProvider/config/hooks';
 import {
     articleHaveMoreSelector,
     articlePageSelector,
     articlesLoadingSelector,
     articlesViewsSelector,
 } from '../../../model/selector/articlesSelector';
-import {getArticles, setNextPage, setPrevPage, viewTypes,} from '../../../model/slice/articlesSlice';
-import {getAllArticles} from '../../../model/services/getArticles';
-import {Button} from '@/shared/ui/Button';
+import {
+    getArticles, setNextPage, setPrevPage, viewTypes,
+} from '../../../model/slice/articlesSlice';
+import { getAllArticles } from '../../../model/services/getArticles';
+import { Button } from '@/shared/ui/Button';
 import cls from './ArticleMainContent.module.scss';
 import ArticleBigComponent from '@/shared/ui/ArticleBigComponent/ArticleBigComponent';
 import ArticleSmallComponent from '@/shared/ui/ArticleSmallComponent/ArticleSmallComponent';
-import {ArticlesIsEmpty} from '@/shared/ui/ArticlesIsEmpty';
+import { ArticlesIsEmpty } from '@/shared/ui/ArticlesIsEmpty';
 import ServerError from '@/widgets/ServerError/ServerError';
-import {Loader} from "@/shared/ui/Loader";
+import { Loader } from '@/shared/ui/Loader';
 
 interface Props {
 }
 
 const ArticleMainContent: FC<Props> = () => {
-    const {t} = useTranslation();
+    const { t } = useTranslation();
 
     const [articlesServerError, setArticlesServerError] = useState(false);
 
@@ -43,46 +47,46 @@ const ArticleMainContent: FC<Props> = () => {
         });
     }, [dispatch]);
 
-    const nextPageHandler = () => {
+    const nextPageHandler = useCallback(() => {
         dispatch(setNextPage());
         dispatch(getAllArticles()).unwrap().then((res) => {
             setArticlesServerError(false);
         }).catch((error) => {
             setArticlesServerError(true);
         });
-    };
+    }, [dispatch]);
 
-    const prevPageHandler = () => {
+    const prevPageHandler = useCallback(() => {
         dispatch(setPrevPage());
         dispatch(getAllArticles()).unwrap().then((res) => {
             setArticlesServerError(false);
         }).catch((error) => {
             setArticlesServerError(true);
         });
-    };
+    }, [dispatch]);
 
     if (articlesLoading) {
         return (
             <div className={cls.loaderWrapper}>
-                <Loader/>
+                <Loader />
             </div>
         );
     }
 
     if (articlesServerError) {
-        return <ServerError/>;
+        return <ServerError />;
     }
 
     if (articles.length === 0) {
         return (
             <div className={cls.emptyArticlesWrapper}>
-                <ArticlesIsEmpty/>
+                <ArticlesIsEmpty />
             </div>
         );
     }
 
     return (
-        <div className={classNames(cls.ArticleMainContent, {}, [])}>
+        <section className={classNames(cls.ArticleMainContent, {}, [])}>
             <div className={cls.smallComponentsWrapper}>
                 {selectViewType === viewTypes.SMALL && articles.map((item) => (
                     <ArticleSmallComponent
@@ -102,12 +106,12 @@ const ArticleMainContent: FC<Props> = () => {
             </div>
 
             <div className={cls.pagination}>
-                <Button disabled={page <= 1} onClick={prevPageHandler}><AiOutlineLeft/></Button>
-                <Button disabled={!haveMore} onClick={nextPageHandler}><AiOutlineRight/></Button>
+                <Button disabled={page <= 1} onClick={prevPageHandler}><AiOutlineLeft /></Button>
+                <Button disabled={!haveMore} onClick={nextPageHandler}><AiOutlineRight /></Button>
 
             </div>
 
-        </div>
+        </section>
     );
 };
 

@@ -30,7 +30,7 @@ const ArticleDetails: FC<Props> = ({ article }) => {
     };
 
     return (
-        <>
+        <section>
             <div className={cls.titleWrapper}>
                 <div className={cls.Avatar}>
                     <Avatar size={100} src={article.img} />
@@ -54,7 +54,7 @@ const ArticleDetails: FC<Props> = ({ article }) => {
             {article.blocks.map((block) => (
                 <div key={block.id}>{blockTypeRender(block.type, block)}</div>
             ))}
-        </>
+        </section>
     );
 };
 

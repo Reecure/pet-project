@@ -14,7 +14,7 @@ const ArticleTextComponent: FC<Props> = ({ block }) => {
     const { t } = useTranslation();
 
     return (
-        <div className={classNames(cls.ArticleTextComponent, {}, [])}>
+        <article className={classNames(cls.ArticleTextComponent, {}, [])}>
             <Text
                 text={block?.title}
                 textSize={TextSizes.TEXT2XL}
@@ -26,7 +26,7 @@ const ArticleTextComponent: FC<Props> = ({ block }) => {
                     <Text key={paragraph.id} text={paragraph.text} className={cls.articleParagraph} />
                 ))}
             </div>
-        </div>
+        </article>
     );
 };
 

@@ -20,7 +20,7 @@ const ArticleImageComponent: FC<Props> = ({ block }) => {
     };
     return (
 
-        <div className={classNames(cls.ArticleImageComponent, {}, [])}>
+        <article className={classNames(cls.ArticleImageComponent, {}, [])}>
             <div>
                 <div className={cls.ArticleImageWrapper}>
                     <Image onClick={popupOpenHanler} width={400} height={300} src={block.src} />
@@ -35,7 +35,7 @@ const ArticleImageComponent: FC<Props> = ({ block }) => {
             <Modal isOpen={popupOpen} setIsOpen={popupOpenHanler} childrenPosition={ModalPositions.CENTER}>
                 <Image width={700} height={600} src={block.src} />
             </Modal>
-        </div>
+        </article>
     );
 };
 

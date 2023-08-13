@@ -15,14 +15,15 @@ const UserHasntArticles: FC<Props> = () => {
     const redirectToCreateArticles = () => {
         navigate(getCreateArticleRoute());
     };
+
     return (
-        <div className={classNames(cls.UserHasntArticles, {}, [])}>
+        <section className={classNames(cls.UserHasntArticles, {}, [])}>
             <p>{t('It`s looks that you haven`t articles')}</p>
             <Button theme={ThemeButton.CLEAR} onClick={redirectToCreateArticles}>
                 {t('Create')}
                 ?
             </Button>
-        </div>
+        </section>
     );
 };
 export default UserHasntArticles;

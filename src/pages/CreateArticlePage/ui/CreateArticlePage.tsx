@@ -44,12 +44,12 @@ const CreateArticlePage: FC<Props> = () => {
     );
 
     return (
-        <div data-testid="articleForm">
+        <section data-testid="articleForm">
             <ArticleForm onSubmit={sendArticleHandler} submitError={serverError} />
             <Notify open={notifyOpen} error={!notifySuccess}>
                 {notifySuccess ? t('Article created success') : t('Article created failed')}
             </Notify>
-        </div>
+        </section>
 
     );
 };

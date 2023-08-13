@@ -32,21 +32,21 @@ const Sidebar: FC<SidebarProps> = ({ className, openSidebar, sidebarIsOpen }) =>
 
     return (
         <div className={cls.sidebarWrapper}>
-            <div data-testid="sidebar" className={classNames(cls.Sidebar, { [cls.open]: sidebarIsOpen }, [className])}>
-                <div className={cls.links}>
+            <aside data-testid="sidebar" className={classNames(cls.Sidebar, { [cls.open]: sidebarIsOpen }, [className])}>
+                <ul className={cls.links}>
                     {
                         links
                     }
-                </div>
-                <div>
+                </ul>
+                <section>
                     <Button data-testid="sidebar-toggle" className={cls.ToggleButton} onClick={openSidebar}>
                         {sidebarIsOpen ? <AiOutlineLeft /> : <AiOutlineRight />}
                     </Button>
                     <div className={cls.switchersWrapper}>
                         <LangSwitcher />
                     </div>
-                </div>
-            </div>
+                </section>
+            </aside>
             {
                 sidebarIsOpen && outerWidth < 640 && (
                     <div className={cls.overlay} onClick={openSidebar} />

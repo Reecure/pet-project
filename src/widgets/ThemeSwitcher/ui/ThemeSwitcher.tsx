@@ -19,12 +19,11 @@ const ThemeSwitcher: FC<ThemeSwitcherProps> = ({ className }) => {
             onClick={toggleTheme}
             theme={ThemeButton.CLEAR}
         >
-            <div data-testid="theme-swither-state">
-                <div
-                    className={cls.ball}
-                    style={{ left: ballPosition }}
-                />
-            </div>
+            <div
+                data-testid="theme-swither-state"
+                className={cls.ball}
+                style={{ left: ballPosition }}
+            />
         </Button>
     );
 };

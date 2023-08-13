@@ -22,12 +22,11 @@ const ArticleBigComponent: FC<Props> = ({ article, userId }) => {
     const outerWidth = useOuterWidth();
 
     useEffect(() => {
-        const selectParagraph = (artic: Article) => artic?.blocks?.find((block) => {
-            if (block.type === BlockTypes.TEXT) {
-                setParagraph(block.paragraphs[0].text);
-            }
-        });
-        selectParagraph(article);
+        const selectParagraph = (artic: Article) => artic?.blocks?.find((block) => block.type === BlockTypes.TEXT);
+        const selectedBlock = selectParagraph(article);
+        if (selectedBlock && selectedBlock.type === BlockTypes.TEXT) {
+            setParagraph(selectedBlock.paragraphs[0].text);
+        }
     }, [article]);
 
     return (

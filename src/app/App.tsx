@@ -7,13 +7,22 @@ import { Sidebar } from '@/widgets/Sidebar';
 import './styles/index.scss';
 import { initAuthData } from '@/enteties/User';
 import { useAppDispatch } from './providers/ReduxProvider/config/hooks';
+import { useOuterWidth } from '@/shared/lib/hooks';
 
 const App = () => {
     const { theme } = useTheme();
     const dispatch = useAppDispatch();
 
-    const [sidebarOpen, setSidebarOpen] = useState(false);
+    const [sidebarOpen, setSidebarOpen] = useState(true);
+    const outerWidth = useOuterWidth();
 
+    useEffect(() => {
+        if (outerWidth < 1200) {
+            setSidebarOpen(false);
+        } else if (outerWidth > 1200) {
+            setSidebarOpen(true);
+        }
+    }, [outerWidth]);
     const sidebarOpenHandler = () => {
         setSidebarOpen((prev) => !prev);
     };
@@ -21,8 +30,9 @@ const App = () => {
     useEffect(() => {
         dispatch(initAuthData());
     }, [dispatch]);
+
     return (
-        <div className={classNames('app', {}, [theme])}>
+        <main className={classNames('app', {}, [theme])}>
             <Suspense fallback="">
                 <Navbar openSideBar={sidebarOpenHandler} />
 
@@ -36,7 +46,7 @@ const App = () => {
 
                 </div>
             </Suspense>
-        </div>
+        </main>
     );
 };
 
