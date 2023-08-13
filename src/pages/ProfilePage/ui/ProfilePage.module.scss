@@ -15,7 +15,7 @@
 
 .loaderWrapper {
   width: 100%;
-  height: 100%;
+  height: var(--error-page-height);
   display: flex;
   justify-content: center;
   align-items: center;

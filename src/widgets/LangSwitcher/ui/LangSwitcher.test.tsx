@@ -1,25 +1,25 @@
-import { fireEvent, screen } from '@testing-library/react';
-import { ComponentRender } from '@/shared/lib/tests/ui/ComponentRender/ComponentRender';
+import {fireEvent, screen} from '@testing-library/react';
+import {ComponentRender} from '@/shared/lib/tests/ui/ComponentRender/ComponentRender';
 import LangSwitcher from './LangSwitcher';
 
 describe('LangSwitcher', () => {
     test('LangSwitcher rendered', () => {
-        ComponentRender(<LangSwitcher />);
+        ComponentRender(<LangSwitcher/>);
         const langComponent = screen.getByTestId('LangSwitcher');
         expect(langComponent.className).toContain('LangSwitcher');
         expect(screen.getByTestId('LangSwitcher')).toBeInTheDocument();
     });
 
-    test('LangSwitcher inner UA lang', () => {
-        ComponentRender(<LangSwitcher />);
+    test('LangSwitcher inner EN lang', () => {
+        ComponentRender(<LangSwitcher/>);
         const langComponent = screen.getByTestId('LangSwitcher');
-        expect(langComponent.textContent).toBe('UA');
+        expect(langComponent.textContent).toBe('EN');
     });
 
-    test('LangSwitcher inner EN lang', () => {
-        ComponentRender(<LangSwitcher />);
+    test('LangSwitcher inner UA lang', () => {
+        ComponentRender(<LangSwitcher/>);
         const langComponent = screen.getByTestId('LangSwitcher');
         fireEvent.click(langComponent);
-        expect(langComponent.textContent).toBe('EN');
+        expect(langComponent.textContent).toBe('UA');
     });
 });
