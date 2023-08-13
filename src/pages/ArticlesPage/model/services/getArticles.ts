@@ -1,5 +1,5 @@
-import { createAsyncThunk } from '@reduxjs/toolkit';
-import { Article } from '@/enteties/Article/model/types/article';
+import {createAsyncThunk} from '@reduxjs/toolkit';
+import {Article} from '@/enteties/Article/model/types/article';
 import {
     articleFieldSelector,
     articleOrderSelector,
@@ -9,14 +9,14 @@ import {
     articleTypesSelector,
 } from '../selector/articlesSelector';
 import fetchData from '@/shared/helpers/ApiHelper';
-import { RootState } from '@/app/providers/ReduxProvider/config/store';
+import {RootState} from '@/app/providers/ReduxProvider/config/store';
 
 interface ThunkConfig {
     state: RootState;
 }
 
 export const getAllArticles = createAsyncThunk<Article[], void, ThunkConfig>('articles/getAllArticles', async (_, thunkApi) => {
-    const { getState } = thunkApi;
+    const {getState} = thunkApi;
 
     const pageState = articlePageSelector(getState());
     const limitState = articlesLimitSelector(getState());
@@ -44,7 +44,7 @@ export const getAllArticles = createAsyncThunk<Article[], void, ThunkConfig>('ar
             params._order = orderState;
         }
 
-        const res = await fetchData('articles', { params });
+        const res = await fetchData('articles', {params});
 
         return res;
     } catch (error) {

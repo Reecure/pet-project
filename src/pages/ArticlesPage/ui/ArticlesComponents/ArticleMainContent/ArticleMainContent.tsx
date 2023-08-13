@@ -1,33 +1,29 @@
-import {
-    FC, memo, useEffect, useState,
-} from 'react';
-import { useTranslation } from 'react-i18next';
-import { AiOutlineLeft, AiOutlineRight } from 'react-icons/ai';
-import { classNames } from '@/shared/lib/classNames';
-import { useAppDispatch, useAppSelector } from '@/app/providers/ReduxProvider/config/hooks';
+import {FC, memo, useEffect, useState,} from 'react';
+import {useTranslation} from 'react-i18next';
+import {AiOutlineLeft, AiOutlineRight} from 'react-icons/ai';
+import {classNames} from '@/shared/lib/classNames';
+import {useAppDispatch, useAppSelector} from '@/app/providers/ReduxProvider/config/hooks';
 import {
     articleHaveMoreSelector,
     articlePageSelector,
     articlesLoadingSelector,
     articlesViewsSelector,
 } from '../../../model/selector/articlesSelector';
-import {
-    getArticles, setNextPage, setPrevPage, viewTypes,
-} from '../../../model/slice/articlesSlice';
-import { getAllArticles } from '../../../model/services/getArticles';
-import { Button } from '@/shared/ui/Button';
+import {getArticles, setNextPage, setPrevPage, viewTypes,} from '../../../model/slice/articlesSlice';
+import {getAllArticles} from '../../../model/services/getArticles';
+import {Button} from '@/shared/ui/Button';
 import cls from './ArticleMainContent.module.scss';
 import ArticleBigComponent from '@/shared/ui/ArticleBigComponent/ArticleBigComponent';
 import ArticleSmallComponent from '@/shared/ui/ArticleSmallComponent/ArticleSmallComponent';
-import { ArticlesIsEmpty } from '@/shared/ui/ArticlesIsEmpty';
+import {ArticlesIsEmpty} from '@/shared/ui/ArticlesIsEmpty';
 import ServerError from '@/widgets/ServerError/ServerError';
-import { Skeleton } from '@/shared/ui/Skeleton';
+import {Loader} from "@/shared/ui/Loader";
 
 interface Props {
 }
 
 const ArticleMainContent: FC<Props> = () => {
-    const { t } = useTranslation();
+    const {t} = useTranslation();
 
     const [articlesServerError, setArticlesServerError] = useState(false);
 
@@ -67,24 +63,20 @@ const ArticleMainContent: FC<Props> = () => {
 
     if (articlesLoading) {
         return (
-            <div className={cls.smallComponentsWrapper}>
-                {
-                    Array(15).fill(null).map((item) => (
-                        <Skeleton height={200} />
-                    ))
-                }
+            <div className={cls.loaderWrapper}>
+                <Loader/>
             </div>
         );
     }
 
     if (articlesServerError) {
-        return <ServerError />;
+        return <ServerError/>;
     }
 
     if (articles.length === 0) {
         return (
             <div className={cls.emptyArticlesWrapper}>
-                <ArticlesIsEmpty />
+                <ArticlesIsEmpty/>
             </div>
         );
     }
@@ -110,8 +102,8 @@ const ArticleMainContent: FC<Props> = () => {
             </div>
 
             <div className={cls.pagination}>
-                <Button disabled={page <= 1} onClick={prevPageHandler}><AiOutlineLeft /></Button>
-                <Button disabled={!haveMore} onClick={nextPageHandler}><AiOutlineRight /></Button>
+                <Button disabled={page <= 1} onClick={prevPageHandler}><AiOutlineLeft/></Button>
+                <Button disabled={!haveMore} onClick={nextPageHandler}><AiOutlineRight/></Button>
 
             </div>
 

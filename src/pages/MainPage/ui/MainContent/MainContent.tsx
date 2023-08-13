@@ -10,7 +10,6 @@ import {
 } from '../../model/selectors/RecommendationArticles';
 import ArticleSmallComponent from '@/shared/ui/ArticleSmallComponent/ArticleSmallComponent';
 import {getRecommendationArticles} from '@/pages/MainPage/model/services/getRecommendationArticles';
-import useMouseWheelScroll from '@/shared/lib/hooks/useMouseWheel/useMouseWheel';
 import {FontWeight, TextSizes} from '@/shared/ui/Text/model/types';
 import {Skeleton} from '@/shared/ui/Skeleton';
 import {userDataSelector} from "@/enteties/User";
@@ -29,11 +28,10 @@ const MainContent: FC<Props> = () => {
 
     const wrapperRef = useRef(null);
 
-    useMouseWheelScroll(wrapperRef);
 
     useEffect(() => {
         dispatch(getRecommendationArticles());
-    }, [dispatch]);
+    }, [dispatch, isLogged]);
 
     return (
         <>
