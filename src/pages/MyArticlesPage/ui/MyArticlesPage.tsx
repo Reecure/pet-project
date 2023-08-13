@@ -1,33 +1,37 @@
-import {useTranslation} from 'react-i18next';
-import {ChangeEvent, FC, useCallback, useEffect, useState,} from 'react';
-import {classNames} from '@/shared/lib/classNames';
+import { useTranslation } from 'react-i18next';
+import {
+    ChangeEvent, FC, useCallback, useEffect, useState,
+} from 'react';
+import { AiOutlineLeft, AiOutlineRight } from 'react-icons/ai';
+import { classNames } from '@/shared/lib/classNames';
 import cls from './MyArticlesPage.module.scss';
-import {useAppDispatch, useAppSelector} from '@/app/providers/ReduxProvider/config/hooks';
-import {userDataSelector} from '@/enteties/User';
-import {getMyArticles, resetPage, setNextPage, setPrevPage, setSearchQuery,} from '../model/slice/myArticlesSlice';
-import {getAllMyArticles} from '../model/services/getMyArticles';
+import { useAppDispatch, useAppSelector } from '@/app/providers/ReduxProvider/config/hooks';
+import { userDataSelector } from '@/enteties/User';
+import {
+    getMyArticles, resetPage, setNextPage, setPrevPage, setSearchQuery,
+} from '../model/slice/myArticlesSlice';
+import { getAllMyArticles } from '../model/services/getMyArticles';
 import {
     myArticleHaveMoreLoading,
     myArticlePageLoading,
     myArticlePageSelector,
     myArticlesQuerySelector,
 } from '../model/selectors/myArticlesSelectors';
-import {Stack, StackPosition} from '@/shared/ui/Stack';
 import MyArticleButtons from './MyArticleButtons/MyArticleButtons';
 import UserHasntArticles from './UserHasntArticles/UserHasntArticles';
-import {Input, ThemeInput} from '@/shared/ui/Input';
-import {Button} from '@/shared/ui/Button';
-import {useDebounce} from '@/shared/lib/hooks';
-import {Loader} from '@/shared/ui/Loader';
-import ServerError from "@/widgets/ServerError/ServerError";
+import { Input, ThemeInput } from '@/shared/ui/Input';
+import { Button } from '@/shared/ui/Button';
+import { useDebounce } from '@/shared/lib/hooks';
+import { Loader } from '@/shared/ui/Loader';
+import ServerError from '@/widgets/ServerError/ServerError';
 
 interface Props {
 }
 
 const MyArticlesPage: FC<Props> = () => {
-    const {t} = useTranslation();
+    const { t } = useTranslation();
 
-    const [serverError, setServerError] = useState(false)
+    const [serverError, setServerError] = useState(false);
 
     const dispatch = useAppDispatch();
 
@@ -42,17 +46,17 @@ const MyArticlesPage: FC<Props> = () => {
 
     useEffect(() => {
         dispatch(getAllMyArticles(user.id)).unwrap().then((res) => {
-            setServerError(false)
+            setServerError(false);
         }).catch((error) => {
-            setServerError(true)
+            setServerError(true);
         });
     }, [dispatch, user, page]);
 
     useEffect(() => {
         dispatch(getAllMyArticles(user.id)).unwrap().then((res) => {
-            setServerError(false)
+            setServerError(false);
         }).catch((error) => {
-            setServerError(true)
+            setServerError(true);
         });
         dispatch(resetPage());
     }, [dispatch, debouncedQuery]);
@@ -69,19 +73,19 @@ const MyArticlesPage: FC<Props> = () => {
     };
 
     if (serverError) {
-        return <ServerError/>
+        return <ServerError />;
     }
 
     return (
-        <div data-testid='myArticlesPage' className={classNames(cls.MyArticlesPage, {}, [])}>
-            <Input theme={ThemeInput.OUTLINE} onChange={searchHandler} placeholder="Search..." value={query}/>
+        <div data-testid="myArticlesPage" className={classNames(cls.MyArticlesPage, {}, [])}>
+            <Input theme={ThemeInput.OUTLINE} onChange={searchHandler} placeholder="Search..." value={query} />
             {isLoading ? (
                 <div className={cls.loaderWrapper}>
-                    <Loader/>
+                    <Loader />
                 </div>
 
             ) : (
-                articles.length === 0 ? (<UserHasntArticles/>) : (
+                articles.length === 0 ? (<UserHasntArticles />) : (
                     <div>
                         <div>
                             {articles.map((article) => (
@@ -97,10 +101,10 @@ const MyArticlesPage: FC<Props> = () => {
                                 </div>
                             ))}
                         </div>
-                        <Stack childrenPosition={StackPosition.RIGHT}>
-                            <Button disabled={page <= 1} onClick={setPrevPageHandler}>{'<'}</Button>
-                            <Button disabled={!haveMore} onClick={setNextPageHandler}>{'>'}</Button>
-                        </Stack>
+                        <div className={cls.paginationButtonWrapper}>
+                            <Button disabled={page <= 1} onClick={setPrevPageHandler}><AiOutlineLeft /></Button>
+                            <Button disabled={!haveMore} onClick={setNextPageHandler}><AiOutlineRight /></Button>
+                        </div>
 
                     </div>
                 )

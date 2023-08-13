@@ -11,7 +11,7 @@
   margin-left: 40%;
   transform: translateX(-25%);
   font-size: 24px;
-  font-weight: 600;
+  font-weight: 900;
   animation: titleAnimationWelcome 5s ease-in-out forwards;
 }
 
@@ -19,7 +19,7 @@
   margin-left: 45%;
   transform: translateX(-25%);
   font-size: 24px;
-  font-weight: 600;
+  font-weight: 900;
   white-space: nowrap;
   width: min-content;
   position: relative;
@@ -33,7 +33,7 @@
   right: -15px;
   width: 15px;
   height: 5px;
-  background-color: var(--inverted-primary-color);
+  background-color: var(--text-color);
   animation: caretAnimation 1s infinite;
 }
 
@@ -80,7 +80,7 @@
     margin-left: 50%;
     transform: translateX(-25%);
     font-size: 64px;
-    font-weight: 600;
+    font-weight: 900;
     animation: titleAnimationWelcome 5s ease-in-out forwards;
   }
 
@@ -88,7 +88,7 @@
     margin-left: 50%;
     transform: translateX(-25%);
     font-size: 64px;
-    font-weight: 600;
+    font-weight: 900;
     white-space: nowrap;
     width: min-content;
     position: relative;
@@ -100,9 +100,9 @@
     position: absolute;
     bottom: 35px;
     right: -40px;
-    width: 35px;
-    height: 15px;
-    background-color: var(--inverted-primary-color);
+    width: 30px;
+    height: 10px;
+    background-color: var(--text-color);
     animation: caretAnimation 1s infinite;
   }
 }

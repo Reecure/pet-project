@@ -1,15 +1,15 @@
-import {useTranslation} from 'react-i18next';
-import {FC, memo} from 'react';
-import {classNames} from '@/shared/lib/classNames';
-import {useAppSelector} from '@/app/providers/ReduxProvider/config/hooks';
-import {isLoggedSelector} from '@/enteties/User';
-import {AppLink} from '@/shared/ui/AppLink';
-import {SidebarLink} from '../../../model/item';
+import { useTranslation } from 'react-i18next';
+import { FC, memo } from 'react';
+import { classNames } from '@/shared/lib/classNames';
+import { useAppSelector } from '@/app/providers/ReduxProvider/config/hooks';
+import { isLoggedSelector } from '@/enteties/User';
+import { AppLink } from '@/shared/ui/AppLink';
+import { SidebarLink } from '../../../model/item';
 import cls from './SidebarItem.module.scss';
-import {sidebarIconRender} from '../../../helpers/sidebarIconRender';
-import {useOuterWidth} from '@/shared/lib/hooks';
-import {Text} from "@/shared/ui/Text";
-import {FontWeight} from "@/shared/ui/Text/model/types";
+import { sidebarIconRender } from '../../../helpers/sidebarIconRender';
+import { useOuterWidth } from '@/shared/lib/hooks';
+import { Text } from '@/shared/ui/Text';
+import { FontWeight } from '@/shared/ui/Text/model/types';
 
 interface Props {
     link: SidebarLink
@@ -17,8 +17,8 @@ interface Props {
     openSidebar: () => void
 }
 
-const SidebarItem: FC<Props> = ({link, open, openSidebar}) => {
-    const {t} = useTranslation();
+const SidebarItem: FC<Props> = ({ link, open, openSidebar }) => {
+    const { t } = useTranslation();
 
     const outerWidth = useOuterWidth();
     const selectIsLogged = useAppSelector(isLoggedSelector);
@@ -33,7 +33,7 @@ const SidebarItem: FC<Props> = ({link, open, openSidebar}) => {
             <div
                 className={classNames(`${!open ? `${cls.linkTextWhenClose}` : ''}`, {}, [])}
             >
-                <Text text={t(link.text)} fontWeight={FontWeight.FONTBOLD}/>
+                <Text text={t(link.text)} fontWeight={FontWeight.FONTBOLD} />
             </div>
         </AppLink>
     );

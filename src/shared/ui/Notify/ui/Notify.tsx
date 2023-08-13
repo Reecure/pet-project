@@ -6,10 +6,11 @@ import cls from './Notify.module.scss';
 
 interface Props {
     children: React.ReactNode
+    error?: boolean
     open: boolean
 }
 
-const Notify: FC<Props> = ({ children, open }) => {
+const Notify: FC<Props> = ({ children, open, error }) => {
     const { t } = useTranslation();
 
     return (
@@ -25,7 +26,7 @@ const Notify: FC<Props> = ({ children, open }) => {
                 }
             }
         >
-            <div data-testid="notify" className={classNames(cls.Notify, {}, [])}>
+            <div data-testid="notify" className={classNames(cls.Notify, { [cls.error]: error }, [])}>
                 <p>{children}</p>
             </div>
         </CSSTransition>

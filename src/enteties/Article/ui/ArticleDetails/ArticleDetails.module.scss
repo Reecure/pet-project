@@ -1,35 +1,36 @@
-.titleWrapper{
-    display: grid;
-    grid-template-columns: 1fr 10fr;
+.titleWrapper {
+  display: grid;
+  grid-template-columns: 1fr 10fr;
+  gap: 10px;
 }
 
-.Avatar{
-    margin: 0 auto;
+.Avatar {
+  margin: 0 auto;
 }
 
 .Title {
-    font-size: 32px;
-    font-weight: 600;
-    margin-bottom: 5px;
-    margin-left: 10px;
+  font-size: 32px;
+  font-weight: 600;
+  margin-bottom: 5px;
+  margin-left: 10px;
 }
 
 .subTitle {
-    font-size: 20px;
-    font-weight: 400;
-    margin-left: 10px;
-    margin-bottom: 10px;
+  font-size: 20px;
+  font-weight: 400;
+  margin-left: 10px;
+  margin-bottom: 10px;
 }
 
 .articleInfoWrapper {
-    margin: 10px 0;
+  margin: 10px 0;
 }
 
 .articleInfo {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .articleInfoIcon {
-    margin-right: 3px;
+  margin-right: 3px;
 }

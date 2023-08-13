@@ -22,7 +22,7 @@ const LangSwitcher: FC<LangSwitcherProps> = ({ className }) => {
             onClick={toggle}
             className={classNames(cls.LangSwitcher, {}, [className])}
         >
-            {i18n.language === 'en' ? 'ua'.toUpperCase() : 'en'.toUpperCase()}
+            {i18n.language === 'en' ? 'en'.toUpperCase() : 'ua'.toUpperCase()}
         </Button>
     );
 };

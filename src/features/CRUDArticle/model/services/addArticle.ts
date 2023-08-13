@@ -1,15 +1,15 @@
-import {createAsyncThunk} from '@reduxjs/toolkit';
-import {Article, ArticleForSend} from '@/enteties/Article/model/types/article';
-import {userDataSelector} from '@/enteties/User/model/selectors/userDataSelector';
-import fetchData from "@/shared/helpers/ApiHelper";
-import {RootState} from "@/app/providers/ReduxProvider/config/store";
+import { createAsyncThunk } from '@reduxjs/toolkit';
+import { Article, ArticleForSend } from '@/enteties/Article/model/types/article';
+import { userDataSelector } from '@/enteties/User/model/selectors/userDataSelector';
+import fetchData from '@/shared/helpers/ApiHelper';
+import { RootState } from '@/app/providers/ReduxProvider/config/store';
 
 interface ThunkConfig {
     state: RootState;
 }
 
 export const addArticle = createAsyncThunk<Article, ArticleForSend, ThunkConfig>('comments/addComment', async (article, thunkApi) => {
-    const {getState} = thunkApi;
+    const { getState } = thunkApi;
 
     const currentDate = new Date();
 
@@ -21,12 +21,13 @@ export const addArticle = createAsyncThunk<Article, ArticleForSend, ThunkConfig>
     const userData = userDataSelector(getState());
     try {
         const res = await fetchData('articles', {
-            method: 'POST', data: {
+            method: 'POST',
+            data: {
                 ...article,
                 createdAt: formattedDate,
                 userId: userData.id,
-            }
-        })
+            },
+        });
 
         if (!res) {
             throw new Error();

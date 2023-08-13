@@ -4,10 +4,37 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="054dcfbb-5232-4235-a308-8c1e1cec3020" name="Changes" comment="redesigned">
+    <list default="true" id="054dcfbb-5232-4235-a308-8c1e1cec3020" name="Changes" comment="hot fix">
+      <change afterPath="$PROJECT_DIR$/src/pages/AboutPage/ui/AboutPage.module.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/shared/lib/hooks/useMouseWheel/useMouseWheel.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shared/ui/Input/ui/Input.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/ui/Input/ui/Input.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vite.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/vite.config.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html-report/jest-html-reporters-attach/report/result.js" beforeDir="false" afterPath="$PROJECT_DIR$/html-report/jest-html-reporters-attach/report/result.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/enteties/Article/ui/ArticleDetails/ArticleDetails.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/enteties/Article/ui/ArticleDetails/ArticleDetails.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/enteties/Article/ui/ArticleDetails/ArticleDetails.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/enteties/Article/ui/ArticleDetails/ArticleDetails.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/AboutPage/ui/AboutPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/AboutPage/ui/AboutPage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/ArticlePage/ui/ArticlePage.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ArticlePage/ui/ArticlePage.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/ArticlesPage/ui/ArticlesComponents/ArticleHeader/ArticleHeader.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ArticlesPage/ui/ArticlesComponents/ArticleHeader/ArticleHeader.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/ArticlesPage/ui/ArticlesComponents/ArticleMainContent/ArticleMainContent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ArticlesPage/ui/ArticlesComponents/ArticleMainContent/ArticleMainContent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/CreateArticlePage/ui/CreateArticlePage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/CreateArticlePage/ui/CreateArticlePage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/EditArticlePage/ui/EditArticlePage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/EditArticlePage/ui/EditArticlePage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/MainPage/ui/Header/Header.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/MainPage/ui/Header/Header.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/MainPage/ui/MainContent/MainContent.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/MainPage/ui/MainContent/MainContent.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/MainPage/ui/MainContent/MainContent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/MainPage/ui/MainContent/MainContent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/MainPage/ui/MainPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/MainPage/ui/MainPage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/MyArticlesPage/ui/MyArticlesPage.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/MyArticlesPage/ui/MyArticlesPage.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/MyArticlesPage/ui/MyArticlesPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/MyArticlesPage/ui/MyArticlesPage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/ui/ArticleSmallComponent/ArticleSmallComponent.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/ui/ArticleSmallComponent/ArticleSmallComponent.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/ui/ArticlesIsEmpty/ui/ArticlesIsEmpty.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/ui/ArticlesIsEmpty/ui/ArticlesIsEmpty.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/ui/ArticlesIsEmpty/ui/ArticlesIsEmpty.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/ui/ArticlesIsEmpty/ui/ArticlesIsEmpty.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/ui/Notify/ui/Notify.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/ui/Notify/ui/Notify.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/ui/Notify/ui/Notify.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/ui/Notify/ui/Notify.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/ui/Skeleton/ui/Skeleton.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/ui/Skeleton/ui/Skeleton.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/ui/Skeleton/ui/Skeleton.test.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/ui/Skeleton/ui/Skeleton.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/ui/Skeleton/ui/Skeleton.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/ui/Text/ui/Text.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/ui/Text/ui/Text.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/ui/Text/ui/Text.test.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/ui/Text/ui/Text.test.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/ui/Text/ui/Text.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/ui/Text/ui/Text.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/widgets/LangSwitcher/ui/LangSwitcher.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/widgets/LangSwitcher/ui/LangSwitcher.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -100,21 +127,11 @@
       <envs />
       <method v="2" />
     </configuration>
-    <configuration name="cypress:open" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+    <configuration name="lint:ts:fix" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
       <scripts>
-        <script value="cypress:open" />
-      </scripts>
-      <node-interpreter value="project" />
-      <envs />
-      <method v="2" />
-    </configuration>
-    <configuration name="preview:vite" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
-      <package-json value="$PROJECT_DIR$/package.json" />
-      <command value="run" />
-      <scripts>
-        <script value="preview:vite" />
+        <script value="lint:ts:fix" />
       </scripts>
       <node-interpreter value="project" />
       <envs />
@@ -140,13 +157,23 @@
       <envs />
       <method v="2" />
     </configuration>
+    <configuration name="test" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="test" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="npm.lint:ts:fix" />
         <item itemvalue="npm.build:vite" />
+        <item itemvalue="npm.test" />
         <item itemvalue="npm.start:vite" />
         <item itemvalue="npm.start:dev:server" />
-        <item itemvalue="npm.preview:vite" />
-        <item itemvalue="npm.cypress:open" />
       </list>
     </recent_temporary>
   </component>
@@ -195,7 +222,8 @@
       <workItem from="1691662418976" duration="17720000" />
       <workItem from="1691693457403" duration="5418000" />
       <workItem from="1691738846859" duration="21750000" />
-      <workItem from="1691847136172" duration="17823000" />
+      <workItem from="1691847136172" duration="18260000" />
+      <workItem from="1691906042776" duration="6351000" />
     </task>
     <task id="LOCAL-00001" summary="some fix">
       <created>1689795990367</created>
@@ -484,7 +512,14 @@
       <option name="project" value="LOCAL" />
       <updated>1691869268342</updated>
     </task>
-    <option name="localTasksCounter" value="42" />
+    <task id="LOCAL-00042" summary="hot fix">
+      <created>1691869525358</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1691869525358</updated>
+    </task>
+    <option name="localTasksCounter" value="43" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -492,7 +527,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="widgets now have tests" />
     <MESSAGE value="shared folder elements now have tests" />
     <MESSAGE value="write test for slices tests" />
     <MESSAGE value="add comments validation" />
@@ -517,6 +551,7 @@
     <MESSAGE value="refactored code" />
     <MESSAGE value="upd build" />
     <MESSAGE value="redesigned" />
-    <option name="LAST_COMMIT_MESSAGE" value="redesigned" />
+    <MESSAGE value="hot fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="hot fix" />
   </component>
 </project>

@@ -1,10 +1,9 @@
-import axios, {Method} from "axios";
-import {USER_LOCALSTORAGE_KEY} from "@/shared/constants/localStorage";
+import axios, { Method } from 'axios';
+import { USER_LOCALSTORAGE_KEY } from '@/shared/constants/localStorage';
 
+// https://production-project-server-psi-ivory.vercel.app
 
-//https://production-project-server-psi-ivory.vercel.app
-
-//http://localhost:8000/
+// http://localhost:8000/
 
 interface FetchDataOptions {
     method?: Method;
@@ -14,8 +13,7 @@ interface FetchDataOptions {
 
 export const fetchData = async (url: string, options: FetchDataOptions = {}): Promise<any> => {
     try {
-
-        const {method = 'GET', data, params} = options;
+        const { method = 'GET', data, params } = options;
 
         const headers = {
             authorization: localStorage.getItem(USER_LOCALSTORAGE_KEY) || '',

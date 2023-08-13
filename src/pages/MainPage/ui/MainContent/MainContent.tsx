@@ -1,50 +1,60 @@
-import {useTranslation} from 'react-i18next';
-import {FC, useEffect} from 'react';
-import {classNames} from '@/shared/lib/classNames';
+import { useTranslation } from 'react-i18next';
+import { FC, useEffect, useRef } from 'react';
+import { classNames } from '@/shared/lib/classNames';
 import cls from './MainContent.module.scss';
-import {Text} from '@/shared/ui/Text';
-import {useAppDispatch, useAppSelector} from '@/app/providers/ReduxProvider/config/hooks';
+import { Text } from '@/shared/ui/Text';
+import { useAppDispatch, useAppSelector } from '@/app/providers/ReduxProvider/config/hooks';
 import {
     recommendationArticleLoadingsSelector,
     recommendationArticlesSelector,
 } from '../../model/selectors/RecommendationArticles';
-import {Loader} from '@/shared/ui/Loader';
 import ArticleSmallComponent from '@/shared/ui/ArticleSmallComponent/ArticleSmallComponent';
-import {getRecommendationArticles} from '@/pages/MainPage/model/services/getRecommendationArticles';
+import { getRecommendationArticles } from '@/pages/MainPage/model/services/getRecommendationArticles';
+import useMouseWheelScroll from '@/shared/lib/hooks/useMouseWheel/useMouseWheel';
+import { FontWeight, TextSizes } from '@/shared/ui/Text/model/types';
+import { Skeleton } from '@/shared/ui/Skeleton';
 
 interface Props {
 }
 
 const MainContent: FC<Props> = () => {
-    const {t} = useTranslation();
+    const { t } = useTranslation();
 
     const dispatch = useAppDispatch();
 
     const recommendations = useAppSelector(recommendationArticlesSelector);
     const loading = useAppSelector(recommendationArticleLoadingsSelector);
 
+    const wrapperRef = useRef(null);
+
+    useMouseWheelScroll(wrapperRef);
+
     useEffect(() => {
         dispatch(getRecommendationArticles());
     }, [dispatch]);
 
-    if (loading) {
-        return (
-            <div className={classNames(cls.MainContent, {}, [])}>
-                <Text text="New Articles"/>
-                <Loader/>
-            </div>
-        );
-    }
-
     return (
         <div className={classNames(cls.MainContent, {}, [])}>
-            <Text text="New Articles"/>
-            <div className={cls.articlesWraper}>
-                {
-                    recommendations.map((article) => (<ArticleSmallComponent key={article.id} article={article}/>))
-                }
-            </div>
+            <Text text="New Articles" fontWeight={FontWeight.FONTBOLD} textSize={TextSizes.TEXT2XL} />
+            {
+                loading ? (
+                    <div className={cls.articlesWraper} ref={wrapperRef}>
+                        {
+                            Array(6).fill(null).map((item) => (
+                                <Skeleton height={200} />
+                            ))
 
+                        }
+                    </div>
+                ) : (
+                    <div className={cls.articlesWraper} ref={wrapperRef}>
+                        {
+                            recommendations.map((article, i) => (<ArticleSmallComponent key={article.id} article={article} />))
+
+                        }
+                    </div>
+                )
+            }
         </div>
     );
 };

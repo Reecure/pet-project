@@ -5,7 +5,6 @@ export enum FontWeight {
     FONTBOLD = 700,
 }
 
-
 export enum TextSizes {
     TEXTXS = '12px',
     TEXTSM = '14px',

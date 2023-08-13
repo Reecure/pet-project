@@ -11,6 +11,11 @@
   z-index: var(--z-index-100);
 }
 
+.error {
+  background-color: var(--error-color);
+  color: var(--white);
+}
+
 .notifyActive {
   animation: notifyAnim .4s forwards ease-in-out;
 }

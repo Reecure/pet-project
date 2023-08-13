@@ -1,7 +1,7 @@
 .Skeleton {
   position: relative;
-  width: 200px;
-  height: 200px;
+
+  border-radius: 10px;
   background-color: rgb(190, 190, 190);
 
 }
@@ -13,6 +13,7 @@
   left: 0;
   right: 0;
   bottom: 0;
+  border-radius: 10px;
   background-color: rgb(190, 190, 190); /* Set the background color for the skeleton */
   z-index: var(--z-index-1);
   animation: skeletonPulse 1.2s infinite alternate; /* Animation effect */

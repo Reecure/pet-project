@@ -1,29 +1,31 @@
-import {useTranslation} from 'react-i18next';
-import {FC, memo, useEffect, useState,} from 'react';
-import {useParams} from 'react-router-dom';
-import {classNames} from '@/shared/lib/classNames';
-import {useAppDispatch, useAppSelector} from '@/app/providers/ReduxProvider/config/hooks';
-import {ArticleAllProps, ArticleDetails, getArticleById} from '@/enteties/Article';
-import {Loader} from '@/shared/ui/Loader';
+import { useTranslation } from 'react-i18next';
+import {
+    FC, memo, useEffect, useState,
+} from 'react';
+import { useParams } from 'react-router-dom';
+import { classNames } from '@/shared/lib/classNames';
+import { useAppDispatch, useAppSelector } from '@/app/providers/ReduxProvider/config/hooks';
+import { ArticleAllProps, ArticleDetails, getArticleById } from '@/enteties/Article';
+import { Loader } from '@/shared/ui/Loader';
 import cls from './ArticlePage.module.scss';
-import {commentisLoading, Comments, getCommentsByArticleId} from '@/features/getComments';
-import {getArticleComments} from '@/features/getComments/model/slice/commentsSlice';
-import {Stack, StackPosition} from '@/shared/ui/Stack';
-import ServerError from "@/widgets/ServerError/ServerError";
+import { commentisLoading, Comments, getCommentsByArticleId } from '@/features/getComments';
+import { getArticleComments } from '@/features/getComments/model/slice/commentsSlice';
+import { Stack, StackPosition } from '@/shared/ui/Stack';
+import ServerError from '@/widgets/ServerError/ServerError';
 
 interface Props {
 }
 
 const ArticlePage: FC<Props> = () => {
-    const {t} = useTranslation();
+    const { t } = useTranslation();
 
     const [articleError, setArticleError] = useState(false);
     const [commentError, setCommentError] = useState(false);
-    const {id} = useParams();
+    const { id } = useParams();
 
     const dispatch = useAppDispatch();
 
-    const {article, error, loading} = useAppSelector(ArticleAllProps);
+    const { article, error, loading } = useAppSelector(ArticleAllProps);
     const commentLoading = useAppSelector(commentisLoading);
     const comments = useAppSelector(getArticleComments.selectAll);
 
@@ -43,13 +45,13 @@ const ArticlePage: FC<Props> = () => {
     if (loading) {
         return (
             <Stack childrenPosition={StackPosition.CENTER}>
-                <Loader/>
+                <Loader />
             </Stack>
         );
     }
 
     if (articleError || commentError) {
-        return <ServerError/>
+        return <ServerError />;
     }
 
     if (article === undefined) {
@@ -57,9 +59,9 @@ const ArticlePage: FC<Props> = () => {
     }
 
     return (
-        <div data-testid='articlePage' className={classNames(cls.ArticlePage, {}, [])}>
-            <ArticleDetails article={article}/>
-            <Comments isLoading={commentLoading} comments={comments}/>
+        <div data-testid="articlePage" className={classNames(cls.ArticlePage, {}, [])}>
+            <ArticleDetails article={article} />
+            <Comments isLoading={commentLoading} comments={comments} />
         </div>
     );
 };

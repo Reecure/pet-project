@@ -27,6 +27,9 @@
 
   .createdAt {
     position: absolute;
+    padding: 5px 10px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 0 0 0 5px;
     top: 0;
     right: 0;
   }

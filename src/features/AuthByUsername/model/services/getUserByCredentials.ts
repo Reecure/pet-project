@@ -1,9 +1,9 @@
-import {createAsyncThunk} from '@reduxjs/toolkit';
-import {USER_LOCALSTORAGE_KEY} from '@/shared/constants/localStorage';
-import {User} from '@/enteties/User/model/types';
-import {setAuthData} from '@/enteties/User/model/slice/userSlice';
-import fetchData from "@/shared/helpers/ApiHelper";
-import {RootState} from "@/app/providers/ReduxProvider/config/store";
+import { createAsyncThunk } from '@reduxjs/toolkit';
+import { USER_LOCALSTORAGE_KEY } from '@/shared/constants/localStorage';
+import { User } from '@/enteties/User/model/types';
+import { setAuthData } from '@/enteties/User/model/slice/userSlice';
+import fetchData from '@/shared/helpers/ApiHelper';
+import { RootState } from '@/app/providers/ReduxProvider/config/store';
 
 interface ThunkConfig {
     state: RootState;
@@ -15,12 +15,10 @@ interface LoginByCredentials {
 }
 
 export const getUserByCredentials = createAsyncThunk<User, LoginByCredentials, ThunkConfig>('login/getUserByCredentials', async (authData, thunkApi) => {
-    const {dispatch} = thunkApi;
+    const { dispatch } = thunkApi;
 
     try {
-
-        const res = await fetchData('login', {method: "POST", data: authData})
-
+        const res = await fetchData('login', { method: 'POST', data: authData });
 
         if (!res) {
             throw new Error();

@@ -1,6 +1,6 @@
-import {useTranslation} from 'react-i18next';
-import {FC, memo} from 'react';
-import {classNames} from '@/shared/lib/classNames';
+import { useTranslation } from 'react-i18next';
+import { FC, memo } from 'react';
+import { classNames } from '@/shared/lib/classNames';
 import cls from './Image.module.scss';
 
 interface Props extends React.ImgHTMLAttributes<HTMLImageElement> {
@@ -11,15 +11,15 @@ interface Props extends React.ImgHTMLAttributes<HTMLImageElement> {
 }
 
 const Image: FC<Props> = ({
-                              height, width, src, ...otherProps
-                          }) => {
-    const {t} = useTranslation();
+    height, width, src, ...otherProps
+}) => {
+    const { t } = useTranslation();
     return (
         <img
             {...otherProps}
             className={classNames(cls.image, {}, [])}
             src={src}
-            style={{maxWidth: `${width}px` || '95%', maxHeight: `${height}px` || 'auto'}}
+            style={{ maxWidth: `${width}px` || '95%', maxHeight: `${height}px` || 'auto' }}
             alt={src}
         />
     );

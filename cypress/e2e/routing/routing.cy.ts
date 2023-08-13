@@ -1,63 +1,61 @@
-import {login} from '../../support/commands/login'
-
+import { login } from '../../support/commands/login';
 
 describe('routing', () => {
-
     describe('user is NOT logged', () => {
         it('main page', () => {
-            cy.visit('/')
-            cy.get('[data-testid=mainpage]').should('exist')
-        })
+            cy.visit('/');
+            cy.get('[data-testid=mainpage]').should('exist');
+        });
         it('articles', () => {
-            cy.visit('/articles')
-            cy.get('[data-testid=notFoundPage]').should('exist')
-        })
+            cy.visit('/articles');
+            cy.get('[data-testid=notFoundPage]').should('exist');
+        });
 
         it('notFoundPage', () => {
-            cy.visit('/SADFJAD')
-            cy.get('[data-testid=notFoundPage]').should('exist')
-        })
-    })
+            cy.visit('/SADFJAD');
+            cy.get('[data-testid=notFoundPage]').should('exist');
+        });
+    });
 
     describe('user is logged', () => {
         beforeEach(() => {
             login();
         });
         it('aboutPage page', () => {
-            cy.visit('/about')
-            cy.get('[data-testid=aboutPage]').should('exist')
+            cy.visit('/about');
+            cy.get('[data-testid=aboutPage]').should('exist');
         });
         it('editArticlePage', () => {
-            cy.visit('/edit-article/1')
-            cy.get('[data-testid=editArticlePage]').should('exist')
-        })
+            cy.visit('/edit-article/1');
+            cy.get('[data-testid=editArticlePage]').should('exist');
+        });
         it('myArticlesPage', () => {
-            cy.visit('/my-articles')
-            cy.get('[data-testid=myArticlesPage]').should('exist')
-        })
+            cy.visit('/my-articles');
+            cy.get('[data-testid=myArticlesPage]').should('exist');
+        });
 
         it('ProfilePage', () => {
-            cy.visit('/profile/1')
-            cy.get('[data-testid=profilePage]').should('exist')
-        })
+            cy.visit('/profile/1');
+            cy.get('[data-testid=profilePage]').should('exist');
+        });
         it('ArticlePage', () => {
-            cy.visit('/article/k2nvbFr')
-            cy.get('[data-testid=articlePage]').should('exist')
-        })
+            cy.visit('/article/k2nvbFr');
+            cy.get('[data-testid=articlePage]').should('exist');
+        });
         it('myArticlesPage', () => {
-            cy.visit('/my-articles')
-            cy.get('[data-testid=myArticlesPage]').should('exist')
-        })
+            cy.visit('/my-articles');
+            cy.get('[data-testid=myArticlesPage]').should('exist');
+        });
         it('ArticlesPage', () => {
-            cy.visit('/articles')
-            cy.get('[data-testid=articlesPage]').should('exist')
-        })
+            cy.visit('/articles');
+            cy.get('[data-testid=articlesPage]').should('exist');
+        });
 
         it('AdminPage', () => {
-            cy.visit('/admin')
-            cy.get('[data-testid=notFoundPage]').should('exist')
-        })
-    })
+            cy.visit('/admin');
+            cy.get('[data-testid=notFoundPage]').should('exist');
+        });
+    });
 
     describe('user is Admin', () => {
         beforeEach(() => {
@@ -65,12 +63,8 @@ describe('routing', () => {
         });
 
         it('AdminPage', () => {
-            cy.visit('/admin')
-            cy.get('[data-testid=adminPage]').should('exist')
-        })
-    })
-})
-
-
-
-
+            cy.visit('/admin');
+            cy.get('[data-testid=adminPage]').should('exist');
+        });
+    });
+});

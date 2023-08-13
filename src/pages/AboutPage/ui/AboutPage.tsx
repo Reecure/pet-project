@@ -1,5 +1,10 @@
-import React, {memo} from 'react';
-import {useTranslation} from 'react-i18next';
+import React, { memo } from 'react';
+import { useTranslation } from 'react-i18next';
+import { Text } from '@/shared/ui/Text';
+import cls from './AboutPage.module.scss';
+import { FontWeight, TextSizes } from '@/shared/ui/Text/model/types';
+import { AppLink } from '@/shared/ui/AppLink';
+import { getArticlesRoute } from '@/shared/config/routeConfig/routeConfig';
 
 const categories = [
     {
@@ -58,11 +63,27 @@ const categories = [
 ];
 
 const AboutPage = () => {
-    const {t} = useTranslation('about');
+    const { t } = useTranslation('about');
 
     return (
-        <div data-testid='aboutPage'>
-           
+        <div data-testid="aboutPage">
+            <Text text="About" textSize={TextSizes.TEXT4XL} fontWeight={FontWeight.FONTBOLD} />
+
+            <div className={cls.categoriesWrapper}>
+                {
+                    categories.map((category) => (
+                        <AppLink to={getArticlesRoute()} className={cls.categoryWrapper}>
+                            <Text
+                                text={category.title}
+                                textSize={TextSizes.TEXT2XL}
+                                fontWeight={FontWeight.FONTMEDIUM}
+                            />
+                            <Text text={category.paragraph} textSize={TextSizes.TEXTBASE} />
+                        </AppLink>
+                    ))
+                }
+            </div>
+
         </div>
     );
 };
