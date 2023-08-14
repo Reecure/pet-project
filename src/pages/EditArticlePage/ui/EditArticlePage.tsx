@@ -11,6 +11,7 @@ import { Loader } from '@/shared/ui/Loader';
 import { ArticleForSend } from '@/enteties/Article/model/types/article';
 import { ArticleForm, updateArticle } from '@/features/CRUDArticle';
 import { Notify } from '@/shared/ui/Notify';
+import ServerError from '@/widgets/ServerError/ServerError';
 
 interface Props {
 }
@@ -71,13 +72,15 @@ const EditArticlePage: FC<Props> = () => {
     return (
         <>
             <section data-testid="editArticlePage" className={classNames(cls.EditArticlePage, {}, [])}>
-                <ArticleForm
-                    submitError={serverError}
-                    article={article.article}
-                    loading={article.loading}
-                    onSubmit={updateHandler}
-                />
-
+                {article.article !== undefined
+                    ? (
+                        <ArticleForm
+                            submitError={serverError}
+                            article={article.article}
+                            loading={article.loading}
+                            onSubmit={updateHandler}
+                        />
+                    ) : (<ServerError />)}
             </section>
             <Notify open={notifyOpen} error={!notifySuccess}>
                 {notifySuccess ? t('Article update success') : t('Article update failed')}

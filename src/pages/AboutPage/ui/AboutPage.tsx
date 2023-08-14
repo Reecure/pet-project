@@ -57,14 +57,14 @@ const categories = [
         paragraph: t('Delve into the fascinating realm of artificial intelligence and machine learning, where cutting-edge technologies shape the future.'),
     },
     {
-        title: t('Blockchain & Cryptocurrency'),
-        paragraph: t('Explore the transformative potential of blockchain technology and cryptocurrencies, revolutionizing industries worldwide.'),
+        title: 'Blockchain & Cryptocurrency',
+        paragraph: 'Explore the transformative potential of blockchain technology and cryptocurrencies, revolutionizing industries worldwide.',
     },
 
 ];
 
 const AboutPage = () => {
-    const { t } = useTranslation();
+    const { t } = useTranslation('about');
 
     return (
         <section data-testid="aboutPage">

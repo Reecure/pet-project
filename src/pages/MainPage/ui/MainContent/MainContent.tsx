@@ -68,7 +68,7 @@ const MainContent: FC<Props> = () => {
                                                 </div>
                                             )) : (
                                                 <Text
-                                                    text="Server error"
+                                                    text={t('Server error')}
                                                     haveError={true}
                                                     textSize={TextSizes.TEXT2XL}
                                                     fontWeight={FontWeight.FONTBOLD}

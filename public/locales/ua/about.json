@@ -1,0 +1,61 @@
+{
+  "Technology": "Технології",
+  "Science & Nature": "Наука та Природа",
+  "Education & Learning": "Освіта та Навчання",
+  "Economics & Finance": "Економіка та Фінанси",
+  "Mathematics & Logic": "Математика та Логіка",
+  "Physics & Astronomy": "Фізика та Астрономія",
+  "Mind & Psychology": "Розум та Психологія",
+  "Languages & Linguistics": "Мови та Лінгвістика",
+  "Programming & Development": "Програмування та Розробка",
+  "Web & App Development": "Розробка Веб та Додатків",
+  "Data Science & Analytics": "Наука про Дані та Аналітика",
+  "AI & Machine Learning": "ШІ та Машинне Навчання",
+  "Blockchain & Cryptocurrency": "Блокчейн та Криптовалюта",
+  "About": "Про Нас",
+  "Stay updated with the latest advancements in the world of technology": {
+    " From IT trends to cutting-edge innovations, our articles cover a broad spectrum of tech-related topics": {
+      "": "Будьте в курсі останніх досягнень у світі технологій. Від трендів ІТ до передових інновацій, наші статті охоплюють широкий спектр технологічних тем."
+    }
+  },
+  "Unravel the mysteries of the natural world with our science and nature articles": {
+    " Delve into scientific discoveries, environmental issues, and much more": {
+      "": "Розгадайте таємниці природного світу разом із нашими науковими та природничими статтями. Глибоко зануртесь у наукові відкриття, проблеми навколишнього середовища та багато іншого."
+    }
+  },
+  "Empower yourself with insights into effective learning techniques, educational trends, and tools that can enhance your knowledge journey": {
+    "": "Надайте собі можливість засвоїти методи ефективного навчання, освітні тренди та інструменти, що можуть покращити ваш шлях здобуття знань."
+  },
+  "Understand the complexities of economics and finance with our expertly curated articles on market dynamics, financial strategies, and global economic trends": {
+    "": "Зрозумійте складнощі економіки та фінансів за допомогою наших професійно підготовлених статей про динаміку ринку, фінансові стратегії та глобальні економічні тренди."
+  },
+  "Embrace the beauty of numbers and explore the depths of logical reasoning with our mathematics and logic-focused content": {
+    "": "Відкрийте для себе красу чисел та досліджуйте глибини логічного мислення разом із нашим математичним та логічно орієнтованим вмістом."
+  },
+  "Embark on a cosmic journey through our physics and astronomy articles, touching upon celestial wonders and the laws that govern the universe": {
+    "": "Вируште у космічну подорож через наші статті з фізики та астрономії, доторкаючись до небесних див і законів, що керують всесвітом."
+  },
+  "Gain insights into the human mind and behavior with our psychology articles": {
+    " Discover tips for personal growth and emotional well-being": {
+      "": "Отримайте уявлення про людський розум та поведінку за допомогою наших статей з психології. Відкрийте поради для особистого зростання та емоційного благополуччя."
+    }
+  },
+  "Dive into the diverse world of languages and linguistics, exploring language structures, linguistic anthropology, and more": {
+    "": "Зануртесь у різноманітний світ мов та лінгвістики, досліджуючи мовні структури, лінгвістичну антропологію та багато іншого."
+  },
+  "For tech enthusiasts and developers, we offer articles on programming languages, software development, and coding best practices": {
+    "": "Для ентузіастів технологій та розробників ми пропонуємо статті про мови програмування, розробку програмного забезпечення та найкращі практики кодування."
+  },
+  "Stay ahead in the digital world with our web and app development articles, covering the latest trends and tools": {
+    "": "Будьте впереду у цифровому світі завдяки нашим статтям про розробку веб-сайтів та додатків, які охоплюють останні тренди та інструменти."
+  },
+  "Unlock the power of data with our data science and analytics content, which explores data-driven insights and machine learning": {
+    "": "Розкрийте потужність даних за допомогою нашого вмісту з науки про дані та аналітики, який досліджує висновки, зроблені на основі даних, та машинне навчання."
+  },
+  "Delve into the fascinating realm of artificial intelligence and machine learning, where cutting-edge technologies shape the future": {
+    "": "Зануртесь у захоплюючий світ штучного інтелекту та машинного навчання, де передові технології формують майбутнє."
+  },
+  "Explore the transformative potential of blockchain technology and cryptocurrencies, revolutionizing industries worldwide": {
+    "": "Дослідьте трансформаційний потенціал технології блокчейну та криптовалют, які революціонізують галузі по всьому світу."
+  }
+}

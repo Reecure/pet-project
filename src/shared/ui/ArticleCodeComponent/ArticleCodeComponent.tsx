@@ -14,22 +14,22 @@ interface Props {
 }
 
 const ArticleCodeComponent: FC<Props> = ({ block }) => {
-    const [coppied, setCoppied] = useState(false);
+    const [copied, setCopied] = useState(false);
     const { t } = useTranslation();
 
     const codeCopyHandler = useCallback(() => {
         navigator.clipboard.writeText(block.code);
-        setCoppied(true);
+        setCopied(true);
     }, [block]);
 
     useEffect(() => {
-        const coppiedTimout = setTimeout(() => {
-            setCoppied(false);
+        const copiedTimout = setTimeout(() => {
+            setCopied(false);
         }, 1500);
         return () => {
-            clearTimeout(coppiedTimout);
+            clearTimeout(copiedTimout);
         };
-    }, [coppied]);
+    }, [copied]);
 
     return (
         <article className={classNames(cls.ArticleCodeComponent, {}, [])}>
@@ -42,8 +42,8 @@ const ArticleCodeComponent: FC<Props> = ({ block }) => {
 
                 <Code>{block.code}</Code>
             </div>
-            <Notify open={coppied}>
-                {t('Coppied')}
+            <Notify open={copied}>
+                {t('Copied')}
                 !
             </Notify>
         </article>

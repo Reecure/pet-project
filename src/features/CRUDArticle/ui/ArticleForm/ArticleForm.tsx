@@ -35,38 +35,14 @@ const ArticleForm: FC<Props> = ({
         blocks: article?.blocks || [],
     };
     const validationSchema = Yup.object().shape({
-        title: Yup.string().required('Title is required').min(4, 'Too short!').max(30, 'Too long!'),
-        subtitle: Yup.string().required('Subtitle is required').min(4, 'Too short!'),
-        img: Yup.string().url('Please enter a valid URL').required('Image URL is required'),
-        // blocks: Yup.array().of(
-        //     Yup.object().shape({
-        //         title: Yup.string().test({
-        //             test: function (value) {
-        //                 const type = this.parent.type;
-        //                 return type === BlockTypes.TEXT || type === BlockTypes.IMAGE ? !!value : true;
-        //             },
-        //             message: 'Block title is required',
-        //         }),
-        //         code: Yup.string().required('Code is required'),
-        //         src: Yup.string().required('Image URL is required and must be a valid URL').test({
-        //             test: function (value) {
-        //                 const type = this.parent.type;
-        //                 return type === BlockTypes.IMAGE ? Yup.string().url().isValidSync(value) : true;
-        //             },
-        //             message: 'Image URL is required and must be a valid URL',
-        //         }),
-        //         paragraphs: Yup.array().of(
-        //             Yup.object().shape({
-        //                 text: Yup.string().required('Paragraph is required')
-        //             })
-        //         ),
-        //     })
-        // ),
+        title: Yup.string().required(t('Title is required')).min(4, t('Too short!')).max(30, t('Too long!')),
+        subtitle: Yup.string().required(t('Subtitle is required')).min(4, t('Too short!')),
+        img: Yup.string().url(t('Please enter a valid URL')).required(t('Image URL is required')),
     });
 
     return (
         <>
-            {submitError && <p className="error">Article doesn`t send some server error</p>}
+            {submitError && <p className="error">{t('Article doesn`t send some server error')}</p>}
             <Formik
                 initialValues={initialValues}
                 validationSchema={validationSchema}
