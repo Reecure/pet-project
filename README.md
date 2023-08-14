@@ -17,14 +17,37 @@ Login Credentials:
 
 Use these scripts to manage the project:
 
-- `start`: Start the project.
-- `start:vite`: Start the project with Vite.
-- `start:dev:server`: Start the JSON server for development.
-- `build:dev`: Build the project in an unzipped format.
-- `build:prod`: Build the project in a zipped format.
-- `lint:ts`: Check TypeScript errors.
-- `lint:ts:fix`: Automatically fix TypeScript errors.
-- `test`: Run unit tests.
+- `start` : This script launches a development server using Webpack to serve the application. It sets an environment
+  variable port to 3000, specifying the port on which the server will listen.
+
+- `start:vite` : This script starts the application's development server using Vite, a build tool that offers fast and
+  efficient development workflows.
+
+- `build:vite`: Executes the Vite build process, generating optimized and production-ready output for deployment.
+
+- `preview:vite`: Runs Vite's preview server to review the production build locally before deployment.
+
+- `start:dev:server` : Initiates a development JSON server by executing the index.js file located in the json-server
+  directory. This server is commonly used to simulate a REST API during development.
+
+- `build:dev`: Triggers the Webpack build process in development mode. This script prepares the application for
+  development deployment, including bundling and optimization.
+
+- `build:prod` : Initiates the Webpack build process in production mode, targeting a specific API URL (apiUrl). This
+  script is designed for creating a production-ready build of the application that connects to a specified production
+  API server.
+
+- `lint:ts` : Executes ESLint to analyze TypeScript and TypeScript React files (ts and tsx extensions) for code quality
+  and adherence to coding standards. This command performs static code analysis and reports any issues found.
+
+- `lint:ts:fix` : Similar to the previous script, this command also uses ESLint to analyze TypeScript files, attempting
+  to automatically fix any fixable issues by applying suggested code changes.
+
+- `cypress:open` : Opens the Cypress Test Runner interface, which allows interactive execution and debugging of
+  end-to-end (E2E) tests written using Cypress.
+
+- `test` : Executes Jest tests using a specific configuration file located in the ./config/jest/ directory. This script
+  is used for running unit tests on the project's codebase.
 
 ---
 

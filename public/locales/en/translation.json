@@ -86,7 +86,9 @@
   "Image URL is required": "Image URL is required",
   "Too short!": "Too short!",
   "Too long!": "Too long!",
-  "Article doesn`t send some server error": "Article doesn`t send some server error",
   "Article created success": "Article created success",
-  "Article created failed": "Article created failed"
+  "Article created failed": "Article created failed",
+  "There are no articles": "There are no articles",
+  "Should have 4 more symbols": "Should have 4 more symbols",
+  "Article doesnt send some server error": "Article doesnt send some server error"
 }

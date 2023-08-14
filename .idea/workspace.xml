@@ -4,20 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="054dcfbb-5232-4235-a308-8c1e1cec3020" name="Changes" comment="fix">
-      <change afterPath="$PROJECT_DIR$/public/locales/en/about.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/locales/ua/about.json" afterDir="false" />
+    <list default="true" id="054dcfbb-5232-4235-a308-8c1e1cec3020" name="Changes" comment="fix translations">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/json-server/db.json" beforeDir="false" afterPath="$PROJECT_DIR$/json-server/db.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/locales/en/translation.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/locales/en/translation.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/locales/ua/translation.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/locales/ua/translation.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/features/CRUDArticle/ui/ArticleForm/ArticleForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/CRUDArticle/ui/ArticleForm/ArticleForm.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/AboutPage/ui/AboutPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/AboutPage/ui/AboutPage.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/EditArticlePage/ui/EditArticlePage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/EditArticlePage/ui/EditArticlePage.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/MainPage/ui/MainContent/MainContent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/MainPage/ui/MainContent/MainContent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/NotFoundPage/ui/NotFoundPage.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/NotFoundPage/ui/NotFoundPage.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/NotFoundPage/ui/NotFoundPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/NotFoundPage/ui/NotFoundPage.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shared/ui/ArticleCodeComponent/ArticleCodeComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/ui/ArticleCodeComponent/ArticleCodeComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/addComment/ui/AddComment.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/addComment/ui/AddComment.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/AdminPage/ui/ArticleForAccept/ArticleForAccept.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/AdminPage/ui/ArticleForAccept/ArticleForAccept.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/MyArticlesPage/ui/MyArticleButtons/MyArticleButtons.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/MyArticlesPage/ui/MyArticleButtons/MyArticleButtons.module.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -208,7 +202,7 @@
       <workItem from="1691847136172" duration="18260000" />
       <workItem from="1691906042776" duration="23949000" />
       <workItem from="1691942812695" duration="5857000" />
-      <workItem from="1691994059765" duration="2248000" />
+      <workItem from="1691994059765" duration="4034000" />
     </task>
     <task id="LOCAL-00001" summary="some fix">
       <created>1689795990367</created>
@@ -546,7 +540,14 @@
       <option name="project" value="LOCAL" />
       <updated>1691942965391</updated>
     </task>
-    <option name="localTasksCounter" value="49" />
+    <task id="LOCAL-00049" summary="fix translations">
+      <created>1691996372663</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1691996372663</updated>
+    </task>
+    <option name="localTasksCounter" value="50" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -554,7 +555,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="add comments validation" />
     <MESSAGE value="formik's integration. add and update article now have validation" />
     <MESSAGE value="fix styling" />
     <MESSAGE value="main page and about page" />
@@ -579,6 +579,7 @@
     <MESSAGE value="hot fix" />
     <MESSAGE value="restyling" />
     <MESSAGE value="fix" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix" />
+    <MESSAGE value="fix translations" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix translations" />
   </component>
 </project>

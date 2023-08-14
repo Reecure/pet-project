@@ -1,0 +1,20 @@
+.MyArticleButtons {
+  width: min-content;
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  flex-wrap: wrap;
+
+}
+
+
+@media (min-width: 640px) {
+  .MyArticleButtons {
+    width: auto;
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    flex-wrap: wrap;
+
+  }
+}

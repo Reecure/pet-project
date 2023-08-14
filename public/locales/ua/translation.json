@@ -88,7 +88,10 @@
   "Too long!": "Занадто довго!",
   "Article created success": "Стаття створена успішно",
   "Article created failed": "Не вдалося створити статтю",
-  "Article doesn't send some server error": "Стаття не відправляється через помилку сервера"
+  "Article doesnt send some server error": "Стаття не відправляється через помилку сервера",
+  "There are no articles": "Немає статей",
+  "Should have 4 more symbols": "Повинно бути ще 4 символи",
+  "Article doesnt send": "Cnfnnz"
 }
 
 

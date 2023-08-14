@@ -14,16 +14,16 @@ import { addComment } from '../model/services/addComment';
 import { Button, ThemeButton } from '@/shared/ui/Button';
 import { Text } from '@/shared/ui/Text';
 
-const SignupSchema = Yup.object().shape({
-    comment: Yup.string().required('Should have 4 more symbols').min(4, 'Too short!!'),
-});
-
 interface Props {
 
 }
 
 const AddComment: FC<Props> = () => {
     const { t } = useTranslation();
+
+    const SignupSchema = Yup.object().shape({
+        comment: Yup.string().required(t('Should have 4 more symbols')).min(4, t('Too short!')),
+    });
 
     const dispatch = useAppDispatch();
     const [serverError, setServerError] = useState(false);
@@ -53,7 +53,7 @@ const AddComment: FC<Props> = () => {
 
                 >
                     {({
-                        values, errors, touched, handleChange,
+                        values,
                     }) => (
 
                         <Form className={cls.form}>

@@ -42,7 +42,7 @@ const ArticleForm: FC<Props> = ({
 
     return (
         <>
-            {submitError && <p className="error">{t('Article doesn`t send some server error')}</p>}
+            {submitError && <p className="error">{t('Article doesnt send some server error')}</p>}
             <Formik
                 initialValues={initialValues}
                 validationSchema={validationSchema}

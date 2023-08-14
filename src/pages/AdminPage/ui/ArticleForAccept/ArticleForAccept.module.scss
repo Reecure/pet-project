@@ -4,7 +4,7 @@
   border: 2px solid var(--secondary-color);
   display: flex;
   justify-content: space-between;
-  
+
   align-items: center;
 }
 
@@ -13,9 +13,22 @@
 }
 
 .buttonsWrapper {
+  width: min-content;
   display: flex;
   justify-content: flex-end;
   gap: 10px;
   flex-wrap: wrap;
 
+}
+
+
+@media (min-width: 640px) {
+  .buttonsWrapper {
+    width: auto;
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    flex-wrap: wrap;
+
+  }
 }
