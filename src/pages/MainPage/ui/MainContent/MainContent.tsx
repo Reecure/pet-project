@@ -64,7 +64,7 @@ const MainContent: FC<Props> = () => {
                                         recommendations !== undefined
                                             ? recommendations.map((article, i) => (
                                                 <div key={i}>
-                                                    <ArticleSmallComponent article={article} />
+                                                    <ArticleSmallComponent article={article} articleWidth="250px" />
                                                 </div>
                                             )) : (
                                                 <Text

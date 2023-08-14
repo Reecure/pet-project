@@ -10,27 +10,30 @@ import Image from '@/shared/ui/Image/Image';
 
 interface Props {
     article: Article
+    articleWidth?: string,
 }
 
-const ArticleSmallComponent: FC<Props> = ({ article }) => {
+const ArticleSmallComponent: FC<Props> = ({ article, articleWidth }) => {
     const { t } = useTranslation();
 
     return (
-        <AppLink to={getArticleRoute(article.id)} className={classNames(cls.ArticleSmallComponent, {}, [])}>
-            <div className={cls.ArticleSmallComponentHeader}>
-                <Image src={article?.img} height={150} />
-                <p className={cls.createdAt}>{article?.createdAt}</p>
-            </div>
-            <div className={cls.ArticleSmallComponentFooter}>
-                <div className={cls.articleInfo}>
-                    <p className={cls.articleType}>{article?.type?.slice(0, 2).join(' ')}</p>
-                    <Views views={article?.views} />
+        <div style={{ width: articleWidth || '100%' }} className={classNames(cls.ArticleSmallComponent, {}, [])}>
+            <AppLink to={getArticleRoute(article.id)}>
+                <div className={cls.ArticleSmallComponentHeader}>
+                    <Image src={article?.img} height={150} />
+                    <p className={cls.createdAt}>{article?.createdAt}</p>
                 </div>
-                <div>
-                    <p className={cls.articleTitle}>{article?.title}</p>
+                <div className={cls.ArticleSmallComponentFooter}>
+                    <div className={cls.articleInfo}>
+                        <p className={cls.articleType}>{article?.type?.slice(0, 2).join(' ')}</p>
+                        <Views views={article?.views} />
+                    </div>
+                    <div>
+                        <p className={cls.articleTitle}>{article?.title}</p>
+                    </div>
                 </div>
-            </div>
-        </AppLink>
+            </AppLink>
+        </div>
     );
 };
 

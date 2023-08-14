@@ -58,7 +58,7 @@ const EditArticlePage: FC<Props> = () => {
             }).catch((error) => {
                 setServerError(true);
             });
-    }, [dispatch]);
+    }, [article.article.id, dispatch]);
 
     if (isLoading) {
         return (

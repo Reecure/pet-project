@@ -20,7 +20,7 @@ const Image: FC<Props> = ({
             className={classNames(cls.image, {}, [])}
             src={src}
             style={{ maxWidth: `${width}px` || '95%', maxHeight: `${height}px` || 'auto' }}
-            alt={src}
+            alt="image"
         />
     );
 };
