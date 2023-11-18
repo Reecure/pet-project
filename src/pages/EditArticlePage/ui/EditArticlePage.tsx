@@ -49,7 +49,7 @@ const EditArticlePage: FC<Props> = () => {
         };
     }, [notifyOpen]);
 
-    const updateHandler = useCallback(async (values: ArticleForSend) => {
+    const updateHandler = async (values: ArticleForSend) => {
         await setNotifyOpen(true);
         await dispatch(updateArticle({ id: article.article.id, article: values }))
             .unwrap().then((res) => {
@@ -58,7 +58,7 @@ const EditArticlePage: FC<Props> = () => {
             }).catch((error) => {
                 setServerError(true);
             });
-    }, [article.article.id, dispatch]);
+    };
 
     if (isLoading) {
         return (

@@ -104,6 +104,7 @@ const articlesSlice = createSlice({
         builder.addCase(getAllArticles.fulfilled, (state, action) => {
             state.loading = false;
             articlesAdapter.setAll(state, action.payload);
+
             state.haveMore = action.payload.length >= state.limit;
         });
         builder.addCase(getAllArticles.rejected, (state, action) => {

@@ -108,9 +108,7 @@ const ArticleMainContent: FC<Props> = () => {
             <div className={cls.pagination}>
                 <Button disabled={page <= 1} onClick={prevPageHandler}><AiOutlineLeft /></Button>
                 <Button disabled={!haveMore} onClick={nextPageHandler}><AiOutlineRight /></Button>
-
             </div>
-
         </section>
     );
 };
